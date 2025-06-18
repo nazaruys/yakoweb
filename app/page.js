@@ -26,11 +26,13 @@ export default function Home() {
         <Navbar/>
         {/* Hero */}
         <section
-          className="relative z-10 aspect-[1920/1400] flex flex-col items-center pt-[200px] bg-[url('/backgrounds/hero.png')] bg-[length:100%_auto] bg-no-repeat"
+           className="relative z-10 aspect-[1920/1400] flex flex-col items-center pt-[200px]
+              bg-[url('/backgrounds/hero.png')] bg-no-repeat bg-top
+              bg-[length:220%_auto] sm:bg-[length:130%_auto] md:bg-[length:100%_auto]"
         >
           {/* Badge */}
           <div
-            className="gap-5 h-[25px] bg-white flex flex-row justify-between items-center relative rounded-3xl px-[30px]"
+            className="gap-5 h-[25px] bg-white flex flex-row justify-between items-center relative rounded-3xl px-[20px] md:px-[30px]"
           >
             <div className="w-[10px] h-[10px]">
               <div className="pulsating-circle"></div>
@@ -39,13 +41,13 @@ export default function Home() {
           </div>
           {/* Title */}
           <h1
-            className="text-[52px] font-bold text-center leading-[110%] bg-gradient-to-r from-[#523C79] via-black to-[#523C79] bg-clip-text text-transparent mt-3"
+            className="text-4xl sm:text-5xl xl:text-[52px] font-bold text-center leading-[110%] bg-gradient-to-r from-[#523C79] via-black to-[#523C79] bg-clip-text text-transparent mt-3"
           >
             Custom websites<br/>built to convert
           </h1>
           {/* Subtitle */}
           <h3
-            className="text-center text-[16px] font-semibold text-dark/80 max-w-[320px] mt-5"
+            className="text-center text-[14px] md:text-[16px] font-semibold text-dark/80 max-w-[320px] mt-3 lg:mt-5"
           >
             Turn visitors into customers and website overwhelm into a distant memory.
           </h3>
@@ -97,19 +99,19 @@ export default function Home() {
           </div>
           {/* Screens */}
           <div
-            className="flex w-full flex-row justify-between items-center px-44 mt-[120px] select-none"
+            className="flex w-full flex-col lg:flex-row justify-between gap-y-32 items-center lg:px-44 mt-[120px] select-none"
           >
             {/* First */}
             <div className="relative w-fit">
               <img
                 src="/images/EK-secondary.png"
                 alt="EK Logo Secondary"
-                className="absolute bottom-5 hover:scale-105 hover:-translate-y-3 left-20 rotate-[8deg] h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-300 z-0 hover:z-20"
+                className="absolute bottom-5 hover:scale-105 hover:-translate-y-3 left-10 lg:left-20 rotate-[8deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-300 z-0 hover:z-20"
               />
               <img
                 src="/images/EK-primary.png"
                 alt="EK Logo Primary"
-                className="relative hover:scale-105 hover:-translate-y-3 rotate-[-8deg] h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-500 z-10"
+                className="relative hover:scale-105 hover:-translate-y-3 right-10 lg:right-0 rotate-[-8deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-500 z-10"
               />
             </div>
 
@@ -118,12 +120,12 @@ export default function Home() {
               <img
                 src="/images/BaCu-secondary.png"
                 alt="EK Logo Secondary"
-                className="absolute bottom-5 hover:scale-105 hover:-translate-y-3 left-20 rotate-[6deg] h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-300 z-10"
+                className="absolute bottom-5 hover:scale-105 hover:-translate-y-3 left-10 lg:left-20 rotate-[6deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-300 z-10"
               />
               <img
                 src="/images/BaCu-primary.png"
                 alt="EK Logo Primary"
-                className="relative hover:scale-105 hover:-translate-y-3 rotate-[-7deg] h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-500 z-0 hover:z-20"
+                className="relative hover:scale-105 hover:-translate-y-3 right-10 lg:right-0 rotate-[-7deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-500 z-0 hover:z-20"
               />
             </div>
             {/* Third */}
@@ -131,19 +133,19 @@ export default function Home() {
               <img
                 src="/images/PickFast-secondary.png"
                 alt="EK Logo Secondary"
-                className="absolute hover:scale-105 hover:-translate-y-3 left-20 rotate-[-12deg] h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-300 z-0 hover:z-20"
+                className="absolute hover:scale-105 hover:-translate-y-3 left-10 lg:left-20 rotate-[-12deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-300 z-0 hover:z-20"
               />
               <img
                 src="/images/PickFast-primary.png"
                 alt="EK Logo Primary"
-                className="relative hover:scale-105 hover:-translate-y-3 rotate-[12deg] h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-500 z-10"
+                className="relative hover:scale-105 hover:-translate-y-3 right-10 lg:right-0 rotate-[12deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-500 z-10"
               />
             </div>
           </div>
         </section>
         {/* Footer */}
         <footer
-          className="hidden relative z-0 aspect-[1426/344] mt-[-27vh] sm:flex px-44 flex-col-reverse bg-[url('/backgrounds/footer.png')] bg-[length:100%_auto] bg-no-repeat bg-bottom"
+          className="hidden relative z-0 aspect-[1426/344] mt-[30vh] sm:flex px-44 flex-col-reverse bg-[url('/backgrounds/footer.png')] bg-[length:100%_auto] bg-no-repeat bg-bottom"
         >
           {/* Below */}
           <div

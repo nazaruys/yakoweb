@@ -90,21 +90,21 @@ function Navbar({ currentPage }) {
 					</button>
 				</div>
 				{isMenuOpen && (
-	<div className="sm:mx-20 mx-10 md:hidden absolute top-full mt-2 left-0 right-0 bg-SecondaryBackground rounded-[30px] shadow-lg px-6 py-4 z-40 shadow-[0_0_30px_rgba(26,6,61,0.20)]">
-		<ul className="flex flex-col items-center divide-y divide-gray-300">
-			{navigationItems.map((item, index) => (
-				<li key={item.slug} className="w-full py-2 first:pt-0 last:pb-0">
-					<a
-						href={item.slug}
-						onClick={() => setIsMenuOpen(false)}
-						className="text-black text-base font-medium w-full flex justify-center"
-					>
-						{item.name}
-					</a>
-				</li>
-			))}
-		</ul>
-	</div>
+					<div className="sm:mx-20 mx-10 md:hidden absolute top-full mt-2 left-0 right-0 bg-SecondaryBackground rounded-[30px] px-6 py-4 z-40 shadow-[0_0_30px_rgba(26,6,61,0.20)]">
+						<ul className="flex flex-col items-center divide-y divide-gray-300">
+							{navigationItems.map((item, index) => (
+								<li key={item.slug} className="w-full py-2 first:pt-0 last:pb-0">
+									<a
+										href={item.slug}
+										onClick={() => setIsMenuOpen(false)}
+										className="text-black text-base font-medium w-full flex justify-center"
+									>
+										{item.name}
+									</a>
+								</li>
+							))}
+						</ul>
+					</div>
 )}
 
 			</div>
