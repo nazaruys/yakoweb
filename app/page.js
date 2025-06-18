@@ -3,6 +3,20 @@ import Navbar from "./components/Navbar";
 import { XLogoIcon, InstagramLogoIcon, FacebookLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react";
 
 export default function Home() {
+  
+  const openCalendly = () => {
+    const url = 'https://calendly.com/nazar_yakov/yakoweb';
+    const width = 700;
+    const height = 800;
+    const left = window.screenX + (window.outerWidth - width) / 2;
+    const top = window.screenY + (window.outerHeight - height) / 2.5;
+
+    window.open(
+      url,
+      'Calendly',
+      `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes`
+    )
+  };
   return (
     <>
       <title>YakoWeb | Turn visitors into customers and website overwhelm into a distant memory.</title>
@@ -41,7 +55,8 @@ export default function Home() {
           >
             {/* Button 1 */}
             <a
-              href="#"
+              href="https://calendly.com/nazar_yakov/yakoweb"
+              target="_blank"
               className="w-[193px] h-[53px] flex items-center justify-center rounded-[25px] bg-gradient-to-r from-[#9568E3] to-[#563C83] shadow-[inset_0_3px_2px_rgba(255,255,255,0.3),inset_0_-3px_2px_rgba(0,0,0,0.1),inset_1px_0_2px_rgba(0,0,0,0.3),inset_-1px_0_2px_rgba(255,255,255,0.3),inset_0_-1px_3px_rgba(0,0,0,0.1)] p-[6px] transform transition-transform duration-300 ease-in-out group hover:-translate-y-0.5"
             >
               <div
@@ -51,33 +66,34 @@ export default function Home() {
                 <span
                   className="text-white text-[15px] font-semibold"
                 >
-                  Pick your package
+                  Book an Intro Call
+                  {/* Pick your package */}
                 </span>
                 <span
                   className="absolute text-white text-[15px] blur-xs group-hover:opacity-75 opacity-50 transform transition-opacity duration-300 ease-in-out font-semibold"
                   aria-hidden="true"
                 >
-                  Pick your package
+                  Book an Intro Call
+                  {/* Pick your package */}
                 </span>
 
               </div>
             </a>
             {/* Button 2 */}
-            <a
+            {/* <a
               href="#"
               className="w-[193px] h-[53px] flex items-center justify-center rounded-[25px] border-[6px] border-[#7853B6] transform transition-all duration-300 ease-in-out group hover:-translate-y-0.5"
             >
               <div
                 className="select-none relative flex items-center justify-center w-full h-full rounded-[25px]"
               >
-                {/* Sharp front text */}
                 <span
                   className="text-[#7853B6] transition-colors duration-300 ease-in-out text-[15px] font-semibold"
                 >
                   Or book a call
                 </span>
               </div>
-            </a>
+            </a> */}
           </div>
           {/* Screens */}
           <div
@@ -127,19 +143,20 @@ export default function Home() {
         </section>
         {/* Footer */}
         <footer
-          className="relative z-0 aspect-[1426/344] mt-[-30vh] flex px-44 flex-col-reverse bg-[url('/backgrounds/footer.png')] bg-[length:100%_auto] bg-no-repeat bg-bottom"
+          className="hidden relative z-0 aspect-[1426/344] mt-[-27vh] sm:flex px-44 flex-col-reverse bg-[url('/backgrounds/footer.png')] bg-[length:100%_auto] bg-no-repeat bg-bottom"
         >
           {/* Below */}
           <div
             className="flex flex-row justify-between items-center py-6 font-medium text-dark text-[14px]"
           >
             <span>Copyright © 2025 YakoWeb</span>
+            <span className="text-xs">We’re building this page section by section. Check back soon!</span>
             <div
               className="flex flex-row gap-3"
             >
               <a href={null} className="text-dark/70">EN</a>
               <div className="w-[1px] h-[28px] bg-dark"></div>
-              <a href="#">NL</a>
+              <a>NL</a>
             </div>
           </div>
           {/* Line */}
