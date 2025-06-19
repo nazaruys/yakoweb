@@ -27,7 +27,7 @@ export default function Home() {
         {/* Hero */}
         <section
            className="relative z-10 aspect-[1920/1400] flex flex-col items-center pt-[200px]
-              bg-[url('/backgrounds/hero.png')] bg-no-repeat bg-top
+              bg-[url('/backgrounds/hero.webp')] bg-no-repeat bg-top
               bg-[length:220%_auto] sm:bg-[length:130%_auto] md:bg-[length:100%_auto]"
         >
           {/* Badge */}
@@ -37,7 +37,7 @@ export default function Home() {
             <div className="w-[10px] h-[10px]">
               <div className="pulsating-circle"></div>
             </div>
-            <span className="text-[12px] font-semibold">2 spots left for July</span>
+            <span className="text-[12px] font-semibold">1 spot left for June</span>
           </div>
           {/* Title */}
           <h1
@@ -104,12 +104,12 @@ export default function Home() {
             {/* First */}
             <div className="relative w-fit">
               <img
-                src="/images/EK-secondary.png"
+                src="/images/EK-secondary.webp"
                 alt="EK Logo Secondary"
                 className="absolute bottom-5 hover:scale-105 hover:-translate-y-3 left-10 lg:left-20 rotate-[8deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-300 z-0 hover:z-20"
               />
               <img
-                src="/images/EK-primary.png"
+                src="/images/EK-primary.webp"
                 alt="EK Logo Primary"
                 className="relative hover:scale-105 hover:-translate-y-3 right-10 lg:right-0 rotate-[-8deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-500 z-10"
               />
@@ -118,12 +118,12 @@ export default function Home() {
             {/* Second */}
             <div className="relative w-fit">
               <img
-                src="/images/BaCu-secondary.png"
+                src="/images/BaCu-secondary.webp"
                 alt="EK Logo Secondary"
                 className="absolute bottom-5 hover:scale-105 hover:-translate-y-3 left-10 lg:left-20 rotate-[6deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-300 z-10"
               />
               <img
-                src="/images/BaCu-primary.png"
+                src="/images/BaCu-primary.webp"
                 alt="EK Logo Primary"
                 className="relative hover:scale-105 hover:-translate-y-3 right-10 lg:right-0 rotate-[-7deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-500 z-0 hover:z-20"
               />
@@ -131,12 +131,12 @@ export default function Home() {
             {/* Third */}
             <div className="relative w-fit">
               <img
-                src="/images/PickFast-secondary.png"
+                src="/images/PickFast-secondary.webp"
                 alt="EK Logo Secondary"
                 className="absolute hover:scale-105 hover:-translate-y-3 left-10 lg:left-20 rotate-[-12deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-300 z-0 hover:z-20"
               />
               <img
-                src="/images/PickFast-primary.png"
+                src="/images/PickFast-primary.webp"
                 alt="EK Logo Primary"
                 className="relative hover:scale-105 hover:-translate-y-3 right-10 lg:right-0 rotate-[12deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-500 z-10"
               />
@@ -145,7 +145,7 @@ export default function Home() {
         </section>
         {/* Footer */}
         <footer
-          className="relative z-0 aspect-[1426/344] mt-[20vh] lg:-mt-[25vh] flex flex-col-reverse bg-[url('/backgrounds/footer.png')] bg-[length:100%_auto] bg-no-repeat bg-bottom px-6 sm:px-12 xl:px-44"
+          className="relative z-0 aspect-[1426/344] mt-[20vh] lg:-mt-[25vh] flex flex-col-reverse bg-[url('/backgrounds/footer.webp')] bg-[length:100%_auto] bg-no-repeat bg-bottom px-6 sm:px-12 xl:px-44"
         >
           {/* Below */}
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 py-6 font-medium text-dark text-[14px]">
