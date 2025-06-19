@@ -168,7 +168,7 @@ export default function Home() {
               <span className="max-w-[300px]">Convert strangers into customers and website overwhelm into a distant memory.</span>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-7">
-              <a href="mailto:hello@yakoweb.com" className="max-w-[300px] hover:text-black transition-all duration-200 break-words">hello@yakoweb.com</a>
+              {/* <a href="mailto:hello@yakoweb.com" className="max-w-[300px] hover:text-black transition-all duration-200 break-words">hello@yakoweb.com</a> */}
               <div className="flex flex-row gap-3">
                 <a href="#" className="group">
                   <XLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
