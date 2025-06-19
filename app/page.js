@@ -145,41 +145,31 @@ export default function Home() {
         </section>
         {/* Footer */}
         <footer
-          className="hidden relative z-0 aspect-[1426/344] mt-[30vh] sm:flex px-44 flex-col-reverse bg-[url('/backgrounds/footer.png')] bg-[length:100%_auto] bg-no-repeat bg-bottom"
+          className="relative z-0 aspect-[1426/344] mt-[20vh] lg:-mt-[25vh] flex flex-col-reverse bg-[url('/backgrounds/footer.png')] bg-[length:100%_auto] bg-no-repeat bg-bottom px-6 sm:px-12 xl:px-44"
         >
           {/* Below */}
-          <div
-            className="flex flex-row justify-between items-center py-6 font-medium text-dark text-[14px]"
-          >
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 py-6 font-medium text-dark text-[14px]">
             <span>Copyright © 2025 YakoWeb</span>
-            <span className="text-xs">We’re building this page section by section. Check back soon!</span>
-            <div
-              className="flex flex-row gap-3"
-            >
-              <a href={null} className="text-dark/70">EN</a>
-              <div className="w-[1px] h-[28px] bg-dark"></div>
+            <span className="text-xs sm:text-[14px] text-wrap sm:text-nowrap">We’re building this page section by section. Check back soon!</span>
+            <div className="flex flex-row items-center gap-3">
+              <a href="#" className="text-dark/70">EN</a>
+              <div className="w-[1px] h-[28px] bg-dark" />
               <a>NL</a>
             </div>
           </div>
+
           {/* Line */}
           <div className="w-full h-[1px] bg-dark" />
+
           {/* Above */}
-          <div
-            className="mb-8 flex flex-row justify-between items-center font-medium text-dark text-[14px]"
-          >
-            <div
-              className="flex flex-row gap-7"
-            >
+          <div className="mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 font-medium text-dark text-[14px]">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-7 max-w-full">
               <img src="/logos/YakoWeb.svg" alt="Logo" className="w-[130px] h-auto select-none" draggable="false" />
               <span className="max-w-[300px]">Convert strangers into customers and website overwhelm into a distant memory.</span>
             </div>
-            <div
-              className="flex flex-row gap-7"
-            >
-              <a href="mailto:hello@yakoweb.com" className="max-w-[300px] hover:text-black transition-all duration-200">hello@yakoweb.com</a>
-              <div
-                className="flex flex-row gap-3"
-              >
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-7">
+              <a href="mailto:hello@yakoweb.com" className="max-w-[300px] hover:text-black transition-all duration-200 break-words">hello@yakoweb.com</a>
+              <div className="flex flex-row gap-3">
                 <a href="#" className="group">
                   <XLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
                 </a>
@@ -196,6 +186,7 @@ export default function Home() {
             </div>
           </div>
         </footer>
+
       </div>
     </>
   );
