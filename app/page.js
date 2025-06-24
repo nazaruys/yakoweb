@@ -17,6 +17,52 @@ export default function Home() {
       `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes`
     )
   };
+
+const updatesCol1 = [
+  { title: "Improved how pages load on phones", time: "3 days ago" },
+  { title: "Fixed an issue with the payment screen", time: "1 week ago" },
+  { title: "Updated the legal page to match latest rules", time: "2 weeks ago" },
+  { title: "Better wording for search engines", time: "5 days ago" },
+  { title: "Navigation buttons work more smoothly", time: "4 hours ago" },
+  { title: "Added dark theme for easier viewing", time: "6 days ago" },
+  { title: "Refreshed the FAQ layout", time: "12 hours ago" },
+  { title: "Enabled multilingual display", time: "2 days ago" },
+  { title: "Cleaned up text spacing", time: "1 hour ago" },
+  { title: "Improved how visitors sign up", time: "3 weeks ago" },
+  { title: "Updated alerts to be more visible", time: "2 days ago" },
+  { title: "Polished mobile menu animations", time: "3 hours ago" },
+  { title: "Improved visual contrast for readability", time: "4 days ago" },
+  { title: "Bug fix for images not loading properly", time: "5 hours ago" },
+  { title: "Added visitor tracking tools", time: "1 day ago" },
+  { title: "Better layout on smaller screens", time: "1 week ago" },
+  { title: "Minor design cleanup", time: "30 minutes ago" },
+  { title: "Faster load times for galleries", time: "6 hours ago" },
+  { title: "SEO settings improved", time: "10 days ago" },
+  { title: "Resolved layout shift on homepage", time: "2 hours ago" },
+];
+const updatesCol2 = [
+  { title: "Fixed login display on older browsers", time: "4 days ago" },
+  { title: "Improved header visibility", time: "2 weeks ago" },
+  { title: "Adjusted fonts for better clarity", time: "6 hours ago" },
+  { title: "Added page About us", time: "5 days ago" },
+  { title: "Better spacing in contact forms", time: "2 hours ago" },
+  { title: "Security updates applied", time: "1 week ago" },
+  { title: "Contact form error now resolved", time: "1 day ago" },
+  { title: "Search keywords optimized", time: "3 days ago" },
+  { title: "Text scaling issue fixed", time: "30 minutes ago" },
+  { title: "Updated translation for buttons", time: "12 hours ago" },
+  { title: "Added visual effects on hover", time: "3 hours ago" },
+  { title: "Improved experience for screen readers", time: "2 days ago" },
+  { title: "Fixed email signup bug", time: "5 hours ago" },
+  { title: "Footer links better organized", time: "2 weeks ago" },
+  { title: "Better layout for announcements", time: "10 days ago" },
+  { title: "Adjusted mobile margins", time: "20 hours ago" },
+  { title: "Animations load more smoothly", time: "3 hours ago" },
+  { title: "Improved color accessibility", time: "8 hours ago" },
+  { title: "Reduced unused code", time: "1 week ago" },
+  { title: "Minor fixes across all pages", time: "1 hour ago" },
+];
+
   return (
     <>
       <title>YakoWeb | Turn visitors into customers and website overwhelm into a distant memory.</title>
@@ -143,9 +189,296 @@ export default function Home() {
             </div>
           </div>
         </section>
+        {/* Why choose us */}
+        <section
+          className="z-40 relative
+          2xl:-mt-[55vh] xl:-mt-[40vh] lg:-mt-[5vh] md:mt-[20vh] sm:mt-[10vh] mt-[20vh]
+          flex flex-col justify-center xl:items-start items-center
+          2xl:px-48 xl:px-36 lg:px-28 md:px-14 sm:px-16 px-8
+          bg-[url('/backgrounds/whyus.webp')] sm:bg-no-repeat bg-top
+          bg-[length:140%_auto] sm:bg-[length:300%_auto] md:bg-[length:200%_auto] lg:bg-[length:170%_auto] xl:bg-[length:110%_auto] 2xl:bg-[length:100%_auto]
+          sm:py-20 xl:py-0
+          xl:aspect-[1920/1400]
+          "
+        >
+          <h3 className="text-center text-[13px] md:text-[16px] text-dark/80 font-semibold">WHY BUSINESSES CHOOSE YAKOWEB?</h3>
+          <h2 className="text-center text-[28px] md:text-[32px] text-black font-bold">The partner that helps you grow</h2>
+          {/* Cards div */}
+          <div
+            className="w-full flex xl:flex-row flex-col items-center xl:items-start xl:justify-between sm:space-y-6 space-y-10 xl:space-y-0 mt-10"
+          >
+            {/* Card 1 */}
+            <div
+              className="2xl:min-w-[380px] 2xl:max-w-[380px] xl:min-w-[350px] xl:max-w-[350px] min-w-[380px] max-w-[380px] h-[320px] rounded-2xl p-[5px]"
+              style={{
+                background: `
+                  linear-gradient(
+                    to bottom,
+                    #FFFFFD 0%,
+                    #E9E2F5 80%,
+                    #BBA7DF 88%,
+                    #AA92D5 100%
+                  )
+                `,
+                boxShadow: `
+                  inset 2px 0px 3px rgba(255, 255, 255, 0.25),
+                  inset -2px 0px 3px rgba(0, 0, 0, 0.15),
+                  inset 0px -2px 3px rgba(0, 0, 0, 0.25),
+                  inset 0px 2px 3px rgba(255, 255, 255, 0.25)
+                `
+                
+              }}
+            >
+              {/* Main container */}
+              <div
+                className="bg-white flex flex-col w-full h-full rounded-[12px] p-6"
+                style={{
+                  boxShadow: `
+                    inset -2px 0px 5px rgba(255, 255, 255, 0.25),
+                    inset 2px 0px 5px rgba(0, 0, 0, 0.25)
+                  `,
+                  background: `
+                    linear-gradient(
+                      to bottom,
+                      #FFFFFD 0%,
+                      #FFFFFD 40%,
+                      #E9E2F5 59.2%,
+                      #BBA7DF 77.2%,
+                      #AA92D5 100%
+                    )
+                  `
+                }}
+              >
+                <span className="font-semibold text-black text-[20px]">Performance</span>
+                <p
+                  className="text-[14px] font-medium text-dark mt-2"
+                >
+                  Our mission is to help businesses get more sales. We carry out an in-depth analysis of your niche and create sites that generate profit.
+                </p>
+                <div
+                  className="flex w-full h-full justify-center items-center"
+                >
+                  {/* Animation */}
+                  <div
+                    className="mt-8 px-2 flex flex-col-reverse items-center w-full font-inter"
+                  >
+                    {/* First bottom card border */}
+                    <div
+                      className="z-40 bg-gradient-to-r flex justify-center items-center from-[#DEDEDE] to-[#ACACAC] w-full h-[50px] rounded-xl p-[1px]"
+                    >
+                      {/* Content */}
+                      <div
+                        className="flex flex-col justify-between bg-white w-full h-full rounded-[10px] py-2 px-4"
+                      >
+                        <span className="text-black text-[13px]">Ben wants to jump on the call.</span>
+                        <span className="text-dark/80 text-[10px]">Just now</span>
+                      </div>
+                    </div>
+                    {/* Second bottom card border */}
+                    <div
+                      className="z-20 -mb-[25px] opacity-70 bg-gradient-to-r flex justify-center items-center from-[#DEDEDE] to-[#ACACAC] w-[93%] h-[45px] rounded-xl p-[1px]"
+                    >
+                      {/* Content */}
+                      <div
+                        className="flex flex-col justify-between bg-white w-full h-full rounded-[10px] py-2 px-4"
+                      >
+                        <span className="text-black text-[12px]">Mike just made an order for $499.00.</span>
+                        <span className="text-dark/80 text-[9px]">3 minutes ago</span>
+                      </div>
+                    </div>
+                    {/* Third bottom card border */}
+                    <div
+                      className="z-10 -mb-[28px] opacity-60 bg-gradient-to-r flex justify-center items-center from-[#DEDEDE] to-[#ACACAC] w-[83%] h-[40px] rounded-xl p-[1px]"
+                    >
+                      {/* Content */}
+                      <div
+                        className="flex flex-col justify-between bg-white w-full h-full rounded-[10px] py-2 px-4"
+                      >
+                        <span className="text-black text-[11px]">Emma just made a new appointment.</span>
+                        <span className="text-dark/80 text-[8px]">1 hour ago</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Card 2 */}
+            <div
+              className="2xl:min-w-[380px] 2xl:max-w-[380px] xl:min-w-[350px] xl:max-w-[350px] min-w-[380px] max-w-[380px] h-[320px] rounded-2xl p-[5px]"
+              style={{
+                background: `
+                  linear-gradient(
+                    to bottom,
+                    #FFFFFD 0%,
+                    #EBF3FF 80%,
+                    #A2C5FF 88%,
+                    #5B99FF 100%
+                  )
+                `,
+                boxShadow: `
+                  inset 2px 0px 3px rgba(255, 255, 255, 0.25),
+                  inset -2px 0px 3px rgba(0, 0, 0, 0.15),
+                  inset 0px -2px 3px rgba(0, 0, 0, 0.25),
+                  inset 0px 2px 3px rgba(255, 255, 255, 0.25)
+                `
+                
+              }}
+            >
+              {/* Main container */}
+              <div
+                className="bg-white flex flex-col w-full h-full rounded-[12px] p-6"
+                style={{
+                  boxShadow: `
+                    inset -2px 0px 5px rgba(255, 255, 255, 0.25),
+                    inset 2px 0px 5px rgba(0, 0, 0, 0.25)
+                  `,
+                  background: `
+                    linear-gradient(
+                      to bottom,
+                      #FFFFFD 0%,
+                      #FFFFFD 40%,
+                      #EBF3FF 59.2%,
+                      #A2C5FF 77.2%,
+                      #5B99FF 100%
+                    )
+                  `
+                }}
+              >
+                <span className="font-semibold text-black text-[20px]">Partnership</span>
+                <p
+                  className="text-[14px] font-medium text-dark mt-2"
+                >
+                  From first idea to final delivery, we keep you informed and confident at every stage. This way, the final result matches your goals, not just our plan.
+                </p>
+                  {/* Animation */}
+                  <div className="mt-8 px-2 flex flex-col w-full font-inter space-y-2">
+                    {/* Received message (left) */}
+                    <div className="z-20 flex flex-col items-start max-w-[180px]">
+                      <div className="relative bg-white text-black px-4 py-2 rounded-xl rounded-bl-none shadow-md">
+                        <span className="block text-[11px] text-dark">
+                          We improved SEO by adding more keywords.
+                        </span>
+                      </div>
+                      <div className="-mt-[1px] z-40 w-0 h-0 border-l-0 border-r-[16px] border-r-transparent border-t-[8px] border-t-white" />
+                    </div>
+
+                    {/* Sent message (right) */}
+                    <div className="z-20 flex flex-col items-end self-end max-w-[180px]">
+                      <div className="relative bg-white text-black px-4 py-2 rounded-xl rounded-br-none shadow-md">
+                        <span className="block text-[11px]">
+                          Thanks! That’s exactly what I needed.
+                        </span>
+                      </div>
+                      <div className="-mt-[1px] z-40 w-0 h-0 border-l-[16px] border-l-transparent border-r-0 border-t-[8px] border-t-white" />
+                    </div>
+                  </div>
+              </div>
+            </div>
+            {/* Card 3 */}
+            <div
+              className="2xl:min-w-[380px] 2xl:max-w-[380px] xl:min-w-[350px] xl:max-w-[350px] min-w-[380px] max-w-[380px] h-[320px] rounded-2xl p-[5px]"
+              style={{
+                background: `
+                  linear-gradient(
+                    to bottom,
+                    #FFFFFD 0%,
+                    #FFE7B5 80%,
+                    #FFD781 88%,
+                    #FF9500 100%
+                  )
+                `,
+                boxShadow: `
+                  inset 2px 0px 3px rgba(255, 255, 255, 0.25),
+                  inset -2px 0px 3px rgba(0, 0, 0, 0.15),
+                  inset 0px -2px 3px rgba(0, 0, 0, 0.25),
+                  inset 0px 2px 3px rgba(255, 255, 255, 0.25)
+                `
+                
+              }}
+            >
+              {/* Main container */}
+              <div
+                className="bg-white flex flex-col w-full h-full rounded-[12px] p-6 overflow-hidden"
+                style={{
+                  boxShadow: `
+                    inset -2px 0px 5px rgba(255, 255, 255, 0.25),
+                    inset 2px 0px 5px rgba(0, 0, 0, 0.25)
+                  `,
+                  background: `
+                    linear-gradient(
+                      to bottom,
+                      #FFFFFD 0%,
+                      #FFFFFD 40%,
+                      #FFE7B5 65%,
+                      #FFD781 85%,
+                      #FF9500 100%
+                    )
+                  `
+                }}
+              >
+                <span className="font-semibold text-black text-[20px]">Longevity</span>
+                <p
+                  className="text-[14px] font-medium text-dark mt-2 w-[73%]"
+                >
+                  We’re here for the long run. You can ask for updates anytime, we always stay connected, committed, and easy to reach.
+                </p>
+                <div
+                  className="flex w-full h-full justify-center items-center"
+                >
+                  {/* Animation */}
+                  <div
+                    className="mt-8 px-2 flex flex-row w-full space-x-5 font-inter [transform:rotateX(60deg)_rotateZ(50deg)]"
+                  >
+                    {/* First col */}
+                    <div
+                      className="flex flex-col space-y-3"
+                    >
+                      {updatesCol1.map(({ title, time }, i) => (
+                        <div key={i} className="relative w-36 h-20">
+                          {/* Faded copy, offset down+right */}
+                          <div
+                            className="bg-white w-36 h-20 rounded-[5px] shadow-[inset_0_0_0_0.5px_#CDCDCD] opacity-40 absolute top-[3px] left-[3px] pointer-events-none"
+                            aria-hidden="true"
+                          />
+
+                          {/* Original box on top */}
+                          <div className="bg-white flex flex-col justify-between p-3 w-36 h-20 rounded-[5px] shadow-[inset_0_0_0_0.5px_#CDCDCD] relative">
+                            <span className="block text-[12px]">{title}</span>
+                            <span className="block text-[10px] text-dark/80">{time}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    {/* Second col */}
+                    <div
+                      className="flex flex-col space-y-3"
+                    >
+                      {updatesCol2.map(({ title, time }, i) => (
+                        <div key={i} className="relative w-36 h-20">
+                          {/* Faded copy, offset down+right */}
+                          <div
+                            className="bg-white w-36 h-20 rounded-[5px] shadow-[inset_0_0_0_0.5px_#CDCDCD] opacity-40 absolute top-[3px] left-[3px] pointer-events-none"
+                            aria-hidden="true"
+                          />
+
+                          {/* Original box on top */}
+                          <div className="bg-white flex flex-col justify-between p-3 w-36 h-20 rounded-[5px] shadow-[inset_0_0_0_0.5px_#CDCDCD] relative">
+                            <span className="block text-[12px]">{title}</span>
+                            <span className="block text-[10px] text-dark/80">{time}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         {/* Footer */}
         <footer
-          className="relative z-0 aspect-[1426/344] mt-[20vh] lg:-mt-[25vh] flex flex-col-reverse bg-[url('/backgrounds/footer.webp')] bg-[length:100%_auto] bg-no-repeat bg-bottom px-6 sm:px-12 xl:px-44"
+          className="relative z-0 aspect-[1426/344] mt-[20vh] xl:-mt-[25vh] flex flex-col-reverse bg-[url('/backgrounds/footer.webp')] bg-[length:100%_auto] bg-no-repeat bg-bottom px-6 sm:px-12 xl:px-44"
         >
           {/* Below */}
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 py-6 font-medium text-dark text-[14px]">
