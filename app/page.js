@@ -487,7 +487,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Testamonial section 1 */}
+        {/* Testimonial section 1 */}
         <section
           className="
             2xl:px-48 xl:px-36 lg:px-28 md:px-14 sm:px-16 px-8
