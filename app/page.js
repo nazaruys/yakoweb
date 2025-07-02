@@ -491,7 +491,7 @@ export default function Home() {
         <section
           className="
             2xl:px-48 xl:px-36 lg:px-28 md:px-14 sm:px-16 px-8
-            flex flex-col xl:flex-row items-center xl:items-start gap-y-24 xl:gap-y-0 justify-between
+            flex flex-col xl:flex-row gap-y-24 xl:gap-y-0 justify-between
             py-[100px]
           "
         >

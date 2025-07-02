@@ -52,7 +52,7 @@ function Navbar({ currentPage }) {
 					w-full max-w-screens
 					`}
 					style={{
-						transition: `height ${smallVersion ? '700ms' : '300ms'} ease-in-out, border-radius ${smallVersion ? '1000ms' : '300ms'} ease-in-out, padding-inline ${smallVersion ? '700ms' : '300ms'} ease-in-out`
+						transition: `box-shadow ${smallVersion ? '700ms' : '300ms'} ease-in-out, height ${smallVersion ? '700ms' : '300ms'} ease-in-out, border-radius ${smallVersion ? '1000ms' : '300ms'} ease-in-out, padding-inline ${smallVersion ? '700ms' : '300ms'} ease-in-out`
 					}}
 				>
 				<div className="flex w-full items-center justify-between gap-4 md:gap-6">
