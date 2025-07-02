@@ -103,7 +103,7 @@ function WebsiteSlides({ icon, typeWebsite, imagesList }) {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-[500px]">
+    <div ref={containerRef} className="relative w-full sm:w-[500px]">
       {/* Top-left label */}
       <div className="absolute -top-11 left-0 gap-x-2 w-fit flex flex-row justify-center items-center px-3 py-2 bg-SecondaryBackground rounded-xl border-[0.3px] border-dark/20">
         {icon}

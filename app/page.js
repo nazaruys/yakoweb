@@ -491,15 +491,13 @@ export default function Home() {
         <section
           className="
             2xl:px-48 xl:px-36 lg:px-28 md:px-14 sm:px-16 px-8
-            flex flex-row justify-between
+            flex flex-col xl:flex-row items-center xl:items-start gap-y-24 xl:gap-y-0 justify-between
             py-[100px]
           "
         >
           {/* Left side */}
           <div className="flex flex-col justify-between relative space-y-3 max-w-[500px]">
-            <div
-              className=""
-            >
+            <div>
               <span className="text-black text-[20px] font-semibold">
                 BaCu Kozijnen
               </span>
@@ -513,7 +511,7 @@ export default function Home() {
             <a
               href="https://www.bacukozijnen.nl/"
               target="_blank"
-              className="gap-x-2 w-fit flex flex-row justify-center items-center px-3 py-2 bg-SecondaryBackground rounded-xl shadow-[0_0_12px_rgba(0,0,0,0.10)] hover:shadow-[0_0_12px_rgba(0,0,0,0.20)] transition-shadow duration-300"
+              className="mt-6 xl:mt-0 gap-x-2 w-fit flex flex-row justify-center items-center px-3 py-2 bg-SecondaryBackground rounded-xl shadow-[0_0_12px_rgba(0,0,0,0.10)] hover:shadow-[0_0_12px_rgba(0,0,0,0.20)] transition-shadow duration-300"
             >
               <ArrowSquareOutIcon size={18} className="text-black" />
               <span
@@ -830,7 +828,7 @@ export default function Home() {
         <section
           className="
             2xl:px-48 xl:px-36 lg:px-28 md:px-14 sm:px-16 px-8
-            flex flex-row justify-center gap-x-12
+            flex flex-col xl:flex-row justify-center gap-x-12
             py-[100px]
           "
         >
