@@ -1,27 +1,60 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ListIcon, XIcon } from '@phosphor-icons/react';
 
 function Navbar({ currentPage }) {
-  // Navigation items with name and slug
+  // Navigation items with name and link
   const navigationItems = [
-    { name: 'Pricing', slug: '#pricing' },
-    { name: 'Services', slug: '#services' },
-    { name: 'FAQs', slug: '#faqs' },
-    { name: 'Case studies', slug: 'case-studies' },
-    { name: 'Blog', slug: 'blog' }
+    { name: 'Home', link: '/' },
+    { name: 'Pricing', link: '#pricing' },
+    { name: 'FAQs', link: null },
+    { name: 'Case studies', link: null },
+    { name: 'Blog', link: null }
   ];
 
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [smallVersion, setSmallVersion] = useState(false);
+
+	// Convert to small vertion when scrolled down
+  useEffect(() => {
+    const handleScroll = () => {
+      setSmallVersion(window.scrollY > 80);
+    };
+
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
 
 	return (
-		<header className="fixed top-7 z-50 w-full flex justify-center
-			2xl:px-48 xl:px-40 lg:px-32 md:px-16 sm:px-20 px-10">
-  			<div className="bg-SecondaryBackground font-manrope shadow-[0_0_30px_rgba(26,6,61,0.20)] hover:shadow-[0_0_30px_rgba(26,6,61,0.25)]
-				flex flex-row items-center justify-between h-[60px] md:h-[70px] rounded-[40px]
-				px-8 sm:px-6 md:px-8 lg:px-12 2xl:px-14
-				w-full max-w-screen
-				text-black transition-shadow duration-300 ease-in-out"
-			>
+		<header
+			className={`
+				fixed z-50 w-full flex justify-center
+				${smallVersion ? 'px-0' : '2xl:px-48 xl:px-40 lg:px-32 md:px-16 sm:px-20 px-10'}
+				${smallVersion ? 'top-0' : 'top-7'}
+			`}
+			style={{
+				transition: `top 300ms ease-in-out, padding ${smallVersion ? '700ms' : '300ms'} ease-in-out`
+			}}
+		>
+  			<div className={`font-manrope
+					${smallVersion ? 'bg-SecondaryBackground/60' : 'bg-SecondaryBackground '}
+					backdrop-blur-xl
+					shadow-[0_0_30px_rgba(26,6,61,0.20)] hover:shadow-[0_0_30px_rgba(26,6,61,0.25)]
+					${smallVersion ? 'shadow-none hover:shadow-none' : ''}
+					text-black transition-shadow duration-300 ease-in-out
+					flex flex-row items-center justify-between 
+					${smallVersion 
+						? 'md:h-[50px] h-[50px] no-rounded 2xl:px-[248px] xl:px-[208px] lg:px-[176px] md:px-[96px] sm:px-[104px]' 
+						: 'md:h-[70px] h-[60px] rounded-[40px] 2xl:px-14 xl:px-12 lg:px-12 md:px-8 sm:px-6'
+					}
+					px-8
+					w-full max-w-screens
+					`}
+					style={{
+						transition: `height ${smallVersion ? '700ms' : '300ms'} ease-in-out, border-radius ${smallVersion ? '1000ms' : '300ms'} ease-in-out, padding-inline ${smallVersion ? '700ms' : '300ms'} ease-in-out`
+					}}
+				>
 				<div className="flex w-full items-center justify-between gap-4 md:gap-6">
 					{/* Logo */}
 					<a
@@ -36,23 +69,35 @@ function Navbar({ currentPage }) {
 						<img
 							src="/logos/YakoWeb.svg"
 							alt="Logo"
-							className="svg w-[90px] sm:w-[100px] md:w-[110px] lg:w-[130px] h-auto"
+							className={`
+								svg w-[90px] sm:w-[100px] md:w-[110px] h-auto
+								${smallVersion ? 'lg:w-[110px]' : 'lg:w-[130px]'}
+								`}
+							style={{
+								transition: `width ${smallVersion ? '700ms' : '300ms'} ease-in-out`
+							}}
 						/>
 					</a>
 
 					{/* Links – hidden on small screens */}
 					<ul className="hidden md:flex flex-row md:gap-4 lg:gap-6 xl:gap-12">
 						{navigationItems.map((item) => (
-						<li key={item.slug} className="relative group">
+						<li key={item.name} className="relative group">
 							<a
-							href="#"
-							className="sm:text-[11px] md:text-[12px] lg:text-[13px] xl:text-[15px] font-medium text-black"
+								href={item.link}
+								className={`
+									sm:text-[11px] md:text-[12px] lg:text-[13px] xl:text-[15px] font-medium text-black
+									${smallVersion ? 'xl:text-[13px]' : 'xl:text-[15px]'}
+									`}
+								style={{
+									transition: `font-size ${smallVersion ? '700ms' : '300ms'} ease-in-out`
+								}}
 							>
 							{item.name}
 							</a>
 							<span
 							className={`absolute left-0 bottom-0 h-[1px] bg-dark transition-all ${
-								currentPage === item.slug ? 'w-full' : 'w-0 group-hover:w-full'
+								currentPage === item.link ? 'w-full' : 'w-0 group-hover:w-full'
 							}`}
 							></span>
 						</li>
@@ -63,17 +108,37 @@ function Navbar({ currentPage }) {
 					<a
 						href="https://calendly.com/nazar_yakov/yakoweb"
 						target="_blank"
-						className="hidden md:flex w-[150px] sm:w-[160px] md:w-[150px] lg:w-[190px] xl:w-[190px] h-[40px] sm:h-[42px] md:h-[44px] lg:h-[45px] items-center justify-center rounded-[25px] bg-gradient-to-r from-[#9568E3] to-[#563C83] shadow-[inset_0_3px_2px_rgba(255,255,255,0.3),inset_0_-3px_2px_rgba(0,0,0,0.1),inset_1px_0_2px_rgba(0,0,0,0.3),inset_-1px_0_2px_rgba(255,255,255,0.3),inset_0_-1px_3px_rgba(0,0,0,0.1)] p-[6px] transform transition-transform duration-300 ease-in-out group hover:-translate-y-0.5"
+						className={`hidden md:flex
+							md:w-[150px] lg:w-[190px] xl:w-[190px]
+							${smallVersion ? 'md:h-[35px]' : 'md:h-[45px]'}
+							items-center justify-center rounded-[25px] bg-gradient-to-r from-[#9568E3] to-[#563C83]
+							shadow-[inset_0_3px_2px_rgba(255,255,255,0.3),inset_0_-3px_2px_rgba(0,0,0,0.1),inset_1px_0_2px_rgba(0,0,0,0.3),inset_-1px_0_2px_rgba(255,255,255,0.3),inset_0_-1px_3px_rgba(0,0,0,0.1)]
+							${smallVersion ? 'p-[4px]' : 'p-[6px]'}
+							transform transition-transform duration-300 ease-in-out group hover:-translate-y-0.5
+						`}
+						style={{
+							transition: `height ${smallVersion ? '700ms' : '300ms'} ease-in-out, padding ${smallVersion ? '700ms' : '300ms'} ease-in-out`
+						}}
 						>
-						<div className="select-none relative flex items-center justify-center w-full h-full rounded-[25px] bg-gradient-to-r from-[#9568E3] to-[#563C83] shadow-[inset_1px_0_2px_rgba(0,0,0,0.3),inset_-1px_0_2px_rgba(255,255,255,0.3),inset_0_-1px_3px_rgba(0,0,0,0.1)]">
-							<span className="text-white text-[13px] sm:text-[11.5px] md:text-[11.5px] lg:text-[15px] xl:text-[15px] font-semibold">
-							Book an Intro Call
+						<div className={`text-white
+							text-[13px] sm:text-[11.5px] md:text-[12.5px] lg:text-[15px]
+							${smallVersion ? 'xl:text-[14px]' : 'xl:text-[15px]'}
+							select-none relative flex items-center justify-center w-full h-full rounded-[25px]
+							bg-gradient-to-r from-[#9568E3] to-[#563C83]
+							shadow-[inset_1px_0_2px_rgba(0,0,0,0.3),inset_-1px_0_2px_rgba(255,255,255,0.3),inset_0_-1px_3px_rgba(0,0,0,0.1)]
+						`}
+						style={{
+							transition: `font-size ${smallVersion ? '700ms' : '300ms'} ease-in-out`
+						}}
+						>
+							<span className="font-semibold">
+								Book an Intro Call
 							</span>
 							<span
-							className="absolute text-white text-[13px] sm:text-[11.5px] md:text-[12.5px] lg:text-[15px] xl:text-[15px] blur-xs group-hover:opacity-75 opacity-50 transform transition-opacity duration-300 ease-in-out font-semibold"
-							aria-hidden="true"
+								className="absolute blur-xs group-hover:opacity-75 opacity-50 transform transition-opacity duration-300 ease-in-out font-semibold"
+								aria-hidden="true"
 							>
-							Book an Intro Call
+								Book an Intro Call
 							</span>
 						</div>
 					</a>
@@ -90,12 +155,12 @@ function Navbar({ currentPage }) {
 					</button>
 				</div>
 				{isMenuOpen && (
-					<div className="sm:mx-20 mx-10 md:hidden absolute top-full mt-2 left-0 right-0 bg-SecondaryBackground rounded-[30px] px-6 py-4 z-40 shadow-[0_0_30px_rgba(26,6,61,0.20)]">
+					<div className={`sm:mx-20 mx-10 md:hidden absolute top-full mt-2 left-0 right-0 rounded-[30px] bg-SecondaryBackground px-6 py-4 z-40 shadow-[0_0_30px_rgba(26,6,61,0.20)]`}>
 						<ul className="flex flex-col items-center divide-y divide-gray-300">
 							{navigationItems.map((item, index) => (
-								<li key={item.slug} className="w-full py-2 first:pt-0 last:pb-0">
+								<li key={item.link} className="w-full py-2 first:pt-0 last:pb-0 ">
 									<a
-										href={item.slug}
+										href={item.link}
 										onClick={() => setIsMenuOpen(false)}
 										className="text-black text-base font-medium w-full flex justify-center"
 									>

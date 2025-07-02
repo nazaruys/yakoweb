@@ -6,6 +6,12 @@
   scroll-behavior: smooth;
 }
 
+/* Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #999999 #F2F5F9;
+}
+
 @theme {
   --font-manrope: "Manrope", sans-serif;
   --font-inter: "Inter", sans-serif;

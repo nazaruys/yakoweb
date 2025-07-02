@@ -1,23 +1,9 @@
 "use client";
 import Navbar from "./components/Navbar";
-import { XLogoIcon, InstagramLogoIcon, FacebookLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react";
+import { XLogoIcon, InstagramLogoIcon, FacebookLogoIcon, LinkedinLogoIcon, ArrowSquareOutIcon, HouseIcon, CarProfileIcon } from "@phosphor-icons/react";
+import WebsiteSlides from "./components/WebsiteSlides";
 
 export default function Home() {
-  
-  const openCalendly = () => {
-    const url = 'https://calendly.com/nazar_yakov/yakoweb';
-    const width = 700;
-    const height = 800;
-    const left = window.screenX + (window.outerWidth - width) / 2;
-    const top = window.screenY + (window.outerHeight - height) / 2.5;
-
-    window.open(
-      url,
-      'Calendly',
-      `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes`
-    )
-  };
-
   const updatesCol1 = [
     { title: "Improved how pages load on phones", time: "3 days ago" },
     { title: "Fixed an issue with the payment screen", time: "1 week ago" },
@@ -87,7 +73,6 @@ export default function Home() {
     ],
   ];
 
-
   return (
     <>
       <title>YakoWeb | Turn visitors into customers and website overwhelm into a distant memory.</title>
@@ -108,7 +93,7 @@ export default function Home() {
             <div className="w-[10px] h-[10px]">
               <div className="pulsating-circle"></div>
             </div>
-            <span className="text-[12px] font-semibold">1 spot left for June</span>
+            <span className="text-[12px] font-semibold">1 spot left for July</span>
           </div>
           {/* Title */}
           <h1
@@ -214,16 +199,16 @@ export default function Home() {
             </div>
           </div>
         </section>
+        
         {/* Why choose us */}
         <section
-          className="z-40 relative
-          2xl:-mt-[55vh] xl:-mt-[40vh] lg:-mt-[5vh] md:mt-[20vh] sm:mt-[10vh] mt-[20vh]
-          flex flex-col justify-center xl:items-start items-center
-          2xl:px-48 xl:px-36 lg:px-28 md:px-14 sm:px-16 px-8
-          bg-[url('/backgrounds/whyus.webp')] sm:bg-no-repeat bg-top
-          bg-[length:140%_auto] sm:bg-[length:300%_auto] md:bg-[length:200%_auto] lg:bg-[length:170%_auto] xl:bg-[length:110%_auto] 2xl:bg-[length:100%_auto]
-          sm:py-20 xl:py-0
-          xl:aspect-[1920/1400]
+          className="z-30 relative
+            2xl:-mt-[50vh] xl:-mt-[40vh] lg:-mt-[5vh] md:mt-[20vh] sm:mt-[10vh] mt-[20vh]
+            flex flex-col justify-center xl:items-start items-center
+            2xl:px-48 xl:px-36 lg:px-28 md:px-14 sm:px-16 px-8
+            bg-[url('/backgrounds/whyus.webp')] sm:bg-no-repeat bg-top
+            bg-[length:140%_auto] sm:bg-[length:300%_auto] md:bg-[length:200%_auto] lg:bg-[length:170%_auto] xl:bg-[length:110%_auto] 2xl:bg-[length:100%_auto]
+            sm:py-20 xl:pt-[24vh] xl:pb-[16vh]
           "
         >
           <h3 className="text-center text-[13px] md:text-[16px] text-dark/80 font-semibold">WHY BUSINESSES CHOOSE YAKOWEB?</h3>
@@ -234,7 +219,7 @@ export default function Home() {
           >
             {/* Card 1 */}
             <div
-              className="2xl:min-w-[380px] 2xl:max-w-[380px] xl:min-w-[350px] xl:max-w-[350px] min-w-[380px] max-w-[380px] h-[320px] rounded-2xl p-[5px]"
+              className="2xl:min-w-[380px] 2xl:max-w-[380px] xl:min-w-[350px] xl:max-w-[350px] sm:min-w-[380px] sm:max-w-[380px] min-w-[350px] max-w-[350px] h-[320px] rounded-2xl p-[5px]"
               style={{
                 background: `
                   linear-gradient(
@@ -329,7 +314,7 @@ export default function Home() {
             </div>
             {/* Card 2 */}
             <div
-              className="2xl:min-w-[380px] 2xl:max-w-[380px] xl:min-w-[350px] xl:max-w-[350px] min-w-[380px] max-w-[380px] h-[320px] rounded-2xl p-[5px]"
+              className="2xl:min-w-[380px] 2xl:max-w-[380px] xl:min-w-[350px] xl:max-w-[350px] sm:min-w-[380px] sm:max-w-[380px] min-w-[350px] max-w-[350px] h-[320px] rounded-2xl p-[5px]"
               style={{
                 background: `
                   linear-gradient(
@@ -401,7 +386,7 @@ export default function Home() {
             </div>
             {/* Card 3 */}
             <div
-              className="2xl:min-w-[380px] 2xl:max-w-[380px] xl:min-w-[350px] xl:max-w-[350px] min-w-[380px] max-w-[380px] h-[320px] rounded-2xl p-[5px]"
+              className="2xl:min-w-[380px] 2xl:max-w-[380px] xl:min-w-[350px] xl:max-w-[350px] sm:min-w-[380px] sm:max-w-[380px] min-w-[350px] max-w-[350px] h-[320px] rounded-2xl p-[5px]"
               style={{
                 background: `
                   linear-gradient(
@@ -501,16 +486,59 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Testamonial section 1 */}
+        <section
+          className="
+            2xl:px-48 xl:px-36 lg:px-28 md:px-14 sm:px-16 px-8
+            flex flex-row justify-between
+            py-[100px]
+          "
+        >
+          {/* Left side */}
+          <div className="flex flex-col justify-between relative space-y-3 max-w-[500px]">
+            <div
+              className=""
+            >
+              <span className="text-black text-[20px] font-semibold">
+                BaCu Kozijnen
+              </span>
+              <p className="text-[16px] text-dark/80 font-medium mt-3">
+                We created a 6-page website for BaCu Kozijnen, complete with clear and effective copywriting. The site showcases their products and services, builds credibility, and helps convert visitors into customers.
+              </p>
+              <span className="inline-flex items-center bg-[#C36CFF]/20 px-1 w-fit -rotate-1 mt-5">
+                <span className="text-black text-[16px] font-medium rotate-1">#Regular</span>
+              </span>
+            </div>
+            <a
+              href="https://www.bacukozijnen.nl/"
+              target="_blank"
+              className="gap-x-2 w-fit flex flex-row justify-center items-center px-3 py-2 bg-SecondaryBackground rounded-xl shadow-[0_0_12px_rgba(0,0,0,0.10)] hover:shadow-[0_0_12px_rgba(0,0,0,0.20)] transition-shadow duration-300"
+            >
+              <ArrowSquareOutIcon size={18} className="text-black" />
+              <span
+                className="text-dark text-[13px] font-medium"
+              >
+                bacukozijnen.nl
+              </span>
+            </a>
+          </div>
+
+          {/* Right side */}
+          <WebsiteSlides icon={<HouseIcon size={18} className="text-black" />} typeWebsite={"Windows & doors website"} imagesList={["/images/BaCu-primary.webp", "/images/BaCu-secondary.webp", "/images/BaCu-products.webp", "/images/BaCu-form.webp", "/images/BaCu-faq.webp"]} />
+
+        </section>
+
         {/* Pricing */}
         <section
+          id="pricing"
           className="z-40 relative
             flex flex-col xl:items-start items-center
-            mt-[12vh] sm:mt-0
+            mt-[12vh] sm:-mt-[0vh]
             2xl:px-48 xl:px-36 lg:px-28 md:px-14 sm:px-16 px-8
             bg-[url('/backgrounds/pricing.webp')] xl:bg-no-repeat bg-top
-            bg-[length:300%_auto] bg-opacity-10 sm:bg-[length:240%_auto] md:bg-[length:200%_auto] lg:bg-[length:150%_auto] xl:bg-[length:110%_auto] 2xl:bg-[length:100%_auto]
-            sm:py-20 xl:py-0
-            xl:aspect-[1920/1400]
+            bg-[length:300%_auto] bg-opacity-10 sm:bg-[length:240%_auto] md:bg-[length:200%_auto] lg:bg-[length:150%_auto] xl:bg-[length:110%_auto] 2xl:bg-[length:130%_auto]
+            sm:py-20 xl:py-16
           "
           >
             {/* Text */}
@@ -768,9 +796,78 @@ export default function Home() {
               </div>
             </div>
         </section>
+
+        {/* CTA */}
+        <section
+          className="flex flex-col gap-y-5 items-center justify-center text-center my-[120px]"
+        >
+          <h2 className="text-[28px] md:text-[32px] text-black font-bold leading-[114%]">Not sure what fits the best for you?</h2>
+          <a
+              href="https://calendly.com/nazar_yakov/yakoweb"
+              target="_blank"
+              className="w-[193px] h-[53px] flex items-center justify-center rounded-[25px] bg-gradient-to-r from-[#9568E3] to-[#563C83] shadow-[inset_0_3px_2px_rgba(255,255,255,0.3),inset_0_-3px_2px_rgba(0,0,0,0.1),inset_1px_0_2px_rgba(0,0,0,0.3),inset_-1px_0_2px_rgba(255,255,255,0.3),inset_0_-1px_3px_rgba(0,0,0,0.1)] p-[6px] transform transition-transform duration-300 ease-in-out group hover:-translate-y-0.5"
+            >
+              <div
+                className="select-none relative flex items-center justify-center w-full h-full rounded-[25px] bg-gradient-to-r from-[#9568E3] to-[#563C83] shadow-[inset_1px_0_2px_rgba(0,0,0,0.3),inset_-1px_0_2px_rgba(255,255,255,0.3),inset_0_-1px_3px_rgba(0,0,0,0.1)]"
+              >
+                <span
+                  className="text-white text-[15px] font-semibold"
+                >
+                  Book an Intro Call
+                </span>
+                <span
+                  className="absolute text-white text-[15px] blur-xs group-hover:opacity-75 opacity-50 transform transition-opacity duration-300 ease-in-out font-semibold"
+                  aria-hidden="true"
+                >
+                  Book an Intro Call
+                </span>
+
+              </div>
+            </a>
+        </section>
+        
+        {/* Testamonial section 2 */}
+        <section
+          className="
+            2xl:px-48 xl:px-36 lg:px-28 md:px-14 sm:px-16 px-8
+            flex flex-row justify-center gap-x-12
+            py-[100px]
+          "
+        >
+          {/* Left side */}
+          <WebsiteSlides icon={<CarProfileIcon size={18} className="text-black" />} typeWebsite={"Auto services website"} imagesList={["/images/EK-primary.webp", "/images/EK-secondary.webp", "/images/EK-text.webp", "/images/EK-question.webp", "/images/EK-form.webp"]} />
+          {/* Right side */}
+          <div className="flex flex-col justify-between relative space-y-3 max-w-[450px]">
+            <div
+              className=""
+            >
+              <span className="text-black text-[20px] font-semibold">
+                EK Autotechniek
+              </span>
+              <p className="text-[16px] text-dark/80 font-medium mt-3">
+                We built a 9-page website for EK Autotechniek with full copywriting. It showcases their services and builds trust. We also set up the domain, business email, and hosting.              </p>
+              <span className="inline-flex items-center bg-[#C36CFF]/20 px-1 w-fit -rotate-1 mt-5">
+                <span className="text-black text-[16px] font-medium rotate-1">#Regular</span>
+              </span>
+            </div>
+            <a
+              href="https://www.ekautotechniek.nl/"
+              target="_blank"
+              className="gap-x-2 w-fit flex flex-row justify-center items-center px-3 py-2 bg-SecondaryBackground rounded-xl shadow-[0_0_12px_rgba(0,0,0,0.10)] hover:shadow-[0_0_12px_rgba(0,0,0,0.20)] transition-shadow duration-300"
+            >
+              <ArrowSquareOutIcon size={18} className="text-black" />
+              <span
+                className="text-dark text-[13px] font-medium"
+              >
+                ekautotechniek.nl
+              </span>
+            </a>
+          </div>
+        </section>
+
         {/* Footer */}
         <footer
-          className="relative z-0 aspect-[1426/344] mt-[20vh] xl:-mt-[25vh] flex flex-col-reverse bg-[url('/backgrounds/footer.webp')] bg-[length:100%_auto] bg-no-repeat bg-bottom px-6 sm:px-12 xl:px-44"
+          className="border-t-[2px] border-dark/10 mt-16 pt-16 relative z-0 flex flex-col-reverse bg-[url('/backgrounds/footer.webp')] bg-[length:100%_auto] bg-no-repeat bg-bottom px-6 sm:px-12 xl:px-44"
         >
           {/* Below */}
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 py-6 font-medium text-dark text-[14px]">
