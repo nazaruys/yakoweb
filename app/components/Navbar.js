@@ -4,9 +4,8 @@ import { ListIcon, XIcon } from '@phosphor-icons/react';
 function Navbar({ currentPage }) {
   // Navigation items with name and link
   const navigationItems = [
-    { name: 'Home', link: '/' },
     { name: 'Pricing', link: '#pricing' },
-    { name: 'FAQs', link: null },
+    { name: 'FAQs', link: '#faqs' },
     { name: 'Case studies', link: null },
     { name: 'Blog', link: null }
   ];
@@ -82,27 +81,54 @@ function Navbar({ currentPage }) {
 					{/* Links – hidden on small screens */}
 					<ul className="hidden md:flex flex-row md:gap-4 lg:gap-6 xl:gap-12">
 						{navigationItems.map((item) => (
-						<li key={item.name} className="relative group">
-							<a
+							<li key={item.name} className="relative group">
+							{item.link ? (
+								<a
 								href={item.link}
 								className={`
 									sm:text-[11px] md:text-[12px] lg:text-[13px] xl:text-[15px] font-medium text-black
 									${smallVersion ? 'xl:text-[13px]' : 'xl:text-[15px]'}
-									`}
+								`}
 								style={{
-									transition: `font-size ${smallVersion ? '700ms' : '300ms'} ease-in-out`
+									transition: `font-size ${smallVersion ? '700ms' : '300ms'} ease-in-out`,
 								}}
-							>
-							{item.name}
-							</a>
-							<span
-							className={`absolute left-0 bottom-0 h-[1px] bg-dark transition-all ${
-								currentPage === item.link ? 'w-full' : 'w-0 group-hover:w-full'
-							}`}
-							></span>
-						</li>
+								>
+								{item.name}
+								</a>
+							) : (
+								<button
+								type="button"
+								className={`
+									sm:text-[11px] md:text-[12px] lg:text-[13px] xl:text-[15px] font-medium text-black cursor-default
+									${smallVersion ? 'xl:text-[13px]' : 'xl:text-[15px]'}
+								`}
+								style={{
+									transition: `font-size ${smallVersion ? '700ms' : '300ms'} ease-in-out`,
+								}}
+								>
+								{item.name}
+								</button>
+							)}
+
+							{/* Underline bar */}
+							{item.link && (
+								<span
+									className={`absolute left-0 bottom-0 h-[1px] bg-dark transition-all ${
+									currentPage === item.link ? 'w-full' : 'w-0 group-hover:w-full'
+									}`}
+								></span>
+							)}
+
+							{/* Popup message for null links */}
+							{!item.link && (
+								<div className="absolute left-1/2 -translate-x-1/2 mt-1 w-max bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10 whitespace-nowrap">
+									Coming soon...
+								</div>
+							)}
+							</li>
 						))}
-					</ul>
+						</ul>
+
 					
 					{/* CTA Button – slightly smaller on phones */}
 					<a
@@ -158,11 +184,11 @@ function Navbar({ currentPage }) {
 					<div className={`sm:mx-20 mx-10 md:hidden absolute top-full mt-2 left-0 right-0 rounded-[30px] bg-SecondaryBackground px-6 py-4 z-40 shadow-[0_0_30px_rgba(26,6,61,0.20)]`}>
 						<ul className="flex flex-col items-center divide-y divide-gray-300">
 							{navigationItems.map((item, index) => (
-								<li key={item.link} className="w-full py-2 first:pt-0 last:pb-0 ">
+								<li key={item.name} className="w-full py-2 first:pt-0 last:pb-0 ">
 									<a
 										href={item.link}
 										onClick={() => setIsMenuOpen(false)}
-										className="text-black text-base font-medium w-full flex justify-center"
+										className={`${item.link ? "text-black" : "text-dark/60"} text-base font-medium w-full flex justify-center`}
 									>
 										{item.name}
 									</a>

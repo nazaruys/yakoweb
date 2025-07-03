@@ -10,6 +10,21 @@ function WebsiteSlides({ icon, typeWebsite, imagesList }) {
   const containerRef = useRef(null);
   const autoplayRef = useRef(null);
 
+  const imgRef = useRef(null);
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    if (imgRef.current) {
+      // Make sure image is loaded
+      const img = imgRef.current;
+      if (img.complete) {
+        setWidth(img.width);
+      } else {
+        img.onload = () => setWidth(img.width);
+      }
+    }
+  }, []);
+
   const images = [
     imagesList[imagesList.length - 1], // Clone last
     ...imagesList,
@@ -103,7 +118,7 @@ function WebsiteSlides({ icon, typeWebsite, imagesList }) {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full sm:w-[500px]">
+    <div ref={containerRef} className="self-center xl:self-auto relative w-full sm:w-[500px]">
       {/* Top-left label */}
       <div className="absolute -top-11 left-0 gap-x-2 w-fit flex flex-row justify-center items-center px-3 py-2 bg-SecondaryBackground rounded-xl border-[0.3px] border-dark/20">
         {icon}
@@ -129,17 +144,17 @@ function WebsiteSlides({ icon, typeWebsite, imagesList }) {
       </div>
 
       {/* Image slider */}
-      <div className="w-full h-[260px] overflow-hidden rounded-xl relative">
+      <div className="w-full sm:h-[260px] overflow-hidden rounded-xl relative">
         <div
           ref={sliderRef}
           className={`flex ${transition ? 'transition-transform duration-500 ease-in-out' : ''}`}
           style={{
-            transform: `translateX(-${index * 500}px)`,
+            transform: `translateX(-${index * width}px)`,
           }}
         >
           {images.map((src, i) => (
-            <div key={i} className="w-[500px] h-[260px] flex-shrink-0">
-              <img src={src} alt={`Slide ${i}`} className="w-full h-full object-cover select-none" />
+            <div key={i} className="w-full sm:w-[500px] sm:h-[260px] flex-shrink-0">
+              <img ref={imgRef} src={src} alt={`Slide ${i}`} className="w-full h-full object-cover select-none" />
             </div>
           ))}
         </div>

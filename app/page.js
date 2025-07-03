@@ -491,12 +491,12 @@ export default function Home() {
         <section
           className="
             2xl:px-48 xl:px-36 lg:px-28 md:px-14 sm:px-16 px-8
-            flex flex-col xl:flex-row gap-y-24 xl:gap-y-0 justify-between
-            py-[100px]
+            flex flex-col-reverse xl:flex-row gap-y-12 xl:gap-y-0 justify-between
+            pb-[70px] pt-[200px] xl:py-[100px]
           "
         >
           {/* Left side */}
-          <div className="flex flex-col justify-between relative space-y-3 max-w-[500px]">
+          <div className="self-center xl:self-auto flex flex-col justify-between relative space-y-3 max-w-[500px]">
             <div>
               <span className="text-black text-[20px] font-semibold">
                 BaCu Kozijnen
@@ -689,7 +689,7 @@ export default function Home() {
                       <li key={index} className="flex flex-row gap-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                           <rect width="25" height="25" rx="12.5" fill="#E2E1FF"/>
-                          <path fill-rule="evenodd" clip-rule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#5A57C2"/>
+                          <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#5A57C2"/>
                         </svg>
                         <span className="text-dark text-[15px] font-medium">{text}</span>
                       </li>
@@ -768,7 +768,7 @@ export default function Home() {
                       <li key={index} className="flex flex-row gap-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                         <rect width="25" height="25" rx="12.5" fill="#FFE9CB"/>
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#FF9500"/>
+                        <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#FF9500"/>
                         </svg>
                         <span className="text-dark text-[15px] font-medium">{text}</span>
                       </li>
@@ -797,7 +797,7 @@ export default function Home() {
 
         {/* CTA */}
         <section
-          className="flex flex-col gap-y-5 items-center justify-center text-center my-[120px]"
+          className="px-12 flex flex-col gap-y-5 items-center justify-center text-center my-[120px]"
         >
           <h2 className="text-[28px] md:text-[32px] text-black font-bold leading-[114%]">Not sure what fits the best for you?</h2>
           <a
@@ -828,14 +828,14 @@ export default function Home() {
         <section
           className="
             2xl:px-48 xl:px-36 lg:px-28 md:px-14 sm:px-16 px-8
-            flex flex-col xl:flex-row justify-center gap-x-12
+            flex flex-col xl:flex-row justify-center gap-y-12 xl:gap-y-0 gap-x-12
             py-[100px]
           "
         >
           {/* Left side */}
           <WebsiteSlides icon={<CarProfileIcon size={18} className="text-black" />} typeWebsite={"Auto services website"} imagesList={["/images/EK-primary.webp", "/images/EK-secondary.webp", "/images/EK-text.webp", "/images/EK-question.webp", "/images/EK-form.webp"]} />
           {/* Right side */}
-          <div className="flex flex-col justify-between relative space-y-3 max-w-[450px]">
+          <div className="self-center xl:self-auto flex flex-col justify-between relative space-y-3 max-w-[450px]">
             <div
               className=""
             >
@@ -851,7 +851,7 @@ export default function Home() {
             <a
               href="https://www.ekautotechniek.nl/"
               target="_blank"
-              className="gap-x-2 w-fit flex flex-row justify-center items-center px-3 py-2 bg-SecondaryBackground rounded-xl shadow-[0_0_12px_rgba(0,0,0,0.10)] hover:shadow-[0_0_12px_rgba(0,0,0,0.20)] transition-shadow duration-300"
+              className="mt-6 xl:mt-0 gap-x-2 w-fit flex flex-row justify-center items-center px-3 py-2 bg-SecondaryBackground rounded-xl shadow-[0_0_12px_rgba(0,0,0,0.10)] hover:shadow-[0_0_12px_rgba(0,0,0,0.20)] transition-shadow duration-300"
             >
               <ArrowSquareOutIcon size={18} className="text-black" />
               <span
