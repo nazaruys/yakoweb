@@ -1,0 +1,32 @@
+{
+  "faqs": [
+    {
+      "question": "Who do you work with?",
+      "answer": "We mostly work with physical businesses that have 1 to 3 locations or are just starting out. But we are open to working with any industry."
+    },
+    {
+      "question": "How can we get started?",
+      "answer": "You can make your payment above to get started. After that, you'll be redirected to a form where you can share your business details and optionally book a meeting with us. If you're not 100% sure yet, you can book a free intro call to explore the possibilities and ask any questions."
+    },
+    {
+      "question": "How does payment work?",
+      "answer": "You can pay full, but 50% before we start and 50% after delivery is also possible. Payments are made securely through Stripe. You will also receive an invoice after the payment."
+    },
+    {
+      "question": "Do you offer refunds?",
+      "answer": "No, we don’t offer refunds because each project takes a lot of time. That’s why we offer to split the payment, so you only pay the second half when you’re happy with the result."
+    },
+    {
+      "question": "What if I don’t like the design?",
+      "answer": "We always send you a first version of the website for feedback. If you’re not happy, we will adjust the design. If the full website is already done, we can’t redesign everything from scratch."
+    },
+    {
+      "question": "Are there any extra costs?",
+      "answer": "No extra payments from us. If your website needs things like hosting or a paid subscription, you pay for those directly to the provider."
+    },
+    {
+        "question": "Do you offer ongoing support?",
+        "answer": "Yes. We offer flexible support plans to keep your website fast, fresh, and performing at its best:<br /><br />\n<ul class='list-disc ml-4 text-[14px]'>\n  <li><strong>€150/year (Landing & Standard):</strong> Includes regular performance checks, content updates (like text, images, or sections), uptime monitoring, and ongoing conversion optimizations.</li>\n  <li><strong>€250/year (Premium):</strong> Designed for more advanced websites. Covers everything in previous plan plus extra updates and advanced checks tailored to complex sites.</li>\n  <li><strong>€0/year:</strong> We’ll help you set up hosting, and that’s it. You won’t pay us anything unless you need updates later, which are billed based on the work required.</li>\n</ul>\n<br />\nOur goal is to keep your website doing what it should—bringing in customers—without the stress of managing it yourself."
+    }
+  ]
+}

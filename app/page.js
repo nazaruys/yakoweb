@@ -1,7 +1,10 @@
 "use client";
 import Navbar from "./components/Navbar";
-import { XLogoIcon, InstagramLogoIcon, FacebookLogoIcon, LinkedinLogoIcon, ArrowSquareOutIcon, HouseIcon, CarProfileIcon } from "@phosphor-icons/react";
+import { XLogoIcon, InstagramLogoIcon, FacebookLogoIcon, LinkedinLogoIcon, ArrowSquareOutIcon, HouseIcon, CarProfileIcon, CaretRightIcon } from "@phosphor-icons/react";
 import WebsiteSlides from "./components/WebsiteSlides";
+import faqs from '../public/faqs.json';
+import { useState } from "react";
+
 
 export default function Home() {
   const updatesCol1 = [
@@ -48,7 +51,6 @@ export default function Home() {
     { title: "Reduced unused code", time: "1 week ago" },
     { title: "Minor fixes across all pages", time: "1 hour ago" },
   ];
-
   const pricingFeatures = [
     [
       "1 landing page",
@@ -71,7 +73,29 @@ export default function Home() {
       "API integrations",
       "Everything delivered in 6 weeks"
     ],
+    
   ];
+
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggle = (index) => {
+    setOpenIndex(prev => (prev === index ? null : index));
+  };
+
+  const navigateToRecurringPricing = () => {
+    const targetId = 'faqs';
+    const element = document.getElementById(targetId);
+
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+
+      // Wait for scrollIntoView to finish (~300ms), then scroll 100px more
+      setTimeout(() => {
+        setOpenIndex(6)
+        window.scrollBy({ top: 400, behavior: 'smooth' });
+      }, 800); // Slightly longer than the scrollIntoView duration
+    }
+  };
 
   return (
     <>
@@ -505,7 +529,7 @@ export default function Home() {
                 We created a 6-page website for BaCu Kozijnen, complete with clear and effective copywriting. The site showcases their products and services, builds credibility, and helps convert visitors into customers.
               </p>
               <span className="inline-flex items-center bg-[#C36CFF]/20 px-1 w-fit -rotate-1 mt-5">
-                <span className="text-black text-[16px] font-medium rotate-1">#Regular</span>
+                <span className="text-black text-[16px] font-medium rotate-1">#Standard</span>
               </span>
             </div>
             <a
@@ -578,13 +602,17 @@ export default function Home() {
                     >
                       €1000
                     </span>
-
-                    <span className="text-dark self-end ml-2 mb-2 font-medium text-[14px]">+</span>
-                    <span
-                      className="text-dark self-end mb-2 font-medium text-[14px] underline"
+                    <div
+                      className="text-[14px] cursor-pointer font-medium ml-2 mb-2 self-end text-dark transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:opacity-80"
+                      onClick={() => navigateToRecurringPricing()}
                     >
-                      €<span className="font-semibold text-[16px]">0</span><span className="">/year</span>
-                    </span>
+                      <span>+</span>
+                      <span
+                        className="underline"
+                      >
+                        €<span className="font-semibold text-[16px]">0</span><span className="">/year</span>
+                      </span>
+                    </div>
                   </div>
                   <p className="mt-1 text-dark text-[15px] font-medium">A custom one-page website that presents your business professionally and generates new leads.</p>
                   {/* Stroke */}
@@ -656,7 +684,7 @@ export default function Home() {
                   <span
                     className="font-bold text-[26px] text-black leading-[136.6%]"
                   >
-                    Regular
+                    Standard
                   </span>
                   {/* Price */}
                   <div
@@ -668,12 +696,17 @@ export default function Home() {
                       €1500
                     </span>
 
-                    <span className="text-dark self-end ml-2 mb-2 font-medium text-[14px]">+</span>
-                    <span
-                      className="text-dark self-end mb-2 font-medium text-[14px] underline"
+                    <div
+                      className="text-[14px] cursor-pointer font-medium ml-2 mb-2 self-end text-dark transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:opacity-80"
+                      onClick={() => navigateToRecurringPricing()}
                     >
-                      €<span className="font-semibold text-[16px]">0</span><span className="">/year</span>
-                    </span>
+                      <span>+</span>
+                      <span
+                        className="underline"
+                      >
+                        €<span className="font-semibold text-[16px]">0</span><span className="">/year</span>
+                      </span>
+                    </div>
                   </div>
                   <p className="mt-1 text-dark text-[15px] font-medium">A multi-page website designed to present your complete service portfolio and build customer confidence.</p>
                   {/* Stroke */}
@@ -747,18 +780,23 @@ export default function Home() {
                       €2000+
                     </span>
 
-                    <span className="text-dark self-end ml-2 mb-2 font-medium text-[14px]">+</span>
-                    <span
-                      className="text-dark self-end mb-2 font-medium text-[14px] underline"
+                    <div
+                      className="text-[14px] cursor-pointer font-medium ml-2 mb-2 self-end text-dark transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:opacity-80"
+                      onClick={() => navigateToRecurringPricing()}
                     >
-                      €<span className="font-semibold text-[16px]">0</span><span className="">/year</span>
-                    </span>
+                      <span>+</span>
+                      <span
+                        className="underline"
+                      >
+                        €<span className="font-semibold text-[16px]">0</span><span className="">/year</span>
+                      </span>
+                    </div>
                   </div>
                   <p className="mt-1 text-dark text-[15px] font-medium">A full-scale website with additional features like configurators, API integrations, payment processing.</p>
                   {/* Stroke */}
                   <div className='bg-dark/80 w-full h-[0.5px] my-7' />
 
-                  <span className="text-[15px] font-bold" >Everything in Regular, plus:</span>
+                  <span className="text-[15px] font-bold" >Everything in Standard, plus:</span>
 
                   {/* Pros */}
                   <ul
@@ -845,7 +883,7 @@ export default function Home() {
               <p className="text-[16px] text-dark/80 font-medium mt-3">
                 We built a 9-page website for EK Autotechniek with full copywriting. It showcases their services and builds trust. We also set up the domain, business email, and hosting.              </p>
               <span className="inline-flex items-center bg-[#C36CFF]/20 px-1 w-fit -rotate-1 mt-5">
-                <span className="text-black text-[16px] font-medium rotate-1">#Regular</span>
+                <span className="text-black text-[16px] font-medium rotate-1">#Standard</span>
               </span>
             </div>
             <a
@@ -863,6 +901,57 @@ export default function Home() {
           </div>
         </section>
 
+        {/* FAQs */}
+        <section
+          id="faqs"
+          className="flex flex-col items-center px-6 sm:py-20 xl:py-16"
+        >
+          {/* Text */}
+          <h3 className="text-center text-[13px] md:text-[16px] text-dark/80 font-semibold">FAQs</h3>
+          <h2 className="text-center text-[28px] md:text-[32px] text-black font-bold leading-[114%] mb-14">Got Questions?<br />We’ve Got Answers!</h2>
+          {/* FAQ part */}
+          <ul>
+            {faqs.faqs.map((item, index) => {
+              const isOpen = openIndex === index;
+
+              return (
+                <li
+                  key={index}
+                  className={`cursor-pointer flex flex-col bg-SecondaryBackground ${isOpen ? '' : 'hover:shadow-[0_0_10px_rgba(0,0,0,0.10)]'} transition-all duration-300 w-full sm:w-[600px] py-3 px-5 mb-4 rounded-xl border border-dark/20`}
+                  onClick={() => toggle(index)}
+                >
+                  <div
+                    className="flex flex-row justify-between cursor-pointer"
+                  >
+                    <span className="text-black font-semibold text-[16px]">{item.question}</span>
+                    <CaretRightIcon
+                      size={24}
+                      className={`text-black transform transition-transform duration-300 ${
+                        isOpen ? 'rotate-90' : ''
+                      }`}
+                    />
+                  </div>
+
+                  <div
+                    style={{
+                      transitionDuration: '400ms'
+                    }}
+                    className={`overflow-hidden transition-all ${
+                      isOpen ? 'max-h-[500px] mt-3' : 'max-h-0'
+                    }`}
+                  >
+                    <div
+                      className="text-dark text-[14px] font-medium leading-[140%]"
+                      dangerouslySetInnerHTML={{ __html: item.answer }}
+                    />
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+
+        </section>
+
         {/* Footer */}
         <footer
           className="border-t-[2px] border-dark/10 mt-16 pt-16 relative z-0 flex flex-col-reverse bg-[url('/backgrounds/footer.webp')] bg-[length:100%_auto] bg-no-repeat bg-bottom px-6 sm:px-12 xl:px-44"
@@ -870,7 +959,6 @@ export default function Home() {
           {/* Below */}
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 py-6 font-medium text-dark text-[14px]">
             <span>Copyright © 2025 YakoWeb</span>
-            <span className="text-xs sm:text-[14px] text-wrap sm:text-nowrap">We’re building this page section by section. Check back soon!</span>
             <div className="flex flex-row items-center gap-3">
               <a href="#" className="text-dark/70">EN</a>
               <div className="w-[1px] h-[28px] bg-dark" />

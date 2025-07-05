@@ -12,6 +12,14 @@
   scrollbar-color: #999999 #F2F5F9;
 }
 
+/* Text selection */
+::selection {
+  background-color: #d9e7ff;
+}
+h1::selection {
+  color: #000000;
+}
+
 @theme {
   --font-manrope: "Manrope", sans-serif;
   --font-inter: "Inter", sans-serif;
