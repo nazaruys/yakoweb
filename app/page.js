@@ -137,8 +137,7 @@ export default function Home() {
           >
             {/* Button 1 */}
             <a
-              href="https://calendly.com/nazar_yakov/yakoweb"
-              target="_blank"
+              href="#pricing"
               className="w-[193px] h-[53px] flex items-center justify-center rounded-[25px] bg-gradient-to-r from-[#9568E3] to-[#563C83] shadow-[inset_0_3px_2px_rgba(255,255,255,0.3),inset_0_-3px_2px_rgba(0,0,0,0.1),inset_1px_0_2px_rgba(0,0,0,0.3),inset_-1px_0_2px_rgba(255,255,255,0.3),inset_0_-1px_3px_rgba(0,0,0,0.1)] p-[6px] transform transition-transform duration-300 ease-in-out group hover:-translate-y-0.5"
             >
               <div
@@ -148,22 +147,20 @@ export default function Home() {
                 <span
                   className="text-white text-[15px] font-semibold"
                 >
-                  Book an Intro Call
-                  {/* Pick your package */}
+                  Pick your package
                 </span>
                 <span
                   className="absolute text-white text-[15px] blur-xs group-hover:opacity-75 opacity-50 transform transition-opacity duration-300 ease-in-out font-semibold"
                   aria-hidden="true"
                 >
-                  Book an Intro Call
-                  {/* Pick your package */}
+                  Pick your package
                 </span>
 
               </div>
             </a>
             {/* Button 2 */}
-            {/* <a
-              href="#"
+            <a
+              href="https://calendly.com/nazar_yakov/yakoweb"
               className="w-[193px] h-[53px] flex items-center justify-center rounded-[25px] border-[6px] border-[#7853B6] transform transition-all duration-300 ease-in-out group hover:-translate-y-0.5"
             >
               <div
@@ -175,7 +172,7 @@ export default function Home() {
                   Or book a call
                 </span>
               </div>
-            </a> */}
+            </a>
           </div>
           {/* Screens */}
           <div
@@ -641,7 +638,7 @@ export default function Home() {
                   </ul>
                   {/* Button */}
                   <a
-                    href="https://calendly.com/nazar_yakov/yakoweb"
+                    href="https://buy.stripe.com/aFaeV6f6pfTM9IM4LF5J602"
                     target="_blank"
                     className="bg-SecondaryBackground/50 w-full h-[53px] mt-10 mb-4 flex items-center justify-center rounded-[25px] border-[6px] border-[#3B9EF6] transform transition-all duration-300 ease-in-out group hover:-translate-y-0.5"
                   >
@@ -651,8 +648,7 @@ export default function Home() {
                       <span
                         className="text-[#3B9EF6] transition-colors duration-300 ease-in-out text-[16px] font-bold"
                       >
-                        {/* Order your website */}
-                        Book an Intro Call
+                        Order your website
                       </span>
                     </div>
                   </a>
@@ -730,7 +726,7 @@ export default function Home() {
                   </ul>
                   {/* Button */}
                   <a
-                    href="https://calendly.com/nazar_yakov/yakoweb"
+                    href="https://buy.stripe.com/cNi28k6zT22W08cdib5J601"
                     target="_blank"
                     className="bg-SecondaryBackground/50 w-full h-[53px] mt-10 mb-4 flex items-center justify-center rounded-[25px] border-[6px] border-[#7652B3] transform transition-all duration-300 ease-in-out group hover:-translate-y-0.5"
                   >
@@ -740,8 +736,7 @@ export default function Home() {
                       <span
                         className="text-[#7652B3] transition-colors duration-300 ease-in-out text-[16px] font-bold"
                       >
-                        {/* Order your website */}
-                        Book an Intro Call
+                        Order your website
                       </span>
                     </div>
                   </a>
