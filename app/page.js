@@ -953,7 +953,21 @@ export default function Home() {
         >
           {/* Below */}
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 py-6 font-medium text-dark text-[14px]">
-            <span>Copyright © 2025 YakoWeb</span>
+            <div className="flex flex-row gap-x-4">
+              <span>YakoWeb © 2025 </span>
+              <a
+                href="/terms-and-conditions"
+                className="underline"
+              >
+                Terms
+              </a>
+              <a
+                href="/privacy-policy"
+                className="underline"
+              >
+                Privacy
+              </a>
+            </div>
             <div className="flex flex-row items-center gap-3">
               <a href="#" className="text-dark/70">EN</a>
               <div className="w-[1px] h-[28px] bg-dark" />
