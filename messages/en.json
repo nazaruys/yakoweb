@@ -1,0 +1,92 @@
+{
+	"HomePage": {
+		"title": "Custom websites<br/>built to convert",
+		"badge": "1 spot left for July",
+		"subtitle": "Turn visitors into customers and website overwhelm into a distant memory.",
+		"button1": "Pick your package",
+		"button2": "Or book a call",
+		"whyUs": {
+			"title": "WHY BUSINESSES CHOOSE YAKOWEB?",
+			"subtitle": "The partner that helps you grow",
+			"performance": {
+				"title": "Performance",
+				"description": "Our mission is to help businesses get more sales. We carry out an in-depth analysis of your niche and create sites that generate profit."
+			},
+			"partnership": {
+				"title": "Partnership",
+				"description": "From first idea to final delivery, we keep you informed and confident at every stage. This way, the final result matches your goals, not just our plan."
+			},
+			"longevity": {
+				"title": "Longevity",
+				"description": "We're here for the long run. You can ask for updates anytime, we always stay connected, committed, and easy to reach."
+			}
+		},
+		"pricing": {
+			"title": "PRICING",
+			"subtitle": "Clear plans<br/>Without surprises",
+			"landing": {
+				"title": "Landing",
+				"description": "A custom one-page website that presents your business professionally and generates new leads.",
+				"yearlyText": "/year",
+				"features": {
+					"1": "1 landing page",
+					"2": "Mobile-friendly design",
+					"3": "Full copywriting",
+					"4": "Basic contact forms",
+					"5": "Delivered in 10 days"
+				},
+				"button": "Order your website"
+			},
+			"standard": {
+				"title": "Standard",
+				"badge": "#most popular",
+				"description": "A multi-page website designed to present your complete service portfolio and build customer confidence.",
+				"yearlyText": "/year",
+				"features": {
+					"1": "Up to 6 pages",
+					"2": "Professional design",
+					"3": "Advanced contact forms",
+					"4": "Up to 2 languages",
+					"5": "Delivered in 3 weeks"
+				},
+				"button": "Order your website"
+			},
+			"premium": {
+				"title": "Premium",
+				"description": "A full-scale website with additional features like configurators, API integrations, payment processing.",
+				"yearlyText": "/year",
+				"features": {
+					"1": "Premium UI/UX design",
+					"2": "Database management",
+					"3": "Payment processing",
+					"4": "API integrations",
+					"5": "Everything delivered in 6 weeks"
+				},
+				"button": "Book an Intro Call"
+			}
+		},
+		"cta": {
+			"title": "Not sure what fits the best for you?",
+			"button": "Book an Intro Call"
+		},
+		"faq": {
+			"title": "FAQs",
+			"subtitle": "Got Questions?<br/>We've Got Answers!"
+		},
+		"footer": {
+			"copyright": "YakoWeb © 2025",
+			"terms": "Terms",
+			"privacy": "Privacy",
+			"description": "Convert strangers into customers and website overwhelm into a distant memory.",
+			"email": "hello@yakoweb.com"
+		}
+	},
+	"navbar": {
+		"pricing": "Pricing",
+		"faqs": "FAQs",
+		"caseStudies": "Case studies",
+		"blog": "Blog",
+		"comingSoon": "Coming soon...",
+		"bookCall": "Book an Intro Call"
+	}
+}

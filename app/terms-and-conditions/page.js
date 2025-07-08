@@ -55,7 +55,7 @@ export default function TermsAndConditions() {
 
                 By default, we maintain administrative access to the websites we build, solely for the purpose of applying updates, providing support, or improving security and performance. You may request in writing that we remove our access at any time, and we will comply without delay.
 
-                As part of our standard terms, a small credit link will be placed in the footer of your website (e.g., “Website made by YakoWeb”). If you wish to remove this credit, please inform us before project completion. We reserve the right to charge a reasonable removal fee.
+                As part of our standard terms, a small credit link will be placed in the footer of your website (e.g., "Website made by YakoWeb"). If you wish to remove this credit, please inform us before project completion. We reserve the right to charge a reasonable removal fee.
 
                 Any pre-existing tools, templates, or frameworks used in development that were created by us remain our intellectual property and may be reused in other projects.
               </p>

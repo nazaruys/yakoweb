@@ -1,9 +1,12 @@
 "use client";
-import Navbar from "./components/Navbar";
+import Navbar from "../components/Navbar";
 import { XLogoIcon, InstagramLogoIcon, FacebookLogoIcon, LinkedinLogoIcon, ArrowSquareOutIcon, HouseIcon, CarProfileIcon, CaretRightIcon } from "@phosphor-icons/react";
-import WebsiteSlides from "./components/WebsiteSlides";
-import faqs from '../public/faqs.json';
+import WebsiteSlides from "../components/WebsiteSlides";
+import faqs from '../../public/faqs.json';
 import { useState } from "react";
+import { useTranslations } from "next-intl";
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 
 export default function Home() {
@@ -89,17 +92,18 @@ export default function Home() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
 
-      // Wait for scrollIntoView to finish (~300ms), then scroll 100px more
       setTimeout(() => {
         setOpenIndex(6)
         window.scrollBy({ top: 400, behavior: 'smooth' });
-      }, 800); // Slightly longer than the scrollIntoView duration
+      }, 800);
     }
   };
 
+  const t = useTranslations('HomePage');
+  const pathname = usePathname();
+
   return (
     <>
-      <title>YakoWeb | Turn visitors into customers and website overwhelm into a distant memory.</title>
       <div
         className="font-manrope bg-background"
       >
@@ -117,19 +121,18 @@ export default function Home() {
             <div className="w-[10px] h-[10px]">
               <div className="pulsating-circle"></div>
             </div>
-            <span className="text-[12px] font-semibold">1 spot left for July</span>
+            <span className="text-[12px] font-semibold">{t('badge')}</span>
           </div>
           {/* Title */}
           <h1
-            className="text-4xl sm:text-5xl xl:text-[52px] font-bold text-center leading-[110%] bg-gradient-to-r from-[#523C79] via-black to-[#523C79] bg-clip-text text-transparent mt-3"
-          >
-            Custom websites<br/>built to convert
-          </h1>
+            className="text-4xl pb-1 sm:text-5xl xl:text-[52px] font-bold text-center leading-[110%] bg-gradient-to-r from-[#523C79] via-black to-[#523C79] bg-clip-text text-transparent mt-3"
+            dangerouslySetInnerHTML={{ __html: t('title') }}
+          />
           {/* Subtitle */}
           <h3
-            className="text-center text-[14px] md:text-[16px] font-semibold text-dark/80 max-w-[320px] mt-3 lg:mt-5"
+            className="text-center text-[14px] md:text-[16px] font-semibold text-dark/80 max-w-[320px] mt-2 lg:mt-4"
           >
-            Turn visitors into customers and website overwhelm into a distant memory.
+            {t('subtitle')}
           </h3>
           {/* Buttons */}
           <div
@@ -147,13 +150,13 @@ export default function Home() {
                 <span
                   className="text-white text-[15px] font-semibold"
                 >
-                  Pick your package
+                  {t('button1')}
                 </span>
                 <span
                   className="absolute text-white text-[15px] blur-xs group-hover:opacity-75 opacity-50 transform transition-opacity duration-300 ease-in-out font-semibold"
                   aria-hidden="true"
                 >
-                  Pick your package
+                  {t('button1')}
                 </span>
 
               </div>
@@ -169,7 +172,7 @@ export default function Home() {
                 <span
                   className="text-[#7853B6] transition-colors duration-300 ease-in-out text-[15px] font-semibold"
                 >
-                  Or book a call
+                  {t('button2')}
                 </span>
               </div>
             </a>
@@ -232,8 +235,8 @@ export default function Home() {
             sm:py-20 xl:pt-[24vh] xl:pb-[16vh]
           "
         >
-          <h3 className="text-center text-[13px] md:text-[16px] text-dark/80 font-semibold">WHY BUSINESSES CHOOSE YAKOWEB?</h3>
-          <h2 className="text-center text-[28px] md:text-[32px] text-black font-bold">The partner that helps you grow</h2>
+          <h3 className="text-center text-[13px] md:text-[16px] text-dark/80 font-semibold">{t('whyUs.title')}</h3>
+          <h2 className="text-center text-[28px] md:text-[32px] text-black font-bold">{t('whyUs.subtitle')}</h2>
           {/* Cards div */}
           <div
             className="w-full flex xl:flex-row flex-col items-center xl:items-start xl:justify-between sm:space-y-6 space-y-10 xl:space-y-0 mt-10"
@@ -280,11 +283,11 @@ export default function Home() {
                   `
                 }}
               >
-                <span className="font-semibold text-black text-[20px]">Performance</span>
+                <span className="font-semibold text-black text-[20px]">{t('whyUs.performance.title')}</span>
                 <p
                   className="text-[14px] font-medium text-dark mt-2"
                 >
-                  Our mission is to help businesses get more sales. We carry out an in-depth analysis of your niche and create sites that generate profit.
+                  {t('whyUs.performance.description')}
                 </p>
                 <div
                   className="flex w-full h-full justify-center items-center"
@@ -375,11 +378,11 @@ export default function Home() {
                   `
                 }}
               >
-                <span className="font-semibold text-black text-[20px]">Partnership</span>
+                <span className="font-semibold text-black text-[20px]">{t('whyUs.partnership.title')}</span>
                 <p
                   className="text-[14px] font-medium text-dark mt-2"
                 >
-                  From first idea to final delivery, we keep you informed and confident at every stage. This way, the final result matches your goals, not just our plan.
+                  {t('whyUs.partnership.description')}
                 </p>
                   {/* Animation */}
                   <div className="mt-8 px-2 flex flex-col w-full font-inter space-y-2">
@@ -397,7 +400,7 @@ export default function Home() {
                     <div className="z-20 flex flex-col items-end self-end max-w-[180px]">
                       <div className="relative bg-white text-black px-4 py-2 rounded-xl rounded-br-none shadow-md">
                         <span className="block text-[11px]">
-                          Thanks! That’s exactly what I needed.
+                          Thanks! That's exactly what I needed.
                         </span>
                       </div>
                       <div className="-mt-[1px] z-40 w-0 h-0 border-l-[16px] border-l-transparent border-r-0 border-t-[8px] border-t-white" />
@@ -447,11 +450,11 @@ export default function Home() {
                   `
                 }}
               >
-                <span className="font-semibold text-black text-[20px]">Longevity</span>
+                <span className="font-semibold text-black text-[20px]">{t('whyUs.longevity.title')}</span>
                 <p
                   className="text-[14px] font-medium text-dark mt-2 w-[73%]"
                 >
-                  We’re here for the long run. You can ask for updates anytime, we always stay connected, committed, and easy to reach.
+                  {t('whyUs.longevity.description')}
                 </p>
                 <div
                   className="flex w-full h-full justify-center items-center"
@@ -561,8 +564,8 @@ export default function Home() {
           "
           >
             {/* Text */}
-            <h3 className="text-[13px] md:text-[16px] text-dark/80 font-semibold">PRICING</h3>
-            <h2 className="text-[28px] md:text-[32px] text-black font-bold leading-[114%] text-center xl:text-left">Clear plans<br />Without surprises</h2>
+            <h3 className="text-[13px] md:text-[16px] text-dark/80 font-semibold">{t('pricing.title')}</h3>
+            <h2 className="text-[28px] md:text-[32px] text-black font-bold leading-[114%] text-center xl:text-left" dangerouslySetInnerHTML={{ __html: t('pricing.subtitle') }} />
             {/* Cards */}
             <div
               className="mt-8 gap-y-8 flex w-full flex-col items-center xl:items-start xl:flex-row xl:justify-between"
@@ -588,7 +591,7 @@ export default function Home() {
                   <span
                     className="font-bold text-[26px] text-black leading-[136.6%]"
                   >
-                    Landing
+                    {t('pricing.landing.title')}
                   </span>
                   {/* Price */}
                   <div
@@ -607,32 +610,25 @@ export default function Home() {
                       <span
                         className="underline"
                       >
-                        €<span className="font-semibold text-[16px]">0</span><span className="">/year</span>
+                        €<span className="font-semibold text-[16px]">0</span><span className="">{t('pricing.landing.yearlyText')}</span>
                       </span>
                     </div>
                   </div>
-                  <p className="mt-1 text-dark text-[15px] font-medium">A custom one-page website that presents your business professionally and generates new leads.</p>
+                  <p className="mt-1 text-dark text-[15px] font-medium">{t('pricing.landing.description')}</p>
                   {/* Stroke */}
                   <div className='bg-dark/80 w-full h-[0.5px] my-7' />
 
                   <span className="text-[15px] font-bold" >Everything in Landing:</span>
 
                   {/* Pros */}
-                  <ul
-                    className="flex flex-col mt-5 gap-y-4"
-                  >
-                    {pricingFeatures[0].map((text, index) => (
-                      <li key={index} className="flex flex-row gap-3">
+                  <ul className="flex flex-col mt-5 gap-y-4">
+                    {[1, 2, 3, 4, 5].map((num) => (
+                      <li key={num} className="flex flex-row gap-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                           <rect width="25" height="25" rx="12.5" fill="#CEE1FF" />
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z"
-                            fill="#3B82F6"
-                          />
+                          <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#3B82F6"/>
                         </svg>
-                        <span className="text-dark text-[15px] font-medium">{text}</span>
+                        <span className="text-dark text-[15px] font-medium">{t(`pricing.landing.features.${num}`)}</span>
                       </li>
                     ))}
                   </ul>
@@ -648,7 +644,7 @@ export default function Home() {
                       <span
                         className="text-[#3B9EF6] transition-colors duration-300 ease-in-out text-[16px] font-bold"
                       >
-                        Order your website
+                        {t('pricing.landing.button')}
                       </span>
                     </div>
                   </a>
@@ -674,13 +670,13 @@ export default function Home() {
                 >
                   <span className="absolute whitespace-nowrap top-6 right-6">
                     <span className="absolute bg-[#C36CFF]/20 left-[2px] top-[6px] bottom-[2px] right-[2px] -rotate-1"></span>
-                    <span className="relative text-dark px-2 text-sm font-medium">#most popular</span>
+                    <span className="relative text-dark px-2 text-sm font-medium">{t('pricing.standard.badge')}</span>
                   </span>
 
                   <span
                     className="font-bold text-[26px] text-black leading-[136.6%]"
                   >
-                    Standard
+                    {t('pricing.standard.title')}
                   </span>
                   {/* Price */}
                   <div
@@ -700,27 +696,25 @@ export default function Home() {
                       <span
                         className="underline"
                       >
-                        €<span className="font-semibold text-[16px]">0</span><span className="">/year</span>
+                        €<span className="font-semibold text-[16px]">0</span><span className="">{t('pricing.standard.yearlyText')}</span>
                       </span>
                     </div>
                   </div>
-                  <p className="mt-1 text-dark text-[15px] font-medium">A multi-page website designed to present your complete service portfolio and build customer confidence.</p>
+                  <p className="mt-1 text-dark text-[15px] font-medium">{t('pricing.standard.description')}</p>
                   {/* Stroke */}
                   <div className='bg-dark/80 w-full h-[0.5px] my-7' />
 
                   <span className="text-[15px] font-bold" >Everything in Landing, plus:</span>
 
                   {/* Pros */}
-                  <ul
-                    className="flex flex-col mt-5 gap-y-4"
-                  >
-                    {pricingFeatures[1].map((text, index) => (
-                      <li key={index} className="flex flex-row gap-3">
+                  <ul className="flex flex-col mt-5 gap-y-4">
+                    {[1, 2, 3, 4, 5].map((num) => (
+                      <li key={num} className="flex flex-row gap-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                           <rect width="25" height="25" rx="12.5" fill="#E2E1FF"/>
                           <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#5A57C2"/>
                         </svg>
-                        <span className="text-dark text-[15px] font-medium">{text}</span>
+                        <span className="text-dark text-[15px] font-medium">{t(`pricing.standard.features.${num}`)}</span>
                       </li>
                     ))}
                   </ul>
@@ -736,7 +730,7 @@ export default function Home() {
                       <span
                         className="text-[#7652B3] transition-colors duration-300 ease-in-out text-[16px] font-bold"
                       >
-                        Order your website
+                        {t('pricing.standard.button')}
                       </span>
                     </div>
                   </a>
@@ -763,7 +757,7 @@ export default function Home() {
                   <span
                     className="font-bold text-[26px] text-black leading-[136.6%]"
                   >
-                    Premium
+                    {t('pricing.premium.title')}
                   </span>
                   {/* Price */}
                   <div
@@ -783,27 +777,25 @@ export default function Home() {
                       <span
                         className="underline"
                       >
-                        €<span className="font-semibold text-[16px]">0</span><span className="">/year</span>
+                        €<span className="font-semibold text-[16px]">0</span><span className="">{t('pricing.premium.yearlyText')}</span>
                       </span>
                     </div>
                   </div>
-                  <p className="mt-1 text-dark text-[15px] font-medium">A full-scale website with additional features like configurators, API integrations, payment processing.</p>
+                  <p className="mt-1 text-dark text-[15px] font-medium">{t('pricing.premium.description')}</p>
                   {/* Stroke */}
                   <div className='bg-dark/80 w-full h-[0.5px] my-7' />
 
                   <span className="text-[15px] font-bold" >Everything in Standard, plus:</span>
 
                   {/* Pros */}
-                  <ul
-                    className="flex flex-col mt-5 gap-y-4"
-                  >
-                    {pricingFeatures[2].map((text, index) => (
-                      <li key={index} className="flex flex-row gap-3">
+                  <ul className="flex flex-col mt-5 gap-y-4">
+                    {[1, 2, 3, 4, 5].map((num) => (
+                      <li key={num} className="flex flex-row gap-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                        <rect width="25" height="25" rx="12.5" fill="#FFE9CB"/>
-                        <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#FF9500"/>
+                          <rect width="25" height="25" rx="12.5" fill="#FFE9CB"/>
+                          <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#FF9500"/>
                         </svg>
-                        <span className="text-dark text-[15px] font-medium">{text}</span>
+                        <span className="text-dark text-[15px] font-medium">{t(`pricing.premium.features.${num}`)}</span>
                       </li>
                     ))}
                   </ul>
@@ -819,7 +811,7 @@ export default function Home() {
                       <span
                         className="text-[#FA8700] transition-colors duration-300 ease-in-out text-[16px] font-bold"
                       >
-                        Book an Intro Call
+                        {t('pricing.premium.button')}
                       </span>
                     </div>
                   </a>
@@ -832,7 +824,7 @@ export default function Home() {
         <section
           className="px-12 flex flex-col gap-y-5 items-center justify-center text-center my-[120px]"
         >
-          <h2 className="text-[28px] md:text-[32px] text-black font-bold leading-[114%]">Not sure what fits the best for you?</h2>
+          <h2 className="text-[28px] md:text-[32px] text-black font-bold leading-[114%]">{t('cta.title')}</h2>
           <a
               href="https://calendly.com/nazar_yakov/yakoweb"
               target="_blank"
@@ -844,13 +836,13 @@ export default function Home() {
                 <span
                   className="text-white text-[15px] font-semibold"
                 >
-                  Book an Intro Call
+                  {t('cta.button')}
                 </span>
                 <span
                   className="absolute text-white text-[15px] blur-xs group-hover:opacity-75 opacity-50 transform transition-opacity duration-300 ease-in-out font-semibold"
                   aria-hidden="true"
                 >
-                  Book an Intro Call
+                  {t('cta.button')}
                 </span>
 
               </div>
@@ -902,8 +894,11 @@ export default function Home() {
           className="flex flex-col items-center px-6 sm:py-20 xl:py-16"
         >
           {/* Text */}
-          <h3 className="text-center text-[13px] md:text-[16px] text-dark/80 font-semibold">FAQs</h3>
-          <h2 className="text-center text-[28px] md:text-[32px] text-black font-bold leading-[114%] mb-14">Got Questions?<br />We’ve Got Answers!</h2>
+          <h3 className="text-center text-[13px] md:text-[16px] text-dark/80 font-semibold">{t('faq.title')}</h3>
+          <h2
+            className="text-center text-[28px] md:text-[32px] text-black font-bold leading-[114%] mb-14"
+            dangerouslySetInnerHTML={{ __html: t('faq.subtitle') }}
+          />
           {/* FAQ part */}
           <ul>
             {faqs.faqs.map((item, index) => {
@@ -954,24 +949,34 @@ export default function Home() {
           {/* Below */}
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 py-6 font-medium text-dark text-[14px]">
             <div className="flex flex-row gap-x-4">
-              <span>YakoWeb © 2025 </span>
+              <span>{t('footer.copyright')}</span>
               <a
                 href="/terms-and-conditions"
                 className="underline"
               >
-                Terms
+                {t('footer.terms')}
               </a>
               <a
                 href="/privacy-policy"
                 className="underline"
               >
-                Privacy
+                {t('footer.privacy')}
               </a>
             </div>
             <div className="flex flex-row items-center gap-3">
-              <a href="#" className="text-dark/70">EN</a>
+              <Link 
+                href="/" 
+                className={`text-dark/70 hover:text-dark transition-colors ${pathname === '/' ? 'font-bold' : ''}`}
+              >
+                NL
+              </Link>
               <div className="w-[1px] h-[28px] bg-dark" />
-              <a>NL</a>
+              <Link 
+                href="/en" 
+                className={`text-dark/70 hover:text-dark transition-colors ${pathname === '/en' ? 'font-bold' : ''}`}
+              >
+                EN
+              </Link>
             </div>
           </div>
 
@@ -982,10 +987,10 @@ export default function Home() {
           <div className="mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 font-medium text-dark text-[14px]">
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-7 max-w-full">
               <img src="/logos/YakoWeb.svg" alt="Logo" className="w-[130px] h-auto select-none" draggable="false" />
-              <span className="max-w-[300px]">Convert strangers into customers and website overwhelm into a distant memory.</span>
+              <span className="max-w-[300px]">{t('footer.description')}</span>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-7">
-              <a href="mailto:hello@yakoweb.com" className="max-w-[300px] hover:text-black transition-all duration-200 break-words">hello@yakoweb.com</a>
+              <a href="mailto:hello@yakoweb.com" className="max-w-[300px] hover:text-black transition-all duration-200 break-words">{t('footer.email')}</a>
               <div className="flex flex-row gap-3">
                 <a target="_blank" href="https://x.com/nazar_yakov" className="group">
                   <XLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
