@@ -635,6 +635,7 @@ export default function Home() {
                   {/* Button */}
                   <a
                     href="https://buy.stripe.com/aFaeV6f6pfTM9IM4LF5J602"
+                    // href="https://buy.stripe.com/test_7sYeV6e224kY9sv1GG7kc00"
                     target="_blank"
                     className="bg-SecondaryBackground/50 w-full h-[53px] mt-10 mb-4 flex items-center justify-center rounded-[25px] border-[6px] border-[#3B9EF6] transform transition-all duration-300 ease-in-out group hover:-translate-y-0.5"
                   >
@@ -721,6 +722,7 @@ export default function Home() {
                   {/* Button */}
                   <a
                     href="https://buy.stripe.com/cNi28k6zT22W08cdib5J601"
+                    // href="https://buy.stripe.com/test_cNi14gcXY3gUeMPfxw7kc01"
                     target="_blank"
                     className="bg-SecondaryBackground/50 w-full h-[53px] mt-10 mb-4 flex items-center justify-center rounded-[25px] border-[6px] border-[#7652B3] transform transition-all duration-300 ease-in-out group hover:-translate-y-0.5"
                   >
