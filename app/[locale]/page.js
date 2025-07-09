@@ -916,13 +916,13 @@ export default function Home() {
             <div className="flex flex-row gap-x-4">
               <span>{t('footer.copyright')}</span>
               <a
-                href="/terms-and-conditions"
+                href={t('footer.termsPage')}
                 className="underline"
               >
                 {t('footer.terms')}
               </a>
               <a
-                href="/privacy-policy"
+                href={t('footer.privacyPage')}
                 className="underline"
               >
                 {t('footer.privacy')}

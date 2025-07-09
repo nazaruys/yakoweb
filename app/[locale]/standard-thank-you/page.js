@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 export default function ThankYouStandardPage() {
   const searchParams = useSearchParams();
@@ -9,6 +10,7 @@ export default function ThankYouStandardPage() {
   const [countdown, setCountdown] = useState(5);
   const [status, setStatus] = useState('verifying');
   const [errorMessage, setErrorMessage] = useState('');
+  const t = useTranslations('ThankYouPage');
 
   useEffect(() => {
     const verifySession = async () => {
@@ -33,12 +35,12 @@ export default function ThankYouStandardPage() {
           return () => clearInterval(timer);
         } else {
           setStatus('error');
-          setErrorMessage(data.error || 'Failed to verify purchase');
+          setErrorMessage(data.error || t('error.sessionUsed'));
         }
       } catch (error) {
         console.error('Error:', error);
         setStatus('error');
-        setErrorMessage('An unexpected error occurred');
+        setErrorMessage(t('error.sessionUsed'));
       }
     };
 
@@ -46,34 +48,34 @@ export default function ThankYouStandardPage() {
       verifySession();
     } else {
       setStatus('error');
-      setErrorMessage('No session ID provided');
+      setErrorMessage(t('error.sessionUsed'));
     }
-  }, [sessionId]);
+  }, [sessionId, t]);
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4">
       {status === 'verifying' && (
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Verifying your purchase...</h1>
-          <p>Please wait while we confirm your payment.</p>
+          <h1 className="text-2xl font-bold mb-4">{t('verifying.title')}</h1>
+          <p>{t('verifying.description')}</p>
         </div>
       )}
 
       {status === 'success' && (
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Thank You for Your Purchase!</h1>
-          <p className="mb-4">Your payment has been successfully processed.</p>
-          <p>Redirecting to the form in {countdown} seconds...</p>
+          <h1 className="text-2xl font-bold mb-4">{t('success.title')}</h1>
+          <p className="mb-4">{t('success.description')}</p>
+          <p>{t('success.redirecting', { countdown })}</p>
         </div>
       )}
 
       {status === 'error' && (
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Oops! Something went wrong.</h1>
+          <h1 className="text-2xl font-bold mb-4">{t('error.title')}</h1>
           <p>{errorMessage}</p>
-          {errorMessage === 'This session has already been used' && (
+          {errorMessage === t('error.sessionUsed') && (
             <p className="mt-4">
-              Please contact support if you made a purchase, but weren't redirected to the form.
+              {t('error.supportContact')}
             </p>
           )}
         </div>

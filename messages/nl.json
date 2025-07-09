@@ -95,7 +95,7 @@
 			"subtitle": "Heldere pakketten<br/>Zonder verrassingen",
 			"landing": {
 				"title": "Landing",
-				"description": "Een op maat gemaakte landingspagina die je bedrijf professioneel presenteert en nieuwe leads genereert.",
+				"description": "Een op maat gemaakte landingspagina die je bedrijf professioneel presenteert en nieuwe klanten genereert.",
 				"yearlyText": "/jaar",
 				"everythingIn": "Alles in Landing:",
 				"features": {
@@ -140,7 +140,7 @@
 		"testimonial2": {
 			"testimonial": "We hebben een 9-pagina website gebouwd voor EK Autotechniek met volledige copywriting. Het toont hun diensten en bouwt vertrouwen op. We hebben ook het domein, zakelijke e-mail en hosting opgezet.",
 			"hashtag": "#Standard",
-			"typeWebsite": "Auto services website"
+			"typeWebsite": "Autobedrijf website"
 		},
 		"cta": {
 			"title": "Niet zeker welk pakket het beste bij je past?",
@@ -183,7 +183,9 @@
 		"footer": {
 			"copyright": "YakoWeb © 2025",
 			"terms": "Voorwaarden",
+			"termsPage": "/algemene-voorwaarden",
 			"privacy": "Privacy",
+			"privacyPage": "/privacyverklaring",
 			"description": "Verander bezoekers in klanten en website-stress in een verre herinnering.",
 			"email": "hello@yakoweb.com"
 		}
@@ -195,5 +197,21 @@
 		"blog": "Blog",
 		"comingSoon": "Binnenkort beschikbaar...",
 		"bookCall": "Plan een gesprek"
+	},
+	"ThankYouPage": {
+		"verifying": {
+			"title": "Je aankoop wordt geverifieerd...",
+			"description": "Even geduld terwijl we je betaling bevestigen."
+		},
+		"success": {
+			"title": "Bedankt voor je aankoop!",
+			"description": "Je betaling is succesvol verwerkt.",
+			"redirecting": "Je wordt doorgestuurd naar het formulier in {countdown} seconden..."
+		},
+		"error": {
+			"title": "Oeps! Er is iets misgegaan.",
+			"sessionUsed": "Deze sessie is al gebruikt",
+			"supportContact": "Neem contact op met de support als je een aankoop hebt gedaan, maar niet bent doorgestuurd naar het formulier."
+		}
 	}
 }
