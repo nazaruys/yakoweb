@@ -121,9 +121,14 @@ export default function Home() {
             {/* Button 2 */}
             <a
               href="https://calendly.com/nazar_yakov/yakoweb"
-              onClick={async (e) => {
-                await trackGoal('book_an_intro_call', 'Book an Intro Call button pressed.');
+              // onClick={() => {
+              //   trackGoal('book_an_intro_call', 'Book an Intro Call button pressed.');
+              // }}
+              onClick={() => {
+                window?.datafast?.("book_an_intro_call");
               }}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-[193px] h-[53px] flex items-center justify-center rounded-[25px] border-[6px] border-[#7853B6] transform transition-all duration-300 ease-in-out group hover:-translate-y-0.5"
             >
               <div

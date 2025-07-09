@@ -2,12 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request) {
   try {
-    console.log('Request headers:', Object.fromEntries(request.headers));
-    const body = await request.text();
-    console.log('Raw request body:', body);
-    
-    const data = JSON.parse(body);
-    const { name, description } = data;
+    const { name, description } = await request.json();
     const datafast_visitor_id = request.cookies.get('datafast_visitor_id')?.value;
 
     if (!name) {
@@ -15,7 +10,7 @@ export async function POST(request) {
     }
 
     if (!datafast_visitor_id) {
-      return NextResponse.json({ error: 'Visitor ID not found' }, { status: 400 });
+      return NextResponse.json({ error: 'DataFast visitor ID not found. Make sure the visitor has at least one pageview.' }, { status: 400 });
     }
 
     const response = await fetch("https://datafa.st/api/v1/goals", {
