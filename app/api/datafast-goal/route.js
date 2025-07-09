@@ -35,7 +35,7 @@ export async function POST(req) {
 
     return NextResponse.json({ success: true, result }, { status: 200 });
   } catch (error) {
-    console.error("Error sending goal to DataFast:", datafast_visitor_id, error);
+    console.error("Error sending goal to DataFast:", error);
     return NextResponse.json(
       { error: 'Failed to track goal' },
       { status: 500 }
