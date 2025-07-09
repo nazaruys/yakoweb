@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
 
-export async function POST(request) {
+export async function POST(req) {
   try {
-    const { name, description } = await request.json();
-    const datafast_visitor_id = request.cookies.get('datafast_visitor_id')?.value;
+    const { name, description } = await req.json();
+    const datafast_visitor_id = req.cookies.get('datafast_visitor_id')?.value;
 
     if (!name) {
       return NextResponse.json({ error: 'Goal name is required' }, { status: 400 });
@@ -33,9 +33,9 @@ export async function POST(request) {
     const result = await response.json();
     console.log("Goal sent to DataFast:", result);
 
-    return NextResponse.json({ success: true, result });
+    return NextResponse.json({ success: true, result }, { status: 200 });
   } catch (error) {
-    console.error("Error sending goal to DataFast:", error);
+    console.error("Error sending goal to DataFast:", datafast_visitor_id, error);
     return NextResponse.json(
       { error: 'Failed to track goal' },
       { status: 500 }
