@@ -40,7 +40,7 @@ export const metadata = {
   },
   openGraph: {
     type: 'website',
-    locale: 'en_US',
+    locale: 'nl_NL',
     url: 'https://yakoweb.com',
     siteName: 'YakoWeb',
     title: 'YakoWeb | Modern Web Development Solutions',

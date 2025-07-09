@@ -10,16 +10,85 @@
 			"subtitle": "The partner that helps you grow",
 			"performance": {
 				"title": "Performance",
-				"description": "Our mission is to help businesses get more sales. We carry out an in-depth analysis of your niche and create sites that generate profit."
+				"description": "Our mission is to help businesses get more sales. We carry out an in-depth analysis of your niche and create sites that generate profit.",
+				"messages": {
+					"1": {
+						"text": "Ben wants to jump on the call.",
+						"time": "Just now"
+					},
+					"2": {
+						"text": "Mike just made an order for $499.00.",
+						"time": "3 minutes ago"
+					},
+					"3": {
+						"text": "Emma just made a new appointment.",
+						"time": "1 hour ago"
+					}
+				}
 			},
 			"partnership": {
 				"title": "Partnership",
-				"description": "From first idea to final delivery, we keep you informed and confident at every stage. This way, the final result matches your goals, not just our plan."
+				"description": "From first idea to final delivery, we keep you informed and confident at every stage. This way, the final result matches your goals, not just our plan.",
+				"messages": {
+					"1": "We improved SEO by adding more keywords.",
+					"2": "Thanks! That's exactly what I needed."
+				}
 			},
 			"longevity": {
 				"title": "Longevity",
-				"description": "We're here for the long run. You can ask for updates anytime, we always stay connected, committed, and easy to reach."
+				"description": "We're here for the long run. You can ask for updates anytime, we always stay connected, committed, and easy to reach.",
+				"messages": {
+					"col1": {
+						"1": { "title": "Improved how pages load on phones", "time": "3 days ago" },
+						"2": { "title": "Fixed an issue with the payment screen", "time": "1 week ago" },
+						"3": { "title": "Updated the legal page to match latest rules", "time": "2 weeks ago" },
+						"4": { "title": "Better wording for search engines", "time": "5 days ago" },
+						"5": { "title": "Navigation buttons work more smoothly", "time": "4 hours ago" },
+						"6": { "title": "Added dark theme for easier viewing", "time": "6 days ago" },
+						"7": { "title": "Refreshed the FAQ layout", "time": "12 hours ago" },
+						"8": { "title": "Enabled multilingual display", "time": "2 days ago" },
+						"9": { "title": "Cleaned up text spacing", "time": "1 hour ago" },
+						"10": { "title": "Improved how visitors sign up", "time": "3 weeks ago" },
+						"11": { "title": "Updated alerts to be more visible", "time": "2 days ago" },
+						"12": { "title": "Polished mobile menu animations", "time": "3 hours ago" },
+						"13": { "title": "Improved visual contrast for readability", "time": "4 days ago" },
+						"14": { "title": "Bug fix for images not loading properly", "time": "5 hours ago" },
+						"15": { "title": "Added visitor tracking tools", "time": "1 day ago" },
+						"16": { "title": "Better layout on smaller screens", "time": "1 week ago" },
+						"17": { "title": "Minor design cleanup", "time": "30 minutes ago" },
+						"18": { "title": "Faster load times for galleries", "time": "6 hours ago" },
+						"19": { "title": "SEO settings improved", "time": "10 days ago" },
+						"20": { "title": "Resolved layout shift on homepage", "time": "2 hours ago" }
+					},
+					"col2": {
+						"1": { "title": "Fixed login display on older browsers", "time": "4 days ago" },
+						"2": { "title": "Improved header visibility", "time": "2 weeks ago" },
+						"3": { "title": "Adjusted fonts for better clarity", "time": "6 hours ago" },
+						"4": { "title": "Added page About us", "time": "5 days ago" },
+						"5": { "title": "Better spacing in contact forms", "time": "2 hours ago" },
+						"6": { "title": "Security updates applied", "time": "1 week ago" },
+						"7": { "title": "Contact form error now resolved", "time": "1 day ago" },
+						"8": { "title": "Search keywords optimized", "time": "3 days ago" },
+						"9": { "title": "Text scaling issue fixed", "time": "30 minutes ago" },
+						"10": { "title": "Updated translation for buttons", "time": "12 hours ago" },
+						"11": { "title": "Added visual effects on hover", "time": "3 hours ago" },
+						"12": { "title": "Improved experience for screen readers", "time": "2 days ago" },
+						"13": { "title": "Fixed email signup bug", "time": "5 hours ago" },
+						"14": { "title": "Footer links better organized", "time": "2 weeks ago" },
+						"15": { "title": "Better layout for announcements", "time": "10 days ago" },
+						"16": { "title": "Adjusted mobile margins", "time": "20 hours ago" },
+						"17": { "title": "Animations load more smoothly", "time": "3 hours ago" },
+						"18": { "title": "Improved color accessibility", "time": "8 hours ago" },
+						"19": { "title": "Reduced unused code", "time": "1 week ago" },
+						"20": { "title": "Minor fixes across all pages", "time": "1 hour ago" }
+					}
+				}
 			}
+		},
+		"testimonial1": {
+			"testimonial": "We created a 6-page website for BaCu Kozijnen, complete with clear and effective copywriting. The site showcases their products and services, builds credibility, and helps convert visitors into customers.",
+			"hashtag": "#Standard",
+			"typeWebsite": "Windows & doors website"
 		},
 		"pricing": {
 			"title": "PRICING",
@@ -28,6 +97,7 @@
 				"title": "Landing",
 				"description": "A custom one-page website that presents your business professionally and generates new leads.",
 				"yearlyText": "/year",
+				"everythingIn": "Everything in Landing:",
 				"features": {
 					"1": "1 landing page",
 					"2": "Mobile-friendly design",
@@ -42,6 +112,7 @@
 				"badge": "#most popular",
 				"description": "A multi-page website designed to present your complete service portfolio and build customer confidence.",
 				"yearlyText": "/year",
+				"everythingIn": "Everything in Landing, plus:",
 				"features": {
 					"1": "Up to 6 pages",
 					"2": "Professional design",
@@ -55,6 +126,7 @@
 				"title": "Premium",
 				"description": "A full-scale website with additional features like configurators, API integrations, payment processing.",
 				"yearlyText": "/year",
+				"everythingIn": "Everything in Standard, plus:",
 				"features": {
 					"1": "Premium UI/UX design",
 					"2": "Database management",
@@ -69,9 +141,44 @@
 			"title": "Not sure what fits the best for you?",
 			"button": "Book an Intro Call"
 		},
+		"testimonial2": {
+			"testimonial": "We built a 9-page website for EK Autotechniek with full copywriting. It showcases their services and builds trust. We also set up the domain, business email, and hosting.",
+			"hashtag": "#Standard",
+			"typeWebsite": "Auto services website"
+		},
 		"faq": {
 			"title": "FAQs",
-			"subtitle": "Got Questions?<br/>We've Got Answers!"
+			"subtitle": "Got Questions?<br/>We've Got Answers!",
+			"items": [
+				{
+					"question": "Who do you work with?",
+					"answer": "We mostly work with physical businesses that have 1 to 3 locations or are just starting out. But we are open to working with any industry."
+				},
+				{
+					"question": "How can we get started?",
+					"answer": "You can make your payment above to get started. After that, you'll be redirected to a form where you can share your business details and optionally book a meeting with us. If you're not 100% sure yet, you can book a free intro call to explore the possibilities and ask any questions."
+				},
+				{
+					"question": "How does payment work?",
+					"answer": "You can pay full, but 50% before we start and 50% after delivery is also possible. Payments are made securely through Stripe. You will also receive an invoice after the payment."
+				},
+				{
+					"question": "Do you offer refunds?",
+					"answer": "No, we don't offer refunds because each project takes a lot of time. That's why we offer to split the payment, so you only pay the second half when you're happy with the result."
+				},
+				{
+					"question": "What if I don't like the design?",
+					"answer": "We always send you a first version of the website for feedback. If you're not happy, we will adjust the design. If the full website is already done, we can't redesign everything from scratch."
+				},
+				{
+					"question": "Are there any extra costs?",
+					"answer": "No extra payments from us. If your website needs things like hosting or a paid subscription, you pay for those directly to the provider."
+				},
+				{
+					"question": "Do you offer ongoing support?",
+					"answer": "Yes. We offer flexible support plans to keep your website fast, fresh, and performing at its best:<br /><br />\n<ul class='list-disc ml-4 text-[14px]'>\n  <li><strong>€150/year (Landing & Standard):</strong> Includes regular performance checks, content updates (like text, images, or sections), uptime monitoring, and ongoing conversion optimizations.</li>\n  <li><strong>€250/year (Premium):</strong> Designed for more advanced websites. Covers everything in previous plan plus extra updates and advanced checks tailored to complex sites.</li>\n  <li><strong>€0/year:</strong> We'll help you set up hosting, and that's it. You won't pay us anything unless you need updates later, which are billed based on the work required.</li>\n</ul>\n<br />\nOur goal is to keep your website doing what it should—bringing in customers—without the stress of managing it yourself."
+				}
+			]
 		},
 		"footer": {
 			"copyright": "YakoWeb © 2025",

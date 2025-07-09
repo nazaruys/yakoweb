@@ -10,16 +10,85 @@
 			"subtitle": "De partner die je helpt groeien",
 			"performance": {
 				"title": "Prestatie",
-				"description": "Onze missie is om bedrijven te helpen meer omzet te genereren. We voeren een diepgaande analyse uit van jouw branche en creëren websites die winst opleveren."
+				"description": "Onze missie is om bedrijven te helpen meer omzet te genereren. We voeren een diepgaande analyse uit van jouw branche en creëren websites die winst opleveren.",
+				"messages": {
+					"1": {
+						"text": "Ben wil graag een gesprek inplannen.",
+						"time": "Zojuist"
+					},
+					"2": {
+						"text": "Mike heeft net een bestelling geplaatst voor €499,00.",
+						"time": "3 minuten geleden"
+					},
+					"3": {
+						"text": "Emma heeft net een afspraak gemaakt.",
+						"time": "1 uur geleden"
+					}
+				}
 			},
 			"partnership": {
 				"title": "Samenwerking",
-				"description": "Van eerste idee tot eindresultaat houden we je op de hoogte en vol vertrouwen. Zo sluit het eindresultaat aan bij jouw doelen, niet alleen bij ons plan."
+				"description": "Van eerste idee tot eindresultaat houden we je op de hoogte en vol vertrouwen. Zo sluit het eindresultaat aan bij jouw doelen, niet alleen bij ons plan.",
+				"messages": {
+					"1": "We hebben de website beter vindbaar gemaakt op Google.",
+					"2": "Bedankt! Dit is precies wat ik nodig had."
+				}
 			},
 			"longevity": {
 				"title": "Duurzaamheid",
-				"description": "We zijn er voor de lange termijn. Je kunt altijd om updates vragen, we blijven verbonden, betrokken en goed bereikbaar."
+				"description": "We zijn er voor de lange termijn. Je kunt altijd om updates vragen, we blijven verbonden, betrokken en goed bereikbaar.",
+				"messages": {
+					"col1": {
+						"1": { "title": "Paginalaadtijd op mobiel verbeterd", "time": "3 dagen geleden" },
+						"2": { "title": "Probleem met betaalscherm opgelost", "time": "1 week geleden" },
+						"3": { "title": "Juridische pagina bijgewerkt volgens nieuwe regels", "time": "2 weken geleden" },
+						"4": { "title": "Teksten geoptimaliseerd voor zoekmachines", "time": "5 dagen geleden" },
+						"5": { "title": "Navigatieknoppen werken soepeler", "time": "4 uur geleden" },
+						"6": { "title": "Donker thema toegevoegd voor beter zicht", "time": "6 dagen geleden" },
+						"7": { "title": "FAQ-layout vernieuwd", "time": "12 uur geleden" },
+						"8": { "title": "Meertalige weergave ingeschakeld", "time": "2 dagen geleden" },
+						"9": { "title": "Tekstspatiëring opgeschoond", "time": "1 uur geleden" },
+						"10": { "title": "Aanmeldproces voor bezoekers verbeterd", "time": "3 weken geleden" },
+						"11": { "title": "Meldingen zichtbaarder gemaakt", "time": "2 dagen geleden" },
+						"12": { "title": "Mobiele menu-animaties verfijnd", "time": "3 uur geleden" },
+						"13": { "title": "Visueel contrast verbeterd voor leesbaarheid", "time": "4 dagen geleden" },
+						"14": { "title": "Bug met niet-ladende afbeeldingen opgelost", "time": "5 uur geleden" },
+						"15": { "title": "Bezoekersanalyse tools toegevoegd", "time": "1 dag geleden" },
+						"16": { "title": "Layout verbeterd voor kleinere schermen", "time": "1 week geleden" },
+						"17": { "title": "Kleine design verbeteringen", "time": "30 minuten geleden" },
+						"18": { "title": "Snellere laadtijden voor galerijen", "time": "6 uur geleden" },
+						"19": { "title": "SEO-instellingen verbeterd", "time": "10 dagen geleden" },
+						"20": { "title": "Layout verschuiving op homepage opgelost", "time": "2 uur geleden" }
+					},
+					"col2": {
+						"1": { "title": "Login-weergave op oudere browsers gerepareerd", "time": "4 dagen geleden" },
+						"2": { "title": "Header zichtbaarheid verbeterd", "time": "2 weken geleden" },
+						"3": { "title": "Lettertypen aangepast voor betere leesbaarheid", "time": "6 uur geleden" },
+						"4": { "title": "Over ons pagina toegevoegd", "time": "5 dagen geleden" },
+						"5": { "title": "Betere spatiëring in contactformulieren", "time": "2 uur geleden" },
+						"6": { "title": "Beveiligingsupdates toegepast", "time": "1 week geleden" },
+						"7": { "title": "Probleem met contactformulier opgelost", "time": "1 dag geleden" },
+						"8": { "title": "Zoekwoorden geoptimaliseerd", "time": "3 dagen geleden" },
+						"9": { "title": "Tekstschalingsprobleem opgelost", "time": "30 minuten geleden" },
+						"10": { "title": "Vertalingen voor knoppen bijgewerkt", "time": "12 uur geleden" },
+						"11": { "title": "Visuele effecten bij hover toegevoegd", "time": "3 uur geleden" },
+						"12": { "title": "Ervaring voor schermlezers verbeterd", "time": "2 dagen geleden" },
+						"13": { "title": "E-mailaanmelding bug opgelost", "time": "5 uur geleden" },
+						"14": { "title": "Footer links beter georganiseerd", "time": "2 weken geleden" },
+						"15": { "title": "Betere layout voor aankondigingen", "time": "10 dagen geleden" },
+						"16": { "title": "Mobiele marges aangepast", "time": "20 uur geleden" },
+						"17": { "title": "Animaties laden vloeiender", "time": "3 uur geleden" },
+						"18": { "title": "Kleurtoegankelijkheid verbeterd", "time": "8 uur geleden" },
+						"19": { "title": "Ongebruikte code verwijderd", "time": "1 week geleden" },
+						"20": { "title": "Kleine fixes op alle pagina's", "time": "1 uur geleden" }
+					}
+				}
 			}
+		},
+		"testimonial1": {
+			"testimonial": "We hebben een 6-pagina website gemaakt voor BaCu Kozijnen, compleet met heldere en effectieve copywriting. De site toont hun producten en diensten, bouwt geloofwaardigheid op en helpt bezoekers om te zetten naar klanten.",
+			"hashtag": "#Standaard",
+			"typeWebsite": "Kozijnen & deuren website"
 		},
 		"pricing": {
 			"title": "PRIJZEN",
@@ -28,6 +97,7 @@
 				"title": "Landing",
 				"description": "Een op maat gemaakte landingspagina die je bedrijf professioneel presenteert en nieuwe leads genereert.",
 				"yearlyText": "/jaar",
+				"everythingIn": "Alles in Landing:",
 				"features": {
 					"1": "1 landingspagina",
 					"2": "Mobiel-vriendelijk ontwerp",
@@ -42,6 +112,7 @@
 				"badge": "#meest gekozen",
 				"description": "Een website met meerdere pagina's, ontworpen om je diensten te presenteren en klantvertrouwen op te bouwen.",
 				"yearlyText": "/jaar",
+				"everythingIn": "Alles in Ladning, plus:",
 				"features": {
 					"1": "Tot 6 pagina's",
 					"2": "Professioneel ontwerp",
@@ -55,6 +126,7 @@
 				"title": "Premium",
 				"description": "Een complete website met extra functies zoals configurators, API-integraties en betalingsverwerking.",
 				"yearlyText": "/jaar",
+				"everythingIn": "Alles in Standaard, plus:",
 				"features": {
 					"1": "Premium UI/UX ontwerp",
 					"2": "Database beheer",
@@ -65,13 +137,48 @@
 				"button": "Plan een gesprek"
 			}
 		},
+		"testimonial2": {
+			"testimonial": "We hebben een 9-pagina website gebouwd voor EK Autotechniek met volledige copywriting. Het toont hun diensten en bouwt vertrouwen op. We hebben ook het domein, zakelijke e-mail en hosting opgezet.",
+			"hashtag": "#Standard",
+			"typeWebsite": "Auto services website"
+		},
 		"cta": {
 			"title": "Niet zeker welk pakket het beste bij je past?",
 			"button": "Plan een gesprek"
 		},
 		"faq": {
 			"title": "FAQ",
-			"subtitle": "Heb je vragen?<br/>Wij hebben antwoorden!"
+			"subtitle": "Heb je vragen?<br/>Wij hebben antwoorden!",
+			"items": [
+				{
+					"question": "Met wie werken jullie?",
+					"answer": "We werken vooral met fysieke bedrijven die 1 tot 3 locaties hebben of net beginnen. Maar we staan open voor samenwerking met elke branche."
+				},
+				{
+					"question": "Hoe kunnen we beginnen?",
+					"answer": "Je kunt hierboven je betaling doen om te beginnen. Daarna word je doorgestuurd naar een formulier waar je je bedrijfsgegevens kunt delen en optioneel een gesprek kunt inplannen. Als je nog niet 100% zeker bent, kun je een gratis introgesprek boeken om de mogelijkheden te verkennen en vragen te stellen."
+				},
+				{
+					"question": "Hoe werkt de betaling?",
+					"answer": "Je kunt volledig betalen, maar 50% voor we beginnen en 50% na oplevering is ook mogelijk. Betalingen worden veilig verwerkt via Stripe. Je ontvangt ook een factuur na de betaling."
+				},
+				{
+					"question": "Bieden jullie restitutie aan?",
+					"answer": "Nee, we bieden geen restitutie aan omdat elk project veel tijd kost. Daarom bieden we de mogelijkheid om de betaling te splitsen, zodat je de tweede helft pas betaalt als je tevreden bent met het resultaat."
+				},
+				{
+					"question": "Wat als ik het ontwerp niet mooi vind?",
+					"answer": "We sturen je altijd eerst een eerste versie van de website voor feedback. Als je niet tevreden bent, passen we het ontwerp aan. Als de volledige website al klaar is, kunnen we niet alles opnieuw ontwerpen."
+				},
+				{
+					"question": "Zijn er extra kosten?",
+					"answer": "Geen extra kosten van ons. Als je website zaken nodig heeft zoals hosting of een betaald abonnement, betaal je die rechtstreeks aan de provider."
+				},
+				{
+					"question": "Bieden jullie doorlopende ondersteuning?",
+					"answer": "Ja. We bieden flexibele ondersteuningsplannen om je website snel, fris en optimaal presterend te houden:<br /><br />\n<ul class='list-disc ml-4 text-[14px]'>\n  <li><strong>€150/jaar (Landing & Standaard):</strong> Inclusief regelmatige prestatiecontroles, content updates (zoals tekst, afbeeldingen of secties), uptime monitoring en doorlopende conversie-optimalisaties.</li>\n  <li><strong>€250/jaar (Premium):</strong> Ontworpen voor meer geavanceerde websites. Dekt alles in het vorige plan plus extra updates en geavanceerde controles op maat voor complexe sites.</li>\n  <li><strong>€0/jaar:</strong> We helpen je met het opzetten van hosting, en dat is het. Je betaalt ons niets tenzij je later updates nodig hebt, die worden gefactureerd op basis van het benodigde werk.</li>\n</ul>\n<br />\nOns doel is om je website te laten doen wat hij moet doen—klanten binnenhalen—zonder de stress van het zelf beheren."
+				}
+			]
 		},
 		"footer": {
 			"copyright": "YakoWeb © 2025",

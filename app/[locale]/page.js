@@ -2,7 +2,7 @@
 import Navbar from "../components/Navbar";
 import { XLogoIcon, InstagramLogoIcon, FacebookLogoIcon, LinkedinLogoIcon, ArrowSquareOutIcon, HouseIcon, CarProfileIcon, CaretRightIcon } from "@phosphor-icons/react";
 import WebsiteSlides from "../components/WebsiteSlides";
-import faqs from '../../public/faqs.json';
+// Remove faqs import since we'll use translations
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { usePathname } from 'next/navigation';
@@ -10,50 +10,9 @@ import Link from 'next/link';
 
 
 export default function Home() {
-  const updatesCol1 = [
-    { title: "Improved how pages load on phones", time: "3 days ago" },
-    { title: "Fixed an issue with the payment screen", time: "1 week ago" },
-    { title: "Updated the legal page to match latest rules", time: "2 weeks ago" },
-    { title: "Better wording for search engines", time: "5 days ago" },
-    { title: "Navigation buttons work more smoothly", time: "4 hours ago" },
-    { title: "Added dark theme for easier viewing", time: "6 days ago" },
-    { title: "Refreshed the FAQ layout", time: "12 hours ago" },
-    { title: "Enabled multilingual display", time: "2 days ago" },
-    { title: "Cleaned up text spacing", time: "1 hour ago" },
-    { title: "Improved how visitors sign up", time: "3 weeks ago" },
-    { title: "Updated alerts to be more visible", time: "2 days ago" },
-    { title: "Polished mobile menu animations", time: "3 hours ago" },
-    { title: "Improved visual contrast for readability", time: "4 days ago" },
-    { title: "Bug fix for images not loading properly", time: "5 hours ago" },
-    { title: "Added visitor tracking tools", time: "1 day ago" },
-    { title: "Better layout on smaller screens", time: "1 week ago" },
-    { title: "Minor design cleanup", time: "30 minutes ago" },
-    { title: "Faster load times for galleries", time: "6 hours ago" },
-    { title: "SEO settings improved", time: "10 days ago" },
-    { title: "Resolved layout shift on homepage", time: "2 hours ago" },
-  ];
-  const updatesCol2 = [
-    { title: "Fixed login display on older browsers", time: "4 days ago" },
-    { title: "Improved header visibility", time: "2 weeks ago" },
-    { title: "Adjusted fonts for better clarity", time: "6 hours ago" },
-    { title: "Added page About us", time: "5 days ago" },
-    { title: "Better spacing in contact forms", time: "2 hours ago" },
-    { title: "Security updates applied", time: "1 week ago" },
-    { title: "Contact form error now resolved", time: "1 day ago" },
-    { title: "Search keywords optimized", time: "3 days ago" },
-    { title: "Text scaling issue fixed", time: "30 minutes ago" },
-    { title: "Updated translation for buttons", time: "12 hours ago" },
-    { title: "Added visual effects on hover", time: "3 hours ago" },
-    { title: "Improved experience for screen readers", time: "2 days ago" },
-    { title: "Fixed email signup bug", time: "5 hours ago" },
-    { title: "Footer links better organized", time: "2 weeks ago" },
-    { title: "Better layout for announcements", time: "10 days ago" },
-    { title: "Adjusted mobile margins", time: "20 hours ago" },
-    { title: "Animations load more smoothly", time: "3 hours ago" },
-    { title: "Improved color accessibility", time: "8 hours ago" },
-    { title: "Reduced unused code", time: "1 week ago" },
-    { title: "Minor fixes across all pages", time: "1 hour ago" },
-  ];
+  const t = useTranslations('HomePage');
+  const pathname = usePathname();
+
   const pricingFeatures = [
     [
       "1 landing page",
@@ -98,9 +57,6 @@ export default function Home() {
       }, 800);
     }
   };
-
-  const t = useTranslations('HomePage');
-  const pathname = usePathname();
 
   return (
     <>
@@ -304,8 +260,8 @@ export default function Home() {
                       <div
                         className="flex flex-col justify-between bg-white w-full h-full rounded-[10px] py-2 px-4"
                       >
-                        <span className="text-black text-[13px]">Ben wants to jump on the call.</span>
-                        <span className="text-dark/80 text-[10px]">Just now</span>
+                        <span className="text-black text-[13px]">{t(`whyUs.performance.messages.1.text`)}</span>
+                        <span className="text-dark/80 text-[10px]">{t(`whyUs.performance.messages.1.time`)}</span>
                       </div>
                     </div>
                     {/* Second bottom card border */}
@@ -316,8 +272,8 @@ export default function Home() {
                       <div
                         className="flex flex-col justify-between bg-white w-full h-full rounded-[10px] py-2 px-4"
                       >
-                        <span className="text-black text-[12px]">Mike just made an order for $499.00.</span>
-                        <span className="text-dark/80 text-[9px]">3 minutes ago</span>
+                        <span className="text-black text-[12px]">{t(`whyUs.performance.messages.2.text`)}</span>
+                        <span className="text-dark/80 text-[9px]">{t(`whyUs.performance.messages.2.time`)}</span>
                       </div>
                     </div>
                     {/* Third bottom card border */}
@@ -328,8 +284,8 @@ export default function Home() {
                       <div
                         className="flex flex-col justify-between bg-white w-full h-full rounded-[10px] py-2 px-4"
                       >
-                        <span className="text-black text-[11px]">Emma just made a new appointment.</span>
-                        <span className="text-dark/80 text-[8px]">1 hour ago</span>
+                        <span className="text-black text-[11px]">{t(`whyUs.performance.messages.3.text`)}</span>
+                        <span className="text-dark/80 text-[8px]">{t(`whyUs.performance.messages.3.time`)}</span>
                       </div>
                     </div>
                   </div>
@@ -390,7 +346,7 @@ export default function Home() {
                     <div className="z-20 flex flex-col items-start max-w-[180px]">
                       <div className="relative bg-white text-black px-4 py-2 rounded-xl rounded-bl-none shadow-md">
                         <span className="block text-[11px] text-dark">
-                          We improved SEO by adding more keywords.
+                          {t(`whyUs.partnership.messages.1`)}
                         </span>
                       </div>
                       <div className="-mt-[1px] z-40 w-0 h-0 border-l-0 border-r-[16px] border-r-transparent border-t-[8px] border-t-white" />
@@ -400,7 +356,7 @@ export default function Home() {
                     <div className="z-20 flex flex-col items-end self-end max-w-[180px]">
                       <div className="relative bg-white text-black px-4 py-2 rounded-xl rounded-br-none shadow-md">
                         <span className="block text-[11px]">
-                          Thanks! That's exactly what I needed.
+                          {t(`whyUs.partnership.messages.2`)}
                         </span>
                       </div>
                       <div className="-mt-[1px] z-40 w-0 h-0 border-l-[16px] border-l-transparent border-r-0 border-t-[8px] border-t-white" />
@@ -467,41 +423,47 @@ export default function Home() {
                     <div
                       className="flex flex-col space-y-3"
                     >
-                      {updatesCol1.map(({ title, time }, i) => (
-                        <div key={i} className="relative w-36 h-20">
-                          {/* Faded copy, offset down+right */}
-                          <div
-                            className="bg-white w-36 h-20 rounded-[5px] shadow-[inset_0_0_0_0.5px_#CDCDCD] opacity-40 absolute top-[3px] left-[3px] pointer-events-none"
-                            aria-hidden="true"
-                          />
+                      {[...Array(20)].map((_, i) => {
+                        const num = i + 1;
+                        return (
+                          <div key={num} className="relative w-36 h-20">
+                            {/* Faded copy, offset down+right */}
+                            <div
+                              className="bg-white w-36 h-20 rounded-[5px] shadow-[inset_0_0_0_0.5px_#CDCDCD] opacity-40 absolute top-[3px] left-[3px] pointer-events-none"
+                              aria-hidden="true"
+                            />
 
-                          {/* Original box on top */}
-                          <div className="bg-white flex flex-col justify-between p-3 w-36 h-20 rounded-[5px] shadow-[inset_0_0_0_0.5px_#CDCDCD] relative">
-                            <span className="block text-[12px]">{title}</span>
-                            <span className="block text-[10px] text-dark/80">{time}</span>
+                            {/* Original box on top */}
+                            <div className="bg-white flex flex-col justify-between p-3 w-36 h-20 rounded-[5px] shadow-[inset_0_0_0_0.5px_#CDCDCD] relative">
+                              <span className="block text-[12px]">{t(`whyUs.longevity.messages.col1.${num}.title`)}</span>
+                              <span className="block text-[10px] text-dark/80">{t(`whyUs.longevity.messages.col1.${num}.time`)}</span>
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                     {/* Second col */}
                     <div
                       className="flex flex-col space-y-3"
                     >
-                      {updatesCol2.map(({ title, time }, i) => (
-                        <div key={i} className="relative w-36 h-20">
-                          {/* Faded copy, offset down+right */}
-                          <div
-                            className="bg-white w-36 h-20 rounded-[5px] shadow-[inset_0_0_0_0.5px_#CDCDCD] opacity-40 absolute top-[3px] left-[3px] pointer-events-none"
-                            aria-hidden="true"
-                          />
+                      {[...Array(20)].map((_, i) => {
+                        const num = i + 1;
+                        return (
+                          <div key={num} className="relative w-36 h-20">
+                            {/* Faded copy, offset down+right */}
+                            <div
+                              className="bg-white w-36 h-20 rounded-[5px] shadow-[inset_0_0_0_0.5px_#CDCDCD] opacity-40 absolute top-[3px] left-[3px] pointer-events-none"
+                              aria-hidden="true"
+                            />
 
-                          {/* Original box on top */}
-                          <div className="bg-white flex flex-col justify-between p-3 w-36 h-20 rounded-[5px] shadow-[inset_0_0_0_0.5px_#CDCDCD] relative">
-                            <span className="block text-[12px]">{title}</span>
-                            <span className="block text-[10px] text-dark/80">{time}</span>
+                            {/* Original box on top */}
+                            <div className="bg-white flex flex-col justify-between p-3 w-36 h-20 rounded-[5px] shadow-[inset_0_0_0_0.5px_#CDCDCD] relative">
+                              <span className="block text-[12px]">{t(`whyUs.longevity.messages.col2.${num}.title`)}</span>
+                              <span className="block text-[10px] text-dark/80">{t(`whyUs.longevity.messages.col2.${num}.time`)}</span>
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                     
                   </div>
@@ -526,10 +488,10 @@ export default function Home() {
                 BaCu Kozijnen
               </span>
               <p className="text-[16px] text-dark/80 font-medium mt-3">
-                We created a 6-page website for BaCu Kozijnen, complete with clear and effective copywriting. The site showcases their products and services, builds credibility, and helps convert visitors into customers.
+                {t('testimonial1.testimonial')}
               </p>
               <span className="inline-flex items-center bg-[#C36CFF]/20 px-1 w-fit -rotate-1 mt-5">
-                <span className="text-black text-[16px] font-medium rotate-1">#Standard</span>
+                <span className="text-black text-[16px] font-medium rotate-1">{t('testimonial1.hashtag')}</span>
               </span>
             </div>
             <a
@@ -547,7 +509,7 @@ export default function Home() {
           </div>
 
           {/* Right side */}
-          <WebsiteSlides icon={<HouseIcon size={18} className="text-black" />} typeWebsite={"Windows & doors website"} imagesList={["/images/BaCu-primary.webp", "/images/BaCu-secondary.webp", "/images/BaCu-products.webp", "/images/BaCu-form.webp", "/images/BaCu-faq.webp"]} />
+          <WebsiteSlides icon={<HouseIcon size={18} className="text-black" />} typeWebsite={t('testimonial1.typeWebsite')} imagesList={["/images/BaCu-primary.webp", "/images/BaCu-secondary.webp", "/images/BaCu-products.webp", "/images/BaCu-form.webp", "/images/BaCu-faq.webp"]} />
 
         </section>
 
@@ -618,7 +580,7 @@ export default function Home() {
                   {/* Stroke */}
                   <div className='bg-dark/80 w-full h-[0.5px] my-7' />
 
-                  <span className="text-[15px] font-bold" >Everything in Landing:</span>
+                  <span className="text-[15px] font-bold" >{t('pricing.landing.everythingIn')}</span>
 
                   {/* Pros */}
                   <ul className="flex flex-col mt-5 gap-y-4">
@@ -705,7 +667,7 @@ export default function Home() {
                   {/* Stroke */}
                   <div className='bg-dark/80 w-full h-[0.5px] my-7' />
 
-                  <span className="text-[15px] font-bold" >Everything in Landing, plus:</span>
+                  <span className="text-[15px] font-bold" >{t('pricing.standard.everythingIn')}</span>
 
                   {/* Pros */}
                   <ul className="flex flex-col mt-5 gap-y-4">
@@ -787,7 +749,7 @@ export default function Home() {
                   {/* Stroke */}
                   <div className='bg-dark/80 w-full h-[0.5px] my-7' />
 
-                  <span className="text-[15px] font-bold" >Everything in Standard, plus:</span>
+                  <span className="text-[15px] font-bold" >{t('pricing.premium.everythingIn')}</span>
 
                   {/* Pros */}
                   <ul className="flex flex-col mt-5 gap-y-4">
@@ -860,7 +822,7 @@ export default function Home() {
           "
         >
           {/* Left side */}
-          <WebsiteSlides icon={<CarProfileIcon size={18} className="text-black" />} typeWebsite={"Auto services website"} imagesList={["/images/EK-primary.webp", "/images/EK-secondary.webp", "/images/EK-text.webp", "/images/EK-question.webp", "/images/EK-form.webp"]} />
+          <WebsiteSlides icon={<CarProfileIcon size={18} className="text-black" />} typeWebsite={t('testimonial2.typeWebsite')} imagesList={["/images/EK-primary.webp", "/images/EK-secondary.webp", "/images/EK-text.webp", "/images/EK-question.webp", "/images/EK-form.webp"]} />
           {/* Right side */}
           <div className="self-center xl:self-auto flex flex-col justify-between relative space-y-3 max-w-[450px]">
             <div
@@ -870,9 +832,10 @@ export default function Home() {
                 EK Autotechniek
               </span>
               <p className="text-[16px] text-dark/80 font-medium mt-3">
-                We built a 9-page website for EK Autotechniek with full copywriting. It showcases their services and builds trust. We also set up the domain, business email, and hosting.              </p>
+                {t('testimonial2.testimonial')}
+              </p>
               <span className="inline-flex items-center bg-[#C36CFF]/20 px-1 w-fit -rotate-1 mt-5">
-                <span className="text-black text-[16px] font-medium rotate-1">#Standard</span>
+                <span className="text-black text-[16px] font-medium rotate-1">{t('testimonial2.hashtag')}</span>
               </span>
             </div>
             <a
@@ -903,7 +866,7 @@ export default function Home() {
           />
           {/* FAQ part */}
           <ul>
-            {faqs.faqs.map((item, index) => {
+            {t.raw('faq.items').map((item, index) => {
               const isOpen = openIndex === index;
 
               return (
