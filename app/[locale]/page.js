@@ -121,11 +121,8 @@ export default function Home() {
             {/* Button 2 */}
             <a
               href="https://calendly.com/nazar_yakov/yakoweb"
-              // onClick={() => {
-              //   trackGoal('book_an_intro_call', 'Book an Intro Call button pressed.');
-              // }}
               onClick={() => {
-                window?.datafast?.("book_an_intro_call");
+                trackGoal('book_an_intro_call', 'Book an Intro Call button pressed.');
               }}
               target="_blank"
               rel="noopener noreferrer"
