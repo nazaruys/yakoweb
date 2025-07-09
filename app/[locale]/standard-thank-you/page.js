@@ -15,7 +15,7 @@ export default function ThankYouStandardPage() {
   useEffect(() => {
     const verifySession = async () => {
       try {
-        const response = await fetch(`/api/verify-session-standard?session_id=${sessionId}`);
+        const response = await fetch(`/api/verify-session?session_id=${sessionId}`);
         const data = await response.json();
         
         if (data.success) {

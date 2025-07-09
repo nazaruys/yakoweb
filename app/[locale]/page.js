@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { trackGoal } from '../utils/datafast';
 
 
 export default function Home() {
@@ -120,6 +121,9 @@ export default function Home() {
             {/* Button 2 */}
             <a
               href="https://calendly.com/nazar_yakov/yakoweb"
+              onClick={async (e) => {
+                await trackGoal('book_an_intro_call', 'Book an Intro Call button pressed.');
+              }}
               className="w-[193px] h-[53px] flex items-center justify-center rounded-[25px] border-[6px] border-[#7853B6] transform transition-all duration-300 ease-in-out group hover:-translate-y-0.5"
             >
               <div
