@@ -196,7 +196,10 @@ function Navbar({ currentPage }) {
 								<li key={item.name} className="w-full py-2 first:pt-0 last:pb-0 ">
 									<a
 										href={item.link}
-										onClick={() => setIsMenuOpen(false)}
+										onClick={() => {
+											setIsMenuOpen(false)
+											trackGoal(`navbar_${item.name.toLowerCase()}`, `Click ${item.name} on Navbar`);
+										}}
 										className={`${item.link ? "text-black" : "text-dark/60"} text-base font-medium w-full flex justify-center`}
 									>
 										{item.name}
