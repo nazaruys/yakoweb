@@ -20,9 +20,9 @@ export async function POST(req) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        datafast_visitor_id,
-        name,
-        description,
+        datafast_visitor_id: datafast_visitor_id,
+        name: name,
+        description: description,
       }),
     });
 
