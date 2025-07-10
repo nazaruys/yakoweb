@@ -963,6 +963,12 @@ export default function Home() {
               >
                 {t('footer.privacy')}
               </a>
+              <a
+                href={t('footer.cookiesPage')}
+                className="underline"
+              >
+                Cookies
+              </a>
             </div>
             <div className="flex flex-row items-center gap-3">
               <Link 

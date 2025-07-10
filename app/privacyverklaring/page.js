@@ -2,12 +2,13 @@
 import React from 'react';
 import { ArrowLeftIcon } from '@phosphor-icons/react';
 import SetHtmlLang from '../components/SetHtmlLang';
+import ManageCookies from '../components/ManageCookies';
 
 export default function Privacyverklaring() {
   return (
-    <>
-        <SetHtmlLang lang="nl" />
-        <div className="flex flex-col bg-background px-4 mx-auto py-8 sm:px-6 lg:px-72">
+    <div className="min-h-screen bg-background py-20 px-8 sm:px-16">
+      <SetHtmlLang locale="nl" />
+      <div className="max-w-3xl mx-auto">
         <a
             href="/"
             className="flex flex-row justify-center items-center gap-x-2 w-fit border-2 border-primary text-primary font-semibold px-3 py-2 mb-8 rounded-lg shadow hover:bg-primary hover:text-white transition"
@@ -15,8 +16,9 @@ export default function Privacyverklaring() {
             <ArrowLeftIcon size={18} weight="bold" /> 
             Terug naar Home
         </a>
+
         <h1 className="text-3xl font-bold mb-8">Privacyverklaring</h1>
-        
+
         <div className="space-y-8">
             <section id="inleiding">
             <p className="text-dark">
@@ -89,8 +91,26 @@ export default function Privacyverklaring() {
             <section id="cookies-tracking">
             <h2 className="text-xl font-semibold mb-4">6. Cookies en tracking</h2>
             <p className="text-dark">
-                Wij gebruiken geen cookies, tracking scripts of analytics tools op onze website.
+                Wij gebruiken cookies om uw ervaring te verbeteren en te begrijpen hoe bezoekers onze website gebruiken. U kunt via ons cookievoorkeurscentrum bepalen welke cookies u accepteert.
             </p>
+            <div className="mt-4">
+                <h3 className="font-semibold mb-2">Soorten cookies die we gebruiken:</h3>
+                <ul className="list-disc pl-6 space-y-2 text-dark">
+                    <li>
+                        <span className="font-medium">Strikt Noodzakelijke Cookies:</span> Deze cookies zijn essentieel voor het goed functioneren van de website en kunnen niet worden uitgeschakeld.
+                    </li>
+                    <li>
+                        <span className="font-medium">Analytics Cookies:</span> We gebruiken DataFast analytics om te begrijpen hoe bezoekers onze website gebruiken. Dit helpt ons de prestaties en gebruiksvriendelijkheid van onze website te verbeteren. Deze cookies verzamelen anonieme, geaggregeerde gegevens en omvatten:
+                        <ul className="list-disc pl-6 mt-2 space-y-1">
+                            <li>datafast_visitor_id – Identificeert unieke bezoeken (Duur: 1 jaar)</li>
+                            <li>datafast_session_id – Volgt sessie-niveau activiteit (Duur: 30 minuten)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div className="text-dark mt-4">
+                U kunt <ManageCookies>hier klikken om uw cookievoorkeuren te beheren</ManageCookies> of gebruik maken van de knop "Aanpassen" in onze cookiebanner.
+            </div>
             </section>
 
             <section id="avg-rechten">
@@ -124,7 +144,7 @@ export default function Privacyverklaring() {
             </p>
             </div>
         </div>
-        </div>
-    </>
+      </div>
+    </div>
   );
 }

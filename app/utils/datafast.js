@@ -1,5 +1,14 @@
+import { getCookieConsent } from './cookieConsent';
+
 export async function trackGoal(name, description) {
   try {
+    // Check if analytics is enabled
+    const consent = getCookieConsent();
+    if (!consent?.analytics) {
+      console.log('Analytics tracking disabled by user consent');
+      return false;
+    }
+
     const response = await fetch('/api/datafast-goal', {
       method: 'POST',
       headers: {
