@@ -2,8 +2,33 @@ import { NextResponse } from 'next/server';
 
 export async function POST(req) {
   try {
-    const { name, description } = await req.json();
+    // Debug log to check if API key is available
+    console.log('DATAFAST_API_KEY is', process.env.DATAFAST_API_KEY ? 'set' : 'not set');
+    
+    // Check API key first
+    if (!process.env.DATAFAST_API_KEY) {
+      console.error("DATAFAST_API_KEY environment variable is not set");
+      return NextResponse.json(
+        { error: 'DataFast API key not configured' },
+        { status: 500 }
+      );
+    }
+
+    // Parse request body
+    let name, description;
+    try {
+      ({ name, description } = await req.json());
+    } catch (e) {
+      console.error("Failed to parse request body:", e);
+      return NextResponse.json(
+        { error: 'Invalid request body' },
+        { status: 400 }
+      );
+    }
+
+    // Get visitor ID
     const datafast_visitor_id = req.cookies.get('datafast_visitor_id')?.value;
+    console.log("DataFast visitor ID:", datafast_visitor_id); // Debug log
 
     if (!name) {
       return NextResponse.json({ error: 'Goal name is required' }, { status: 400 });
@@ -13,6 +38,7 @@ export async function POST(req) {
       return NextResponse.json({ error: 'DataFast visitor ID not found. Make sure the visitor has at least one pageview.' }, { status: 400 });
     }
 
+    // Make request to DataFast
     const response = await fetch("https://datafa.st/api/v1/goals", {
       method: "POST",
       headers: {
@@ -26,14 +52,19 @@ export async function POST(req) {
       }),
     });
 
+    const result = await response.json();
+    
     if (!response.ok) {
-      throw new Error(`DataFast API responded with status ${response.status}`);
+      console.error("DataFast API error response:", result);
+      return NextResponse.json(
+        { error: result.error || `DataFast API responded with status ${response.status}` },
+        { status: response.status }
+      );
     }
 
-    const result = await response.json();
     console.log("Goal sent to DataFast:", result);
-
-    return NextResponse.json({ success: true, result }, { status: 200 });
+    return NextResponse.json(result);
+    
   } catch (error) {
     console.error("Error sending goal to DataFast:", error);
     return NextResponse.json(

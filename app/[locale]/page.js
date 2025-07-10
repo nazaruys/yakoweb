@@ -120,9 +120,9 @@ export default function Home() {
             </a>
             {/* Button 2 */}
             <a
-              href="https://calendly.com/nazar_yakov/yakoweb"
+              // href="https://calendly.com/nazar_yakov/yakoweb"
               onClick={() => {
-                trackGoal('book_an_intro_call', 'Book an Intro Call button pressed.');
+                trackGoal('navigate_pricing_from_hero', 'Navigate to pricing from hero');
               }}
               target="_blank"
               rel="noopener noreferrer"
