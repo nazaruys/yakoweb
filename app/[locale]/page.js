@@ -102,7 +102,7 @@ export default function Home() {
           </h3>
           {/* Buttons */}
           <div
-            className="flex flex-row gap-4 mt-8"
+            className="flex flex-col sm:flex-row gap-2 sm:gap-4 mt-8"
           >
             {/* Button 1 */}
             <a
