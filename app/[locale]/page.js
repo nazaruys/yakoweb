@@ -8,39 +8,14 @@ import { useTranslations } from "next-intl";
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { trackGoal } from '../utils/datafast';
+import { setLangPref } from '../utils/langPref';
 
 
 export default function Home() {
   const t = useTranslations('HomePage');
   const pathname = usePathname();
 
-  const pricingFeatures = [
-    [
-      "1 landing page",
-      "Mobile-friendly design",
-      "Full copywriting",
-      "Basic contact forms",
-      "Delivered in 10 days"
-    ],
-    [
-      "Up to 6 pages",
-      "Professional design",
-      "Advanced contact forms",
-      "Up to 2 languages",
-      "Delivered in 3 weeks"
-    ],
-    [
-      "Premium UI/UX design",
-      "Database management",
-      "Payment processing",
-      "API integrations",
-      "Everything delivered in 6 weeks"
-    ],
-    
-  ];
-
   const [openIndex, setOpenIndex] = useState(null);
-
   const toggle = (index) => {
     // If we're opening a question (not closing), track it
     if (openIndex !== index) {
@@ -67,6 +42,17 @@ export default function Home() {
       trackGoal('navigate_to_recurring_pricing', 'Navigate to FAQ about recurring pricing');
     }
   };
+
+  const changeLanguage = (lang) => {
+    const langCode = lang.toLowerCase();
+    setLangPref(langCode);
+    
+    if (lang === "NL") {
+      trackGoal('set_lang_to_nl', 'Set language to NL');
+    } else if (lang === "EN") {
+      trackGoal('set_lang_to_en', 'Set language to EN');
+    }
+  }
 
   return (
     <>
@@ -971,25 +957,21 @@ export default function Home() {
               </a>
             </div>
             <div className="flex flex-row items-center gap-3">
-              <Link 
+              <a 
                 href="/" 
-                onClick={() => {
-                  trackGoal('set_lang_to_nl', 'Set language to NL');
-                }}
+                onClick={() => changeLanguage('NL')}
                 className={`text-dark/70 hover:text-dark transition-colors ${pathname === '/' ? 'font-bold' : ''}`}
               >
                 NL
-              </Link>
+              </a>
               <div className="w-[1px] h-[28px] bg-dark" />
-              <Link 
+              <a 
                 href="/en" 
-                onClick={() => {
-                  trackGoal('set_lang_to_en', 'Set language to EN');
-                }}
+                onClick={() => changeLanguage('EN')}
                 className={`text-dark/70 hover:text-dark transition-colors ${pathname === '/en' ? 'font-bold' : ''}`}
               >
                 EN
-              </Link>
+              </a>
             </div>
           </div>
 
