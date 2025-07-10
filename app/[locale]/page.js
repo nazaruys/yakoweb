@@ -42,6 +42,13 @@ export default function Home() {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggle = (index) => {
+    // If we're opening a question (not closing), track it
+    if (openIndex !== index) {
+      const faqItem = t.raw('faq.items')[index];
+      const questionText = faqItem.question;
+      const trackingName = questionText.toLowerCase().replace(/\?/g, '').trim().replace(/\s+/g, '_');
+      trackGoal(`faq_${trackingName}`, `Open FAQ: ${questionText}`);
+    }
     setOpenIndex(prev => (prev === index ? null : index));
   };
 
@@ -56,6 +63,8 @@ export default function Home() {
         setOpenIndex(6)
         window.scrollBy({ top: 400, behavior: 'smooth' });
       }, 800);
+
+      trackGoal('navigate_to_recurring_pricing', 'Navigate to FAQ about recurring pricing');
     }
   };
 
@@ -98,6 +107,9 @@ export default function Home() {
             {/* Button 1 */}
             <a
               href="#pricing"
+              onClick={() => {
+                trackGoal('navigate_pricing_from_hero', 'Navigate to pricing from hero');
+              }}
               className="w-[193px] h-[53px] flex items-center justify-center rounded-[25px] bg-gradient-to-r from-[#9568E3] to-[#563C83] shadow-[inset_0_3px_2px_rgba(255,255,255,0.3),inset_0_-3px_2px_rgba(0,0,0,0.1),inset_1px_0_2px_rgba(0,0,0,0.3),inset_-1px_0_2px_rgba(255,255,255,0.3),inset_0_-1px_3px_rgba(0,0,0,0.1)] p-[6px] transform transition-transform duration-300 ease-in-out group hover:-translate-y-0.5"
             >
               <div
@@ -120,9 +132,9 @@ export default function Home() {
             </a>
             {/* Button 2 */}
             <a
-              // href="https://calendly.com/nazar_yakov/yakoweb"
+              href="https://calendly.com/nazar_yakov/yakoweb"
               onClick={() => {
-                trackGoal('navigate_pricing_from_hero', 'Navigate to pricing from hero');
+                trackGoal('book_an_intro_call_hero', 'Book an intro call on hero');
               }}
               target="_blank"
               rel="noopener noreferrer"
@@ -502,6 +514,9 @@ export default function Home() {
             </div>
             <a
               href="https://www.bacukozijnen.nl/"
+              onClick={() => {
+                trackGoal('open_bacukozijnen', 'Open BaCu Kozijnen website');
+              }}
               target="_blank"
               className="mt-6 xl:mt-0 gap-x-2 w-fit flex flex-row justify-center items-center px-3 py-2 bg-SecondaryBackground rounded-xl shadow-[0_0_12px_rgba(0,0,0,0.10)] hover:shadow-[0_0_12px_rgba(0,0,0,0.20)] transition-shadow duration-300"
             >
@@ -604,6 +619,9 @@ export default function Home() {
                   <a
                     href="https://buy.stripe.com/aFaeV6f6pfTM9IM4LF5J602"
                     // href="https://buy.stripe.com/test_7sYeV6e224kY9sv1GG7kc00"
+                    onClick={() => {
+                      trackGoal('order_landing', 'Order a landing page');
+                    }}
                     target="_blank"
                     className="bg-SecondaryBackground/50 w-full h-[53px] mt-10 mb-4 flex items-center justify-center rounded-[25px] border-[6px] border-[#3B9EF6] transform transition-all duration-300 ease-in-out group hover:-translate-y-0.5"
                   >
@@ -691,6 +709,9 @@ export default function Home() {
                   <a
                     href="https://buy.stripe.com/cNi28k6zT22W08cdib5J601"
                     // href="https://buy.stripe.com/test_cNi14gcXY3gUeMPfxw7kc01"
+                    onClick={() => {
+                      trackGoal('order_standard', 'Order a standard website');
+                    }}
                     target="_blank"
                     className="bg-SecondaryBackground/50 w-full h-[53px] mt-10 mb-4 flex items-center justify-center rounded-[25px] border-[6px] border-[#7652B3] transform transition-all duration-300 ease-in-out group hover:-translate-y-0.5"
                   >
@@ -772,6 +793,9 @@ export default function Home() {
                   {/* Button */}
                   <a
                     href="https://calendly.com/nazar_yakov/yakoweb"
+                    onClick={() => {
+                      trackGoal('book_an_intro_call_premium_website', 'Book an intro call on Premium plan');
+                    }}
                     target="_blank"
                     className="w-full h-[53px] mt-10 mb-4 flex items-center justify-center rounded-[25px] border-[6px] border-[#FA8700] transform transition-all duration-300 ease-in-out group hover:-translate-y-0.5"
                   >
@@ -797,6 +821,9 @@ export default function Home() {
           <h2 className="text-[28px] md:text-[32px] text-black font-bold leading-[114%]">{t('cta.title')}</h2>
           <a
               href="https://calendly.com/nazar_yakov/yakoweb"
+              onClick={() => {
+                trackGoal('book_an_intro_call_cta', 'Book an intro call on CTA section');
+              }}
               target="_blank"
               className="w-[193px] h-[53px] flex items-center justify-center rounded-[25px] bg-gradient-to-r from-[#9568E3] to-[#563C83] shadow-[inset_0_3px_2px_rgba(255,255,255,0.3),inset_0_-3px_2px_rgba(0,0,0,0.1),inset_1px_0_2px_rgba(0,0,0,0.3),inset_-1px_0_2px_rgba(255,255,255,0.3),inset_0_-1px_3px_rgba(0,0,0,0.1)] p-[6px] transform transition-transform duration-300 ease-in-out group hover:-translate-y-0.5"
             >
@@ -846,6 +873,9 @@ export default function Home() {
             </div>
             <a
               href="https://www.ekautotechniek.nl/"
+              onClick={() => {
+                trackGoal('open_ekautotechniek', 'Open EK Autotechniek website');
+              }}
               target="_blank"
               className="mt-6 xl:mt-0 gap-x-2 w-fit flex flex-row justify-center items-center px-3 py-2 bg-SecondaryBackground rounded-xl shadow-[0_0_12px_rgba(0,0,0,0.10)] hover:shadow-[0_0_12px_rgba(0,0,0,0.20)] transition-shadow duration-300"
             >
@@ -937,6 +967,9 @@ export default function Home() {
             <div className="flex flex-row items-center gap-3">
               <Link 
                 href="/" 
+                onClick={() => {
+                  trackGoal('set_lang_to_nl', 'Set language to NL');
+                }}
                 className={`text-dark/70 hover:text-dark transition-colors ${pathname === '/' ? 'font-bold' : ''}`}
               >
                 NL
@@ -944,6 +977,9 @@ export default function Home() {
               <div className="w-[1px] h-[28px] bg-dark" />
               <Link 
                 href="/en" 
+                onClick={() => {
+                  trackGoal('set_lang_to_en', 'Set language to EN');
+                }}
                 className={`text-dark/70 hover:text-dark transition-colors ${pathname === '/en' ? 'font-bold' : ''}`}
               >
                 EN
@@ -961,7 +997,7 @@ export default function Home() {
               <span className="max-w-[300px]">{t('footer.description')}</span>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-7">
-              <a href="mailto:hello@yakoweb.com" className="max-w-[300px] hover:text-black transition-all duration-200 break-words">{t('footer.email')}</a>
+              <a onClick={() => {trackGoal('email_us', 'Email us')}}href="mailto:hello@yakoweb.com" className="max-w-[300px] hover:text-black transition-all duration-200 break-words">{t('footer.email')}</a>
               <div className="flex flex-row gap-3">
                 <a target="_blank" href="https://x.com/nazar_yakov" className="group">
                   <XLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />

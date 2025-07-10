@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { ListIcon, XIcon } from '@phosphor-icons/react';
 import { useTranslations } from 'next-intl';
+import { trackGoal } from '../utils/datafast';
 
 function Navbar({ currentPage }) {
 	const t = useTranslations('navbar');
@@ -87,6 +88,9 @@ function Navbar({ currentPage }) {
 								{item.link ? (
 									<a
 										href={item.link}
+										onClick={() => {
+											trackGoal(`navbar_${item.name.toLowerCase()}`, `Click ${item.name} on Navbar`);
+										}}
 										className={`
 											sm:text-[11px] md:text-[12px] lg:text-[13px] xl:text-[15px] font-medium text-black
 											${smallVersion ? 'xl:text-[13px]' : 'xl:text-[15px]'}
@@ -134,6 +138,9 @@ function Navbar({ currentPage }) {
 					{/* CTA Button – slightly smaller on phones */}
 					<a
 						href="https://calendly.com/nazar_yakov/yakoweb"
+						onClick={() => {
+							trackGoal('book_an_intro_call_navbar', 'Book an intro call on Navbar');
+						}}
 						target="_blank"
 						className={`hidden md:flex
 							md:w-[150px] lg:w-[190px] xl:w-[190px]
