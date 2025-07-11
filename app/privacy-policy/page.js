@@ -135,7 +135,7 @@ export default function PrivacyPolicy() {
 
             <div className="mt-12 pt-8 border-t border-dark/30">
               <p className="text-sm text-dark">
-                Last updated: 07/07/2025
+                Last updated: 07/11/2025
               </p>
             </div>
           </div>

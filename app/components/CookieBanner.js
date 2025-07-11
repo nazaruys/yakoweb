@@ -1,12 +1,14 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import CookiePreferencesModal from './CookiePreferencesModal';
 import { setCookieConsent, hasCookieConsent } from '../utils/cookieConsent';
 
 export default function CookieBanner() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const t = useTranslations('cookies.banner');
 
   useEffect(() => {
     // Show banner only if consent hasn't been given
@@ -25,7 +27,11 @@ export default function CookieBanner() {
 
   const handleModalClose = () => {
     setIsModalOpen(false);
-    setIsVisible(false); // Hide banner when modal is closed (preferences were saved)
+  };
+
+  const handlePreferencesSave = () => {
+    setIsModalOpen(false);
+    setIsVisible(false);
   };
 
   if (!isVisible) return null;
@@ -33,34 +39,34 @@ export default function CookieBanner() {
   return (
     <>
       <div
-        className="fixed flex flex-row justify-center items-center bottom-0 z-50 w-full bg-SecondaryBackground gap-x-16 py-5 border-t border-dark/20 text-sm text-black"
+        className="fixed flex lg:flex-row flex-col justify-center items-center bottom-0 z-50 w-full bg-SecondaryBackground px-4 lg:px-8 py-4 lg:py-5 border-t border-dark/20 text-sm text-black gap-4 lg:gap-x-16"
         style={{ boxShadow: '0 -6px 10px rgba(0, 0, 0, 0.1)' }}
       >
-        <p className="">
-          We use cookies to improve your experience. See our{' '}
-          <a href="/privacy-policy" className="underline text-blue-600 hover:text-blue-800">
-            Privacy Policy
+        <p className="text-center lg:text-left">
+          {t('message')}{' '}
+          <a href={t('privacyPath')} className="underline text-blue-600 hover:text-blue-800">
+            {t('privacyLink')}
           </a>
           .
         </p>
-        <div className="flex justify-end gap-2">
+        <div className="flex flex-col-reverse lg:flex-row gap-2 w-full lg:w-auto">
           <button 
             onClick={handleRejectAll}
-            className="px-4 py-2 rounded-md text-sm bg-gray-100 hover:bg-gray-200"
+            className="cursor-pointer px-4 py-2 rounded-md text-sm bg-gray-100 hover:bg-gray-200 w-full lg:w-auto"
           >
-            Reject All
+            {t('rejectAll')}
           </button>
           <button 
             onClick={() => setIsModalOpen(true)}
-            className="px-4 py-2 rounded-md text-sm bg-gray-100 hover:bg-gray-200"
+            className="cursor-pointer px-4 py-2 rounded-md text-sm bg-gray-100 hover:bg-gray-200 w-full lg:w-auto"
           >
-            Customize
+            {t('customize')}
           </button>
           <button 
             onClick={handleAcceptAll}
-            className="px-4 py-2 rounded-md text-sm bg-blue-600 text-white hover:bg-blue-700"
+            className="cursor-pointer px-4 py-2 rounded-md text-sm bg-blue-600 text-white hover:bg-blue-700 w-full lg:w-auto"
           >
-            Accept All
+            {t('acceptAll')}
           </button>
         </div>
       </div>
@@ -68,7 +74,7 @@ export default function CookieBanner() {
       <CookiePreferencesModal
         isOpen={isModalOpen}
         onClose={handleModalClose}
-        onSave={handleModalClose}
+        onSave={handlePreferencesSave}
       />
     </>
   );

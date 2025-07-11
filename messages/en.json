@@ -214,5 +214,44 @@
 			"sessionUsed": "This session has already been used",
 			"supportContact": "Please contact support if you made a purchase, but weren't redirected to the form."
 		}
+	},
+	"cookies": {
+		"banner": {
+			"message": "We use cookies to improve your experience. See our",
+			"privacyLink": "Privacy Policy",
+			"privacyPath": "/privacy-policy#cookies-tracking",
+			"rejectAll": "Reject All",
+			"customize": "Customize",
+			"acceptAll": "Accept All"
+		},
+		"preferences": {
+			"title": "Cookie Preferences",
+			"necessary": {
+				"title": "Strictly Necessary Cookies",
+				"required": "(required)",
+				"description": "These cookies are essential for the website to function properly. They enable core features like page navigation and security. These cookies cannot be disabled."
+			},
+			"analytics": {
+				"title": "Analytics Cookies",
+				"description": "These cookies help us understand how visitors use our website — for example, which pages are popular or how long people stay. This allows us to improve performance and usability. The data collected is anonymous and aggregated.",
+				"cookies": {
+					"visitor": {
+						"name": "datafast_visitor_id",
+						"description": "Identifies unique visits",
+						"duration": "1 year"
+					},
+					"session": {
+						"name": "datafast_session_id",
+						"description": "Tracks session-level activity",
+						"duration": "30 minutes"
+					}
+				}
+			},
+			"buttons": {
+				"rejectAll": "Reject All",
+				"savePreferences": "Save my preferences",
+				"acceptAll": "Accept All"
+			}
+		}
 	}
 }

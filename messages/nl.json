@@ -214,5 +214,44 @@
 			"sessionUsed": "Deze sessie is al gebruikt",
 			"supportContact": "Neem contact op met de support als je een aankoop hebt gedaan, maar niet bent doorgestuurd naar het formulier."
 		}
+	},
+	"cookies": {
+		"banner": {
+			"message": "We gebruiken cookies om je ervaring te verbeteren. Bekijk ons",
+			"privacyLink": "Privacyverklaring",
+			"privacyPath": "/privacyverklaring#cookies-tracking",
+			"rejectAll": "Weigeren",
+			"customize": "Instellingen",
+			"acceptAll": "Accepteren"
+		},
+		"preferences": {
+			"title": "Cookie-voorkeuren",
+			"necessary": {
+				"title": "Strikt noodzakelijke cookies",
+				"required": "(vereist)",
+				"description": "Deze cookies zijn essentieel voor het goed functioneren van de website. Ze maken kernfuncties mogelijk zoals navigatie en beveiliging. Deze cookies kunnen niet worden uitgeschakeld."
+			},
+			"analytics": {
+				"title": "Analytische cookies",
+				"description": "Deze cookies helpen ons te begrijpen hoe bezoekers onze website gebruiken — bijvoorbeeld welke pagina's populair zijn of hoe lang mensen blijven. Dit stelt ons in staat om de prestaties en gebruiksvriendelijkheid te verbeteren. De verzamelde gegevens zijn anoniem en geaggregeerd.",
+				"cookies": {
+					"visitor": {
+						"name": "datafast_visitor_id",
+						"description": "Identificeert unieke bezoeken",
+						"duration": "1 jaar"
+					},
+					"session": {
+						"name": "datafast_session_id",
+						"description": "Volgt sessie-activiteit",
+						"duration": "30 minuten"
+					}
+				}
+			},
+			"buttons": {
+				"rejectAll": "Weigeren",
+				"savePreferences": "Voorkeuren opslaan",
+				"acceptAll": "Accepteren"
+			}
+		}
 	}
 }

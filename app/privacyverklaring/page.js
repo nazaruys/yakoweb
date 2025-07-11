@@ -138,7 +138,7 @@ export default function Privacyverklaring() {
 
             <div className="mt-12 pt-8 border-t border-dark/30">
             <p className="text-sm text-dark">
-                Laatst bijgewerkt: 07/07/2025
+                Laatst bijgewerkt: 07/11/2025
             </p>
             </div>
         </div>
