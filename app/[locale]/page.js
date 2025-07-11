@@ -6,7 +6,6 @@ import WebsiteSlides from "../components/WebsiteSlides";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { usePathname } from 'next/navigation';
-import Link from 'next/link';
 import { trackGoal } from '../utils/datafast';
 import { setLangPref } from '../utils/langPref';
 
@@ -960,7 +959,7 @@ export default function Home() {
               <a 
                 href="/" 
                 onClick={() => changeLanguage('NL')}
-                className={`text-dark/70 hover:text-dark transition-colors ${pathname === '/' ? 'font-bold' : ''}`}
+                className={`transition-colors ${pathname === '/' ? 'font-semibold text-black' : 'text-dark/80 hover:text-black'}`}
               >
                 NL
               </a>
@@ -968,7 +967,7 @@ export default function Home() {
               <a 
                 href="/en" 
                 onClick={() => changeLanguage('EN')}
-                className={`text-dark/70 hover:text-dark transition-colors ${pathname === '/en' ? 'font-bold' : ''}`}
+                className={`transition-colors ${pathname === '/en' ? 'font-semibold text-black' : 'text-dark/80 hover:text-black'}`}
               >
                 EN
               </a>
