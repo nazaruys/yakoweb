@@ -1,13 +1,10 @@
 'use client';
 import React from 'react';
 import { ArrowLeftIcon } from '@phosphor-icons/react';
-import SetHtmlLang from '../components/SetHtmlLang';
 
 export default function AlgemeneVoorwaarden() {
   return (
-    <>
-        <SetHtmlLang lang="nl" />
-        <div className="flex flex-col bg-background px-4 mx-auto py-8 sm:px-6 lg:px-72">
+    <div className="flex flex-col bg-background px-4 mx-auto py-8 sm:px-6 lg:px-72">
         <a
             href="/"
             className="flex flex-row justify-center items-center gap-x-2 w-fit border-2 border-primary text-primary font-semibold px-3 py-2 mb-8 rounded-lg shadow hover:bg-primary hover:text-white transition"
@@ -151,7 +148,6 @@ export default function AlgemeneVoorwaarden() {
             </p>
             </div>
         </div>
-        </div>
-    </>
+    </div>
   );
 }

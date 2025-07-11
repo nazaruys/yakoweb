@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { hasLocale } from 'next-intl';
 import { routing } from '@/i18n/routing';
+import SetHtmlLang from '../components/SetHtmlLang';
 
 export default async function LocaleLayout({ children, params }) {
   const { locale } = await params;
@@ -9,5 +10,10 @@ export default async function LocaleLayout({ children, params }) {
     notFound();
   }
 
-  return children;
+  return (
+    <>
+      <SetHtmlLang lang={locale} />
+      {children}
+    </>
+  );
 }

@@ -1,13 +1,11 @@
 'use client';
 import React from 'react';
 import { ArrowLeftIcon } from '@phosphor-icons/react';
-import SetHtmlLang from '../components/SetHtmlLang';
 import ManageCookies from '../components/ManageCookies';
 
 export default function Privacyverklaring() {
   return (
     <div className="min-h-screen bg-background py-20 px-8 sm:px-16">
-      <SetHtmlLang locale="nl" />
       <div className="max-w-3xl mx-auto">
         <a
             href="/"
