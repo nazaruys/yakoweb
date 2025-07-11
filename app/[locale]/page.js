@@ -602,8 +602,7 @@ export default function Home() {
                   </ul>
                   {/* Button */}
                   <a
-                    href="https://buy.stripe.com/aFaeV6f6pfTM9IM4LF5J602"
-                    // href="https://buy.stripe.com/test_7sYeV6e224kY9sv1GG7kc00"
+                    href={t('pricing.landing.paymentLink')}
                     onClick={() => {
                       trackGoal('order_landing', 'Order a landing page');
                     }}
@@ -692,8 +691,7 @@ export default function Home() {
                   </ul>
                   {/* Button */}
                   <a
-                    href="https://buy.stripe.com/cNi28k6zT22W08cdib5J601"
-                    // href="https://buy.stripe.com/test_cNi14gcXY3gUeMPfxw7kc01"
+                    href={t('pricing.standard.paymentLink')}
                     onClick={() => {
                       trackGoal('order_standard', 'Order a standard website');
                     }}

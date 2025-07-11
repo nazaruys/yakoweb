@@ -105,6 +105,7 @@
 					"4": "Basis contactformulieren",
 					"5": "Geleverd binnen 10 dagen"
 				},
+				"paymentLink": "https://buy.stripe.com/dRmbIUe2l7ngaMQ0vp5J603",
 				"button": "Bestel je website"
 			},
 			"standard": {
@@ -120,6 +121,7 @@
 					"4": "Tot 2 talen",
 					"5": "Geleverd binnen 3 weken"
 				},
+				"paymentLink": "https://buy.stripe.com/00waEQaQ9fTM7AE6TN5J604",
 				"button": "Bestel je website"
 			},
 			"premium": {
@@ -207,7 +209,9 @@
 		"success": {
 			"title": "Bedankt voor je aankoop!",
 			"description": "Je betaling is succesvol verwerkt.",
-			"redirecting": "Je wordt doorgestuurd naar het formulier in {countdown} seconden..."
+			"redirecting": "Je wordt doorgestuurd naar het formulier in {countdown} seconden...",
+			"landingURL": "https://tally.so/r/3EVrM4",
+			"standardURL": "https://tally.so/r/310zXl"
 		},
 		"error": {
 			"title": "Oeps! Er is iets misgegaan.",

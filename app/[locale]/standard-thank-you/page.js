@@ -25,7 +25,7 @@ export default function ThankYouStandardPage() {
             setCountdown((prev) => {
               if (prev <= 1) {
                 clearInterval(timer);
-                window.location.href = 'https://tally.so/r/mZAp8e';
+                window.location.href = t('success.standardURL');
                 return 0;
               }
               return prev - 1;

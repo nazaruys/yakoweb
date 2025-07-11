@@ -105,6 +105,7 @@
 					"4": "Basic contact forms",
 					"5": "Delivered in 10 days"
 				},
+				"paymentLink": "https://buy.stripe.com/aFaeV6f6pfTM9IM4LF5J602",
 				"button": "Order your website"
 			},
 			"standard": {
@@ -120,6 +121,7 @@
 					"4": "Up to 2 languages",
 					"5": "Delivered in 3 weeks"
 				},
+				"paymentLink": "https://buy.stripe.com/cNi28k6zT22W08cdib5J601",
 				"button": "Order your website"
 			},
 			"premium": {
@@ -207,7 +209,9 @@
 		"success": {
 			"title": "Thank You for Your Purchase!",
 			"description": "Your payment has been successfully processed.",
-			"redirecting": "Redirecting to the form in {countdown} seconds..."
+			"redirecting": "Redirecting to the form in {countdown} seconds...",
+			"landingURL": "https://tally.so/r/w2dKEM",
+			"standardURL": "https://tally.so/r/mZAp8e"
 		},
 		"error": {
 			"title": "Oops! Something went wrong.",
