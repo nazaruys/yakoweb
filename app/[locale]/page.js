@@ -2,7 +2,6 @@
 import Navbar from "../components/Navbar";
 import { XLogoIcon, InstagramLogoIcon, FacebookLogoIcon, LinkedinLogoIcon, ArrowSquareOutIcon, HouseIcon, CarProfileIcon, CaretRightIcon } from "@phosphor-icons/react";
 import WebsiteSlides from "../components/WebsiteSlides";
-// Remove faqs import since we'll use translations
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { usePathname } from 'next/navigation';
@@ -141,7 +140,7 @@ export default function Home() {
             className="flex w-full flex-col lg:flex-row justify-between gap-y-32 items-center lg:px-44 mt-[120px] select-none"
           >
             {/* First */}
-            <div className="relative w-fit">
+            <a className="relative w-fit" href="#ek-autotechniek">
               <img
                 src="/images/EK-secondary.webp"
                 alt="EK Logo Secondary"
@@ -152,10 +151,10 @@ export default function Home() {
                 alt="EK Logo Primary"
                 className="relative hover:scale-105 hover:-translate-y-3 right-10 lg:right-0 rotate-[-8deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-500 z-10"
               />
-            </div>
+            </a>
 
             {/* Second */}
-            <div className="relative w-fit">
+            <a className="relative w-fit" href="#bacu-kozijnen">
               <img
                 src="/images/BaCu-secondary.webp"
                 alt="EK Logo Secondary"
@@ -166,7 +165,7 @@ export default function Home() {
                 alt="EK Logo Primary"
                 className="relative hover:scale-105 hover:-translate-y-3 right-10 lg:right-0 rotate-[-7deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-500 z-0 hover:z-20"
               />
-            </div>
+            </a>
             {/* Third */}
             <div className="relative w-fit">
               <img
@@ -478,6 +477,7 @@ export default function Home() {
 
         {/* Testimonial section 1 */}
         <section
+          id="bacu-kozijnen"
           className="
             2xl:px-48 xl:px-36 lg:px-28 md:px-14 sm:px-16 px-8
             flex flex-col-reverse xl:flex-row gap-y-12 xl:gap-y-0 justify-between
@@ -831,6 +831,7 @@ export default function Home() {
         
         {/* Testamonial section 2 */}
         <section
+          id="ek-autotechniek"
           className="
             2xl:px-48 xl:px-36 lg:px-28 md:px-14 sm:px-16 px-8
             flex flex-col xl:flex-row justify-center gap-y-12 xl:gap-y-0 gap-x-12
