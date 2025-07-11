@@ -2,17 +2,19 @@
 import React from 'react';
 import { ArrowLeftIcon } from '@phosphor-icons/react';
 import ManageCookies from '../components/ManageCookies';
+import SetHtmlLang from '../components/SetHtmlLang';
 
 export default function Privacyverklaring() {
   return (
-    <div className="min-h-screen bg-background py-20 px-8 sm:px-16">
-      <div className="max-w-3xl mx-auto">
+    <>
+      <SetHtmlLang lang="nl" />
+      <div className="flex flex-col bg-background px-4 mx-auto py-8 sm:px-6 lg:px-72">
         <a
-            href="/"
-            className="flex flex-row justify-center items-center gap-x-2 w-fit border-2 border-primary text-primary font-semibold px-3 py-2 mb-8 rounded-lg shadow hover:bg-primary hover:text-white transition"
+          href="/"
+          className="flex flex-row justify-center items-center gap-x-2 w-fit border-2 border-primary text-primary font-semibold px-3 py-2 mb-8 rounded-lg shadow hover:bg-primary hover:text-white transition"
         >
-            <ArrowLeftIcon size={18} weight="bold" /> 
-            Terug naar Home
+          <ArrowLeftIcon size={18} weight="bold" /> 
+          Terug naar Home
         </a>
 
         <h1 className="text-3xl font-bold mb-8">Privacyverklaring</h1>
@@ -143,6 +145,6 @@ export default function Privacyverklaring() {
             </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
