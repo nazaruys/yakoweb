@@ -8,8 +8,9 @@ import { LayoutShell } from '../components/LayoutShell';
 import CookieBanner from '../components/CookieBanner';
 // import { usePathname } from 'next/navigation';
 
-export async function generateMetadata({ params: { locale }, parent }) {
-  const heroImage = locale === 'en' ? 'heroEN.png' : 'hero.png';
+export async function generateMetadata({ params, parent }) {
+  const { locale } = await params;
+  const heroImage = await locale === 'en' ? 'heroEN.png' : 'hero.png';
   const imageUrl = `https://www.yakoweb.com/images/${heroImage}`;
   
   // Get the current path from parent metadata
@@ -40,11 +41,6 @@ export async function generateMetadata({ params: { locale }, parent }) {
         'max-image-preview': 'large',
         'max-video-preview': -1
       }
-    },
-    viewport: {
-      width: 'device-width',
-      initialScale: 1,
-      maximumScale: 5,
     },
     alternates: {
       canonical: canonicalUrl,
@@ -87,13 +83,11 @@ export async function generateMetadata({ params: { locale }, parent }) {
         alt: 'YakoWeb Hero Image'
       },
     },
-
-    themeColor: '#F2F5F9',
   };
 }
 
 export default async function LocaleLayout({ children, params }) {
-  const { locale } = params;
+  const { locale } = await params;
 
   if (!hasLocale(routing.locales, locale)) {
     notFound();

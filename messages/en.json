@@ -190,7 +190,10 @@
 			"privacyPage": "/privacy",
 			"cookiesPage": "/privacy#cookies-tracking",
 			"description": "Convert strangers into customers and website overwhelm into a distant memory.",
-			"email": "hello@yakoweb.com"
+			"email": "hello@yakoweb.com",
+			"socialLinks": {
+				"xProfile": "Visit our X profile"
+			}
 		}
 	},
 	"navbar": {
@@ -262,9 +265,6 @@
 		"websiteSlides": {
 			"previousSlide": "Previous slide",
 			"nextSlide": "Next slide"
-		},
-		"socialLinks": {
-			"xProfile": "Visit our X profile"
 		}
 	},
 	"terms": {

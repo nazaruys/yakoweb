@@ -190,7 +190,10 @@
 			"privacyPage": "/privacy",
 			"cookiesPage": "/privacy#cookies-tracking",
 			"description": "Verander bezoekers in klanten en website-stress in een verre herinnering.",
-			"email": "hello@yakoweb.com"
+			"email": "hello@yakoweb.com",
+			"socialLinks": {
+				"xProfile": "Ga naar onze X profiel"
+			}
 		}
 	},
 	"navbar": {
@@ -262,10 +265,7 @@
 		"websiteSlides": {
 			"previousSlide": "Vorige slide",
 			"nextSlide": "Volgende slide"
-		},
-		"socialLinks": {
-			"xProfile": "Ga naar onze X profiel"
-		}
+		}	
 	},
 	"terms": {
 		"backToHome": "Terug naar Home",

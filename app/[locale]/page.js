@@ -986,18 +986,18 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-7">
             <a onClick={() => {trackGoal('email_us', 'Email us')}}href="mailto:hello@yakoweb.com" className="max-w-[300px] hover:text-black transition-all duration-200 break-words">{t('footer.email')}</a>
             <div className="flex flex-row gap-3">
-              <a aria-label={t('components.socialLinks.xProfile')} target="_blank" href="https://x.com/nazar_yakov" className="group">
+              <a aria-label={t('footer.socialLinks.xProfile')} target="_blank" href="https://x.com/nazar_yakov" className="group">
                 <XLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
               </a>
-              <a className="group">
+              <span className="group">
                 <InstagramLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
-              </a>
-              <a className="group">
+              </span>
+              <span className="group">
                 <FacebookLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
-              </a>
-              <a className="group">
+              </span>
+              <span className="group">
                 <LinkedinLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
-              </a>
+              </span>
             </div>
           </div>
         </div>
