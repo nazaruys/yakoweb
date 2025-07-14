@@ -7,43 +7,53 @@ import { AnalyticsScript } from '../components/AnalyticsScript';
 import { LayoutShell } from '../components/LayoutShell';
 import CookieBanner from '../components/CookieBanner';
 
-export const metadata = {
-  title: 'YakoWeb | Verander bezoekers in klanten en website-stress in een verre herinnering.',
-  description:
-    'Wij ontwerpen en ontwikkelen snelle, responsieve websites die jouw merk weerspiegelen, bezoekers betrekken en zorgen voor meer verkoop. Of je nu vanaf nul begint of een complete website-vernieuwing nodig hebt.',
+export async function generateMetadata({ params: { locale } }) {
+  const heroImage = locale === 'en' ? 'heroEN.png' : 'hero.png';
+  
+  return {
+    title: `YakoWeb | ${locale === 'en' 
+      ? 'Turn visitors into customers and website overwhelm into a distant memory.'
+      : 'Verander bezoekers in klanten en website-stress in een verre herinnering.'
+    }`,
+    description: locale === 'en'
+      ? 'We design and develop fast, responsive websites that reflect your brand, engage visitors, and drive more sales. Whether you\'re starting from scratch or need a complete website overhaul.'
+      : 'Wij ontwerpen en ontwikkelen snelle, responsieve websites die jouw merk weerspiegelen, bezoekers betrekken en zorgen voor meer verkoop. Of je nu vanaf nul begint of een complete website-vernieuwing nodig hebt.',
 
-  robots: 'index, follow',
+    robots: 'index, follow',
 
-  openGraph: {
-    title: 'YakoWeb',
-    description:
-      'Verander bezoekers in klanten en website-stress in een verre herinnering.',
-    url: 'https://www.yakoweb.com/',
-    type: 'website',
-    images: [
-      {
-        url: 'https://www.yakoweb.com/images/hero.png',
-        width: 1200,
-        height: 630,
-        alt: 'YakoWeb Hero Afbeelding',
-      },
-    ],
-  },
+    openGraph: {
+      title: 'YakoWeb',
+      description: locale === 'en'
+        ? 'Turn visitors into customers and website overwhelm into a distant memory.'
+        : 'Verander bezoekers in klanten en website-stress in een verre herinnering.',
+      url: 'https://www.yakoweb.com/',
+      type: 'website',
+      images: [
+        {
+          url: `https://www.yakoweb.com/images/${heroImage}`,
+          width: 1200,
+          height: 630,
+          alt: locale === 'en' ? 'YakoWeb Hero Image' : 'YakoWeb Hero Afbeelding',
+        },
+      ],
+    },
 
-  twitter: {
-    card: 'summary_large_image',
-    title: 'YakoWeb',
-    description:
-      'Turn visitors into customers and website overwhelm into a distant memory.',
-    site: '@nazar_yakov',
-    images: ['https://www.yakoweb.com/images/heroEN.png'],
-  },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'YakoWeb',
+      description: locale === 'en'
+        ? 'Turn visitors into customers and website overwhelm into a distant memory.'
+        : 'Verander bezoekers in klanten en website-stress in een verre herinnering.',
+      site: '@nazar_yakov',
+      images: [`https://www.yakoweb.com/images/${heroImage}`],
+    },
 
-  themeColor: '#F2F5F9',
-};
+    themeColor: '#F2F5F9',
+  };
+}
 
 export default async function LocaleLayout({ children, params }) {
-  const { locale } = await params;
+  const { locale } = params;
 
   if (!hasLocale(routing.locales, locale)) {
     notFound();
@@ -54,13 +64,13 @@ export default async function LocaleLayout({ children, params }) {
       <head>
         {/* hrefLang */}
         <link rel="alternate" href="https://www.yakoweb.com/" hrefLang="nl" />
-        <link rel="alternate" href="https://www.yakoweb.com/privacyverklaring/" hrefLang="nl" />
-        <link rel="alternate" href="https://www.yakoweb.com/algemene-voorwaarden/" hrefLang="nl" />
+        <link rel="alternate" href="https://www.yakoweb.com/privacy/" hrefLang="nl" />
+        <link rel="alternate" href="https://www.yakoweb.com/terms/" hrefLang="nl" />
         <link rel="alternate" href="https://www.yakoweb.com/landing-thank-you/" hrefLang="nl" />
         <link rel="alternate" href="https://www.yakoweb.com/standard-thank-you/" hrefLang="nl" />
         <link rel="alternate" href="https://www.yakoweb.com/en/" hrefLang="en" />
-        <link rel="alternate" href="https://www.yakoweb.com/privacy-policy/" hrefLang="en" />
-        <link rel="alternate" href="https://www.yakoweb.com/terms-and-conditions/" hrefLang="en" />
+        <link rel="alternate" href="https://www.yakoweb.com/en/privacy/" hrefLang="en" />
+        <link rel="alternate" href="https://www.yakoweb.com/en/terms/" hrefLang="en" />
         <link rel="alternate" href="https://www.yakoweb.com/en/landing-thank-you/" hrefLang="en" />
         <link rel="alternate" href="https://www.yakoweb.com/en/standard-thank-you/" hrefLang="en" />
         <link rel="alternate" href="https://www.yakoweb.com/" hrefLang="x-default" />
