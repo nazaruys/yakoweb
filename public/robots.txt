@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.yakoweb.com
+
+# Sitemaps
+Sitemap: https://www.yakoweb.com/sitemap.xml
