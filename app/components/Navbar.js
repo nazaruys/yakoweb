@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { ListIcon, XIcon } from '@phosphor-icons/react';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { trackGoal } from '../utils/datafast';
 
 function Navbar({ currentPage }) {
@@ -59,34 +60,48 @@ function Navbar({ currentPage }) {
 			>
 				<div className="flex w-full items-center justify-between gap-4 md:gap-6">
 					{/* Logo */}
-					<a
-						href={currentPage ? '/' : '#'}
-						onClick={(e) => {
-							if (!currentPage) {
+					{currentPage ? (
+						<Link href="/">
+							<img
+								src="/logos/YakoWeb.svg"
+								alt="Logo"
+								className={`
+									svg w-[90px] sm:w-[100px] md:w-[110px] h-auto
+									${smallVersion ? 'lg:w-[110px]' : 'lg:w-[130px]'}
+									`}
+								style={{
+									transition: `width ${smallVersion ? '700ms' : '300ms'} ease-in-out`
+								}}
+							/>
+						</Link>
+					) : (
+						<a
+							href="#"
+							onClick={(e) => {
 								e.preventDefault();
 								window.scrollTo({ top: 0, behavior: 'smooth' });
-							}
-						}}
-					>
-						<img
-							src="/logos/YakoWeb.svg"
-							alt="Logo"
-							className={`
-								svg w-[90px] sm:w-[100px] md:w-[110px] h-auto
-								${smallVersion ? 'lg:w-[110px]' : 'lg:w-[130px]'}
-								`}
-							style={{
-								transition: `width ${smallVersion ? '700ms' : '300ms'} ease-in-out`
 							}}
-						/>
-					</a>
+						>
+							<img
+								src="/logos/YakoWeb.svg"
+								alt="Logo"
+								className={`
+									svg w-[90px] sm:w-[100px] md:w-[110px] h-auto
+									${smallVersion ? 'lg:w-[110px]' : 'lg:w-[130px]'}
+									`}
+								style={{
+									transition: `width ${smallVersion ? '700ms' : '300ms'} ease-in-out`
+								}}
+							/>
+						</a>
+					)}
 
 					{/* Links – hidden on small screens */}
 					<ul className="hidden md:flex flex-row md:gap-4 lg:gap-6 xl:gap-12">
 						{navigationItems.map((item) => (
 							<li key={item.name} className="relative group">
 								{item.link ? (
-									<a
+									<Link
 										href={item.link}
 										onClick={() => {
 											trackGoal(`navbar_${item.name.toLowerCase()}`, `Click ${item.name} on Navbar`);
@@ -100,7 +115,7 @@ function Navbar({ currentPage }) {
 										}}
 									>
 										{item.name}
-									</a>
+									</Link>
 								) : (
 									<button
 										type="button"
@@ -194,7 +209,7 @@ function Navbar({ currentPage }) {
 						<ul className="flex flex-col items-center divide-y divide-gray-300">
 							{navigationItems.map((item, index) => (
 								<li key={item.name} className="w-full py-2 first:pt-0 last:pb-0 ">
-									<a
+									<Link
 										href={item.link}
 										onClick={() => {
 											setIsMenuOpen(false)
@@ -203,7 +218,7 @@ function Navbar({ currentPage }) {
 										className={`${item.link ? "text-black" : "text-dark/60"} text-base font-medium w-full flex justify-center`}
 									>
 										{item.name}
-									</a>
+									</Link>
 								</li>
 							))}
 						</ul>

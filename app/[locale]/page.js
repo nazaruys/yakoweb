@@ -3,6 +3,7 @@ import { XLogoIcon, InstagramLogoIcon, FacebookLogoIcon, LinkedinLogoIcon, Arrow
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { usePathname } from 'next/navigation';
+import { Link } from '@/i18n/navigation';
 
 import Navbar from "../components/Navbar";
 import WebsiteSlides from "../components/WebsiteSlides";
@@ -935,24 +936,24 @@ export default function Home() {
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 py-6 font-medium text-dark text-[14px]">
           <div className="flex flex-row gap-x-4">
             <span>{t('footer.copyright')}</span>
-            <a
+            <Link
               href={t('footer.termsPage')}
               className="underline"
             >
               {t('footer.terms')}
-            </a>
-            <a
+            </Link>
+            <Link
               href={t('footer.privacyPage')}
               className="underline"
             >
               {t('footer.privacy')}
-            </a>
-            <a
+            </Link>
+            <Link
               href={t('footer.cookiesPage')}
               className="underline"
             >
               Cookies
-            </a>
+            </Link>
           </div>
           <div className="flex flex-row items-center gap-3">
             <a 

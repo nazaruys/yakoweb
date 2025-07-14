@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import CookiePreferencesModal from './CookiePreferencesModal';
 import { setCookieConsent, hasCookieConsent } from '../utils/cookieConsent';
 
@@ -44,9 +45,9 @@ export default function CookieBanner() {
       >
         <p className="text-[15px] text-center lg:text-left">
           {t('message')}{' '}
-          <a href={t('privacyPath')} className="underline text-blue-600 hover:text-blue-800">
+          <Link href={t('privacyPath')} className="underline text-blue-600 hover:text-blue-800">
             {t('privacyLink')}
-          </a>
+          </Link>
           .
         </p>
         <div className="flex flex-col-reverse lg:flex-row gap-2 w-full lg:w-auto">
