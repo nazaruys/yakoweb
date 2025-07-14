@@ -9,6 +9,7 @@ import CookieBanner from '../components/CookieBanner';
 
 export async function generateMetadata({ params: { locale } }) {
   const heroImage = locale === 'en' ? 'heroEN.png' : 'hero.png';
+  const imageUrl = `https://www.yakoweb.com/images/${heroImage}`;
   
   return {
     title: `YakoWeb | ${locale === 'en' 
@@ -30,7 +31,7 @@ export async function generateMetadata({ params: { locale } }) {
       type: 'website',
       images: [
         {
-          url: `https://www.yakoweb.com/images/${heroImage}`,
+          url: imageUrl,
           width: 1200,
           height: 630,
           alt: locale === 'en' ? 'YakoWeb Hero Image' : 'YakoWeb Hero Afbeelding',
@@ -45,7 +46,11 @@ export async function generateMetadata({ params: { locale } }) {
         ? 'Turn visitors into customers and website overwhelm into a distant memory.'
         : 'Verander bezoekers in klanten en website-stress in een verre herinnering.',
       site: '@nazar_yakov',
-      images: [`https://www.yakoweb.com/images/${heroImage}`],
+      creator: '@nazar_yakov',
+      images: {
+        url: imageUrl,
+        alt: locale === 'en' ? 'YakoWeb Hero Image' : 'YakoWeb Hero Afbeelding',
+      },
     },
 
     themeColor: '#F2F5F9',
