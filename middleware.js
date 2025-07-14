@@ -22,6 +22,6 @@ export default function middleware(request) {
 
 export const config = {
   matcher: [
-    '/((?!api|trpc|_next|terms-and-conditions|privacy-policy|algemene-voorwaarden|privacyverklaring|_vercel|.*\\..*).*)'
+    '/((?!api|trpc|_next|_vercel|.*\\..*).*)'
   ]
 };
