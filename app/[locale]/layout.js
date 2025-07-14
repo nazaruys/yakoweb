@@ -48,7 +48,7 @@ export async function generateMetadata({ params: { locale } }) {
       site: '@nazar_yakov',
       creator: '@nazar_yakov',
       images: {
-        url: imageUrl,
+        url: 'https://www.yakoweb.com/images/hero.png',
         alt: locale === 'en' ? 'YakoWeb Hero Image' : 'YakoWeb Hero Afbeelding',
       },
     },
