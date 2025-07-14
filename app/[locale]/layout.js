@@ -49,7 +49,7 @@ export async function generateMetadata({ params: { locale } }) {
       creator: '@nazar_yakov',
       images: {
         url: 'https://www.yakoweb.com/images/hero.png',
-        alt: locale === 'en' ? 'YakoWeb Hero Image' : 'YakoWeb Hero Afbeelding',
+        alt: 'YakoWeb Hero Image'
       },
     },
 
