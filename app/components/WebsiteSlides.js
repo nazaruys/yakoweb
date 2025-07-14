@@ -1,7 +1,9 @@
 import { CaretLeftIcon, CaretRightIcon } from '@phosphor-icons/react';
 import React, { useEffect, useRef, useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 function WebsiteSlides({ icon, typeWebsite, imagesList }) {
+  const t = useTranslations('components.websiteSlides');
   const [index, setIndex] = useState(1);
   const [transition, setTransition] = useState(true);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -130,6 +132,7 @@ function WebsiteSlides({ icon, typeWebsite, imagesList }) {
         <button
           onClick={handlePrevButtonPress}
           disabled={isAnimating}
+          aria-label={t('previousSlide')}
           className="cursor-pointer w-fit flex flex-row justify-center items-center p-2 bg-SecondaryBackground rounded-xl shadow-[0_0_12px_rgba(0,0,0,0.10)] hover:shadow-[0_0_12px_rgba(0,0,0,0.20)] transition-shadow duration-300"
         >
           <CaretLeftIcon size={18} className="text-black" />
@@ -137,6 +140,7 @@ function WebsiteSlides({ icon, typeWebsite, imagesList }) {
         <button
           onClick={handleNextButtonPress}
           disabled={isAnimating}
+          aria-label={t('nextSlide')}
           className="cursor-pointer w-fit flex flex-row justify-center items-center p-2 bg-SecondaryBackground rounded-xl shadow-[0_0_12px_rgba(0,0,0,0.10)] hover:shadow-[0_0_12px_rgba(0,0,0,0.20)] transition-shadow duration-300"
         >
           <CaretRightIcon size={18} className="text-black" />

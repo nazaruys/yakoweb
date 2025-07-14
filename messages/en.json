@@ -258,6 +258,15 @@
 			}
 		}
 	},
+	"components": {
+		"websiteSlides": {
+			"previousSlide": "Previous slide",
+			"nextSlide": "Next slide"
+		},
+		"socialLinks": {
+			"xProfile": "Visit our X profile"
+		}
+	},
 	"terms": {
 		"backToHome": "Back to Home",
 		"title": "Terms and Conditions",

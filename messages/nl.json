@@ -258,6 +258,15 @@
 			}
 		}
 	},
+	"components": {
+		"websiteSlides": {
+			"previousSlide": "Vorige slide",
+			"nextSlide": "Volgende slide"
+		},
+		"socialLinks": {
+			"xProfile": "Ga naar onze X profiel"
+		}
+	},
 	"terms": {
 		"backToHome": "Terug naar Home",
 		"title": "Algemene Voorwaarden",

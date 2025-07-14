@@ -80,11 +80,11 @@ export default function Home() {
           dangerouslySetInnerHTML={{ __html: t('title') }}
         />
         {/* Subtitle */}
-        <h3
+        <h2
           className="text-center text-[14px] md:text-[16px] font-semibold text-dark/80 max-w-[320px] mt-2 lg:mt-4"
         >
           {t('subtitle')}
-        </h3>
+        </h2>
         {/* Buttons */}
         <div
           className="flex flex-col sm:flex-row gap-2 sm:gap-4 mt-8"
@@ -986,16 +986,16 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-7">
             <a onClick={() => {trackGoal('email_us', 'Email us')}}href="mailto:hello@yakoweb.com" className="max-w-[300px] hover:text-black transition-all duration-200 break-words">{t('footer.email')}</a>
             <div className="flex flex-row gap-3">
-              <a target="_blank" href="https://x.com/nazar_yakov" className="group">
+              <a aria-label={t('components.socialLinks.xProfile')} target="_blank" href="https://x.com/nazar_yakov" className="group">
                 <XLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
               </a>
-              <a href="#" className="group">
+              <a className="group">
                 <InstagramLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
               </a>
-              <a href="#" className="group">
+              <a className="group">
                 <FacebookLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
               </a>
-              <a href="#" className="group">
+              <a className="group">
                 <LinkedinLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
               </a>
             </div>
