@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint"
   },
@@ -13,6 +14,7 @@
     "@stripe/stripe-js": "^7.4.0",
     "next": "15.3.3",
     "next-intl": "^4.3.4",
+    "next-sitemap": "^4.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "stripe": "^18.3.0"
