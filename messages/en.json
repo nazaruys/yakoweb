@@ -227,7 +227,7 @@
 		"banner": {
 			"message": "We use cookies to improve your experience. See our",
 			"privacyLink": "Privacy Policy",
-			"privacyPath": "/privacy-policy#cookies-tracking",
+			"privacyPath": "/privacy#cookies-tracking",
 			"rejectAll": "Reject All",
 			"customize": "Customize",
 			"acceptAll": "Accept All"
