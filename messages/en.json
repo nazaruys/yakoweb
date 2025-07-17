@@ -215,9 +215,7 @@
 		"success": {
 			"title": "Thank You for Your Purchase!",
 			"description": "Your payment has been successfully processed.",
-			"redirecting": "Redirecting to the form in {countdown} seconds...",
-			"landingURL": "https://tally.so/r/w2dKEM",
-			"standardURL": "https://tally.so/r/mZAp8e"
+			"redirecting": "Redirecting to the form in {countdown} seconds..."
 		},
 		"error": {
 			"title": "Oops! Something went wrong.",

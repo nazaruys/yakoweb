@@ -113,7 +113,7 @@
 				"badge": "#meest gekozen",
 				"description": "Een website met meerdere pagina's, ontworpen om je diensten te presenteren en klantvertrouwen op te bouwen.",
 				"yearlyText": "/jaar",
-				"everythingIn": "Alles in Ladning, plus:",
+				"everythingIn": "Alles in Landing, plus:",
 				"features": {
 					"1": "Tot 6 pagina's",
 					"2": "Professioneel ontwerp",
@@ -215,9 +215,7 @@
 		"success": {
 			"title": "Bedankt voor je aankoop!",
 			"description": "Je betaling is succesvol verwerkt.",
-			"redirecting": "Je wordt doorgestuurd naar het formulier in {countdown} seconden...",
-			"landingURL": "https://tally.so/r/3EVrM4",
-			"standardURL": "https://tally.so/r/310zXl"
+			"redirecting": "Je wordt doorgestuurd naar het formulier in {countdown} seconden..."
 		},
 		"error": {
 			"title": "Oeps! Er is iets misgegaan.",

@@ -3,14 +3,22 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
 
 export default function ThankYouStandardPage() {
   const searchParams = useSearchParams();
+  const params = useParams();
   const sessionId = searchParams.get('session_id');
   const [countdown, setCountdown] = useState(5);
   const [status, setStatus] = useState('verifying');
   const [errorMessage, setErrorMessage] = useState('');
   const t = useTranslations('ThankYouPage');
+  
+  // Get the appropriate form URL based on locale
+  const locale = params?.locale || 'nl';
+  const formUrl = locale === 'en' 
+    ? process.env.FORM_STANDARD_URL_EN 
+    : process.env.FORM_STANDARD_URL_NL;
 
   useEffect(() => {
     const verifySession = async () => {
@@ -25,7 +33,7 @@ export default function ThankYouStandardPage() {
             setCountdown((prev) => {
               if (prev <= 1) {
                 clearInterval(timer);
-                window.location.href = t('success.standardURL');
+                window.location.href = formUrl;
                 return 0;
               }
               return prev - 1;
