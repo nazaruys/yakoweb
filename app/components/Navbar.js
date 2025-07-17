@@ -166,7 +166,7 @@ function Navbar({ currentPage }) {
 							transform transition-transform duration-300 ease-in-out group hover:-translate-y-0.5
 						`}
 						style={{
-							transition: `height ${smallVersion ? '700ms' : '300ms'} ease-in-out, padding ${smallVersion ? '700ms' : '300ms'} ease-in-out`
+							transition: `all ${smallVersion ? '700ms' : '300ms'} ease-in-out`
 						}}
 					>
 						<div className={`text-white
@@ -209,7 +209,7 @@ function Navbar({ currentPage }) {
 						<ul className="flex flex-col items-center divide-y divide-gray-300">
 							{navigationItems.map((item, index) => (
 								<li key={item.name} className="w-full py-2 first:pt-0 last:pb-0 ">
-									<Link
+									<a
 										href={item.link}
 										onClick={() => {
 											setIsMenuOpen(false)
@@ -218,7 +218,7 @@ function Navbar({ currentPage }) {
 										className={`${item.link ? "text-black" : "text-dark/60"} text-base font-medium w-full flex justify-center`}
 									>
 										{item.name}
-									</Link>
+									</a>
 								</li>
 							))}
 						</ul>

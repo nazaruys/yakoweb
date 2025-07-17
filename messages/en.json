@@ -192,7 +192,10 @@
 			"description": "Convert strangers into customers and website overwhelm into a distant memory.",
 			"email": "hello@yakoweb.com",
 			"socialLinks": {
-				"xProfile": "Visit our X profile"
+				"xProfile": "Visit our X profile",
+				"instagramProfile": "Visit our Instagram profile",
+				"facebookProfile": "Visit our Facebook profile",
+				"linkedInProfile": "Visit our LinkedIn profile"
 			}
 		}
 	},

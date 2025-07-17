@@ -989,15 +989,15 @@ export default function Home() {
               <a aria-label={t('footer.socialLinks.xProfile')} target="_blank" href="https://x.com/nazar_yakov" className="group">
                 <XLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
               </a>
-              <span className="group">
+              <a aria-label={t('footer.socialLinks.instagramProfile')} target="_blank" href="https://www.instagram.com/yako.web/" className="group">
                 <InstagramLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
-              </span>
-              <span className="group">
+              </a>
+              <a aria-label={t('footer.socialLinks.facebookProfile')} target="_blank" href="https://www.facebook.com/nazar.yakov" className="group">
                 <FacebookLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
-              </span>
-              <span className="group">
+              </a>
+              <a aria-label={t('footer.socialLinks.linkedInProfile')} target="_blank" href="https://www.linkedin.com/in/nazar-yakov/" className="group">
                 <LinkedinLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
-              </span>
+              </a>
             </div>
           </div>
         </div>
