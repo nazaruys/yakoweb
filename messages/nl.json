@@ -1,7 +1,7 @@
 {
 	"HomePage": {
 		"title": "Websites op maat,<br/>gemaakt om te converteren",
-		"badge": "Nog 1 plek voor juli",
+		"badge": "Nog 1 plek voor augustus",
 		"subtitle": "Verander bezoekers in klanten en website-stress in een verre herinnering.",
 		"button1": "Kies je pakket",
 		"button2": "Of plan een gesprek",
@@ -227,7 +227,7 @@
 		"banner": {
 			"message": "We gebruiken cookies om je ervaring te verbeteren. Bekijk ons",
 			"privacyLink": "Privacyverklaring",
-			"privacyPath": "/privacyverklaring#cookies-tracking",
+			"privacyPath": "/privacy#cookies-tracking",
 			"rejectAll": "Weigeren",
 			"customize": "Instellingen",
 			"acceptAll": "Accepteren"
