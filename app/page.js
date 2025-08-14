@@ -515,7 +515,7 @@ export default function Home() {
         {/* Left side */}
         <WebsiteSlides icon={<CarProfileIcon size={18} className="text-black" />} typeWebsite={nl.testimonial2.typeWebsite} imagesList={["/images/EK-primary.webp", "/images/EK-secondary.webp", "/images/EK-text.webp", "/images/EK-question.webp", "/images/EK-form.webp"]} />
         {/* Right side */}
-        <div className="self-center xl:self-auto flex flex-col justify-between relative space-y-3 max-w-[450px]">
+        <div className="self-center xl:self-auto flex flex-col justify-between relative space-y-3 max-w-[550px]">
           <div
             className=""
           >
@@ -620,15 +620,89 @@ export default function Home() {
 
                 {/* Pros */}
                 <ul className="flex flex-col gap-y-4">
-                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((num) => (
-                    <li key={num} className="flex flex-row gap-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                        <rect width="25" height="25" rx="12.5" fill="#CEE1FF" />
-                        <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#3B82F6"/>
-                      </svg>
-                      <span className="text-dark text-[15px] font-medium">{nl.pricing.landing.features[num]}</span>
-                    </li>
-                  ))}
+                  <li className="flex flex-row gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                      <rect width="25" height="25" rx="12.5" fill="#CEE1FF" />
+                      <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#3B82F6"/>
+                    </svg>
+                    <span className="text-dark text-[15px] font-semibold">1 landingspagina</span>
+                  </li>
+                  <li className="flex flex-row gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                      <rect width="25" height="25" rx="12.5" fill="#CEE1FF" />
+                      <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#3B82F6"/>
+                    </svg>
+                    <span className="text-dark text-[15px] font-semibold">Alles geleverd binnen 2 weken</span>
+                  </li>
+                  <li className="flex flex-row gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                      <rect width="25" height="25" rx="12.5" fill="#CEE1FF" />
+                      <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#3B82F6"/>
+                    </svg>
+                    <span className="text-dark text-[15px] font-medium">Mobiel-vriendelijk ontwerp</span>
+                  </li>
+                  <li className="flex flex-row gap-3 cursor-pointer relative group">
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mt-6 flex bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10 max-w-[250px] text-center">
+                      Zodat je website beter te vinden is op Google.
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                      <rect width="25" height="25" rx="12.5" fill="#CEE1FF" />
+                      <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#3B82F6"/>
+                    </svg>
+                    <span className="text-dark text-[15px] font-medium">SEO-optimalisatie</span>
+                  </li>
+                  <li className="flex flex-row gap-3 cursor-pointer relative group">
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mt-6 flex bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10 min-w-[300px] text-center">
+                      Instelling, zodat wij precies kunnen zien hoeveel bezoekers je website krijgt en welke acties ze ondernemen. Zo kunnen wij begrijpen wat best voor jouw werkt.
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                      <rect width="25" height="25" rx="12.5" fill="#CEE1FF" />
+                      <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#3B82F6"/>
+                    </svg>
+                    <span className="text-dark text-[15px] font-medium">Google Analytics</span>
+                  </li>
+                  <li className="flex flex-row gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                      <rect width="25" height="25" rx="12.5" fill="#CEE1FF" />
+                      <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#3B82F6"/>
+                    </svg>
+                    <span className="text-dark text-[15px] font-medium">Hulp met domein en e-mail</span>
+                  </li>
+                  <li className="flex flex-row gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                      <rect width="25" height="25" rx="12.5" fill="#CEE1FF" />
+                      <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#3B82F6"/>
+                    </svg>
+                    <span className="text-dark text-[15px] font-medium">1 jaar gratis ondersteuning</span>
+                  </li>
+                  <li className="flex flex-row gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                      <rect width="25" height="25" rx="12.5" fill="#CEE1FF" />
+                      <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#3B82F6"/>
+                    </svg>
+                    <span className="text-dark text-[15px] font-medium">Zelf bewerken</span>
+                  </li>
+                  <li className="flex flex-row gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                      <rect width="25" height="25" rx="12.5" fill="#CEE1FF" />
+                      <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#3B82F6"/>
+                    </svg>
+                    <span className="text-dark text-[15px] font-medium">100 dagen zich terugbetaald garantie</span>
+                  </li>
+                  <li className="flex flex-row gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                      <rect width="25" height="25" rx="12.5" fill="#CEE1FF" />
+                      <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#3B82F6"/>
+                    </svg>
+                    <span className="text-dark text-[15px] font-medium">Onbeperkte revisies</span>
+                  </li>
+                  <li className="flex flex-row gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                      <rect width="25" height="25" rx="12.5" fill="#CEE1FF" />
+                      <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#3B82F6"/>
+                    </svg>
+                    <span className="text-dark text-[15px] font-medium">Restitueerbare betaling</span>
+                  </li>
                 </ul>
                 {/* Button */}
                 <a
@@ -711,15 +785,92 @@ export default function Home() {
 
                 {/* Pros */}
                 <ul className="flex flex-col gap-y-4">
-                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((num) => (
-                    <li key={num} className="flex flex-row gap-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                        <rect width="25" height="25" rx="12.5" fill="#E2E1FF"/>
-                        <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#5A57C2"/>
-                      </svg>
-                      <span className="text-dark text-[15px] font-medium">{nl.pricing.standard.features[num]}</span>
-                    </li>
-                  ))}
+                  <li className="flex flex-row gap-3 cursor-pointer relative group">
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mt-6 flex bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10 max-w-[250px] text-center">
+                      Als je extra pagina nodig hebt, bijvoorbeeld voor een extra dienst, is dit in principe geen probleem 😉
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                      <rect width="25" height="25" rx="12.5" fill="#E2E1FF"/>
+                      <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#5A57C2"/>
+                    </svg>
+                    <span className="text-dark text-[15px] font-semibold">Tot 6 pagina's</span>
+                  </li>
+                  <li className="flex flex-row gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                      <rect width="25" height="25" rx="12.5" fill="#E2E1FF"/>
+                      <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#5A57C2"/>
+                    </svg>
+                    <span className="text-dark text-[15px] font-semibold">Alles geleverd binnen 3 weken</span>
+                  </li>
+                  <li className="flex flex-row gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                      <rect width="25" height="25" rx="12.5" fill="#E2E1FF"/>
+                      <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#5A57C2"/>
+                    </svg>
+                    <span className="text-dark text-[15px] font-medium">Mobiel-vriendelijk ontwerp</span>
+                  </li>
+                  <li className="flex flex-row gap-3 cursor-pointer relative group">
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mt-6 flex bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10 max-w-[250px] text-center">
+                      Zodat je website beter te vinden is op Google.
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                      <rect width="25" height="25" rx="12.5" fill="#E2E1FF"/>
+                      <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#5A57C2"/>
+                    </svg>
+                    <span className="text-dark text-[15px] font-medium">SEO-optimalisatie</span>
+                  </li>
+                  <li className="flex flex-row gap-3 cursor-pointer relative group">
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mt-6 flex bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10 min-w-[300px] text-center">
+                      Instelling, zodat wij precies kunnen zien hoeveel bezoekers je website krijgt en welke acties ze ondernemen. Zo kunnen wij begrijpen wat best voor jouw werkt.
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                      <rect width="25" height="25" rx="12.5" fill="#E2E1FF"/>
+                      <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#5A57C2"/>
+                    </svg>
+                    <span className="text-dark text-[15px] font-medium">Google Analytics</span>
+                  </li>
+                  <li className="flex flex-row gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                      <rect width="25" height="25" rx="12.5" fill="#E2E1FF"/>
+                      <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#5A57C2"/>
+                    </svg>
+                    <span className="text-dark text-[15px] font-medium">Hulp met domein en e-mail</span>
+                  </li>
+                  <li className="flex flex-row gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                      <rect width="25" height="25" rx="12.5" fill="#E2E1FF"/>
+                      <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#5A57C2"/>
+                    </svg>
+                    <span className="text-dark text-[15px] font-medium">1 jaar gratis ondersteuning</span>
+                  </li>
+                  <li className="flex flex-row gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                      <rect width="25" height="25" rx="12.5" fill="#E2E1FF"/>
+                      <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#5A57C2"/>
+                    </svg>
+                    <span className="text-dark text-[15px] font-medium">Zelf bewerken</span>
+                  </li>
+                  <li className="flex flex-row gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                      <rect width="25" height="25" rx="12.5" fill="#E2E1FF"/>
+                      <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#5A57C2"/>
+                    </svg>
+                    <span className="text-dark text-[15px] font-medium">100 dagen zich terugbetaald garantie</span>
+                  </li>
+                  <li className="flex flex-row gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                      <rect width="25" height="25" rx="12.5" fill="#E2E1FF"/>
+                      <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#5A57C2"/>
+                    </svg>
+                    <span className="text-dark text-[15px] font-medium">Onbeperkte revisies</span>
+                  </li>
+                  <li className="flex flex-row gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                      <rect width="25" height="25" rx="12.5" fill="#E2E1FF"/>
+                      <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#5A57C2"/>
+                    </svg>
+                    <span className="text-dark text-[15px] font-medium">Restitueerbare betaling</span>
+                  </li>
                 </ul>
                 {/* Button */}
                 <a
@@ -859,7 +1010,7 @@ export default function Home() {
         "
       >
         {/* Left side */}
-        <div className="self-center xl:self-auto flex flex-col justify-between relative space-y-3 max-w-[500px]">
+        <div className="self-center xl:self-auto flex flex-col justify-between relative space-y-3 max-w-[550px]">
           <div>
             <span className="text-black text-[20px] font-semibold">
               BaCu Kozijnen

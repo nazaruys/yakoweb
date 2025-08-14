@@ -117,7 +117,7 @@
 			"standard": {
 				"title": "Standaard",
 				"badge": "#meest gekozen",
-				"description": "Een website met meerdere pagina's, ontworpen om je diensten te presenteren en klantvertrouwen op te bouwen.",
+				"description": "Een website met meerdere pagina's, ontworpen om al je diensten te presenteren en meer afspraken te krijgen.",
 				"yearlyText": "/maand",
 				"everythingIn": "Alles in Landing, plus:",
 				"features": {
@@ -138,21 +138,21 @@
 			},
 			"premium": {
 				"title": "Premium",
-				"description": "Een complete website met extra functies zoals configurators, API-integraties en betalingsverwerking.",
+				"description": "Een website met extra functies zoals occasions, blog, API-integratie, betalingsverwerking en meer.",
 				"yearlyText": "/maand",
 				"everythingIn": "Alles in Standaard, plus:",
 				"features": {
 					"1": "Premium UI/UX ontwerp",
-					"2": "Database beheer",
+					"2": "Occasions pagina",
 					"3": "Betalingsverwerking",
 					"4": "API-integraties",
-					"5": "Alles geleverd binnen 6 weken"
+					"5": "Alles wat je nodig hebt"
 				},
 				"button": "Plan een gesprek"
 			}
 		},
 		"testimonial2": {
-			"testimonial": "We hebben een 9-pagina website gebouwd voor EK Autotechniek met volledige copywriting. Het toont hun diensten en bouwt vertrouwen op. We hebben ook het domein, zakelijke e-mail en hosting opgezet.",
+			"testimonial": "We hebben een 9-pagina website gebouwd voor EK Autotechniek, autobedrijf in Almere. Bezoekers kunnen alle diensten zien en contact opnemen. We hebben ook alle andere onderdelen geleverd, zoals SEO-optimalisatie, domein, zakelijke e-mail en meer.",
 			"hashtag": "#Standard",
 			"typeWebsite": "Autobedrijf in Almere"
 		},
@@ -166,7 +166,7 @@
 			"items": [
 				{
 					"question": "Met wie werken jullie?",
-					"answer": "We werken vooral met fysieke bedrijven die 1 tot 3 locaties hebben of net beginnen. Maar we staan open voor samenwerking met elke branche."
+					"answer": "We werken met autobedrijven."
 				},
 				{
 					"question": "Hoe kunnen we beginnen?",
@@ -178,7 +178,7 @@
 				},
 				{
 					"question": "Bieden jullie restitutie aan?",
-					"answer": "Nee, we bieden geen restitutie aan omdat elk project veel tijd kost. Daarom bieden we de mogelijkheid om de betaling te splitsen, zodat je de tweede helft pas betaalt als je tevreden bent met het resultaat."
+					"answer": "Ja, straks meer info."
 				},
 				{
 					"question": "Wat als ik het ontwerp niet mooi vind?",
@@ -190,7 +190,7 @@
 				},
 				{
 					"question": "Bieden jullie doorlopende ondersteuning?",
-					"answer": "Ja. We bieden flexibele ondersteuningsplannen om je website snel, fris en optimaal presterend te houden:<br /><br />\n<ul class='list-disc ml-4 text-[14px]'>\n  <li><strong>€150/jaar (Landing & Standaard):</strong> Inclusief regelmatige prestatiecontroles, content updates (zoals tekst, afbeeldingen of secties), uptime monitoring en doorlopende conversie-optimalisaties.</li>\n  <li><strong>€250/jaar (Premium):</strong> Ontworpen voor meer geavanceerde websites. Dekt alles in het vorige plan plus extra updates en geavanceerde controles op maat voor complexe sites.</li>\n  <li><strong>€0/jaar:</strong> We helpen je met het opzetten van hosting, en dat is het. Je betaalt ons niets tenzij je later updates nodig hebt, die worden gefactureerd op basis van het benodigde werk.</li>\n</ul>\n<br />\nOns doel is om je website te laten doen wat hij moet doen—klanten binnenhalen—zonder de stress van het zelf beheren."
+					"answer": "Ja. We bieden flexibele ondersteuningsplannen om je website snel, fris en optimaal presterend te houden:<br /><br />\n<ul class='list-disc ml-4 text-[14px]'>\n  <li><strong>€108/jaar (Landing & Standaard):</strong> Inclusief regelmatige prestatiecontroles, content updates (zoals tekst, afbeeldingen of secties), uptime monitoring en doorlopende conversie-optimalisaties.</li>\n</ul>\n<br />\nOns doel is om je website te laten doen wat hij moet doen—klanten binnenhalen—zonder de stress van het zelf beheren."
 				}
 			]
 		},
