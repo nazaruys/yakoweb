@@ -1,15 +1,13 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
+import Link from 'next/link';
 import CookiePreferencesModal from './CookiePreferencesModal';
 import { setCookieConsent, hasCookieConsent } from '../utils/cookieConsent';
 
 export default function CookieBanner() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const t = useTranslations('cookies.banner');
 
   useEffect(() => {
     // Show banner only if consent hasn't been given
@@ -44,9 +42,9 @@ export default function CookieBanner() {
         style={{ boxShadow: '0 -6px 10px rgba(0, 0, 0, 0.1)' }}
       >
         <p className="text-[15px] text-center lg:text-left">
-          {t('message')}{' '}
-          <Link href={t('privacyPath')} className="underline text-blue-600 hover:text-blue-800">
-            {t('privacyLink')}
+          We gebruiken cookies om je ervaring te verbeteren. Bekijk ons{' '}
+          <Link href="/privacy#cookies-tracking" className="underline text-blue-600 hover:text-blue-800">
+            Privacyverklaring
           </Link>
           .
         </p>
@@ -55,19 +53,19 @@ export default function CookieBanner() {
             onClick={handleRejectAll}
             className="cursor-pointer px-5 py-2 rounded-md text-sm bg-gray-100 hover:bg-gray-200 w-full lg:w-auto"
           >
-            {t('rejectAll')}
+            Weigeren
           </button>
           <button 
             onClick={() => setIsModalOpen(true)}
             className="cursor-pointer px-5 py-2 rounded-md text-sm bg-gray-100 hover:bg-gray-200 w-full lg:w-auto"
           >
-            {t('customize')}
+            Instellingen
           </button>
           <button 
             onClick={handleAcceptAll}
             className="cursor-pointer px-5 py-2 rounded-md text-sm bg-blue-600 text-white hover:bg-blue-700 w-full lg:w-auto"
           >
-            {t('acceptAll')}
+            Accepteren
           </button>
         </div>
       </div>

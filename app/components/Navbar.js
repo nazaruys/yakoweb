@@ -1,19 +1,16 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import { ListIcon, XIcon } from '@phosphor-icons/react';
-import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
+import Link from 'next/link';
 import { trackGoal } from '../utils/datafast';
 
 function Navbar({ currentPage }) {
-	const t = useTranslations('navbar');
-
-	// Navigation items with name and link
+	// Navigation items with name and link - Dutch only
 	const navigationItems = [
-		{ name: t('pricing'), link: '#pricing' },
-		{ name: t('faqs'), link: '#faqs' },
-		{ name: t('caseStudies'), link: null },
-		{ name: t('blog'), link: null }
+		{ name: 'Prijzen', link: '#pricing' },
+		{ name: 'FAQ', link: '#faqs' },
+		{ name: 'Cases', link: null },
+		{ name: 'Blog', link: null }
 	];
 
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -143,7 +140,7 @@ function Navbar({ currentPage }) {
 								{/* Popup message for null links */}
 								{!item.link && (
 									<div className="absolute left-1/2 -translate-x-1/2 mt-1 w-max bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10 whitespace-nowrap">
-										{t('comingSoon')}
+										Binnenkort beschikbaar...
 									</div>
 								)}
 							</li>
@@ -181,13 +178,13 @@ function Navbar({ currentPage }) {
 							}}
 						>
 							<span className="font-semibold">
-								{t('bookCall')}
+								Plan een gesprek
 							</span>
 							<span
 								className="absolute blur-xs group-hover:opacity-75 opacity-50 transform transition-opacity duration-300 ease-in-out font-semibold"
 								aria-hidden="true"
 							>
-								{t('bookCall')}
+								Plan een gesprek
 							</span>
 						</div>
 					</a>

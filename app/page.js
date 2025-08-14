@@ -1,25 +1,28 @@
 "use client";
 import { XLogoIcon, InstagramLogoIcon, FacebookLogoIcon, LinkedinLogoIcon, ArrowSquareOutIcon, HouseIcon, CarProfileIcon, CaretRightIcon } from "@phosphor-icons/react";
 import { useState } from "react";
-import { useTranslations } from "next-intl";
 import { usePathname } from 'next/navigation';
-import { Link } from '@/i18n/navigation';
+import Link from 'next/link';
 
-import Navbar from "../components/Navbar";
-import WebsiteSlides from "../components/WebsiteSlides";
-import { trackGoal } from '../utils/datafast';
-import { setLangPref } from '../utils/langPref';
+import Navbar from "./components/Navbar";
+import WebsiteSlides from "./components/WebsiteSlides";
+import { trackGoal } from './utils/datafast';
+
+// Import Dutch translations directly
+import nlTranslations from '../messages/nl.json';
 
 
 export default function Home() {
-  const t = useTranslations('HomePage');
   const pathname = usePathname();
+
+  // Helper function to access Dutch translations
+  const nl = nlTranslations.HomePage;
 
   const [openIndex, setOpenIndex] = useState(null);
   const toggle = (index) => {
     // If we're opening a question (not closing), track it
     if (openIndex !== index) {
-      const faqItem = t.raw('faq.items')[index];
+      const faqItem = nl.faq.items[index];
       const questionText = faqItem.question;
       const trackingName = questionText.toLowerCase().replace(/\?/g, '').trim().replace(/\s+/g, '_');
       trackGoal(`faq_${trackingName}`, `Open FAQ: ${questionText}`);
@@ -43,22 +46,11 @@ export default function Home() {
     }
   };
 
-  const changeLanguage = (lang) => {
-    const langCode = lang.toLowerCase();
-    setLangPref(langCode);
-    
-    if (lang === "NL") {
-      trackGoal('set_lang_to_nl', 'Set language to NL');
-    } else if (lang === "EN") {
-      trackGoal('set_lang_to_en', 'Set language to EN');
-    }
-  }
-
   return (
     <div
       className="font-manrope bg-background"
     >
-      <Navbar/>
+      <Navbar currentPage={pathname}/>
       {/* Hero */}
       <section
           className="relative z-10 aspect-[1920/1400] flex flex-col items-center pt-[200px]
@@ -72,18 +64,18 @@ export default function Home() {
           <div className="w-[10px] h-[10px]">
             <div className="pulsating-circle"></div>
           </div>
-          <span className="text-[12px] font-semibold">{t('badge')}</span>
+          <span className="text-[12px] font-semibold">{nl.badge}</span>
         </div>
         {/* Title */}
         <h1
           className="text-4xl pb-1 sm:text-5xl xl:text-[52px] font-bold text-center leading-[110%] bg-gradient-to-r from-[#523C79] via-black to-[#523C79] bg-clip-text text-transparent mt-3"
-          dangerouslySetInnerHTML={{ __html: t('title') }}
+          dangerouslySetInnerHTML={{ __html: nl.title }}
         />
         {/* Subtitle */}
         <h2
-          className="text-center text-[14px] md:text-[16px] font-semibold text-dark/80 max-w-[320px] mt-2 lg:mt-4"
+          className="text-center text-[14px] md:text-[16px] font-semibold text-dark/80 max-w-[530px] mt-2 lg:mt-4"
         >
-          {t('subtitle')}
+          {nl.subtitle}
         </h2>
         {/* Buttons */}
         <div
@@ -104,13 +96,13 @@ export default function Home() {
               <span
                 className="text-white text-[15px] font-semibold"
               >
-                {t('button1')}
+                {nl.button1}
               </span>
               <span
                 className="absolute text-white text-[15px] blur-xs group-hover:opacity-75 opacity-50 transform transition-opacity duration-300 ease-in-out font-semibold"
                 aria-hidden="true"
               >
-                {t('button1')}
+                {nl.button1}
               </span>
 
             </div>
@@ -131,7 +123,7 @@ export default function Home() {
               <span
                 className="text-[#7853B6] transition-colors duration-300 ease-in-out text-[15px] font-semibold"
               >
-                {t('button2')}
+                {nl.button2}
               </span>
             </div>
           </a>
@@ -153,8 +145,21 @@ export default function Home() {
               className="relative hover:scale-105 hover:-translate-y-3 right-10 lg:right-0 rotate-[-8deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-500 z-10"
             />
           </a>
-
           {/* Second */}
+          <div className="relative w-fit">
+            <img
+              src="/images/CarMaat-secondary.webp"
+              alt="EK Logo Secondary"
+              className="absolute hover:scale-105 hover:-translate-y-3 left-10 lg:left-20 rotate-[-12deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-300 z-0 hover:z-20"
+            />
+            <img
+              src="/images/CarMaat-primary.webp"
+              alt="EK Logo Primary"
+              className="relative hover:scale-105 hover:-translate-y-3 right-10 lg:right-0 rotate-[12deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-500 z-10"
+            />
+          </div>
+
+          {/* Third */}
           <a className="relative w-fit" href="#bacu-kozijnen">
             <img
               src="/images/BaCu-secondary.webp"
@@ -167,19 +172,6 @@ export default function Home() {
               className="relative hover:scale-105 hover:-translate-y-3 right-10 lg:right-0 rotate-[-7deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-500 z-0 hover:z-20"
             />
           </a>
-          {/* Third */}
-          <div className="relative w-fit">
-            <img
-              src="/images/PickFast-secondary.webp"
-              alt="EK Logo Secondary"
-              className="absolute hover:scale-105 hover:-translate-y-3 left-10 lg:left-20 rotate-[-12deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-300 z-0 hover:z-20"
-            />
-            <img
-              src="/images/PickFast-primary.webp"
-              alt="EK Logo Primary"
-              className="relative hover:scale-105 hover:-translate-y-3 right-10 lg:right-0 rotate-[12deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-500 z-10"
-            />
-          </div>
         </div>
       </section>
       
@@ -191,11 +183,11 @@ export default function Home() {
           2xl:px-48 xl:px-36 lg:px-28 md:px-14 sm:px-16 px-8
           bg-[url('/backgrounds/whyus.webp')] sm:bg-no-repeat bg-top
           bg-[length:140%_auto] sm:bg-[length:300%_auto] md:bg-[length:200%_auto] lg:bg-[length:170%_auto] xl:bg-[length:110%_auto] 2xl:bg-[length:100%_auto]
-          sm:py-20 xl:pt-[24vh] xl:pb-[16vh]
+          py-20 xl:pt-[24vh] xl:pb-[16vh]
         "
       >
-        <h3 className="text-center text-[13px] md:text-[16px] text-dark/80 font-semibold">{t('whyUs.title')}</h3>
-        <h2 className="text-center text-[28px] md:text-[32px] text-black font-bold">{t('whyUs.subtitle')}</h2>
+        <h3 className="text-center text-[13px] md:text-[16px] text-dark/80 font-semibold">{nl.whyUs.title}</h3>
+        <h2 className="text-center text-[28px] md:text-[32px] text-black font-bold">{nl.whyUs.subtitle}</h2>
         {/* Cards div */}
         <div
           className="w-full flex xl:flex-row flex-col items-center xl:items-start xl:justify-between sm:space-y-6 space-y-10 xl:space-y-0 mt-10"
@@ -242,11 +234,11 @@ export default function Home() {
                 `
               }}
             >
-              <span className="font-semibold text-black text-[20px]">{t('whyUs.performance.title')}</span>
+              <span className="font-semibold text-black text-[20px]">{nl.whyUs.performance.title}</span>
               <p
                 className="text-[14px] font-medium text-dark mt-2"
               >
-                {t('whyUs.performance.description')}
+                {nl.whyUs.performance.description}
               </p>
               <div
                 className="flex w-full h-full justify-center items-center"
@@ -263,8 +255,8 @@ export default function Home() {
                     <div
                       className="flex flex-col justify-between bg-white w-full h-full rounded-[10px] py-2 px-4"
                     >
-                      <span className="text-black text-[13px]">{t(`whyUs.performance.messages.1.text`)}</span>
-                      <span className="text-dark/80 text-[10px]">{t(`whyUs.performance.messages.1.time`)}</span>
+                      <span className="text-black text-[13px]">{nl.whyUs.performance.messages[1].text}</span>
+                      <span className="text-dark/80 text-[10px]">{nl.whyUs.performance.messages[1].time}</span>
                     </div>
                   </div>
                   {/* Second bottom card border */}
@@ -275,8 +267,8 @@ export default function Home() {
                     <div
                       className="flex flex-col justify-between bg-white w-full h-full rounded-[10px] py-2 px-4"
                     >
-                      <span className="text-black text-[12px]">{t(`whyUs.performance.messages.2.text`)}</span>
-                      <span className="text-dark/80 text-[9px]">{t(`whyUs.performance.messages.2.time`)}</span>
+                      <span className="text-black text-[12px]">{nl.whyUs.performance.messages[2].text}</span>
+                      <span className="text-dark/80 text-[9px]">{nl.whyUs.performance.messages[2].time}</span>
                     </div>
                   </div>
                   {/* Third bottom card border */}
@@ -287,8 +279,8 @@ export default function Home() {
                     <div
                       className="flex flex-col justify-between bg-white w-full h-full rounded-[10px] py-2 px-4"
                     >
-                      <span className="text-black text-[11px]">{t(`whyUs.performance.messages.3.text`)}</span>
-                      <span className="text-dark/80 text-[8px]">{t(`whyUs.performance.messages.3.time`)}</span>
+                      <span className="text-black text-[11px]">{nl.whyUs.performance.messages[3].text}</span>
+                      <span className="text-dark/80 text-[8px]">{nl.whyUs.performance.messages[3].time}</span>
                     </div>
                   </div>
                 </div>
@@ -337,32 +329,31 @@ export default function Home() {
                 `
               }}
             >
-              <span className="font-semibold text-black text-[20px]">{t('whyUs.partnership.title')}</span>
+              <span className="font-semibold text-black text-[20px]">{nl.whyUs.partnership.title}</span>
               <p
                 className="text-[14px] font-medium text-dark mt-2"
               >
-                {t('whyUs.partnership.description')}
+                {nl.whyUs.partnership.description}
               </p>
                 {/* Animation */}
                 <div className="mt-8 px-2 flex flex-col w-full font-inter space-y-2">
-                  {/* Received message (left) */}
-                  <div className="z-20 flex flex-col items-start max-w-[180px]">
-                    <div className="relative bg-white text-black px-4 py-2 rounded-xl rounded-bl-none shadow-md">
-                      <span className="block text-[11px] text-dark">
-                        {t(`whyUs.partnership.messages.1`)}
-                      </span>
-                    </div>
-                    <div className="-mt-[1px] z-40 w-0 h-0 border-l-0 border-r-[16px] border-r-transparent border-t-[8px] border-t-white" />
-                  </div>
-
                   {/* Sent message (right) */}
                   <div className="z-20 flex flex-col items-end self-end max-w-[180px]">
                     <div className="relative bg-white text-black px-4 py-2 rounded-xl rounded-br-none shadow-md">
                       <span className="block text-[11px]">
-                        {t(`whyUs.partnership.messages.2`)}
+                        {nl.whyUs.partnership.messages[1]}
                       </span>
                     </div>
                     <div className="-mt-[1px] z-40 w-0 h-0 border-l-[16px] border-l-transparent border-r-0 border-t-[8px] border-t-white" />
+                  </div>
+                  {/* Received message (left) */}
+                  <div className="z-20 flex flex-col items-start max-w-[180px]">
+                    <div className="relative bg-white text-black px-4 py-2 rounded-xl rounded-bl-none shadow-md">
+                      <span className="block text-[11px] text-dark">
+                        {nl.whyUs.partnership.messages[2]}
+                      </span>
+                    </div>
+                    <div className="-mt-[1px] z-40 w-0 h-0 border-l-0 border-r-[16px] border-r-transparent border-t-[8px] border-t-white" />
                   </div>
                 </div>
             </div>
@@ -409,11 +400,11 @@ export default function Home() {
                 `
               }}
             >
-              <span className="font-semibold text-black text-[20px]">{t('whyUs.longevity.title')}</span>
+              <span className="font-semibold text-black text-[20px]">{nl.whyUs.longevity.title}</span>
               <p
                 className="text-[14px] font-medium text-dark mt-2 w-[73%]"
               >
-                {t('whyUs.longevity.description')}
+                {nl.whyUs.longevity.description}
               </p>
               <div
                 className="flex w-full h-full justify-center items-center"
@@ -437,10 +428,10 @@ export default function Home() {
                           />
 
                           {/* Original box on top */}
-                          <div className="bg-white flex flex-col justify-between p-3 w-36 h-20 rounded-[5px] shadow-[inset_0_0_0_0.5px_#CDCDCD] relative">
-                            <span className="block text-[12px]">{t(`whyUs.longevity.messages.col1.${num}.title`)}</span>
-                            <span className="block text-[10px] text-dark/80">{t(`whyUs.longevity.messages.col1.${num}.time`)}</span>
-                          </div>
+                                                     <div className="bg-white flex flex-col justify-between p-3 w-36 h-20 rounded-[5px] shadow-[inset_0_0_0_0.5px_#CDCDCD] relative">
+                             <span className="block text-[12px]">{nl.whyUs.longevity.messages.col1[num].title}</span>
+                             <span className="block text-[10px] text-dark/80">{nl.whyUs.longevity.messages.col1[num].time}</span>
+                           </div>
                         </div>
                       );
                     })}
@@ -460,10 +451,10 @@ export default function Home() {
                           />
 
                           {/* Original box on top */}
-                          <div className="bg-white flex flex-col justify-between p-3 w-36 h-20 rounded-[5px] shadow-[inset_0_0_0_0.5px_#CDCDCD] relative">
-                            <span className="block text-[12px]">{t(`whyUs.longevity.messages.col2.${num}.title`)}</span>
-                            <span className="block text-[10px] text-dark/80">{t(`whyUs.longevity.messages.col2.${num}.time`)}</span>
-                          </div>
+                                                     <div className="bg-white flex flex-col justify-between p-3 w-36 h-20 rounded-[5px] shadow-[inset_0_0_0_0.5px_#CDCDCD] relative">
+                             <span className="block text-[12px]">{nl.whyUs.longevity.messages.col2[num].title}</span>
+                             <span className="block text-[10px] text-dark/80">{nl.whyUs.longevity.messages.col2[num].time}</span>
+                           </div>
                         </div>
                       );
                     })}
@@ -475,33 +466,73 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Testimonial section 1 */}
+    
+      {/* Wat krijg je? */}
       <section
-        id="bacu-kozijnen"
+				className="2xl:px-48 xl:px-52 lg:px-32 md:px-24 sm:px-20 px-8
+				  flex flex-col xl:flex-row items-center xl:items-center justify-between gap-y-12 xl:gap-x-32
+					pt-[60px] sm:py-[80px] xl:py-[100px]
+				"
+			>
+				{/* Left */}
+				<div
+					className="flex flex-col items-center xl:items-start max-w-full xl:max-w-[50%]"
+				>
+					<h3 className="text-center xl:text-left text-[13px] md:text-[16px] text-dark/80 font-semibold">WAT KRIJG JE?</h3>
+					<h2 className="text-center xl:text-left text-[24px] sm:text-[28px] md:text-[32px] text-black font-bold leading-[120%]">Meer waarde dan waarvoor jij betaalt</h2>
+					<p className="flex flex-col text-left text-[14px] sm:text-[16px] text-dark/80 font-medium mt-5 gap-3">
+						<span>Je bestelt niet zomaar een website die niets doet omdat "iedereen heeft een website".</span>
+						<span>Het doel is afspraken, verkopen en winst verhogen. Wij doen alles om je ermee te helpen.
+						 Om dit doel te bereiken, is een goede web-design niet genoeg, daarom krijg je ook SEO-optimalisatie zodat het beter vindbaar is, Google Analytics instelling en veel andere extra's die je hiernaast kan zien.</span>
+						<span>Wij willen dat je jouw doel bereikt, daarom stellen wij dit: Indien jouw website in eerste 100 dagen zichzelf niet terug betaalt, werken wij voor gratis om dat te veranderen.</span>
+					</p>
+				</div>
+				{/* Right */}
+				<div
+					className="flex flex-col justify-center items-center bg-SecondaryBackground p-6 sm:p-8 lg:p-12 xl:p-16 shadow-xl text-center gap-3 sm:gap-4 w-full max-w-[500px] xl:max-w-none xl:min-w-[400px] 2xl:min-w-[500px]"
+				>
+					<span className="text-[14px] sm:text-[16px] font-medium">Website</span>
+					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ Analytics instellen – <strong>€200</strong></span>
+					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ SEO-optimalisatie – <strong>€300</strong></span>
+					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ 1 jaar gratis ondersteuning – <strong>€108</strong></span>
+					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ Webflow handleiding over website beheren – <strong>€100</strong></span>
+					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ Consultatie met verbeteringen indien website zich niet terugbetaald na 100 dagen – <strong>€500</strong></span>
+					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ Hulp met domein en e-mail – <strong>€100</strong></span>
+					<span className="flex flex-row items-center text-[13px] sm:text-[14px] lg:text-[16px]">+ Oneindige revisies – <strong>€</strong><span className="text-2xl sm:text-3xl">∞</span></span>
+					<span className="text-base sm:text-lg mt-2 sm:mt-4 font-medium">= Website + <strong>€1308+</strong> van extra's</span>
+				</div>
+      </section>
+
+      {/* Testamonial section 2 */}
+      <section
+        id="ek-autotechniek"
         className="
           2xl:px-48 xl:px-36 lg:px-28 md:px-14 sm:px-16 px-8
-          flex flex-col-reverse xl:flex-row gap-y-12 xl:gap-y-0 justify-between
+          flex flex-col xl:flex-row justify-center gap-y-12 xl:gap-y-0 gap-x-12
           pb-[70px] pt-[200px] xl:py-[100px]
         "
       >
         {/* Left side */}
-        <div className="self-center xl:self-auto flex flex-col justify-between relative space-y-3 max-w-[500px]">
-          <div>
+        <WebsiteSlides icon={<CarProfileIcon size={18} className="text-black" />} typeWebsite={nl.testimonial2.typeWebsite} imagesList={["/images/EK-primary.webp", "/images/EK-secondary.webp", "/images/EK-text.webp", "/images/EK-question.webp", "/images/EK-form.webp"]} />
+        {/* Right side */}
+        <div className="self-center xl:self-auto flex flex-col justify-between relative space-y-3 max-w-[450px]">
+          <div
+            className=""
+          >
             <span className="text-black text-[20px] font-semibold">
-              BaCu Kozijnen
+              EK Autotechniek
             </span>
             <p className="text-[16px] text-dark/80 font-medium mt-3">
-              {t('testimonial1.testimonial')}
+              {nl.testimonial2.testimonial}
             </p>
             <span className="inline-flex items-center bg-[#C36CFF]/20 px-1 w-fit -rotate-1 mt-5">
-              <span className="text-black text-[16px] font-medium rotate-1">{t('testimonial1.hashtag')}</span>
+              <span className="text-black text-[16px] font-medium rotate-1">{nl.testimonial2.hashtag}</span>
             </span>
           </div>
           <a
-            href="https://www.bacukozijnen.nl/"
+            href="https://www.ekautotechniek.nl/"
             onClick={() => {
-              trackGoal('open_bacukozijnen', 'Open BaCu Kozijnen website');
+              trackGoal('open_ekautotechniek', 'Open EK Autotechniek website');
             }}
             target="_blank"
             className="mt-6 xl:mt-0 gap-x-2 w-fit flex flex-row justify-center items-center px-3 py-2 bg-SecondaryBackground rounded-xl shadow-[0_0_12px_rgba(0,0,0,0.10)] hover:shadow-[0_0_12px_rgba(0,0,0,0.20)] transition-shadow duration-300"
@@ -510,16 +541,12 @@ export default function Home() {
             <span
               className="text-dark text-[13px] font-medium"
             >
-              bacukozijnen.nl
+              ekautotechniek.nl
             </span>
           </a>
         </div>
-
-        {/* Right side */}
-        <WebsiteSlides icon={<HouseIcon size={18} className="text-black" />} typeWebsite={t('testimonial1.typeWebsite')} imagesList={["/images/BaCu-primary.webp", "/images/BaCu-secondary.webp", "/images/BaCu-products.webp", "/images/BaCu-form.webp", "/images/BaCu-faq.webp"]} />
-
       </section>
-
+      
       {/* Pricing */}
       <section
         id="pricing"
@@ -533,8 +560,8 @@ export default function Home() {
         "
         >
           {/* Text */}
-          <h3 className="text-[13px] md:text-[16px] text-dark/80 font-semibold">{t('pricing.title')}</h3>
-          <h2 className="text-[28px] md:text-[32px] text-black font-bold leading-[114%] text-center xl:text-left" dangerouslySetInnerHTML={{ __html: t('pricing.subtitle') }} />
+          <h3 className="text-[13px] md:text-[16px] text-dark/80 font-semibold">{nl.pricing.title}</h3>
+          <h2 className="text-[28px] md:text-[32px] text-black font-bold leading-[114%] text-center xl:text-left" dangerouslySetInnerHTML={{ __html: nl.pricing.subtitle }} />
           {/* Cards */}
           <div
             className="mt-8 gap-y-8 flex w-full flex-col items-center xl:items-start xl:flex-row xl:justify-between"
@@ -560,7 +587,7 @@ export default function Home() {
                 <span
                   className="font-bold text-[26px] text-black leading-[136.6%]"
                 >
-                  {t('pricing.landing.title')}
+                  {nl.pricing.landing.title}
                 </span>
                 {/* Price */}
                 <div
@@ -576,34 +603,36 @@ export default function Home() {
                     onClick={() => navigateToRecurringPricing()}
                   >
                     <span>+</span>
-                    <span
-                      className="underline"
-                    >
-                      €<span className="font-semibold text-[16px]">0</span><span className="">{t('pricing.landing.yearlyText')}</span>
+                    <span>
+                      €<span className="font-semibold text-[16px]">0</span><span className="">/jaar</span>
+                    </span>
+                    <span> dan </span>
+                    <span>
+                      €<span className="font-semibold text-[16px]">9</span><span className="">{nl.pricing.landing.yearlyText}</span>
                     </span>
                   </div>
                 </div>
-                <p className="mt-1 text-dark text-[15px] font-medium">{t('pricing.landing.description')}</p>
+                <p className="mt-1 text-dark text-[15px] font-medium">{nl.pricing.landing.description}</p>
                 {/* Stroke */}
                 <div className='bg-dark/80 w-full h-[0.5px] my-7' />
 
-                <span className="text-[15px] font-bold" >{t('pricing.landing.everythingIn')}</span>
+                {/* <span className="text-[15px] font-bold" >{t('pricing.landing.everythingIn')}</span> */}
 
                 {/* Pros */}
-                <ul className="flex flex-col mt-5 gap-y-4">
-                  {[1, 2, 3, 4, 5].map((num) => (
+                <ul className="flex flex-col gap-y-4">
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((num) => (
                     <li key={num} className="flex flex-row gap-3">
                       <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                         <rect width="25" height="25" rx="12.5" fill="#CEE1FF" />
                         <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#3B82F6"/>
                       </svg>
-                      <span className="text-dark text-[15px] font-medium">{t(`pricing.landing.features.${num}`)}</span>
+                      <span className="text-dark text-[15px] font-medium">{nl.pricing.landing.features[num]}</span>
                     </li>
                   ))}
                 </ul>
                 {/* Button */}
                 <a
-                  href={t('pricing.landing.paymentLink')}
+                  href={nl.pricing.landing.paymentLink}
                   onClick={() => {
                     trackGoal('order_landing', 'Order a landing page');
                   }}
@@ -616,7 +645,7 @@ export default function Home() {
                     <span
                       className="text-[#3B9EF6] transition-colors duration-300 ease-in-out text-[16px] font-bold"
                     >
-                      {t('pricing.landing.button')}
+                      {nl.pricing.landing.button}
                     </span>
                   </div>
                 </a>
@@ -642,13 +671,13 @@ export default function Home() {
               >
                 <span className="absolute whitespace-nowrap top-6 right-6">
                   <span className="absolute bg-[#C36CFF]/20 left-[2px] top-[6px] bottom-[2px] right-[2px] -rotate-1"></span>
-                  <span className="relative text-dark px-2 text-sm font-medium">{t('pricing.standard.badge')}</span>
+                  <span className="relative text-dark px-2 text-sm font-medium">{nl.pricing.standard.badge}</span>
                 </span>
 
                 <span
                   className="font-bold text-[26px] text-black leading-[136.6%]"
                 >
-                  {t('pricing.standard.title')}
+                  {nl.pricing.standard.title}
                 </span>
                 {/* Price */}
                 <div
@@ -665,34 +694,36 @@ export default function Home() {
                     onClick={() => navigateToRecurringPricing()}
                   >
                     <span>+</span>
-                    <span
-                      className="underline"
-                    >
-                      €<span className="font-semibold text-[16px]">0</span><span className="">{t('pricing.standard.yearlyText')}</span>
+                    <span>
+                      €<span className="font-semibold text-[16px]">0</span><span className="">/jaar</span>
+                    </span>
+                    <span> dan </span>
+                    <span>
+                      €<span className="font-semibold text-[16px]">9</span><span className="">{nl.pricing.standard.yearlyText}</span>
                     </span>
                   </div>
                 </div>
-                <p className="mt-1 text-dark text-[15px] font-medium">{t('pricing.standard.description')}</p>
+                <p className="mt-1 text-dark text-[15px] font-medium">{nl.pricing.standard.description}</p>
                 {/* Stroke */}
                 <div className='bg-dark/80 w-full h-[0.5px] my-7' />
 
-                <span className="text-[15px] font-bold" >{t('pricing.standard.everythingIn')}</span>
+                {/* <span className="text-[15px] font-bold" >{t('pricing.standard.everythingIn')}</span> */}
 
                 {/* Pros */}
-                <ul className="flex flex-col mt-5 gap-y-4">
-                  {[1, 2, 3, 4, 5].map((num) => (
+                <ul className="flex flex-col gap-y-4">
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((num) => (
                     <li key={num} className="flex flex-row gap-3">
                       <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                         <rect width="25" height="25" rx="12.5" fill="#E2E1FF"/>
                         <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#5A57C2"/>
                       </svg>
-                      <span className="text-dark text-[15px] font-medium">{t(`pricing.standard.features.${num}`)}</span>
+                      <span className="text-dark text-[15px] font-medium">{nl.pricing.standard.features[num]}</span>
                     </li>
                   ))}
                 </ul>
                 {/* Button */}
                 <a
-                  href={t('pricing.standard.paymentLink')}
+                  href={nl.pricing.standard.paymentLink}
                   onClick={() => {
                     trackGoal('order_standard', 'Order a standard website');
                   }}
@@ -705,7 +736,7 @@ export default function Home() {
                     <span
                       className="text-[#7652B3] transition-colors duration-300 ease-in-out text-[16px] font-bold"
                     >
-                      {t('pricing.standard.button')}
+                      {nl.pricing.standard.button}
                     </span>
                   </div>
                 </a>
@@ -732,7 +763,7 @@ export default function Home() {
                 <span
                   className="font-bold text-[26px] text-black leading-[136.6%]"
                 >
-                  {t('pricing.premium.title')}
+                  {nl.pricing.premium.title}
                 </span>
                 {/* Price */}
                 <div
@@ -743,24 +774,12 @@ export default function Home() {
                   >
                     €2000+
                   </span>
-
-                  <div
-                    className="text-[14px] cursor-pointer font-medium ml-2 mb-2 self-end text-dark transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:opacity-80"
-                    onClick={() => navigateToRecurringPricing()}
-                  >
-                    <span>+</span>
-                    <span
-                      className="underline"
-                    >
-                      €<span className="font-semibold text-[16px]">0</span><span className="">{t('pricing.premium.yearlyText')}</span>
-                    </span>
-                  </div>
                 </div>
-                <p className="mt-1 text-dark text-[15px] font-medium">{t('pricing.premium.description')}</p>
+                <p className="mt-1 text-dark text-[15px] font-medium">{nl.pricing.premium.description}</p>
                 {/* Stroke */}
                 <div className='bg-dark/80 w-full h-[0.5px] my-7' />
 
-                <span className="text-[15px] font-bold" >{t('pricing.premium.everythingIn')}</span>
+                <span className="text-[15px] font-bold" >{nl.pricing.premium.everythingIn}</span>
 
                 {/* Pros */}
                 <ul className="flex flex-col mt-5 gap-y-4">
@@ -770,7 +789,7 @@ export default function Home() {
                         <rect width="25" height="25" rx="12.5" fill="#FFE9CB"/>
                         <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#FF9500"/>
                       </svg>
-                      <span className="text-dark text-[15px] font-medium">{t(`pricing.premium.features.${num}`)}</span>
+                      <span className="text-dark text-[15px] font-medium">{nl.pricing.premium.features[num]}</span>
                     </li>
                   ))}
                 </ul>
@@ -789,7 +808,7 @@ export default function Home() {
                     <span
                       className="text-[#FA8700] transition-colors duration-300 ease-in-out text-[16px] font-bold"
                     >
-                      {t('pricing.premium.button')}
+                      {nl.pricing.premium.button}
                     </span>
                   </div>
                 </a>
@@ -802,7 +821,7 @@ export default function Home() {
       <section
         className="px-12 flex flex-col gap-y-5 items-center justify-center text-center my-[120px]"
       >
-        <h2 className="text-[28px] md:text-[32px] text-black font-bold leading-[114%]">{t('cta.title')}</h2>
+        <h2 className="text-[28px] md:text-[32px] text-black font-bold leading-[114%]">{nl.cta.title}</h2>
         <a
             href="https://calendly.com/nazar_yakov/yakoweb"
             onClick={() => {
@@ -817,49 +836,45 @@ export default function Home() {
               <span
                 className="text-white text-[15px] font-semibold"
               >
-                {t('cta.button')}
+                {nl.cta.button}
               </span>
               <span
                 className="absolute text-white text-[15px] blur-xs group-hover:opacity-75 opacity-50 transform transition-opacity duration-300 ease-in-out font-semibold"
                 aria-hidden="true"
               >
-                {t('cta.button')}
+                {nl.cta.button}
               </span>
 
             </div>
           </a>
       </section>
       
-      {/* Testamonial section 2 */}
+      {/* Testimonial section 1 */}
       <section
-        id="ek-autotechniek"
+        id="bacu-kozijnen"
         className="
           2xl:px-48 xl:px-36 lg:px-28 md:px-14 sm:px-16 px-8
-          flex flex-col xl:flex-row justify-center gap-y-12 xl:gap-y-0 gap-x-12
+          flex flex-col-reverse xl:flex-row gap-y-12 xl:gap-y-0 justify-between
           py-[100px]
         "
       >
         {/* Left side */}
-        <WebsiteSlides icon={<CarProfileIcon size={18} className="text-black" />} typeWebsite={t('testimonial2.typeWebsite')} imagesList={["/images/EK-primary.webp", "/images/EK-secondary.webp", "/images/EK-text.webp", "/images/EK-question.webp", "/images/EK-form.webp"]} />
-        {/* Right side */}
-        <div className="self-center xl:self-auto flex flex-col justify-between relative space-y-3 max-w-[450px]">
-          <div
-            className=""
-          >
+        <div className="self-center xl:self-auto flex flex-col justify-between relative space-y-3 max-w-[500px]">
+          <div>
             <span className="text-black text-[20px] font-semibold">
-              EK Autotechniek
+              BaCu Kozijnen
             </span>
             <p className="text-[16px] text-dark/80 font-medium mt-3">
-              {t('testimonial2.testimonial')}
+              {nl.testimonial1.testimonial}
             </p>
             <span className="inline-flex items-center bg-[#C36CFF]/20 px-1 w-fit -rotate-1 mt-5">
-              <span className="text-black text-[16px] font-medium rotate-1">{t('testimonial2.hashtag')}</span>
+              <span className="text-black text-[16px] font-medium rotate-1">{nl.testimonial1.hashtag}</span>
             </span>
           </div>
           <a
-            href="https://www.ekautotechniek.nl/"
+            href="https://www.bacukozijnen.nl/"
             onClick={() => {
-              trackGoal('open_ekautotechniek', 'Open EK Autotechniek website');
+              trackGoal('open_bacukozijnen', 'Open BaCu Kozijnen website');
             }}
             target="_blank"
             className="mt-6 xl:mt-0 gap-x-2 w-fit flex flex-row justify-center items-center px-3 py-2 bg-SecondaryBackground rounded-xl shadow-[0_0_12px_rgba(0,0,0,0.10)] hover:shadow-[0_0_12px_rgba(0,0,0,0.20)] transition-shadow duration-300"
@@ -868,10 +883,14 @@ export default function Home() {
             <span
               className="text-dark text-[13px] font-medium"
             >
-              ekautotechniek.nl
+              bacukozijnen.nl
             </span>
           </a>
         </div>
+
+        {/* Right side */}
+        <WebsiteSlides icon={<HouseIcon size={18} className="text-black" />} typeWebsite={nl.testimonial1.typeWebsite} imagesList={["/images/BaCu-primary.webp", "/images/BaCu-secondary.webp", "/images/BaCu-products.webp", "/images/BaCu-form.webp", "/images/BaCu-faq.webp"]} />
+
       </section>
 
       {/* FAQs */}
@@ -880,14 +899,14 @@ export default function Home() {
         className="flex flex-col items-center px-6 sm:py-20 xl:py-16"
       >
         {/* Text */}
-        <h3 className="text-center text-[13px] md:text-[16px] text-dark/80 font-semibold">{t('faq.title')}</h3>
+        <h3 className="text-center text-[13px] md:text-[16px] text-dark/80 font-semibold">{nl.faq.title}</h3>
         <h2
           className="text-center text-[28px] md:text-[32px] text-black font-bold leading-[114%] mb-14"
-          dangerouslySetInnerHTML={{ __html: t('faq.subtitle') }}
+          dangerouslySetInnerHTML={{ __html: nl.faq.subtitle }}
         />
         {/* FAQ part */}
         <ul>
-          {t.raw('faq.items').map((item, index) => {
+          {nl.faq.items.map((item, index) => {
             const isOpen = openIndex === index;
 
             return (
@@ -935,43 +954,27 @@ export default function Home() {
         {/* Below */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 py-6 font-medium text-dark text-[14px]">
           <div className="flex flex-row gap-x-4">
-            <span>{t('footer.copyright')}</span>
+            <span>{nl.footer.copyright}</span>
             <Link
-              href={t('footer.termsPage')}
+              href={nl.footer.termsPage}
               className="underline"
             >
-              {t('footer.terms')}
+              {nl.footer.terms}
             </Link>
             <Link
-              href={t('footer.privacyPage')}
+              href={nl.footer.privacyPage}
               className="underline"
             >
-              {t('footer.privacy')}
+              {nl.footer.privacy}
             </Link>
             <Link
-              href={t('footer.cookiesPage')}
+              href={nl.footer.cookiesPage}
               className="underline"
             >
               Cookies
             </Link>
           </div>
-          <div className="flex flex-row items-center gap-3">
-            <a 
-              href="/" 
-              onClick={() => changeLanguage('NL')}
-              className={`transition-colors ${pathname === '/' ? 'font-semibold text-black' : 'text-dark/80 hover:text-black'}`}
-            >
-              NL
-            </a>
-            <div className="w-[1px] h-[28px] bg-dark" />
-            <a 
-              href="/en" 
-              onClick={() => changeLanguage('EN')}
-              className={`transition-colors ${pathname === '/en' ? 'font-semibold text-black' : 'text-dark/80 hover:text-black'}`}
-            >
-              EN
-            </a>
-          </div>
+
         </div>
 
         {/* Line */}
@@ -981,21 +984,21 @@ export default function Home() {
         <div className="mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 font-medium text-dark text-[14px]">
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-7 max-w-full">
             <img src="/logos/YakoWeb.svg" alt="Logo" className="w-[130px] h-auto select-none" draggable="false" />
-            <span className="max-w-[300px]">{t('footer.description')}</span>
+            <span className="max-w-[300px]">{nl.footer.description}</span>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-7">
-            <a onClick={() => {trackGoal('email_us', 'Email us')}}href="mailto:hello@yakoweb.com" className="max-w-[300px] hover:text-black transition-all duration-200 break-words">{t('footer.email')}</a>
+            <a onClick={() => {trackGoal('email_us', 'Email us')}}href="mailto:hello@yakoweb.com" className="max-w-[300px] hover:text-black transition-all duration-200 break-words">{nl.footer.email}</a>
             <div className="flex flex-row gap-3">
-              <a aria-label={t('footer.socialLinks.xProfile')} target="_blank" href="https://x.com/nazar_yakov" className="group">
+              <a aria-label={nl.footer.socialLinks.xProfile} target="_blank" href="https://x.com/nazar_yakov" className="group">
                 <XLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
               </a>
-              <a aria-label={t('footer.socialLinks.instagramProfile')} target="_blank" href="https://www.instagram.com/yako.web/" className="group">
+              <a aria-label={nl.footer.socialLinks.instagramProfile} target="_blank" href="https://www.instagram.com/yako.web/" className="group">
                 <InstagramLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
               </a>
-              <a aria-label={t('footer.socialLinks.facebookProfile')} target="_blank" href="https://www.facebook.com/nazar.yakov" className="group">
+              <a aria-label={nl.footer.socialLinks.facebookProfile} target="_blank" href="https://www.facebook.com/nazar.yakov" className="group">
                 <FacebookLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
               </a>
-              <a aria-label={t('footer.socialLinks.linkedInProfile')} target="_blank" href="https://www.linkedin.com/in/nazar-yakov/" className="group">
+              <a aria-label={nl.footer.socialLinks.linkedInProfile} target="_blank" href="https://www.linkedin.com/in/nazar-yakov/" className="group">
                 <LinkedinLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
               </a>
             </div>

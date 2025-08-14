@@ -1,14 +1,12 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
 import { setCookieConsent, getCookieConsent } from '../utils/cookieConsent';
 
 export default function CookiePreferencesModal({ isOpen, onClose, onSave }) {
   const [preferences, setPreferences] = useState({
     analytics: true
   });
-  const t = useTranslations('cookies.preferences');
 
   useEffect(() => {
     // Load existing preferences when modal opens
@@ -50,15 +48,15 @@ export default function CookiePreferencesModal({ isOpen, onClose, onSave }) {
         className="bg-white rounded-lg p-6 max-w-2xl w-full mx-4 shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <h2 className="text-xl font-semibold mb-4">{t('title')}</h2>
+        <h2 className="text-xl font-semibold mb-4">Cookie-voorkeuren</h2>
         
         <div className="space-y-6">
           {/* Strictly Necessary Cookies */}
           <div className="space-y-2">
             <div className="flex items-center justify-between">
               <label className="font-medium text-dark">
-                {t('necessary.title')}
-                <span className="text-gray-500 text-sm ml-2">{t('necessary.required')}</span>
+                Strikt noodzakelijke cookies
+                <span className="text-gray-500 text-sm ml-2">(vereist)</span>
               </label>
               <input
                 type="checkbox"
@@ -68,14 +66,14 @@ export default function CookiePreferencesModal({ isOpen, onClose, onSave }) {
               />
             </div>
             <p className="text-gray-600 text-sm">
-              {t('necessary.description')}
+              Deze cookies zijn essentieel voor het goed functioneren van de website. Ze maken kernfuncties mogelijk zoals navigatie en beveiliging. Deze cookies kunnen niet worden uitgeschakeld.
             </p>
           </div>
 
           {/* Analytics Cookies */}
           <div className="space-y-2">
             <div className="flex items-center justify-between">
-              <label className="font-medium text-dark">{t('analytics.title')}</label>
+              <label className="font-medium text-dark">Analytische cookies</label>
               <input
                 type="checkbox"
                 checked={preferences.analytics}
@@ -84,20 +82,20 @@ export default function CookiePreferencesModal({ isOpen, onClose, onSave }) {
               />
             </div>
             <p className="text-gray-600 text-sm">
-              {t('analytics.description')}
+              Deze cookies helpen ons te begrijpen hoe bezoekers onze website gebruiken — bijvoorbeeld welke pagina's populair zijn of hoe lang mensen blijven. Dit stelt ons in staat om de prestaties en gebruiksvriendelijkheid te verbeteren. De verzamelde gegevens zijn anoniem en geaggregeerd.
             </p>
             <div className="flex flex-col text-sm text-gray-500 pl-2 gap-2 pt-2">
               <p>
                 <span className="text-dark bg-gray-300 px-[3px] py-[2px] rounded-sm">
-                  {t('analytics.cookies.visitor.name')}
+                  datafast_visitor_id
                 </span>
-                {' – '}{t('analytics.cookies.visitor.description')}{' | '}{t('analytics.cookies.visitor.duration')}
+                {' – '}Identificeert unieke bezoeken{' | '}1 jaar
               </p>
               <p>
                 <span className="text-dark bg-gray-300 px-[3px] py-[2px] rounded-sm">
-                  {t('analytics.cookies.session.name')}
+                  datafast_session_id
                 </span>
-                {' – '}{t('analytics.cookies.session.description')}{' | '}{t('analytics.cookies.session.duration')}
+                {' – '}Volgt sessie-activiteit{' | '}30 minuten
               </p>
             </div>
           </div>
@@ -108,19 +106,19 @@ export default function CookiePreferencesModal({ isOpen, onClose, onSave }) {
             onClick={handleRejectAll}
             className="cursor-pointer px-4 py-2 rounded-md text-sm bg-gray-100 hover:bg-gray-200 w-full sm:w-auto"
           >
-            {t('buttons.rejectAll')}
+            Weigeren
           </button>
           <button
             onClick={handleSave}
             className="cursor-pointer px-4 py-2 rounded-md text-sm bg-gray-100 hover:bg-gray-200 w-full sm:w-auto"
           >
-            {t('buttons.savePreferences')}
+            Voorkeuren opslaan
           </button>
           <button
             onClick={handleAcceptAll}
             className="cursor-pointer px-4 py-2 rounded-md text-sm bg-blue-600 text-white hover:bg-blue-700 w-full sm:w-auto"
           >
-            {t('buttons.acceptAll')}
+            Accepteren
           </button>
         </div>
       </div>

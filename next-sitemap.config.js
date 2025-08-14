@@ -7,20 +7,18 @@ const config = {
     changefreq: 'monthly',
     priority: 0.5,
     exclude: [
-      '/landing-thank-you',
-      '/standard-thank-you',
-      '/en/landing-thank-you',
-      '/en/standard-thank-you'
+      '/api/*',           // Exclude API routes
+      '/_next/*',         // Exclude Next.js internals
     ],
-    // Handle i18n with Dutch as default (root) and English with /en prefix
+    // Dutch-only website configuration
     alternateRefs: [
       {
         href: 'https://www.yakoweb.com',
         hreflang: 'nl',
       },
       {
-        href: 'https://www.yakoweb.com/en',
-        hreflang: 'en',
+        href: 'https://www.yakoweb.com',
+        hreflang: 'x-default',
       },
     ],
     // Add additional properties to ensure routes are included
@@ -28,46 +26,33 @@ const config = {
       const paths = [];
       const routes = [
         { path: '/', priority: 1.0, changefreq: 'weekly' },
-        { path: '/privacy', priority: 0.3, changefreq: 'monthly' },
-        { path: '/terms', priority: 0.3, changefreq: 'monthly' }
+        { path: '/privacyverklaring', priority: 0.3, changefreq: 'monthly' },
+        { path: '/algemene-voorwaarden', priority: 0.3, changefreq: 'monthly' }
       ];
-      const locales = ['', '/en']; // Empty string for Dutch (default at root), /en for English
 
-      // Generate all combinations of routes and locales
+      // Generate paths for Dutch-only website
       for (const route of routes) {
-        for (const locale of locales) {
-          // Skip the locale prefix for Dutch (default) routes
-          const path = locale ? `${locale}${route.path}` : route.path;
-          paths.push({
-            loc: path,
-            changefreq: route.changefreq || config.changefreq,
-            priority: route.priority || config.priority,
-            lastmod: new Date().toISOString(),
-            alternateRefs: config.alternateRefs,
-            // Add image sitemap entries for pages that have images
-            ...(route.path === '/' && {
-              images: [
-                {
-                  loc: 'https://www.yakoweb.com/images/hero.webp',
-                  title: 'YakoWeb Hero Image',
-                  caption: 'YakoWeb Web Development and Design Services',
-                },
-                {
-                  loc: 'https://www.yakoweb.com/logos/YakoWeb.svg',
-                  title: 'YakoWeb Logo',
-                  caption: 'YakoWeb Company Logo',
-                }
-              ]
-            })
-          });
-        }
+        paths.push({
+          loc: route.path,
+          changefreq: route.changefreq || config.changefreq,
+          priority: route.priority || config.priority,
+          lastmod: new Date().toISOString(),
+          alternateRefs: config.alternateRefs,
+
+        });
       }
 
       return paths;
     },
     transform: async (config, path) => {
       // Skip excluded paths
-      if (config.exclude.includes(path)) {
+      if (config.exclude.some(pattern => {
+        if (pattern.includes('*')) {
+          const regex = new RegExp(pattern.replace(/\*/g, '.*'));
+          return regex.test(path);
+        }
+        return path === pattern;
+      })) {
         return null;
       }
 
@@ -75,10 +60,10 @@ const config = {
       let priority = config.priority;
       let changefreq = config.changefreq;
 
-      if (path === '/' || path === '/en') {
+      if (path === '/') {
         priority = 1.0;
         changefreq = 'weekly';
-      } else if (path.includes('/privacy') || path.includes('/terms')) {
+      } else if (path.includes('/privacyverklaring') || path.includes('/algemene-voorwaarden')) {
         priority = 0.3;
         changefreq = 'monthly';
       }
@@ -90,21 +75,7 @@ const config = {
         priority,
         lastmod: new Date().toISOString(),
         alternateRefs: config.alternateRefs ?? [],
-        // Add image sitemap entries for the homepage
-        ...(path === '/' && {
-          images: [
-            {
-              loc: 'https://www.yakoweb.com/images/hero.webp',
-              title: 'YakoWeb Hero Image',
-              caption: 'YakoWeb Web Development and Design Services',
-            },
-            {
-              loc: 'https://www.yakoweb.com/logos/YakoWeb.svg',
-              title: 'YakoWeb Logo',
-              caption: 'YakoWeb Company Logo',
-            }
-          ]
-        })
+
       }
     },
   };

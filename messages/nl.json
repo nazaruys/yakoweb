@@ -1,42 +1,42 @@
 {
 	"HomePage": {
-		"title": "Websites op maat,<br/>gemaakt om te converteren",
+		"title": "Websites op maat,<br/>voor autobedrijven",
 		"badge": "Nog 1 plek voor augustus",
-		"subtitle": "Verander bezoekers in klanten en website-stress in een verre herinnering.",
+		"subtitle": "Krijg een website voor je autobedrijf die 24/7 extra klanten binnenhaalt, alle info toont en telefoontjes bespaart.",
 		"button1": "Kies je pakket",
 		"button2": "Of plan een gesprek",
 		"whyUs": {
-			"title": "WAAROM KIEZEN BEDRIJVEN VOOR YAKOWEB?",
+			"title": "WAAROM KIEZEN AUTOBEDRIJVEN VOOR YAKOWEB?",
 			"subtitle": "De partner die je helpt groeien",
 			"performance": {
 				"title": "Prestatie",
-				"description": "Onze missie is om bedrijven te helpen meer omzet te genereren. We voeren een diepgaande analyse uit van jouw branche en creëren websites die winst opleveren.",
+				"description": "Onze missie is om autobedrijven te helpen meer klanten te krijgen met minder moeite. We creëren websites die winst opleveren door onze expertise in marketing voor autobedrijven.",
 				"messages": {
 					"1": {
-						"text": "Ben wil graag een gesprek inplannen.",
+						"text": "Thijs heeft net een afspraak gemaakt.",
 						"time": "Zojuist"
 					},
 					"2": {
-						"text": "Mike heeft net een bestelling geplaatst voor €499,00.",
+						"text": "Pim stelt een vraag via de formulier.",
 						"time": "3 minuten geleden"
 					},
 					"3": {
-						"text": "Emma heeft net een afspraak gemaakt.",
+						"text": "Emma heeft route naar je garage gepland.",
 						"time": "1 uur geleden"
 					}
 				}
 			},
 			"partnership": {
-				"title": "Samenwerking",
-				"description": "Van eerste idee tot eindresultaat houden we je op de hoogte en vol vertrouwen. Zo sluit het eindresultaat aan bij jouw doelen, niet alleen bij ons plan.",
+				"title": "Perfectie",
+				"description": "Wij willen dat de website bij jouw doelen aansluit, daarom bieden wij onbeperkte revisies en verbeteringen totdat je tevreden bent.",
 				"messages": {
-					"1": "We hebben de website beter vindbaar gemaakt op Google.",
-					"2": "Bedankt! Dit is precies wat ik nodig had."
+					"1": "Kunnen alle knoppen afgeronde hoeken hebben?",
+					"2": "Natuurlijk! Het is al gereed. Iets anders?"
 				}
 			},
 			"longevity": {
 				"title": "Duurzaamheid",
-				"description": "We zijn er voor de lange termijn. Je kunt altijd om updates vragen, we blijven verbonden, betrokken en goed bereikbaar.",
+				"description": "We zijn er voor de lange termijn. We maken checks elke maand en verbeteringen elke 3 maanden, je kunt ook altijd om updates vragen.",
 				"messages": {
 					"col1": {
 						"1": { "title": "Paginalaadtijd op mobiel verbeterd", "time": "3 dagen geleden" },
@@ -86,7 +86,7 @@
 			}
 		},
 		"testimonial1": {
-			"testimonial": "We hebben een 6-pagina website gemaakt voor BaCu Kozijnen, compleet met heldere en effectieve copywriting. De site toont hun producten en diensten, bouwt geloofwaardigheid op en helpt bezoekers om te zetten naar klanten.",
+			"testimonial": "Hoewel niet autobedrijf, hebben we een 6-pagina website gemaakt voor BaCu Kozijnen, compleet met heldere en effectieve copywriting. De site toont hun producten en diensten, bouwt geloofwaardigheid op en helpt bezoekers om te zetten naar klanten.",
 			"hashtag": "#Standaard",
 			"typeWebsite": "Kozijnen & deuren website"
 		},
@@ -96,14 +96,20 @@
 			"landing": {
 				"title": "Landing",
 				"description": "Een op maat gemaakte landingspagina die je bedrijf professioneel presenteert en nieuwe klanten genereert.",
-				"yearlyText": "/jaar",
+				"yearlyText": "/maand",
 				"everythingIn": "Alles in Landing:",
 				"features": {
 					"1": "1 landingspagina",
-					"2": "Mobiel-vriendelijk ontwerp",
-					"3": "Volledige copywriting",
-					"4": "Basis contactformulieren",
-					"5": "Geleverd binnen 10 dagen"
+					"2": "Alles geleverd binnen 2 weken",
+					"3": "Mobiel-vriendelijk ontwerp",
+					"4": "SEO-optimalisatie",
+					"5": "Google Analytics",
+					"6": "Hulp met domein en e-mail",
+					"7": "1 jaar gratis ondersteuning",
+					"8": "Zelf bewerken",
+					"9": "100 dagen zich terugbetaald garantie",
+					"10": "Onbeperkte revisies",
+					"11": "Restitueerbare betaling"
 				},
 				"paymentLink": "https://buy.stripe.com/dRmbIUe2l7ngaMQ0vp5J603",
 				"button": "Bestel je website"
@@ -112,14 +118,20 @@
 				"title": "Standaard",
 				"badge": "#meest gekozen",
 				"description": "Een website met meerdere pagina's, ontworpen om je diensten te presenteren en klantvertrouwen op te bouwen.",
-				"yearlyText": "/jaar",
+				"yearlyText": "/maand",
 				"everythingIn": "Alles in Landing, plus:",
 				"features": {
 					"1": "Tot 6 pagina's",
-					"2": "Professioneel ontwerp",
-					"3": "Geavanceerde formulieren",
-					"4": "Tot 2 talen",
-					"5": "Geleverd binnen 3 weken"
+					"2": "Alles geleverd binnen 3 weken",
+					"3": "Mobiel-vriendelijk ontwerp",
+					"4": "SEO-optimalisatie",
+					"5": "Google Analytics",
+					"6": "Hulp met domein en e-mail",
+					"7": "1 jaar gratis ondersteuning",
+					"8": "Zelf bewerken",
+					"9": "100 dagen zich terugbetaald garantie",
+					"10": "Onbeperkte revisies",
+					"11": "Restitueerbare betaling"
 				},
 				"paymentLink": "https://buy.stripe.com/00waEQaQ9fTM7AE6TN5J604",
 				"button": "Bestel je website"
@@ -127,7 +139,7 @@
 			"premium": {
 				"title": "Premium",
 				"description": "Een complete website met extra functies zoals configurators, API-integraties en betalingsverwerking.",
-				"yearlyText": "/jaar",
+				"yearlyText": "/maand",
 				"everythingIn": "Alles in Standaard, plus:",
 				"features": {
 					"1": "Premium UI/UX ontwerp",
@@ -142,7 +154,7 @@
 		"testimonial2": {
 			"testimonial": "We hebben een 9-pagina website gebouwd voor EK Autotechniek met volledige copywriting. Het toont hun diensten en bouwt vertrouwen op. We hebben ook het domein, zakelijke e-mail en hosting opgezet.",
 			"hashtag": "#Standard",
-			"typeWebsite": "Autobedrijf website"
+			"typeWebsite": "Autobedrijf in Almere"
 		},
 		"cta": {
 			"title": "Niet zeker welk pakket het beste bij je past?",
@@ -185,10 +197,10 @@
 		"footer": {
 			"copyright": "YakoWeb © 2025",
 			"terms": "Voorwaarden",
-			"termsPage": "/terms",
+			"termsPage": "/algemene-voorwaarden",
 			"privacy": "Privacy",
-			"privacyPage": "/privacy",
-			"cookiesPage": "/privacy#cookies-tracking",
+			"privacyPage": "/privacyverklaring",
+			"cookiesPage": "/privacyverklaring#cookies-tracking",
 			"description": "Verander bezoekers in klanten en website-stress in een verre herinnering.",
 			"email": "hello@yakoweb.com",
 			"socialLinks": {
