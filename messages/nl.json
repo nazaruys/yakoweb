@@ -28,7 +28,7 @@
 			},
 			"partnership": {
 				"title": "Perfectie",
-				"description": "Wij willen dat de website bij jouw doelen aansluit, daarom bieden wij onbeperkte revisies en verbeteringen totdat je tevreden bent.",
+				"description": "Wij willen dat de website bij jouw doelen aansluit, daarom krijg je onbeperkte revisies en verbeteringen totdat je tevreden bent.",
 				"messages": {
 					"1": "Kunnen alle knoppen afgeronde hoeken hebben?",
 					"2": "Natuurlijk! Het is al gereed. Iets anders?"
@@ -36,7 +36,7 @@
 			},
 			"longevity": {
 				"title": "Duurzaamheid",
-				"description": "We zijn er voor de lange termijn. We maken checks elke maand en verbeteringen elke 3 maanden, je kunt ook altijd om updates vragen.",
+				"description": "We zijn er voor de lange termijn. Je krijgt checks elke maand en verbeteringen elke 3 maanden, je kunt ook altijd om updates vragen.",
 				"messages": {
 					"col1": {
 						"1": { "title": "Paginalaadtijd op mobiel verbeterd", "time": "3 dagen geleden" },
@@ -165,32 +165,32 @@
 			"subtitle": "Heb je vragen?<br/>Wij hebben antwoorden!",
 			"items": [
 				{
-					"question": "Met wie werken jullie?",
-					"answer": "We werken met autobedrijven."
+					"question": "Voor welke autobedrijven maken jullie websites?",
+					"answer": "We werken met alle soorten autobedrijven: garages, APK-stations, bandenservice, autoschadeherstellers, dealerships en gespecialiseerde werkplaatsen. Van kleine familiebedrijven tot grotere ondernemingen. Onze focus op de automotive sector betekent dat we precies weten welke informatie jullie klanten zoeken en hoe we meer afspraken kunnen genereren."
 				},
 				{
-					"question": "Hoe kunnen we beginnen?",
-					"answer": "Je kunt hierboven je betaling doen om te beginnen. Daarna word je doorgestuurd naar een formulier waar je je bedrijfsgegevens kunt delen en optioneel een gesprek kunt inplannen. Als je nog niet 100% zeker bent, kun je een gratis introgesprek boeken om de mogelijkheden te verkennen en vragen te stellen."
+					"question": "Hoe kunnen we beginnen met onze website?",
+					"answer": "Kies hierboven je pakket en doe je betaling. Je wordt automatisch doorgestuurd naar een formulier waar je je bedrijfsgegevens invult. Nog niet 100% zeker? Boek dan eerst een <a style='text-decoration: underline; color: #2563eb; font-weight: bold;' href='https://calendly.com/nazar_yakov/yakoweb' target='_blank'>gratis introgesprek</a> of neem contact op om alle mogelijkheden te bespreken en je vragen te stellen."
 				},
 				{
-					"question": "Hoe werkt de betaling?",
-					"answer": "Je kunt volledig betalen, maar 50% voor we beginnen en 50% na oplevering is ook mogelijk. Betalingen worden veilig verwerkt via Stripe. Je ontvangt ook een factuur na de betaling."
+					"question": "Hoe werkt de betaling en facturatie?",
+					"answer": "Je kunt kiezen: volledig vooruitbetalen óf 50% bij de start en 50% na oplevering. Alle betalingen worden veilig verwerkt via Stripe en je ontvangt automatisch een factuur. Zo heb je altijd een duidelijk overzicht van je investering."
 				},
 				{
 					"question": "Bieden jullie restitutie aan?",
-					"answer": "Ja, neem contact op met ons voor meer info."
+					"answer": "Ja, kijk <a style='text-decoration: underline; color: #2563eb; font-weight: bold;' href='/algemene-voorwaarden#terugbetaling-en-annulering' target='_blank'>hier</a> voor meer info."
 				},
 				{
 					"question": "Wat als ik het ontwerp niet mooi vind?",
-					"answer": "We sturen je altijd elke update voor feedback. Als je niet tevreden bent, passen we het ontwerp aan. Als de volledige website al klaar is, kunnen we niet alles opnieuw ontwerpen."
+					"answer": "We sturen je elke update voor feedback. Als je niet tevreden bent, passen we het aan, totdat je tevreden bent!"
 				},
 				{
 					"question": "Zijn er extra kosten?",
-					"answer": "Geen extra kosten van ons. Als je website zaken nodig heeft zoals hosting of een betaald abonnement, betaal je die rechtstreeks aan de provider."
+					"answer": "Van ons geen extra kosten. Voor hosting gebruiken we Webflow (ongeveer €12/maand). Een domeinnaam kost circa €10-15/jaar. Optionele zakelijke e-mail via Google Workspace kost ongeveer €5/maand. Deze en alle andere kosten betaal je rechtstreeks aan de leveranciers."
 				},
 				{
-					"question": "Bieden jullie doorlopende ondersteuning?",
-					"answer": "Ja. We bieden ondersteuning om je website snel, fris en optimaal presterend te houden:<br /><br />\n<ul class='list-disc ml-4 text-[14px]'>\n  <li><strong>€108/jaar (Landing & Standaard):</strong> Inclusief regelmatige prestatiecontroles, content updates (zoals tekst, afbeeldingen of secties), uptime monitoring en doorlopende conversie-optimalisaties.</li>\n</ul>\n<br />\nOns doel is om je website te laten doen wat hij moet doen—klanten binnenhalen—zonder de stress van het zelf beheren."
+					"question": "Hoe werkt jullie doorlopende ondersteuning?",
+					"answer": "Voor slechts <strong>€9/maand</strong> (jaarlijks gefactureerd) krijg je:<br/><br/>✓ Maandelijkse prestatie-checks<br/>✓ Kwartaal optimalisaties op basis van data<br/>✓ Kleine content updates wanneer je wilt<br/>✓ Technische ondersteuning<br/>✓ Uptime monitoring<br/><br/>Doel: je website blijft klanten binnenhalen zonder dat jij je er zorgen over hoeft te maken."
 				}
 			]
 		},

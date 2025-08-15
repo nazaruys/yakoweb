@@ -1,5 +1,5 @@
 "use client";
-import { XLogoIcon, InstagramLogoIcon, FacebookLogoIcon, LinkedinLogoIcon, ArrowSquareOutIcon, HouseIcon, CarProfileIcon, CaretRightIcon } from "@phosphor-icons/react";
+import { XLogoIcon, InstagramLogoIcon, FacebookLogoIcon, LinkedinLogoIcon, ArrowSquareOutIcon, HouseIcon, CarProfileIcon, CaretRightIcon, WhatsappLogoIcon } from "@phosphor-icons/react";
 import { useState } from "react";
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
@@ -509,7 +509,7 @@ export default function Home() {
         className="
           2xl:px-48 xl:px-36 lg:px-28 md:px-14 sm:px-16 px-8
           flex flex-col xl:flex-row justify-center gap-y-12 xl:gap-y-0 gap-x-12
-          pb-[70px] pt-[200px] xl:py-[100px]
+          pb-[70px] pt-[200px] xl:py-[150px]
         "
       >
         {/* Left side */}
@@ -1140,6 +1140,9 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-7">
             <a onClick={() => {trackGoal('email_us', 'Email us')}}href="mailto:hello@yakoweb.com" className="max-w-[300px] hover:text-black transition-all duration-200 break-words">{nl.footer.email}</a>
             <div className="flex flex-row gap-3">
+              <a aria-label={nl.footer.socialLinks.xProfile} target="_blank" href="https://wa.me/+31631194410" className="group">
+                <WhatsappLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
+              </a>
               <a aria-label={nl.footer.socialLinks.xProfile} target="_blank" href="https://x.com/nazar_yakov" className="group">
                 <XLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
               </a>
