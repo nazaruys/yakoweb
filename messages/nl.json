@@ -17,7 +17,7 @@
 						"time": "Zojuist"
 					},
 					"2": {
-						"text": "Pim stelt een vraag via de formulier.",
+						"text": "Pim stelt een vraag via het formulier.",
 						"time": "3 minuten geleden"
 					},
 					"3": {
@@ -100,14 +100,14 @@
 				"everythingIn": "Alles in Landing:",
 				"features": {
 					"1": "1 landingspagina",
-					"2": "Alles geleverd binnen 2 weken",
+					"2": "Alles geleverd binnen 10 dagen",
 					"3": "Mobiel-vriendelijk ontwerp",
 					"4": "SEO-optimalisatie",
 					"5": "Google Analytics",
 					"6": "Hulp met domein en e-mail",
 					"7": "1 jaar gratis ondersteuning",
 					"8": "Zelf bewerken",
-					"9": "100 dagen zich terugbetaald garantie",
+					"9": "100 dagen zich terugbetaalt garantie",
 					"10": "Onbeperkte revisies",
 					"11": "Restitueerbare betaling"
 				},
@@ -122,14 +122,14 @@
 				"everythingIn": "Alles in Landing, plus:",
 				"features": {
 					"1": "Tot 6 pagina's",
-					"2": "Alles geleverd binnen 3 weken",
+					"2": "Alles geleverd binnen 2 weken",
 					"3": "Mobiel-vriendelijk ontwerp",
 					"4": "SEO-optimalisatie",
 					"5": "Google Analytics",
 					"6": "Hulp met domein en e-mail",
 					"7": "1 jaar gratis ondersteuning",
 					"8": "Zelf bewerken",
-					"9": "100 dagen zich terugbetaald garantie",
+					"9": "100 dagen zich terugbetaalt garantie",
 					"10": "Onbeperkte revisies",
 					"11": "Restitueerbare betaling"
 				},
@@ -178,11 +178,11 @@
 				},
 				{
 					"question": "Bieden jullie restitutie aan?",
-					"answer": "Ja, straks meer info."
+					"answer": "Ja, neem contact op met ons voor meer info."
 				},
 				{
 					"question": "Wat als ik het ontwerp niet mooi vind?",
-					"answer": "We sturen je altijd eerst een eerste versie van de website voor feedback. Als je niet tevreden bent, passen we het ontwerp aan. Als de volledige website al klaar is, kunnen we niet alles opnieuw ontwerpen."
+					"answer": "We sturen je altijd elke update voor feedback. Als je niet tevreden bent, passen we het ontwerp aan. Als de volledige website al klaar is, kunnen we niet alles opnieuw ontwerpen."
 				},
 				{
 					"question": "Zijn er extra kosten?",
@@ -190,7 +190,7 @@
 				},
 				{
 					"question": "Bieden jullie doorlopende ondersteuning?",
-					"answer": "Ja. We bieden flexibele ondersteuningsplannen om je website snel, fris en optimaal presterend te houden:<br /><br />\n<ul class='list-disc ml-4 text-[14px]'>\n  <li><strong>€108/jaar (Landing & Standaard):</strong> Inclusief regelmatige prestatiecontroles, content updates (zoals tekst, afbeeldingen of secties), uptime monitoring en doorlopende conversie-optimalisaties.</li>\n</ul>\n<br />\nOns doel is om je website te laten doen wat hij moet doen—klanten binnenhalen—zonder de stress van het zelf beheren."
+					"answer": "Ja. We bieden ondersteuning om je website snel, fris en optimaal presterend te houden:<br /><br />\n<ul class='list-disc ml-4 text-[14px]'>\n  <li><strong>€108/jaar (Landing & Standaard):</strong> Inclusief regelmatige prestatiecontroles, content updates (zoals tekst, afbeeldingen of secties), uptime monitoring en doorlopende conversie-optimalisaties.</li>\n</ul>\n<br />\nOns doel is om je website te laten doen wat hij moet doen—klanten binnenhalen—zonder de stress van het zelf beheren."
 				}
 			]
 		},

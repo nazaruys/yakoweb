@@ -484,7 +484,7 @@ export default function Home() {
 						<span>Je bestelt niet zomaar een website die niets doet omdat "iedereen heeft een website".</span>
 						<span>Het doel is afspraken, verkopen en winst verhogen. Wij doen alles om je ermee te helpen.
 						 Om dit doel te bereiken, is een goede web-design niet genoeg, daarom krijg je ook SEO-optimalisatie zodat het beter vindbaar is, Google Analytics instelling en veel andere extra's die je hiernaast kan zien.</span>
-						<span>Wij willen dat je jouw doel bereikt, daarom stellen wij dit: Indien jouw website in eerste 100 dagen zichzelf niet terug betaalt, werken wij voor gratis om dat te veranderen.</span>
+						<span>Wij willen dat je je doel bereikt, daarom stellen wij dit: Indien je website in eerste 100 dagen zich niet terug betaalt, werken wij voor gratis om dat te veranderen.</span>
 					</p>
 				</div>
 				{/* Right */}
@@ -498,7 +498,7 @@ export default function Home() {
 					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ Webflow handleiding over website beheren – <strong>€100</strong></span>
 					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ Consultatie met verbeteringen indien website zich niet terugbetaald na 100 dagen – <strong>€500</strong></span>
 					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ Hulp met domein en e-mail – <strong>€100</strong></span>
-					<span className="flex flex-row items-center text-[13px] sm:text-[14px] lg:text-[16px]">+ Oneindige revisies – <strong>€</strong><span className="text-2xl sm:text-3xl">∞</span></span>
+					<span className="flex flex-row items-center text-[13px] sm:text-[14px] lg:text-[16px]">+ Onbeperkte revisies – <strong>€</strong><span className="text-2xl sm:text-3xl">∞</span></span>
 					<span className="text-base sm:text-lg mt-2 sm:mt-4 font-medium">= Website + <strong>€1308+</strong> van extra's</span>
 				</div>
       </section>

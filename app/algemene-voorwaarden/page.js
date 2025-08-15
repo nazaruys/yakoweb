@@ -28,7 +28,15 @@ export default function Terms() {
 
             <section id="terugbetaling-en-annulering">
                 <h2 className="text-xl font-semibold mb-4">3. Terugbetaling en Annuleringsbeleid</h2>
-                <p className="text-dark">Vanwege de aard van digitale diensten bieden wij over het algemeen geen terugbetalingen aan zodra het werk is begonnen. Specifieke annuleringsvoorwaarden worden uiteengezet in uw serviceovereenkomst. Voor abonnementsdiensten kunt u op elk moment annuleren, maar er wordt geen terugbetaling verstrekt voor de huidige factureringsperiode. Door akkoord te gaan met deze Voorwaarden erkent en accepteert u dat alle verkopen definitief zijn zodra het werk is begonnen.</p>
+                <p className="text-dark">Wij hanteren een transparant terugbetalingsbeleid dat is gekoppeld aan de verschillende fases van uw project. Het terugbetalingspercentage wordt bepaald door de fase waarin u het project annuleert:</p>
+                <ul className="list-disc pl-6 mt-2 mb-4 text-dark">
+                    <li>100% terugbetaling indien geannuleerd vóór verzending van de sitemap</li>
+                    <li>80% terugbetaling indien geannuleerd vóór verzending van de wireframes</li>
+                    <li>60% terugbetaling indien geannuleerd vóór verzending van het design</li>
+                    <li>0% terugbetaling nadat het basis design is verzonden</li>
+                </ul>
+                <p className="text-dark">Elke fase wordt onafhankelijk behandeld van voorgaande fases. Het terugbetalingspercentage wordt berekend over het totaalbedrag van de betreffende fase.</p>
+                <p className="text-dark">Voor abonnementsdiensten bieden wij de mogelijkheid tot restitutie van vooruitbetaalde, nog niet aangevangen factureringsperioden. De opzegging gaat in aan het einde van de huidige factureringsperiode, en reeds betaalde bedragen voor toekomstige perioden worden volledig terugbetaald. Een verzoek tot annulering dient schriftelijk te worden ingediend.</p>
             </section>
 
             <section id="dienstverlening">
@@ -45,7 +53,8 @@ export default function Terms() {
 
             <section id="beperking-van-aansprakelijkheid">
                 <h2 className="text-xl font-semibold mb-4">6. Beperking van Aansprakelijkheid</h2>
-                <p className="text-dark">Onze diensten worden geleverd "zoals ze zijn" zonder enige garantie van welke aard dan ook. Wij zijn niet aansprakelijk voor enige indirecte, incidentele, bijzondere, gevolg- of bestraffende schade, of enig verlies van winst of inkomsten, direct of indirect opgelopen, of enig verlies van gegevens, gebruik, goodwill of andere immateriële verliezen. Voor zover maximaal toegestaan door de wet, zal onze totale aansprakelijkheid onder deze Voorwaarden niet het bedrag overschrijden dat u ons heeft betaald voor de diensten die aanleiding geven tot de claim.</p>
+                <p className="text-dark">Wij bieden een 100-dagen prestatie garantie. Indien binnen 100 dagen na oplevering de vooraf individueel overeengekomen prestatiedoelen niet worden behaald, zullen wij gerichte verbeteringen doorvoeren op basis van onze analyse. De specifieke prestatiedoelen worden per klant individueel vastgelegd in de serviceovereenkomst.</p>
+                <p className="text-dark mt-4">Buiten deze prestatie garantie zijn wij niet aansprakelijk voor enige indirecte, incidentele, bijzondere, gevolg- of bestraffende schade, of enig verlies van winst of inkomsten, direct of indirect opgelopen, of enig verlies van gegevens, gebruik, goodwill of andere immateriële verliezen. Voor zover maximaal toegestaan door de wet, zal onze totale aansprakelijkheid onder deze Voorwaarden niet het bedrag overschrijden dat u ons heeft betaald voor de diensten die aanleiding geven tot de claim.</p>
             </section>
 
             <section id="overmacht">
@@ -76,7 +85,7 @@ export default function Terms() {
             </section>
 
             <div className="mt-12 pt-8 border-t border-dark/30">
-                <p className="text-sm text-dark">Laatst bijgewerkt: 07/07/2025</p>
+                <p className="text-sm text-dark">Laatst bijgewerkt: 08/15/2025</p>
             </div>
         </div>
     </div>
