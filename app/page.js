@@ -30,22 +30,6 @@ export default function Home() {
     setOpenIndex(prev => (prev === index ? null : index));
   };
 
-  const navigateToRecurringPricing = () => {
-    const targetId = 'faqs';
-    const element = document.getElementById(targetId);
-
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-
-      setTimeout(() => {
-        setOpenIndex(6)
-        window.scrollBy({ top: 400, behavior: 'smooth' });
-      }, 800);
-
-      trackGoal('navigate_to_recurring_pricing', 'Navigate to FAQ about recurring pricing');
-    }
-  };
-
   return (
     <div
       className="font-manrope bg-background"
@@ -136,26 +120,26 @@ export default function Home() {
           <a className="relative w-fit" href="#ek-autotechniek">
             <img
               src="/images/EK-secondary.webp"
-              alt="EK Logo Secondary"
-              className="absolute bottom-5 hover:scale-105 hover:-translate-y-3 left-10 lg:left-20 rotate-[8deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-300 z-0 hover:z-20"
+              alt="EK Secondary"
+              className="absolute bottom-5 hover:scale-105 hover:-translate-y-3 left-10 lg:left-20 h-[130px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-300 z-0 hover:z-20"
             />
             <img
               src="/images/EK-primary.webp"
-              alt="EK Logo Primary"
-              className="relative hover:scale-105 hover:-translate-y-3 right-10 lg:right-0 rotate-[-8deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-500 z-10"
+              alt="EK Primary"
+              className="relative hover:scale-105 hover:-translate-y-3 right-10 lg:right-0 h-[130px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-500 z-10"
             />
           </a>
           {/* Second */}
           <div className="relative w-fit">
             <img
               src="/images/CarMaat-secondary.webp"
-              alt="EK Logo Secondary"
-              className="absolute hover:scale-105 hover:-translate-y-3 left-10 lg:left-20 rotate-[-12deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-300 z-0 hover:z-20"
+              alt="CarMaat Secondary"
+              className="absolute hover:scale-105 hover:-translate-y-3 left-10 lg:left-10 h-[130px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-300 z-0 hover:z-20"
             />
             <img
               src="/images/CarMaat-primary.webp"
-              alt="EK Logo Primary"
-              className="relative hover:scale-105 hover:-translate-y-3 right-10 lg:right-0 rotate-[12deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-500 z-10"
+              alt="Carmaat Primary"
+              className="relative hover:scale-105 hover:-translate-y-3 right-10 lg:right-10 bottom-5 h-[130px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-500 z-10"
             />
           </div>
 
@@ -163,13 +147,13 @@ export default function Home() {
           <a className="relative w-fit" href="#bacu-kozijnen">
             <img
               src="/images/BaCu-secondary.webp"
-              alt="EK Logo Secondary"
-              className="absolute bottom-5 hover:scale-105 hover:-translate-y-3 left-10 lg:left-20 rotate-[6deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-300 z-10"
+              alt="BaCu Secondary"
+              className="absolute bottom-5 hover:scale-105 hover:-translate-y-3 left-10 lg:left-0 h-[130px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-300 z-10"
             />
             <img
               src="/images/BaCu-primary.webp"
-              alt="EK Logo Primary"
-              className="relative hover:scale-105 hover:-translate-y-3 right-10 lg:right-0 rotate-[-7deg] h-[80px] sm:h-[100px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-500 z-0 hover:z-20"
+              alt="BaCu Primary"
+              className="relative hover:scale-105 hover:-translate-y-3 right-10 lg:right-20 h-[130px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-500 z-0 hover:z-20"
             />
           </a>
         </div>
@@ -479,12 +463,11 @@ export default function Home() {
 					className="flex flex-col items-center xl:items-start max-w-full xl:max-w-[50%]"
 				>
 					<h3 className="text-center xl:text-left text-[13px] md:text-[16px] text-dark/80 font-semibold">WAT KRIJG JE?</h3>
-					<h2 className="text-center xl:text-left text-[24px] sm:text-[28px] md:text-[32px] text-black font-bold leading-[120%]">Meer waarde dan waarvoor jij betaalt</h2>
+					<h2 className="text-center xl:text-left text-[24px] sm:text-[28px] md:text-[32px] text-black font-bold leading-[120%]">Meer waarde dan waar je voor betaalt</h2>
 					<p className="flex flex-col text-left text-[14px] sm:text-[16px] text-dark/80 font-medium mt-5 gap-3">
-						<span>Je bestelt niet zomaar een website die niets doet omdat "iedereen heeft een website".</span>
-						<span>Het doel is afspraken, verkopen en winst verhogen. Wij doen alles om je ermee te helpen.
-						 Om dit doel te bereiken, is een goede web-design niet genoeg, daarom krijg je ook SEO-optimalisatie zodat het beter vindbaar is, Google Analytics instelling en veel andere extra's die je hiernaast kan zien.</span>
-						<span>Wij willen dat je je doel bereikt, daarom stellen wij dit: Indien je website in eerste 100 dagen zich niet terug betaalt, werken wij voor gratis om dat te veranderen.</span>
+						<span>Je bestelt niet zomaar een website die niets doet omdat "iedereen een website heeft".</span>
+						<span>Het doel is meer afspraken, verkopen en winst. Wij doen alles om je hiermee te helpen. Voor dit doel is goede webdesign niet genoeg, daarom krijg je ook SEO-optimalisatie zodat je website beter vindbaar is, Google Analytics-instelling zodat wij precies weten wat het beste voor jou werkt. Het eerste jaar blijft je website foutloos en steeds geoptimaliseerd - gratis, voor een makkelijkere start. Je leert ook hoe je teksten en foto's zelf, snel en gemakkelijk kunt bewerken en de website kunt beheren. Heb je nog geen domein of zakelijke e-mail? Wij regelen dat binnen enkele minuten. Je krijgt onbeperkte revisies en verbeteringen totdat je tevreden bent.</span>
+						{/* <span>Wij willen dat je je doel bereikt, daarom stellen wij dit: Indien je website in de eerste 100 dagen zich niet terugbetaalt, werken wij gratis om dat te veranderen.</span> */}
 					</p>
 				</div>
 				{/* Right */}
@@ -492,14 +475,13 @@ export default function Home() {
 					className="flex flex-col justify-center items-center bg-SecondaryBackground p-6 sm:p-8 lg:p-12 xl:p-16 shadow-xl text-center gap-3 sm:gap-4 w-full max-w-[500px] xl:max-w-none xl:min-w-[400px] 2xl:min-w-[500px]"
 				>
 					<span className="text-[14px] sm:text-[16px] font-medium">Website</span>
-					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ Analytics instellen – <strong>€200</strong></span>
-					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ SEO-optimalisatie – <strong>€300</strong></span>
-					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ 1 jaar gratis ondersteuning – <strong>€108</strong></span>
-					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ Webflow handleiding over website beheren – <strong>€100</strong></span>
-					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ Consultatie met verbeteringen indien website zich niet terugbetaald na 100 dagen – <strong>€500</strong></span>
-					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ Hulp met domein en e-mail – <strong>€100</strong></span>
-					<span className="flex flex-row items-center text-[13px] sm:text-[14px] lg:text-[16px]">+ Onbeperkte revisies – <strong>€</strong><span className="text-2xl sm:text-3xl">∞</span></span>
-					<span className="text-base sm:text-lg mt-2 sm:mt-4 font-medium">= Website + <strong>€1308+</strong> van extra's</span>
+					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ SEO-optimalisatie – <strong><s>€300</s></strong> <strong className="text-green-600">Gratis</strong></span>
+					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ Analytics instellen – <strong><s>€200</s></strong> <strong className="text-green-600 shadow-4xl">Gratis</strong></span>
+					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ 1 jaar gratis ondersteuning – <strong><s>€108</s></strong> <strong className="text-green-600">Gratis</strong></span>
+					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ Webflow handleiding over website beheren – <strong><s>€100</s></strong> <strong className="text-green-600">Gratis</strong></span>
+					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ Hulp met domein en e-mail – <strong><s>€100</s></strong> <strong className="text-green-600">Gratis</strong></span>
+					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ Onbeperkte revisies – <strong><s>€?</s></strong> <strong className="text-green-600">Gratis</strong></span>
+					<span className="text-base sm:text-lg mt-2 sm:mt-4 font-medium">= Website + <strong><s>€808+</s></strong> <strong className="text-green-600">gratis</strong> extra's</span>
 				</div>
       </section>
 
@@ -599,14 +581,13 @@ export default function Home() {
                     €1000
                   </span>
                   <div
-                    className="text-[14px] cursor-pointer font-medium ml-2 mb-2 self-end text-dark transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:opacity-80"
-                    onClick={() => navigateToRecurringPricing()}
+                    className="text-[14px] font-medium ml-2 mb-2 self-end text-dark"
                   >
                     <span>+</span>
                     <span>
                       €<span className="font-semibold text-[16px]">0</span><span className="">/jaar</span>
                     </span>
-                    <span> dan </span>
+                    <span> daarna </span>
                     <span>
                       €<span className="font-semibold text-[16px]">9</span><span className="">{nl.pricing.landing.yearlyText}</span>
                     </span>
@@ -642,24 +623,24 @@ export default function Home() {
                     <span className="text-dark text-[15px] font-medium">Mobiel-vriendelijk ontwerp</span>
                   </li>
                   <li className="flex flex-row gap-3 cursor-pointer relative group">
-                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mt-6 flex bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10 max-w-[250px] text-center">
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mt-6 flex bg-gray-800 text-white text-sm rounded px-2 py-1 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10 max-w-[250px] text-center">
                       Zodat je website beter te vinden is op Google.
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                       <rect width="25" height="25" rx="12.5" fill="#CEE1FF" />
                       <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#3B82F6"/>
                     </svg>
-                    <span className="text-dark text-[15px] font-medium">SEO-optimalisatie</span>
+                    <span className="text-dark text-[15px] font-medium underline">SEO-optimalisatie</span>
                   </li>
                   <li className="flex flex-row gap-3 cursor-pointer relative group">
-                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mt-6 flex bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10 min-w-[300px] text-center">
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mt-6 flex bg-gray-800 text-white text-sm rounded px-2 py-1 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10 min-w-[300px] text-center">
                       Instelling, zodat wij precies kunnen zien hoeveel bezoekers je website krijgt en welke acties ze ondernemen. Zo kunnen wij begrijpen wat best voor jouw werkt.
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                       <rect width="25" height="25" rx="12.5" fill="#CEE1FF" />
                       <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#3B82F6"/>
                     </svg>
-                    <span className="text-dark text-[15px] font-medium">Google Analytics</span>
+                    <span className="text-dark text-[15px] font-medium underline">Google Analytics</span>
                   </li>
                   <li className="flex flex-row gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
@@ -680,14 +661,14 @@ export default function Home() {
                       <rect width="25" height="25" rx="12.5" fill="#CEE1FF" />
                       <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#3B82F6"/>
                     </svg>
-                    <span className="text-dark text-[15px] font-medium">Zelf bewerken</span>
+                    <span className="text-dark text-[15px] font-medium">Maandelijkse prestatie-checks</span>
                   </li>
                   <li className="flex flex-row gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                       <rect width="25" height="25" rx="12.5" fill="#CEE1FF" />
                       <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#3B82F6"/>
                     </svg>
-                    <span className="text-dark text-[15px] font-medium">100 dagen zich terugbetaald garantie</span>
+                    <span className="text-dark text-[15px] font-medium">Zelf bewerken</span>
                   </li>
                   <li className="flex flex-row gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
@@ -701,7 +682,7 @@ export default function Home() {
                       <rect width="25" height="25" rx="12.5" fill="#CEE1FF" />
                       <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#3B82F6"/>
                     </svg>
-                    <span className="text-dark text-[15px] font-medium">Restitueerbare betaling</span>
+                    <span className="text-dark text-[15px] font-medium">Terugbetaling op basis van de projectfase</span>
                   </li>
                 </ul>
                 {/* Button */}
@@ -764,14 +745,13 @@ export default function Home() {
                   </span>
 
                   <div
-                    className="text-[14px] cursor-pointer font-medium ml-2 mb-2 self-end text-dark transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:opacity-80"
-                    onClick={() => navigateToRecurringPricing()}
+                    className="text-[14px] font-medium ml-2 mb-2 self-end text-dark"
                   >
                     <span>+</span>
                     <span>
                       €<span className="font-semibold text-[16px]">0</span><span className="">/jaar</span>
                     </span>
-                    <span> dan </span>
+                    <span> daarna </span>
                     <span>
                       €<span className="font-semibold text-[16px]">9</span><span className="">{nl.pricing.standard.yearlyText}</span>
                     </span>
@@ -786,14 +766,14 @@ export default function Home() {
                 {/* Pros */}
                 <ul className="flex flex-col gap-y-4">
                   <li className="flex flex-row gap-3 cursor-pointer relative group">
-                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mt-6 flex bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10 max-w-[250px] text-center">
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mt-6 flex bg-gray-800 text-white text-sm rounded px-2 py-1 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10 max-w-[250px] text-center">
                       Als je extra pagina nodig hebt, bijvoorbeeld voor een extra dienst, is dit in principe geen probleem 😉
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                       <rect width="25" height="25" rx="12.5" fill="#E2E1FF"/>
                       <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#5A57C2"/>
                     </svg>
-                    <span className="text-dark text-[15px] font-semibold">Tot 6 pagina's</span>
+                    <span className="text-dark text-[15px] font-semibold underline">Tot 6 pagina's</span>
                   </li>
                   <li className="flex flex-row gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
@@ -810,24 +790,24 @@ export default function Home() {
                     <span className="text-dark text-[15px] font-medium">Mobiel-vriendelijk ontwerp</span>
                   </li>
                   <li className="flex flex-row gap-3 cursor-pointer relative group">
-                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mt-6 flex bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10 max-w-[250px] text-center">
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mt-6 flex bg-gray-800 text-white text-sm rounded px-2 py-1 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10 max-w-[250px] text-center">
                       Zodat je website beter te vinden is op Google.
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                       <rect width="25" height="25" rx="12.5" fill="#E2E1FF"/>
                       <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#5A57C2"/>
                     </svg>
-                    <span className="text-dark text-[15px] font-medium">SEO-optimalisatie</span>
+                    <span className="text-dark text-[15px] font-medium underline">SEO-optimalisatie</span>
                   </li>
                   <li className="flex flex-row gap-3 cursor-pointer relative group">
-                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mt-6 flex bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10 min-w-[300px] text-center">
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mt-6 flex bg-gray-800 text-white text-sm rounded px-2 py-1 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10 min-w-[300px] text-center">
                       Instelling, zodat wij precies kunnen zien hoeveel bezoekers je website krijgt en welke acties ze ondernemen. Zo kunnen wij begrijpen wat best voor jouw werkt.
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                       <rect width="25" height="25" rx="12.5" fill="#E2E1FF"/>
                       <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#5A57C2"/>
                     </svg>
-                    <span className="text-dark text-[15px] font-medium">Google Analytics</span>
+                    <span className="text-dark text-[15px] font-medium underline">Google Analytics</span>
                   </li>
                   <li className="flex flex-row gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
@@ -848,14 +828,14 @@ export default function Home() {
                       <rect width="25" height="25" rx="12.5" fill="#E2E1FF"/>
                       <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#5A57C2"/>
                     </svg>
-                    <span className="text-dark text-[15px] font-medium">Zelf bewerken</span>
+                    <span className="text-dark text-[15px] font-medium">Maandelijkse prestatie-checks</span>
                   </li>
                   <li className="flex flex-row gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                       <rect width="25" height="25" rx="12.5" fill="#E2E1FF"/>
                       <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#5A57C2"/>
                     </svg>
-                    <span className="text-dark text-[15px] font-medium">100 dagen zich terugbetaald garantie</span>
+                    <span className="text-dark text-[15px] font-medium">Zelf bewerken</span>
                   </li>
                   <li className="flex flex-row gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
@@ -869,7 +849,7 @@ export default function Home() {
                       <rect width="25" height="25" rx="12.5" fill="#E2E1FF"/>
                       <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#5A57C2"/>
                     </svg>
-                    <span className="text-dark text-[15px] font-medium">Restitueerbare betaling</span>
+                    <span className="text-dark text-[15px] font-medium">Terugbetaling op basis van de projectfase</span>
                   </li>
                 </ul>
                 {/* Button */}

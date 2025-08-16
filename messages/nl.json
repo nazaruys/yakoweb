@@ -86,7 +86,7 @@
 			}
 		},
 		"testimonial1": {
-			"testimonial": "Hoewel niet autobedrijf, hebben we een 6-pagina website gemaakt voor BaCu Kozijnen, compleet met heldere en effectieve copywriting. De site toont hun producten en diensten, bouwt geloofwaardigheid op en helpt bezoekers om te zetten naar klanten.",
+			"testimonial": "Hoewel geen autobedrijf, hebben we een 6-pagina website gemaakt voor BaCu Kozijnen, compleet met heldere en effectieve copywriting. De site toont hun producten en diensten, bouwt geloofwaardigheid op en helpt bezoekers om te zetten naar klanten.",
 			"hashtag": "#Standaard",
 			"typeWebsite": "Kozijnen & deuren website"
 		},
@@ -138,15 +138,15 @@
 			},
 			"premium": {
 				"title": "Premium",
-				"description": "Een website met extra functies zoals occasions, blog, API-integratie, betalingsverwerking en meer.",
+				"description": "Een website met extra functies zoals occasions, blog, betalingsverwerking en meer.",
 				"yearlyText": "/maand",
 				"everythingIn": "Alles in Standaard, plus:",
 				"features": {
 					"1": "Premium UI/UX ontwerp",
 					"2": "Occasions pagina",
-					"3": "Betalingsverwerking",
-					"4": "API-integraties",
-					"5": "Alles wat je nodig hebt"
+					"3": "Blog-pagina's",
+					"4": "Betalingsverwerking",
+					"5": "Extra functionaliteit op maat"
 				},
 				"button": "Plan een gesprek"
 			}
@@ -170,27 +170,27 @@
 				},
 				{
 					"question": "Hoe kunnen we beginnen met onze website?",
-					"answer": "Kies hierboven je pakket en doe je betaling. Je wordt automatisch doorgestuurd naar een formulier waar je je bedrijfsgegevens invult. Nog niet 100% zeker? Boek dan eerst een <a style='text-decoration: underline; color: #2563eb; font-weight: bold;' href='https://calendly.com/nazar_yakov/yakoweb' target='_blank'>gratis introgesprek</a> of neem contact op om alle mogelijkheden te bespreken en je vragen te stellen."
+					"answer": "Kies hierboven je pakket en verricht je betaling. Je wordt automatisch doorgestuurd naar een formulier waar je je bedrijfsgegevens invult. Nog niet 100% zeker? Boek dan eerst een <a style='text-decoration: underline; color: #2563eb; font-weight: bold;' href='https://calendly.com/nazar_yakov/yakoweb' target='_blank'>gratis introgesprek</a> of neem contact op beneden om alle mogelijkheden te bespreken en je vragen te stellen."
 				},
 				{
 					"question": "Hoe werkt de betaling en facturatie?",
 					"answer": "Je kunt kiezen: volledig vooruitbetalen óf 50% bij de start en 50% na oplevering. Alle betalingen worden veilig verwerkt via Stripe en je ontvangt automatisch een factuur. Zo heb je altijd een duidelijk overzicht van je investering."
 				},
 				{
-					"question": "Bieden jullie restitutie aan?",
-					"answer": "Ja, kijk <a style='text-decoration: underline; color: #2563eb; font-weight: bold;' href='/algemene-voorwaarden#terugbetaling-en-annulering' target='_blank'>hier</a> voor meer info."
+					"question": "Zijn er extra kosten?",
+					"answer": "Van ons geen extra kosten. Voor hosting gebruiken we Webflow (ongeveer €12/maand). Een domeinnaam kost circa €10-15/jaar. Optionele zakelijke e-mail via Google Workspace kost ongeveer €6/maand. Deze en alle andere kosten betaal je rechtstreeks aan de leveranciers."
 				},
 				{
 					"question": "Wat als ik het ontwerp niet mooi vind?",
 					"answer": "We sturen je elke update voor feedback. Als je niet tevreden bent, passen we het aan, totdat je tevreden bent!"
 				},
 				{
-					"question": "Zijn er extra kosten?",
-					"answer": "Van ons geen extra kosten. Voor hosting gebruiken we Webflow (ongeveer €12/maand). Een domeinnaam kost circa €10-15/jaar. Optionele zakelijke e-mail via Google Workspace kost ongeveer €5/maand. Deze en alle andere kosten betaal je rechtstreeks aan de leveranciers."
+					"question": "Bieden jullie terugbetaling aan?",
+					"answer": "Ja, kijk <a style='text-decoration: underline; color: #2563eb; font-weight: bold;' href='/algemene-voorwaarden#terugbetaling-en-annulering' target='_blank'>hier</a> voor meer info."
 				},
 				{
 					"question": "Hoe werkt jullie doorlopende ondersteuning?",
-					"answer": "Voor slechts <strong>€9/maand</strong> (jaarlijks gefactureerd) krijg je:<br/><br/>✓ Maandelijkse prestatie-checks<br/>✓ Kwartaal optimalisaties op basis van data<br/>✓ Kleine content updates wanneer je wilt<br/>✓ Technische ondersteuning<br/>✓ Uptime monitoring<br/><br/>Doel: je website blijft klanten binnenhalen zonder dat jij je er zorgen over hoeft te maken."
+					"answer": "Het <strong>eerste jaar is gratis</strong>! Daarna voor slechts <strong>€9/maand</strong> (jaarlijks gefactureerd) krijg je:<br/><br/>✓ Maandelijkse prestatie-checks<br/>✓ Kwartaal optimalisaties op basis van data<br/>✓ Kleine content updates wanneer je wilt<br/>✓ Technische ondersteuning<br/>✓ Uptime monitoring<br/><br/>Doel: je website blijft klanten binnenhalen zonder dat jij je er zorgen over hoeft te maken."
 				}
 			]
 		},
@@ -204,10 +204,10 @@
 			"description": "Verander bezoekers in klanten en website-stress in een verre herinnering.",
 			"email": "hello@yakoweb.com",
 			"socialLinks": {
-				"xProfile": "Ga naar onze X profiel",
-				"instagramProfile": "Ga naar onze Instagram profiel",
-				"facebookProfile": "Ga naar onze Facebook profiel",
-				"linkedInProfile": "Ga naar onze LinkedIn profiel"
+				"xProfile": "Ga naar ons X-profiel",
+				"instagramProfile": "Ga naar ons Instagram-profiel",
+				"facebookProfile": "Ga naar ons Facebook-profiel",
+				"linkedInProfile": "Ga naar ons LinkedIn-profiel"
 			}
 		}
 	},
@@ -232,7 +232,7 @@
 		"error": {
 			"title": "Oeps! Er is iets misgegaan.",
 			"sessionUsed": "Deze sessie is al gebruikt",
-			"supportContact": "Neem contact op met de support als je een aankoop hebt gedaan, maar niet bent doorgestuurd naar het formulier."
+			"supportContact": "Neem contact op met de klantenservice als je een aankoop hebt gedaan, maar niet bent doorgestuurd naar het formulier."
 		}
 	},
 	"cookies": {

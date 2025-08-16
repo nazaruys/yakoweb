@@ -30,10 +30,16 @@ export default function Terms() {
                 <h2 className="text-xl font-semibold mb-4">3. Terugbetaling en Annuleringsbeleid</h2>
                 <p className="text-dark">Wij hanteren een transparant terugbetalingsbeleid dat is gekoppeld aan de verschillende fases van uw project. Het terugbetalingspercentage wordt bepaald door de fase waarin u het project annuleert:</p>
                 <ul className="list-disc pl-6 mt-2 mb-4 text-dark">
-                    <li>100% terugbetaling indien geannuleerd vóór verzending van de sitemap</li>
-                    <li>80% terugbetaling indien geannuleerd vóór verzending van de wireframes</li>
-                    <li>60% terugbetaling indien geannuleerd vóór verzending van het design</li>
+                    <li>100% terugbetaling indien geannuleerd vóór verzending van de sitemap (structuur van de website)</li>
+                    <li>80% terugbetaling indien geannuleerd vóór verzending van de wireframes (schematische weergave van de pagina's)</li>
+                    <li>60% terugbetaling indien geannuleerd vóór verzending van het design (visueel ontwerp)</li>
                     <li>0% terugbetaling nadat het basis design is verzonden</li>
+                </ul>
+                <p className="text-dark">Een fase wordt als "verzonden" beschouwd wanneer wij via de overeengekomen communicatiemethode (e-mail, chat, of ander platform) een van de volgende hebben gestuurd:</p>
+                <ul className="list-disc pl-6 mt-2 mb-4 text-dark">
+                    <li>Een link naar het document of ontwerp</li>
+                    <li>Een bestand met het document of ontwerp</li>
+                    <li>Afbeeldingen of screenshots van het document of ontwerp</li>
                 </ul>
                 <p className="text-dark">Elke fase wordt onafhankelijk behandeld van voorgaande fases. Het terugbetalingspercentage wordt berekend over het totaalbedrag van de betreffende fase.</p>
                 <p className="text-dark">Voor abonnementsdiensten bieden wij de mogelijkheid tot restitutie van vooruitbetaalde, nog niet aangevangen factureringsperioden. De opzegging gaat in aan het einde van de huidige factureringsperiode, en reeds betaalde bedragen voor toekomstige perioden worden volledig terugbetaald. Een verzoek tot annulering dient schriftelijk te worden ingediend.</p>
@@ -46,15 +52,36 @@ export default function Terms() {
 
             <section id="intellectueel-eigendom-en-toegangsrechten">
                 <h2 className="text-xl font-semibold mb-4">5. Intellectueel Eigendom en Toegangsrechten</h2>
-                <p className="text-dark"
-                   dangerouslySetInnerHTML={{ __html: "Tenzij anders schriftelijk overeengekomen, behoudt u volledige eigendom van de eindresultaten na volledige betaling. Wij behouden ons het recht voor om niet-vertrouwelijk werk te tonen in onze portfolio en marketingmateriaal.\n\nStandaard behouden wij administratieve toegang tot de websites die wij bouwen, uitsluitend voor het toepassen van updates, het bieden van ondersteuning, of het verbeteren van veiligheid en prestaties. U kunt schriftelijk verzoeken dat wij onze toegang verwijderen op elk moment, en wij zullen hieraan zonder vertraging voldoen.\n\nAls onderdeel van onze standaardvoorwaarden wordt een kleine kredietlink geplaatst in de voettekst van uw website (bijv. \"Website gemaakt door YakoWeb\"). Als u deze krediet wenst te verwijderen, informeer ons dan vóór voltooiing van het project. Wij behouden ons het recht voor om een redelijke verwijderingsvergoeding in rekening te brengen.\n\nEventuele reeds bestaande tools, templates of frameworks die in ontwikkeling worden gebruikt en door ons zijn gemaakt, blijven ons intellectueel eigendom en kunnen worden hergebruikt in andere projecten." }}
-                />
+                <div className="text-dark space-y-6">
+                    <p>Na volledige betaling verkrijgt u de volgende rechten met betrekking tot de geleverde website:</p>
+                    <ul className="list-decimal pl-6">
+                        <li>Een niet-exclusief, onbeperkt gebruiksrecht voor de volledige website zoals deze aan u is opgeleverd</li>
+                        <li>Het recht om de website naar eigen inzicht aan te passen of te laten aanpassen</li>
+                        <li>Volledige eigendom van alle unieke, speciaal voor u ontwikkelde onderdelen</li>
+                        <li>Volledige eigendom van alle content (teksten, afbeeldingen, video&apos;s etc.) die u heeft aangeleverd</li>
+                    </ul>
+
+                    <p>Voor de onderliggende tools, templates en frameworks die wij hebben ontwikkeld en gebruikt bij het bouwen van uw website, geldt het volgende:</p>
+                    <ul className="list-decimal pl-6">
+                        <li>Deze blijven ons intellectueel eigendom</li>
+                        <li>U krijgt hierop een niet-exclusief, onbeperkt gebruiksrecht voor gebruik binnen uw website</li>
+                        <li>Wij behouden het recht om deze onderdelen te hergebruiken in andere projecten</li>
+                        <li>Deze licentie is eeuwigdurend en royalty-vrij - u betaalt dus geen extra kosten voor het gebruik</li>
+                    </ul>
+
+                    <p>Wij behouden ons daarnaast de volgende rechten voor:</p>
+                    <ul className="list-decimal pl-6">
+                        <li>Het recht om niet-vertrouwelijk werk te tonen in onze portfolio en marketingmateriaal</li>
+                        <li>Administratieve toegang tot de website voor updates, ondersteuning en beveiliging (u kunt schriftelijk verzoeken om deze toegang te verwijderen)</li>
+                        <li>Een kredietlink in de voettekst van de website (bijv. &quot;Website gemaakt door YakoWeb&quot;). Indien u deze wenst te verwijderen, informeer ons vóór projectvoltooiing.</li>
+                    </ul>
+                </div>
             </section>
 
             <section id="beperking-van-aansprakelijkheid">
                 <h2 className="text-xl font-semibold mb-4">6. Beperking van Aansprakelijkheid</h2>
-                <p className="text-dark">Wij bieden een 100-dagen prestatie garantie. Indien binnen 100 dagen na oplevering de vooraf individueel overeengekomen prestatiedoelen niet worden behaald, zullen wij gerichte verbeteringen doorvoeren op basis van onze analyse. De specifieke prestatiedoelen worden per klant individueel vastgelegd in de serviceovereenkomst.</p>
-                <p className="text-dark mt-4">Buiten deze prestatie garantie zijn wij niet aansprakelijk voor enige indirecte, incidentele, bijzondere, gevolg- of bestraffende schade, of enig verlies van winst of inkomsten, direct of indirect opgelopen, of enig verlies van gegevens, gebruik, goodwill of andere immateriële verliezen. Voor zover maximaal toegestaan door de wet, zal onze totale aansprakelijkheid onder deze Voorwaarden niet het bedrag overschrijden dat u ons heeft betaald voor de diensten die aanleiding geven tot de claim.</p>
+                <p className="text-dark">Wij zijn niet aansprakelijk voor enige directe, indirecte, incidentele, bijzondere, gevolg- of bestraffende schade, of enig verlies van winst of inkomsten, direct of indirect opgelopen, of enig verlies van gegevens, gebruik, goodwill of andere immateriële verliezen. Voor zover maximaal toegestaan door de wet, zal onze totale aansprakelijkheid onder deze Voorwaarden niet het bedrag overschrijden dat u ons heeft betaald voor de diensten die aanleiding geven tot de claim.</p>
+                <p className="text-dark mt-4">Wij streven ernaar om kwalitatief hoogwaardige diensten te leveren, maar geven geen garanties met betrekking tot specifieke resultaten of prestaties. Alle diensten worden geleverd op een "as is" en "as available" basis.</p>
             </section>
 
             <section id="overmacht">
@@ -85,7 +112,7 @@ export default function Terms() {
             </section>
 
             <div className="mt-12 pt-8 border-t border-dark/30">
-                <p className="text-sm text-dark">Laatst bijgewerkt: 08/15/2025</p>
+                <p className="text-sm text-dark">Laatst bijgewerkt: 08/16/2025</p>
             </div>
         </div>
     </div>
