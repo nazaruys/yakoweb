@@ -174,11 +174,12 @@ export default function Home() {
         <h2 className="text-center text-[28px] md:text-[32px] text-black font-bold">{nl.whyUs.subtitle}</h2>
         {/* Cards div */}
         <div
-          className="w-full flex xl:flex-row flex-col items-center xl:items-start xl:justify-between sm:space-y-6 space-y-10 xl:space-y-0 mt-10"
+          className="w-full grid grid-cols-1 xl:grid-cols-3 mt-10"
+          style={{ gap: '40px' }}
         >
           {/* Card 1 */}
           <div
-            className="2xl:min-w-[380px] 2xl:max-w-[380px] xl:min-w-[350px] xl:max-w-[350px] sm:min-w-[380px] sm:max-w-[380px] min-w-[350px] max-w-[350px] h-[320px] rounded-2xl p-[5px]"
+            className="w-full h-[320px] rounded-2xl p-[5px]"
             style={{
               background: `
                 linear-gradient(
@@ -273,7 +274,7 @@ export default function Home() {
           </div>
           {/* Card 2 */}
           <div
-            className="2xl:min-w-[380px] 2xl:max-w-[380px] xl:min-w-[350px] xl:max-w-[350px] sm:min-w-[380px] sm:max-w-[380px] min-w-[350px] max-w-[350px] h-[320px] rounded-2xl p-[5px]"
+            className="w-full h-[320px] rounded-2xl p-[5px]"
             style={{
               background: `
                 linear-gradient(
@@ -344,7 +345,7 @@ export default function Home() {
           </div>
           {/* Card 3 */}
           <div
-            className="2xl:min-w-[380px] 2xl:max-w-[380px] xl:min-w-[350px] xl:max-w-[350px] sm:min-w-[380px] sm:max-w-[380px] min-w-[350px] max-w-[350px] h-[320px] rounded-2xl p-[5px]"
+            className="w-full h-[320px] rounded-2xl p-[5px]"
             style={{
               background: `
                 linear-gradient(
@@ -386,7 +387,7 @@ export default function Home() {
             >
               <span className="font-semibold text-black text-[20px]">{nl.whyUs.longevity.title}</span>
               <p
-                className="text-[14px] font-medium text-dark mt-2 w-[73%]"
+                className="z-20 text-[14px] font-medium text-dark mt-2 w-[73%]"
               >
                 {nl.whyUs.longevity.description}
               </p>
@@ -395,7 +396,7 @@ export default function Home() {
               >
                 {/* Animation */}
                 <div
-                  className="mt-8 px-2 flex flex-row w-full space-x-5 font-inter [transform:rotateX(60deg)_rotateZ(50deg)]"
+                  className="z-10 mt-20 px-2 flex flex-row w-full space-x-5 font-inter [transform:rotateX(60deg)_rotateZ(50deg)]"
                 >
                   {/* First col */}
                   <div
@@ -546,11 +547,12 @@ export default function Home() {
           <h2 className="text-[28px] md:text-[32px] text-black font-bold leading-[114%] text-center xl:text-left" dangerouslySetInnerHTML={{ __html: nl.pricing.subtitle }} />
           {/* Cards */}
           <div
-            className="mt-8 gap-y-8 flex w-full flex-col items-center xl:items-start xl:flex-row xl:justify-between"
+            className="mt-8 w-full grid grid-cols-1 xl:grid-cols-3 gap-10"
+            style={{ gap: '40px' }}
           >
             {/* 1st card */}
             <div
-              className="rounded-xl 2xl:min-w-[370px] max-w-[330px]"
+              className="rounded-xl w-full"
               style={{
                 background: 'linear-gradient(to bottom, #FFFFFD 33%, #F1EEF7 100%)',
                 boxShadow: `
@@ -708,7 +710,7 @@ export default function Home() {
             </div>
             {/* 2nd card */}
             <div
-              className="rounded-xl 2xl:min-w-[370px] max-w-[330px]"
+              className="rounded-xl w-full"
               style={{
                 background: 'linear-gradient(to bottom, #FFFFFD 33%, #F1EEF7 100%)',
                 boxShadow: `
@@ -875,7 +877,7 @@ export default function Home() {
             </div>
             {/* 3rd card */}
             <div
-              className="mb-16 sm:mb-0 rounded-xl 2xl:min-w-[370px] max-w-[330px]"
+              className="mb-16 sm:mb-0 rounded-xl w-full self-start"
               style={{
                 background: 'linear-gradient(to bottom, #FFFFFD 33%, #F7F5EE 100%)',
                 boxShadow: `
@@ -889,7 +891,7 @@ export default function Home() {
             >
               {/* Overlay/Main */}
               <div
-                className="flex flex-col rounded-xl w-full h-full bg-gradient-to-b from-[#FFFFFD] to-[#FFFFFD1A] p-6"
+                className="flex flex-col rounded-xl w-full bg-gradient-to-b from-[#FFFFFD] to-[#FFFFFD1A] p-6"
               >
                 <span
                   className="font-bold text-[26px] text-black leading-[136.6%]"
