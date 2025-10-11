@@ -149,7 +149,7 @@ function Navbar({ currentPage }) {
 
 					{/* CTA Button – slightly smaller on phones */}
 					<a
-						href="https://calendly.com/nazar_yakov/yakoweb"
+						href="#contact"
 						onClick={() => {
 							trackGoal('book_an_intro_call_navbar', 'Book an intro call on Navbar');
 						}}
@@ -178,13 +178,13 @@ function Navbar({ currentPage }) {
 							}}
 						>
 							<span className="font-semibold">
-								Plan een gesprek
+								Neem contact op
 							</span>
 							<span
 								className="absolute blur-xs group-hover:opacity-75 opacity-50 transform transition-opacity duration-300 ease-in-out font-semibold"
 								aria-hidden="true"
 							>
-								Plan een gesprek
+								Neem contact op
 							</span>
 						</div>
 					</a>
