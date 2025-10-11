@@ -1,6 +1,7 @@
 import { getCookieConsent } from './cookieConsent';
 
 export async function trackGoal(name, description) {
+  return null
   try {
     // Check if analytics is enabled
     const consent = getCookieConsent();

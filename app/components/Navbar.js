@@ -7,7 +7,7 @@ import { trackGoal } from '../utils/datafast';
 function Navbar({ currentPage }) {
 	// Navigation items with name and link - Dutch only
 	const navigationItems = [
-		{ name: 'Prijzen', link: '#pricing' },
+		{ name: 'Prijzen', link: '#prijzen' },
 		{ name: 'FAQ', link: '#faqs' },
 		{ name: 'Cases', link: null },
 		{ name: 'Blog', link: null }

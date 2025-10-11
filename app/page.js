@@ -1,11 +1,12 @@
 "use client";
-import { XLogoIcon, InstagramLogoIcon, FacebookLogoIcon, LinkedinLogoIcon, ArrowSquareOutIcon, HouseIcon, CarProfileIcon, CaretRightIcon, WhatsappLogoIcon } from "@phosphor-icons/react";
-import { useState } from "react";
+import { ArrowSquareOutIcon, HouseIcon, CarProfileIcon, CaretRightIcon, XLogoIcon, InstagramLogoIcon, FacebookLogoIcon, LinkedinLogoIcon, WhatsappLogoIcon, CalendarIcon } from "@phosphor-icons/react";
+import { useState, useRef, useEffect } from "react";
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
 import Navbar from "./components/Navbar";
 import WebsiteSlides from "./components/WebsiteSlides";
+import ContactCard from "./components/ContactCard";
 import { trackGoal } from './utils/datafast';
 
 // Import Dutch translations directly
@@ -18,6 +19,87 @@ export default function Home() {
   // Helper function to access Dutch translations
   const nl = nlTranslations.HomePage;
 
+  // Contact cards data
+  const contactCards = [
+    {
+      href: "https://wa.me/+31631194410",
+      title: "WhatsApp",
+      description: "Direct bericht sturen",
+      ctaText: "+31 6 311 944 10",
+      icon: WhatsappLogoIcon,
+      iconColor: "text-green-600",
+      bgColor: "bg-green-100",
+      hoverBgColor: "bg-green-200",
+      textColor: "text-green-600",
+      hoverTextColor: "text-green-700"
+    },
+    {
+      href: "mailto:hello@yakoweb.com",
+      title: "E-mail",
+      description: "Stuur ons een bericht",
+      ctaText: "hello@yakoweb.com",
+      icon: () => (
+        <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      ),
+      iconColor: "text-blue-600",
+      bgColor: "bg-blue-100",
+      hoverBgColor: "bg-blue-200",
+      textColor: "text-blue-600",
+      hoverTextColor: "text-blue-700",
+      isEmail: true
+    },
+    {
+      href: "https://calendly.com/nazar_yakov/yakoweb",
+      title: "Plan gesprek",
+      description: "Boek een gratis introgesprek",
+      ctaText: "Bekijk beschikbaarheid",
+      icon: CalendarIcon,
+      iconColor: "text-purple-600",
+      bgColor: "bg-purple-100",
+      hoverBgColor: "bg-purple-200",
+      textColor: "text-purple-600",
+      hoverTextColor: "text-purple-700"
+    },
+    {
+      href: "https://www.facebook.com/nazar.yak",
+      title: "Facebook",
+      description: "Stuur ons een bericht op Facebook",
+      ctaText: "nazar.yak",
+      icon: FacebookLogoIcon,
+      iconColor: "text-blue-700",
+      bgColor: "bg-blue-100",
+      hoverBgColor: "bg-blue-200",
+      textColor: "text-blue-700",
+      hoverTextColor: "text-blue-800"
+    },
+    {
+      href: "https://www.linkedin.com/in/nazar-yakov/",
+      title: "LinkedIn",
+      description: "Stuur ons een bericht op LinkedIn",
+      ctaText: "Nazar Yakov",
+      icon: LinkedinLogoIcon,
+      iconColor: "text-blue-700",
+      bgColor: "bg-blue-100",
+      hoverBgColor: "bg-blue-200",
+      textColor: "text-blue-700",
+      hoverTextColor: "text-blue-800"
+    },
+    {
+      href: "https://www.instagram.com/yako.web/",
+      title: "Instagram",
+      description: "Stuur ons een bericht op Instagram",
+      ctaText: "@yako.web",
+      icon: InstagramLogoIcon,
+      iconColor: "text-pink-600",
+      bgColor: "bg-pink-100",
+      hoverBgColor: "bg-pink-200",
+      textColor: "text-pink-600",
+      hoverTextColor: "text-pink-700"
+    }
+  ];
+
   const [openIndex, setOpenIndex] = useState(null);
   const toggle = (index) => {
     // If we're opening a question (not closing), track it
@@ -29,6 +111,78 @@ export default function Home() {
     }
     setOpenIndex(prev => (prev === index ? null : index));
   };
+
+  // Infinite auto-scrolling grid
+  const scrollContainerRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const autoScrollIntervalRef = useRef(null);
+
+  // Create infinite images with all primary and secondary images
+  const createInfiniteImages = () => {
+    const images = [
+      "/images/EK-primary.webp",
+      "/images/sameubels-primary.webp",
+      "/images/BaCu-primary.webp",
+      "/images/het-primary.webp",
+      "/images/CarMaat-primary.webp",
+      "/images/EK-secondary.webp",
+      "/images/CarMaat-secondary.webp",
+      "/images/sameubels-secondary.webp",
+      "/images/het-secondary.webp",
+      "/images/BaCu-secondary.webp",
+      "/images/het-booking.webp",
+      "/images/PickFast-primary.webp",
+    ];
+    
+    // Create 30 images by cycling through the available images
+    return Array.from({ length: 30 }, (_, i) => {
+      const imageSrc = images[i % images.length];
+      const imageName = imageSrc.split('/').pop().split('.')[0];
+      
+      return (
+        <div key={i} className="flex-shrink-0">
+          <img 
+            src={imageSrc}
+            alt={`${imageName} ${Math.floor(i / images.length) + 1}`}
+            className="select-none w-auto xl:h-[400px] md:h-[350px] h-[200px] object-cover rounded-lg shadow-lg"
+            draggable="false"
+          />
+        </div>
+      );
+    });
+  };
+
+  const startAutoScroll = () => {
+    // Always clear existing interval first
+    if (autoScrollIntervalRef.current) {
+      clearInterval(autoScrollIntervalRef.current);
+      autoScrollIntervalRef.current = null;
+    }
+    
+    autoScrollIntervalRef.current = setInterval(() => {
+      if (!scrollContainerRef.current || isDragging) return;
+      
+      const container = scrollContainerRef.current;
+      const scrollSpeed = 1; // pixels per frame
+      
+      container.scrollLeft += scrollSpeed;
+      
+      // Reset scroll position when we've scrolled through all images
+      // This creates the infinite effect
+      const imageWidth = 416; // Approximate width of image + gap
+      const totalWidth = imageWidth * 30;
+      
+      if (container.scrollLeft >= totalWidth) {
+        container.scrollLeft = 0;
+      }
+    }, 16); // ~60fps
+  };
+
+
+  // Start auto-scroll on component mount
+  useEffect(() => {
+    startAutoScroll();
+  }, []);
 
   return (
     <div
@@ -52,7 +206,7 @@ export default function Home() {
         </div>
         {/* Title */}
         <h1
-          className="text-4xl pb-1 sm:text-5xl xl:text-[52px] font-bold text-center leading-[110%] bg-gradient-to-r from-[#523C79] via-black to-[#523C79] bg-clip-text text-transparent mt-3"
+          className="text-3xl pb-1 sm:text-5xl xl:text-[52px] font-bold text-center leading-[110%] bg-gradient-to-r from-[#523C79] via-black to-[#523C79] bg-clip-text text-transparent mt-3"
           dangerouslySetInnerHTML={{ __html: nl.title }}
         />
         {/* Subtitle */}
@@ -67,7 +221,7 @@ export default function Home() {
         >
           {/* Button 1 */}
           <a
-            href="#pricing"
+            href="#contact"
             onClick={() => {
               trackGoal('navigate_pricing_from_hero', 'Navigate to pricing from hero');
             }}
@@ -93,11 +247,10 @@ export default function Home() {
           </a>
           {/* Button 2 */}
           <a
-            href="https://calendly.com/nazar_yakov/yakoweb"
+            href="#prijzen"
             onClick={() => {
               trackGoal('book_an_intro_call_hero', 'Book an intro call on hero');
             }}
-            target="_blank"
             rel="noopener noreferrer"
             className="w-[193px] h-[53px] flex items-center justify-center rounded-[25px] border-[6px] border-[#7853B6] transform transition-all duration-300 ease-in-out group hover:-translate-y-0.5"
           >
@@ -112,62 +265,26 @@ export default function Home() {
             </div>
           </a>
         </div>
-        {/* Screens */}
-        <div
-          className="flex w-full flex-col lg:flex-row justify-between gap-y-32 items-center lg:px-44 mt-[120px] select-none"
-        >
-          {/* First */}
-          <a className="relative w-fit" href="#ek-autotechniek">
-            <img
-              src="/images/EK-secondary.webp"
-              alt="EK Secondary"
-              className="absolute bottom-5 hover:scale-105 hover:-translate-y-3 left-10 lg:left-20 h-[130px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-300 z-0 hover:z-20"
-            />
-            <img
-              src="/images/EK-primary.webp"
-              alt="EK Primary"
-              className="relative hover:scale-105 hover:-translate-y-3 right-10 lg:right-0 h-[130px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-500 z-10"
-            />
-          </a>
-          {/* Second */}
-          <div className="relative w-fit">
-            <img
-              src="/images/CarMaat-secondary.webp"
-              alt="CarMaat Secondary"
-              className="absolute hover:scale-105 hover:-translate-y-3 left-10 lg:left-10 h-[130px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-300 z-0 hover:z-20"
-            />
-            <img
-              src="/images/CarMaat-primary.webp"
-              alt="Carmaat Primary"
-              className="relative hover:scale-105 hover:-translate-y-3 right-10 lg:right-10 bottom-5 h-[130px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-500 z-10"
-            />
+          {/* Horizontal Image Grid */}
+         <div className="flex justify-center py-16 mt-16">
+           <div 
+             ref={scrollContainerRef}
+             className="flex overflow-x-hidden scrollbar-hide gap-4 max-w-full select-none"
+           >
+            {createInfiniteImages()}
           </div>
-
-          {/* Third */}
-          <a className="relative w-fit" href="#bacu-kozijnen">
-            <img
-              src="/images/BaCu-secondary.webp"
-              alt="BaCu Secondary"
-              className="absolute bottom-5 hover:scale-105 hover:-translate-y-3 left-10 lg:left-0 h-[130px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-300 z-10"
-            />
-            <img
-              src="/images/BaCu-primary.webp"
-              alt="BaCu Primary"
-              className="relative hover:scale-105 hover:-translate-y-3 right-10 lg:right-20 h-[130px] w-auto rounded-lg shadow-[0_0_30px_1px_#1A063D59] transition-all duration-500 z-0 hover:z-20"
-            />
-          </a>
         </div>
       </section>
       
       {/* Why choose us */}
       <section
         className="z-30 relative
-          2xl:-mt-[50vh] xl:-mt-[40vh] lg:-mt-[5vh] md:mt-[20vh] sm:mt-[10vh] mt-[20vh]
           flex flex-col justify-center xl:items-start items-center
           2xl:px-48 xl:px-36 lg:px-28 md:px-14 sm:px-16 px-8
           bg-[url('/backgrounds/whyus.webp')] sm:bg-no-repeat bg-top
           bg-[length:140%_auto] sm:bg-[length:300%_auto] md:bg-[length:200%_auto] lg:bg-[length:170%_auto] xl:bg-[length:110%_auto] 2xl:bg-[length:100%_auto]
-          py-20 xl:pt-[24vh] xl:pb-[16vh]
+          py-20 xl:py-24
+        
         "
       >
         <h3 className="text-center text-[13px] md:text-[16px] text-dark/80 font-semibold">{nl.whyUs.title}</h3>
@@ -467,7 +584,7 @@ export default function Home() {
 					<h2 className="text-center xl:text-left text-[24px] sm:text-[28px] md:text-[32px] text-black font-bold leading-[120%]">Meer waarde dan waar je voor betaalt</h2>
 					<p className="flex flex-col text-left text-[14px] sm:text-[16px] text-dark/80 font-medium mt-5 gap-3">
 						<span>Je bestelt niet zomaar een website die niets doet omdat "iedereen een website heeft".</span>
-						<span>Het doel is meer afspraken, verkopen en winst. Wij doen alles om je hiermee te helpen. Voor dit doel is goede webdesign niet genoeg, daarom krijg je ook SEO-optimalisatie zodat je website beter vindbaar is, Google Analytics-instelling zodat wij precies weten wat het beste voor jou werkt. Het eerste jaar blijft je website foutloos en steeds geoptimaliseerd - gratis, voor een makkelijkere start. Je leert ook hoe je teksten en foto's zelf, snel en gemakkelijk kunt bewerken en de website kunt beheren. Heb je nog geen domein of zakelijke e-mail? Wij regelen dat binnen enkele minuten. Je krijgt onbeperkte revisies en verbeteringen totdat je tevreden bent.</span>
+						<span>Het doel is meer afspraken, verkopen en winst. Wij doen alles om je hiermee te helpen. Voor dit doel is goede webdesign niet genoeg, daarom krijg je ook SEO-optimalisatie zodat je website beter vindbaar is, Google Analytics-instelling zodat wij precies weten wat het beste voor jou werkt. Het eerste jaar blijft je website foutloos en steeds geoptimaliseerd - gratis, voor een makkelijkere start. Je leert ook hoe je teksten en foto's zelf, snel en gemakkelijk kunt bewerken en de website kunt beheren. Heb je nog geen domein of zakelijke e-mail? Wij regelen dat snel samen. Je krijgt onbeperkte revisies en verbeteringen totdat je tevreden bent.</span>
 						{/* <span>Wij willen dat je je doel bereikt, daarom stellen wij dit: Indien je website in de eerste 100 dagen zich niet terugbetaalt, werken wij gratis om dat te veranderen.</span> */}
 					</p>
 				</div>
@@ -479,10 +596,10 @@ export default function Home() {
 					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ SEO-optimalisatie – <strong><s>€300</s></strong> <strong className="text-green-600">Gratis</strong></span>
 					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ Analytics instellen – <strong><s>€200</s></strong> <strong className="text-green-600 shadow-4xl">Gratis</strong></span>
 					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ 1 jaar gratis ondersteuning – <strong><s>€108</s></strong> <strong className="text-green-600">Gratis</strong></span>
-					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ Webflow handleiding over website beheren – <strong><s>€100</s></strong> <strong className="text-green-600">Gratis</strong></span>
+					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ Webflow handleiding over website beheren – <strong><s>€50</s></strong> <strong className="text-green-600">Gratis</strong></span>
 					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ Hulp met domein en e-mail – <strong><s>€100</s></strong> <strong className="text-green-600">Gratis</strong></span>
 					<span className="text-[13px] sm:text-[14px] lg:text-[16px]">+ Onbeperkte revisies – <strong><s>€?</s></strong> <strong className="text-green-600">Gratis</strong></span>
-					<span className="text-base sm:text-lg mt-2 sm:mt-4 font-medium">= Website + <strong><s>€808+</s></strong> <strong className="text-green-600">gratis</strong> extra's</span>
+					<span className="text-base sm:text-lg mt-2 sm:mt-4 font-medium">= Website + <strong><s>€758+</s></strong> <strong className="text-green-600">gratis</strong> extra's</span>
 				</div>
       </section>
 
@@ -532,7 +649,7 @@ export default function Home() {
       
       {/* Pricing */}
       <section
-        id="pricing"
+        id="prijzen"
         className="z-40 relative
           flex flex-col xl:items-start items-center
           mt-[12vh] sm:-mt-[0vh]
@@ -580,10 +697,10 @@ export default function Home() {
                   <span
                     className="font-bold text-[34px] text-black"
                   >
-                    €1000
+                    €500
                   </span>
                   <div
-                    className="text-[14px] font-medium ml-2 mb-2 self-end text-dark"
+                    className="hidden text-[14px] font-medium ml-2 mb-2 self-end text-dark"
                   >
                     <span>+</span>
                     <span>
@@ -608,14 +725,14 @@ export default function Home() {
                       <rect width="25" height="25" rx="12.5" fill="#CEE1FF" />
                       <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#3B82F6"/>
                     </svg>
-                    <span className="text-dark text-[15px] font-semibold">1 landingspagina</span>
+                    <span className="text-dark text-[15px] font-semibold">4 basic-pagina's</span>
                   </li>
                   <li className="flex flex-row gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                       <rect width="25" height="25" rx="12.5" fill="#CEE1FF" />
                       <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#3B82F6"/>
                     </svg>
-                    <span className="text-dark text-[15px] font-semibold">Alles geleverd binnen 2 weken</span>
+                    <span className="text-dark text-[15px] font-semibold">Alles geleverd binnen 10 dagen</span>
                   </li>
                   <li className="flex flex-row gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
@@ -689,11 +806,10 @@ export default function Home() {
                 </ul>
                 {/* Button */}
                 <a
-                  href={nl.pricing.landing.paymentLink}
+                  href="#contact"
                   onClick={() => {
                     trackGoal('order_landing', 'Order a landing page');
                   }}
-                  target="_blank"
                   className="bg-SecondaryBackground/50 w-full h-[53px] mt-10 mb-4 flex items-center justify-center rounded-[25px] border-[6px] border-[#3B9EF6] transform transition-all duration-300 ease-in-out group hover:-translate-y-0.5"
                 >
                   <div
@@ -743,11 +859,11 @@ export default function Home() {
                   <span
                     className="font-bold text-[34px] text-black"
                   >
-                    €1500
+                    €750
                   </span>
 
                   <div
-                    className="text-[14px] font-medium ml-2 mb-2 self-end text-dark"
+                    className="hidden text-[14px] font-medium ml-2 mb-2 self-end text-dark"
                   >
                     <span>+</span>
                     <span>
@@ -775,7 +891,7 @@ export default function Home() {
                       <rect width="25" height="25" rx="12.5" fill="#E2E1FF"/>
                       <path fillRule="evenodd" clipRule="evenodd" d="M17.8089 7.69798L10.3506 14.8959L8.37142 12.7813C8.00684 12.4376 7.43392 12.4167 7.01725 12.7084C6.611 13.0105 6.49642 13.5417 6.74642 13.9688L9.09017 17.7813C9.31933 18.1355 9.71517 18.3542 10.1631 18.3542C10.5902 18.3542 10.9964 18.1355 11.2256 17.7813C11.6006 17.2917 18.7568 8.76048 18.7568 8.76048C19.6943 7.80215 18.5589 6.9584 17.8089 7.68756V7.69798Z" fill="#5A57C2"/>
                     </svg>
-                    <span className="text-dark text-[15px] font-semibold underline">Tot 6 pagina's</span>
+                    <span className="text-dark text-[15px] font-semibold underline">Tot 10 pagina's</span>
                   </li>
                   <li className="flex flex-row gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
@@ -856,11 +972,10 @@ export default function Home() {
                 </ul>
                 {/* Button */}
                 <a
-                  href={nl.pricing.standard.paymentLink}
+                  href="#contact"
                   onClick={() => {
                     trackGoal('order_standard', 'Order a standard website');
                   }}
-                  target="_blank"
                   className="bg-SecondaryBackground/50 w-full h-[53px] mt-10 mb-4 flex items-center justify-center rounded-[25px] border-[6px] border-[#7652B3] transform transition-all duration-300 ease-in-out group hover:-translate-y-0.5"
                 >
                   <div
@@ -905,7 +1020,7 @@ export default function Home() {
                   <span
                     className="font-bold text-[34px] text-black"
                   >
-                    €2000+
+                    €1000+
                   </span>
                 </div>
                 <p className="mt-1 text-dark text-[15px] font-medium">{nl.pricing.premium.description}</p>
@@ -928,11 +1043,10 @@ export default function Home() {
                 </ul>
                 {/* Button */}
                 <a
-                  href="https://calendly.com/nazar_yakov/yakoweb"
+                  href="#contact"
                   onClick={() => {
                     trackGoal('book_an_intro_call_premium_website', 'Book an intro call on Premium plan');
                   }}
-                  target="_blank"
                   className="w-full h-[53px] mt-10 mb-4 flex items-center justify-center rounded-[25px] border-[6px] border-[#FA8700] transform transition-all duration-300 ease-in-out group hover:-translate-y-0.5"
                 >
                   <div
@@ -949,10 +1063,37 @@ export default function Home() {
             </div>
           </div>
       </section>
+      
+      {/* Neem contact op */}
+      <section id="contact" className="py-24 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-dark mb-4">Neem contact op</h2>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">Kies de manier die het beste bij jou past om met ons in contact te komen</p>
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {contactCards.map((card, index) => (
+            <ContactCard
+              key={index}
+              href={card.href}
+              title={card.title}
+              description={card.description}
+              ctaText={card.ctaText}
+              icon={card.icon}
+              iconColor={card.iconColor}
+              bgColor={card.bgColor}
+              hoverBgColor={card.hoverBgColor}
+              textColor={card.textColor}
+              hoverTextColor={card.hoverTextColor}
+              isEmail={card.isEmail}
+            />
+          ))}
+        </div>
+      </section>
 
-      {/* CTA */}
+      {/* Cta HIDDEN*/}
       <section
-        className="px-12 flex flex-col gap-y-5 items-center justify-center text-center my-[120px]"
+        className="hidden px-12 flex-col gap-y-5 items-center justify-center text-center my-[120px]"
       >
         <h2 className="text-[28px] md:text-[32px] text-black font-bold leading-[114%]">{nl.cta.title}</h2>
         <a

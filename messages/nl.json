@@ -2,19 +2,19 @@
 	"HomePage": {
 		"titleMarketBased": "Websites op maat,<br/>voor autobedrijven",
 		"title": "Professionele websites<br/>die resultaat opleveren",
-		"badge": "1 plek voor augustus over",
-		"subtitle": "Krijg een website voor je autobedrijf die 24/7 extra klanten binnenhaalt, alle info toont en telefoontjes bespaart.",
-		"button1": "Kies je pakket",
-		"button2": "Of plan een gesprek",
+		"badge": "Nog 1 plek beschikbaar voor oktober",
+		"subtitle": "Krijg een website voor je vakbedrijf die 24/7 extra klanten binnenhaalt, alle info toont en telefoontjes bespaart.",
+		"button1": "Neem contact op",
+		"button2": "Of kies je pakket",
 		"whyUs": {
-			"title": "WAAROM KIEZEN AUTOBEDRIJVEN VOOR YAKOWEB?",
+			"title": "WAAROM KIEZEN VAKBEDRIJVEN VOOR YAKOWEB?",
 			"subtitle": "De partner die je helpt groeien",
 			"performance": {
 				"title": "Prestatie",
-				"description": "Onze missie is om autobedrijven te helpen meer klanten te krijgen met minder moeite. We creëren websites die winst opleveren door onze expertise in marketing voor autobedrijven.",
+				"description": "Onze missie is om vakbedrijven te helpen meer klanten te krijgen met minder moeite. We creëren websites die winst opleveren door onze expertise in marketing voor vakbedrijven.",
 				"messages": {
 					"1": {
-						"text": "Thijs heeft net een afspraak gemaakt.",
+						"text": "Thijs heeft een afspraak gemaakt.",
 						"time": "Zojuist"
 					},
 					"2": {
@@ -22,7 +22,7 @@
 						"time": "3 minuten geleden"
 					},
 					"3": {
-						"text": "Emma heeft route naar je garage gepland.",
+						"text": "Emma heeft route gepland.",
 						"time": "1 uur geleden"
 					}
 				}
@@ -37,7 +37,7 @@
 			},
 			"longevity": {
 				"title": "Duurzaamheid",
-				"description": "We zijn er voor de lange termijn. Je krijgt checks elke maand en verbeteringen elke 3 maanden, je kunt ook altijd om updates vragen.",
+				"description": "We zijn er voor de lange termijn, daarom bieden we doorlopende ondersteuning. Je kunt ook altijd om updates vragen.",
 				"messages": {
 					"col1": {
 						"1": { "title": "Paginalaadtijd op mobiel verbeterd", "time": "3 dagen geleden" },
@@ -87,15 +87,15 @@
 			}
 		},
 		"testimonial1": {
-			"testimonial": "Hoewel geen autobedrijf, hebben we een 6-pagina website gemaakt voor BaCu Kozijnen, compleet met heldere en effectieve copywriting. De site toont hun producten en diensten, bouwt geloofwaardigheid op en helpt bezoekers om te zetten naar klanten.",
-			"hashtag": "#Standaard",
+			"testimonial": "We hebben een 6-pagina website gemaakt voor BaCu Kozijnen, compleet met heldere en effectieve copywriting. De site toont hun producten en diensten, bouwt geloofwaardigheid op en helpt bezoekers om te zetten naar klanten.",
+			"hashtag": "#Zilver",
 			"typeWebsite": "Kozijnen & deuren website"
 		},
 		"pricing": {
 			"title": "PRIJZEN",
 			"subtitle": "Heldere pakketten<br/>Zonder verrassingen",
 			"landing": {
-				"title": "Landing",
+				"title": "Brons",
 				"description": "Een op maat gemaakte landingspagina die je bedrijf professioneel presenteert en nieuwe klanten genereert.",
 				"yearlyText": "/maand",
 				"everythingIn": "Alles in Landing:",
@@ -112,13 +112,12 @@
 					"10": "Onbeperkte revisies",
 					"11": "Restitueerbare betaling"
 				},
-				"paymentLink": "https://buy.stripe.com/dRmbIUe2l7ngaMQ0vp5J603",
-				"button": "Bestel je website"
+				"button": "Neem contact op"
 			},
 			"standard": {
-				"title": "Standaard",
+				"title": "Zilver",
 				"badge": "#meest gekozen",
-				"description": "Een website met meerdere pagina's, ontworpen om al je diensten te presenteren en meer afspraken te krijgen.",
+				"description": "Een website met meerdere pagina's, ontworpen om al je diensten te presenteren en meer verkopen te krijgen.",
 				"yearlyText": "/maand",
 				"everythingIn": "Alles in Landing, plus:",
 				"features": {
@@ -134,27 +133,26 @@
 					"10": "Onbeperkte revisies",
 					"11": "Restitueerbare betaling"
 				},
-				"paymentLink": "https://buy.stripe.com/00waEQaQ9fTM7AE6TN5J604",
-				"button": "Bestel je website"
+				"button": "Neem contact op"
 			},
 			"premium": {
-				"title": "Premium",
-				"description": "Een website met extra functies zoals occasions, blog, betalingsverwerking en meer.",
+				"title": "Goud",
+				"description": "Een website met extra functies zoals occasions, blog, webshop en meer.",
 				"yearlyText": "/maand",
-				"everythingIn": "Alles in Standaard, plus:",
+				"everythingIn": "Sommige functies:",
 				"features": {
 					"1": "Premium UI/UX ontwerp",
 					"2": "Occasions pagina",
 					"3": "Blog-pagina's",
-					"4": "Betalingsverwerking",
+					"4": "Webshop",
 					"5": "Extra functionaliteit op maat"
 				},
-				"button": "Plan een gesprek"
+				"button": "Neem contact op"
 			}
 		},
 		"testimonial2": {
 			"testimonial": "We hebben een 9-pagina website gebouwd voor EK Autotechniek, autobedrijf in Almere. Bezoekers kunnen alle diensten zien en contact opnemen. We hebben ook alle andere onderdelen geleverd, zoals SEO-optimalisatie, domein, zakelijke e-mail en meer.",
-			"hashtag": "#Standard",
+			"hashtag": "#Zilver",
 			"typeWebsite": "Autobedrijf in Almere"
 		},
 		"cta": {
@@ -166,12 +164,12 @@
 			"subtitle": "Heb je vragen?<br/>Wij hebben antwoorden!",
 			"items": [
 				{
-					"question": "Voor welke autobedrijven maken jullie websites?",
-					"answer": "We werken met alle soorten autobedrijven: garages, APK-stations, bandenservice, autoschadeherstellers, dealerships en gespecialiseerde werkplaatsen. Van kleine familiebedrijven tot grotere ondernemingen. Onze focus op de automotive sector betekent dat we precies weten welke informatie jullie klanten zoeken en hoe we meer afspraken kunnen genereren."
+					"question": "Voor welke vakbedrijven maken jullie websites?",
+					"answer": "We werken met alle soorten vakbedrijven: autobedrijven, bouwbedrijven, meubelmakers, kozijnenbedrijven, timmerbedrijven, en meer. Van kleine familiebedrijven tot grotere ondernemingen. Onze focus op de vakbedrijven betekent dat we precies weten welke informatie jullie klanten zoeken en hoe we meer afspraken kunnen genereren."
 				},
 				{
 					"question": "Hoe kunnen we beginnen met onze website?",
-					"answer": "Kies hierboven je pakket en verricht je betaling. Je wordt automatisch doorgestuurd naar een formulier waar je je bedrijfsgegevens invult. Nog niet 100% zeker? Boek dan eerst een <a style='text-decoration: underline; color: #2563eb; font-weight: bold;' href='https://calendly.com/nazar_yakov/yakoweb' target='_blank'>gratis introgesprek</a> of neem contact op beneden om alle mogelijkheden te bespreken en je vragen te stellen."
+					"answer": "Kies hierboven je pakket en <a style='text-decoration: underline; color: #2563eb; font-weight: bold;' href='#contact'>neem contact op</a> om alle mogelijkheden te bespreken en je vragen te stellen."
 				},
 				{
 					"question": "Hoe werkt de betaling en facturatie?",
@@ -191,7 +189,7 @@
 				},
 				{
 					"question": "Hoe werkt jullie doorlopende ondersteuning?",
-					"answer": "Het <strong>eerste jaar is gratis</strong>! Daarna voor slechts <strong>€9/maand</strong> (jaarlijks gefactureerd) krijg je:<br/><br/>✓ Maandelijkse prestatie-checks<br/>✓ Kwartaal optimalisaties op basis van data<br/>✓ Kleine content updates wanneer je wilt<br/>✓ Technische ondersteuning<br/>✓ Uptime monitoring<br/><br/>Doel: je website blijft klanten binnenhalen zonder dat jij je er zorgen over hoeft te maken."
+					"answer": "Het eerste jaar ben je <strong>gratis verzekerd tegen bugs en technische problemen</strong>. Alle prijzen zijn op maat besproken, want iedere klant heeft andere behoeften."
 				}
 			]
 		},

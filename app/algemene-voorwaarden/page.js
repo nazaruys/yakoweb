@@ -28,21 +28,23 @@ export default function Terms() {
 
             <section id="terugbetaling-en-annulering">
                 <h2 className="text-xl font-semibold mb-4">3. Terugbetaling en Annuleringsbeleid</h2>
-                <p className="text-dark">Wij hanteren een transparant terugbetalingsbeleid dat is gekoppeld aan de verschillende fases van uw project. Het terugbetalingspercentage wordt bepaald door de fase waarin u het project annuleert:</p>
+                <p className="text-dark">
+                    Wij hanteren het volgende terugbetalings- en annuleringsbeleid met betrekking tot onze dienstverlening:
+                </p>
                 <ul className="list-disc pl-6 mt-2 mb-4 text-dark">
-                    <li>100% terugbetaling indien geannuleerd vóór verzending van de sitemap (structuur van de website)</li>
-                    <li>80% terugbetaling indien geannuleerd vóór verzending van de wireframes (schematische weergave van de pagina's)</li>
-                    <li>60% terugbetaling indien geannuleerd vóór verzending van het design (visueel ontwerp)</li>
-                    <li>0% terugbetaling nadat het basis design is verzonden</li>
+                    <li><strong>100% terugbetaling</strong>: Indien de klant de opdracht annuleert vóór de aanvang van de werkzaamheden, wordt het volledige door de klant betaalde bedrag gerestitueerd.</li>
+                    <li><strong>50% terugbetaling</strong>: Indien de klant de opdracht annuleert nadat de werkzaamheden zijn aangevangen maar vóór de verzending van het eerste ontwerp, heeft de klant recht op terugbetaling van 50% van het totale factuurbedrag.</li>
+                    <li><strong>0% terugbetaling</strong>: Na verzending van het eerste ontwerp, ongeacht de ontvangen feedback of voortzetting van het project, is restitutie helaas niet meer mogelijk.</li>
                 </ul>
-                <p className="text-dark">Een fase wordt als "verzonden" beschouwd wanneer wij via de overeengekomen communicatiemethode (e-mail, chat, of ander platform) een van de volgende hebben gestuurd:</p>
-                <ul className="list-disc pl-6 mt-2 mb-4 text-dark">
-                    <li>Een link naar het document of ontwerp</li>
-                    <li>Een bestand met het document of ontwerp</li>
-                    <li>Afbeeldingen of screenshots van het document of ontwerp</li>
-                </ul>
-                <p className="text-dark">Elke fase wordt onafhankelijk behandeld van voorgaande fases. Het terugbetalingspercentage wordt berekend over het totaalbedrag van de betreffende fase.</p>
-                <p className="text-dark">Voor abonnementsdiensten bieden wij de mogelijkheid tot restitutie van vooruitbetaalde, nog niet aangevangen factureringsperioden. De opzegging gaat in aan het einde van de huidige factureringsperiode, en reeds betaalde bedragen voor toekomstige perioden worden volledig terugbetaald. Een verzoek tot annulering dient schriftelijk te worden ingediend.</p>
+                <p className="text-dark">
+                    De verzending van het eerste ontwerp geschiedt middels een overeengekomen communicatiemethode, zoals e-mail, chat of een ander platform, en wordt bevestigd door het beschikbaar stellen van een ontwerpbestand, document of afbeelding.
+                </p>
+                <p className="text-dark">
+                    Elk verzoek tot annulering dient schriftelijk te worden ingediend. Betalingen die op grond van dit beleid voor restitutie in aanmerking komen, worden uiterlijk binnen 14 dagen na schriftelijke bevestiging van de annulering terugbetaald.
+                </p>
+                <p className="text-dark">
+                    Voor abonnementsdiensten geldt dat vooraf betaalde maanden die nog niet zijn aangevangen volledig worden gerestitueerd na opzegging. De opzegging treedt in werking aan het einde van de lopende factureringsperiode.
+                </p>
             </section>
 
             <section id="dienstverlening">
@@ -112,7 +114,7 @@ export default function Terms() {
             </section>
 
             <div className="mt-12 pt-8 border-t border-dark/30">
-                <p className="text-sm text-dark">Laatst bijgewerkt: 08/16/2025</p>
+                <p className="text-sm text-dark">Laatst bijgewerkt: 10/11/2025</p>
             </div>
         </div>
     </div>
