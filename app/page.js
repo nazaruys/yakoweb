@@ -266,10 +266,10 @@ export default function Home() {
           </a>
         </div>
           {/* Horizontal Image Grid */}
-         <div className="flex justify-center py-16 mt-16">
+         <div className="w-full overflow-x-hidden flex justify-center mt-16">
            <div 
              ref={scrollContainerRef}
-             className="flex overflow-x-hidden scrollbar-hide gap-4 max-w-full select-none"
+             className="flex overflow-x-hidden scrollbar-hide gap-2 py-16 sm:gap-4 max-w-full w-full select-none box-border p-0"
            >
             {createInfiniteImages()}
           </div>
