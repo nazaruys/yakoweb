@@ -87,11 +87,11 @@ export default async function RootLayout({ children }) {
       </head>
       <body>        
         <FontProvider>
-          <AnalyticsScript />
+          {/* <AnalyticsScript /> */}
           <LayoutShell>
             {children}
           </LayoutShell>
-          <CookieBanner />
+          {/* <CookieBanner /> */}
         </FontProvider>
       </body>
     </html>

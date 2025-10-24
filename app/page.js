@@ -11,6 +11,10 @@ import { trackGoal } from './utils/datafast';
 
 // Import Dutch translations directly
 import nlTranslations from '../messages/nl.json';
+import EKAutotechniekCasePreview from "./components/EKAutotechniekCasePreview";
+import BaCuKozijnenCasePreview from "./components/BaCuKozijnenCasePreview";
+import Footer from "./components/Footer";
+import SAMeubelsCasePreview from "./components/SAMeubelsCasePreview";
 
 
 export default function Home() {
@@ -222,9 +226,6 @@ export default function Home() {
           {/* Button 1 */}
           <a
             href="#contact"
-            onClick={() => {
-              trackGoal('navigate_pricing_from_hero', 'Navigate to pricing from hero');
-            }}
             className="w-[193px] h-[53px] flex items-center justify-center rounded-[25px] bg-gradient-to-r from-[#9568E3] to-[#563C83] shadow-[inset_0_3px_2px_rgba(255,255,255,0.3),inset_0_-3px_2px_rgba(0,0,0,0.1),inset_1px_0_2px_rgba(0,0,0,0.3),inset_-1px_0_2px_rgba(255,255,255,0.3),inset_0_-1px_3px_rgba(0,0,0,0.1)] p-[6px] transform transition-transform duration-300 ease-in-out group hover:-translate-y-0.5"
           >
             <div
@@ -248,9 +249,6 @@ export default function Home() {
           {/* Button 2 */}
           <a
             href="#prijzen"
-            onClick={() => {
-              trackGoal('book_an_intro_call_hero', 'Book an intro call on hero');
-            }}
             rel="noopener noreferrer"
             className="w-[193px] h-[53px] flex items-center justify-center rounded-[25px] border-[6px] border-[#7853B6] transform transition-all duration-300 ease-in-out group hover:-translate-y-0.5"
           >
@@ -602,50 +600,10 @@ export default function Home() {
 					<span className="text-base sm:text-lg mt-2 sm:mt-4 font-medium">= Website + <strong><s>€758+</s></strong> <strong className="text-green-600">gratis</strong> extra's</span>
 				</div>
       </section>
-
-      {/* Testamonial section 2 */}
-      <section
-        id="ek-autotechniek"
-        className="
-          2xl:px-48 xl:px-36 lg:px-28 md:px-14 sm:px-16 px-8
-          flex flex-col xl:flex-row justify-center gap-y-12 xl:gap-y-0 gap-x-12
-          pb-[70px] pt-[200px] xl:py-[150px]
-        "
-      >
-        {/* Left side */}
-        <WebsiteSlides icon={<CarProfileIcon size={18} className="text-black" />} typeWebsite={nl.testimonial2.typeWebsite} imagesList={["/images/EK-primary.webp", "/images/EK-secondary.webp", "/images/EK-text.webp", "/images/EK-question.webp", "/images/EK-form.webp"]} />
-        {/* Right side */}
-        <div className="self-center xl:self-auto flex flex-col justify-between relative space-y-3 max-w-[550px]">
-          <div
-            className=""
-          >
-            <span className="text-black text-[20px] font-semibold">
-              EK Autotechniek
-            </span>
-            <p className="text-[16px] text-dark/80 font-medium mt-3">
-              {nl.testimonial2.testimonial}
-            </p>
-            <span className="inline-flex items-center bg-[#C36CFF]/20 px-1 w-fit -rotate-1 mt-5">
-              <span className="text-black text-[16px] font-medium rotate-1">{nl.testimonial2.hashtag}</span>
-            </span>
-          </div>
-          <a
-            href="https://www.ekautotechniek.nl/"
-            onClick={() => {
-              trackGoal('open_ekautotechniek', 'Open EK Autotechniek website');
-            }}
-            target="_blank"
-            className="mt-6 xl:mt-0 gap-x-2 w-fit flex flex-row justify-center items-center px-3 py-2 bg-SecondaryBackground rounded-xl shadow-[0_0_12px_rgba(0,0,0,0.10)] hover:shadow-[0_0_12px_rgba(0,0,0,0.20)] transition-shadow duration-300"
-          >
-            <ArrowSquareOutIcon size={18} className="text-black" />
-            <span
-              className="text-dark text-[13px] font-medium"
-            >
-              ekautotechniek.nl
-            </span>
-          </a>
-        </div>
-      </section>
+      {/* Case Preview EK Autotechniek */}
+      <EKAutotechniekCasePreview className={"pb-[70px] pt-[200px] xl:py-[150px]"}/>
+      {/* Case Preview SA Meubels */}
+      <SAMeubelsCasePreview className="pb-[100px] pt-[80px]"/>
       
       {/* Pricing */}
       <section
@@ -1123,49 +1081,8 @@ export default function Home() {
           </a>
       </section>
       
-      {/* Testimonial section 1 */}
-      <section
-        id="bacu-kozijnen"
-        className="
-          2xl:px-48 xl:px-36 lg:px-28 md:px-14 sm:px-16 px-8
-          flex flex-col-reverse xl:flex-row gap-y-12 xl:gap-y-0 justify-between
-          py-[100px]
-        "
-      >
-        {/* Left side */}
-        <div className="self-center xl:self-auto flex flex-col justify-between relative space-y-3 max-w-[550px]">
-          <div>
-            <span className="text-black text-[20px] font-semibold">
-              BaCu Kozijnen
-            </span>
-            <p className="text-[16px] text-dark/80 font-medium mt-3">
-              {nl.testimonial1.testimonial}
-            </p>
-            <span className="inline-flex items-center bg-[#C36CFF]/20 px-1 w-fit -rotate-1 mt-5">
-              <span className="text-black text-[16px] font-medium rotate-1">{nl.testimonial1.hashtag}</span>
-            </span>
-          </div>
-          <a
-            href="https://www.bacukozijnen.nl/"
-            onClick={() => {
-              trackGoal('open_bacukozijnen', 'Open BaCu Kozijnen website');
-            }}
-            target="_blank"
-            className="mt-6 xl:mt-0 gap-x-2 w-fit flex flex-row justify-center items-center px-3 py-2 bg-SecondaryBackground rounded-xl shadow-[0_0_12px_rgba(0,0,0,0.10)] hover:shadow-[0_0_12px_rgba(0,0,0,0.20)] transition-shadow duration-300"
-          >
-            <ArrowSquareOutIcon size={18} className="text-black" />
-            <span
-              className="text-dark text-[13px] font-medium"
-            >
-              bacukozijnen.nl
-            </span>
-          </a>
-        </div>
-
-        {/* Right side */}
-        <WebsiteSlides icon={<HouseIcon size={18} className="text-black" />} typeWebsite={nl.testimonial1.typeWebsite} imagesList={["/images/BaCu-primary.webp", "/images/BaCu-secondary.webp", "/images/BaCu-products.webp", "/images/BaCu-form.webp", "/images/BaCu-faq.webp"]} />
-
-      </section>
+      {/* Case Preview BaCu Kozijnen*/}
+      <BaCuKozijnenCasePreview className={"py-[100px]"}/>
 
       {/* FAQs */}
       <section
@@ -1222,66 +1139,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer
-        className="border-t-[2px] border-dark/10 mt-16 pt-16 relative z-0 flex flex-col-reverse bg-[url('/backgrounds/footer.webp')] bg-[length:100%_auto] bg-no-repeat bg-bottom px-6 sm:px-12 xl:px-44"
-      >
-        {/* Below */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 py-6 font-medium text-dark text-[14px]">
-          <div className="flex flex-row gap-x-4">
-            <span>{nl.footer.copyright}</span>
-            <Link
-              href={nl.footer.termsPage}
-              className="underline"
-            >
-              {nl.footer.terms}
-            </Link>
-            <Link
-              href={nl.footer.privacyPage}
-              className="underline"
-            >
-              {nl.footer.privacy}
-            </Link>
-            <Link
-              href={nl.footer.cookiesPage}
-              className="underline"
-            >
-              Cookies
-            </Link>
-          </div>
-
-        </div>
-
-        {/* Line */}
-        <div className="w-full h-[1px] bg-dark" />
-
-        {/* Above */}
-        <div className="mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 font-medium text-dark text-[14px]">
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-7 max-w-full">
-            <img src="/logos/YakoWeb.svg" alt="Logo" className="w-[130px] h-auto select-none" draggable="false" />
-            <span className="max-w-[300px]">{nl.footer.description}</span>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-7">
-            <a onClick={() => {trackGoal('email_us', 'Email us')}}href="mailto:hello@yakoweb.com" className="max-w-[300px] hover:text-black transition-all duration-200 break-words">{nl.footer.email}</a>
-            <div className="flex flex-row gap-3">
-              <a aria-label={nl.footer.socialLinks.xProfile} target="_blank" href="https://wa.me/+31631194410" className="group">
-                <WhatsappLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
-              </a>
-              <a aria-label={nl.footer.socialLinks.xProfile} target="_blank" href="https://x.com/nazar_yakov" className="group">
-                <XLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
-              </a>
-              <a aria-label={nl.footer.socialLinks.instagramProfile} target="_blank" href="https://www.instagram.com/yako.web/" className="group">
-                <InstagramLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
-              </a>
-              <a aria-label={nl.footer.socialLinks.facebookProfile} target="_blank" href="https://www.facebook.com/nazar.yakov" className="group">
-                <FacebookLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
-              </a>
-              <a aria-label={nl.footer.socialLinks.linkedInProfile} target="_blank" href="https://www.linkedin.com/in/nazar-yakov/" className="group">
-                <LinkedinLogoIcon size={24} className="text-[#2D2D2D] group-hover:text-black transition-colors duration-200" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
     </div>
   );

@@ -7,9 +7,9 @@ import { trackGoal } from '../utils/datafast';
 function Navbar({ currentPage }) {
 	// Navigation items with name and link - Dutch only
 	const navigationItems = [
-		{ name: 'Prijzen', link: '#prijzen' },
-		{ name: 'FAQ', link: '#faqs' },
-		{ name: 'Cases', link: null },
+		{ name: 'Prijzen', link: '/#prijzen' },
+		{ name: 'FAQ', link: '/#faqs' },
+		{ name: 'Cases', link: "/cases" },
 		{ name: 'Blog', link: null }
 	];
 
@@ -149,11 +149,7 @@ function Navbar({ currentPage }) {
 
 					{/* CTA Button – slightly smaller on phones */}
 					<a
-						href="#contact"
-						onClick={() => {
-							trackGoal('book_an_intro_call_navbar', 'Book an intro call on Navbar');
-						}}
-						target="_blank"
+						href="/#contact"
 						className={`hidden md:flex
 							md:w-[150px] lg:w-[190px] xl:w-[190px]
 							${smallVersion ? 'md:h-[35px]' : 'md:h-[45px]'}
