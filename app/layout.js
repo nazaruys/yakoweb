@@ -1,83 +1,55 @@
 import './globals.css';
 import { FontProvider } from './components/FontProvider';
-import { AnalyticsScript } from './components/AnalyticsScript';
 import { LayoutShell } from './components/LayoutShell';
-import CookieBanner from './components/CookieBanner';
 import { GA_MEASUREMENT_ID } from './lib/gtag';
 import Script from 'next/script';
 import AnalyticsTracker from './components/analytics-tracker';
 
-export async function generateMetadata({ params, parent }) {
-  const heroImage = 'hero.png';
-  const imageUrl = `https://www.yakoweb.com/images/${heroImage}`;
-  
-  // Get the current path from parent metadata
-  const parentMetadata = await parent;
-  const path = parentMetadata?.openGraph?.url || '';
-  
-  // Extract the path part
-  const pathWithoutLocale = path.replace(/^https:\/\/www\.yakoweb\.com/, '') || '/';
-  const canonicalUrl = `https://www.yakoweb.com${pathWithoutLocale}`;
-  
-  return {
-    title: 'YakoWeb | Verander bezoekers in klanten en website-stress in een verre herinnering.',
-    description: 'Wij ontwerpen en ontwikkelen snelle, responsieve websites die jouw merk weerspiegelen, bezoekers betrekken en zorgen voor meer verkoop. Of je nu vanaf nul begint of een complete website-vernieuwing nodig hebt.',
 
-    metadataBase: new URL('https://www.yakoweb.com'),
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        'max-snippet': -1,
-        'max-image-preview': 'large',
-        'max-video-preview': -1
-      }
-    },
-    alternates: {
-      canonical: canonicalUrl,
-      languages: {
-        'nl': 'https://www.yakoweb.com',
-      },
-    },
-
-    openGraph: {
-      title: 'YakoWeb',
-      description: 'Verander bezoekers in klanten en website-stress in een verre herinnering.',
-      url: canonicalUrl,
-      type: 'website',
-      locale: 'nl_NL',
-      images: [
-        {
-          url: imageUrl,
-          width: 1200,
-          height: 630,
-          alt: 'YakoWeb Hero Afbeelding',
-          type: 'image/png',
-        },
-      ],
-      siteName: 'YakoWeb',
-    },
-
-    twitter: {
-      card: 'summary_large_image',
-      title: 'YakoWeb',
-      description: 'Verander bezoekers in klanten en website-stress in een verre herinnering.',
-      site: '@nazar_yakov',
-      creator: '@nazar_yakov',
-      images: {
-        url: 'https://www.yakoweb.com/images/hero.png',
-        alt: 'YakoWeb Hero Afbeelding'
-      },
-    },
+export default async function RootLayout({ children, pageMetadata }) {
+  const defaultMetadata = {
+    title: "Moderne websites voor vakbedrijven | YakoWeb",
+    description: "Snelle, responsieve websites die jouw merk weerspiegelen en bezoekers betrekken. Voor vakbedrijven die meer klanten willen met een moderne website.",
   };
-}
 
-export default async function RootLayout({ children }) {
+  const metadata = { ...defaultMetadata, ...pageMetadata };
+
   return (
     <html lang="nl">
       <head>
+        {/* Title and Description */}
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+
+        {/* <!-- Canonical --> */}
+        <link rel="canonical" href="https://www.yakoweb.com" />
+
+        {/* <!-- Robots --> */}
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+        {/* <!-- Open Graph --> */}
+        <meta property="og:title" content="YakoWeb" />
+        <meta property="og:description" content="Verander bezoekers in klanten en website-stress in een verre herinnering." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.yakoweb.com" />
+        <meta property="og:site_name" content="YakoWeb" />
+        <meta property="og:locale" content="nl_NL" />
+        <meta property="og:image" content="https://www.yakoweb.com/images/hero.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="YakoWeb Hero Afbeelding" />
+        <meta property="og:image:type" content="image/png" />
+
+        {/* <!-- Twitter --> */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="YakoWeb" />
+        <meta name="twitter:description" content="Verander bezoekers in klanten en website-stress in een verre herinnering." />
+        <meta name="twitter:site" content="@nazar_yakov" />
+        <meta name="twitter:creator" content="@nazar_yakov" />
+        <meta name="twitter:image" content="https://www.yakoweb.com/images/hero.png" />
+        <meta name="twitter:image:alt" content="YakoWeb Hero Afbeelding" />
+
         {/* gtag.js: loads the GA library */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
@@ -103,9 +75,9 @@ export default async function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body>        
+        <AnalyticsTracker />
         <FontProvider>
           <LayoutShell>
-            <AnalyticsTracker />
             {children}
           </LayoutShell>
         </FontProvider>
