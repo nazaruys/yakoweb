@@ -47,7 +47,7 @@ export default function SAMeubelsPagina() {
                     <HeroButtonPrimary target="_blank" href={"https://www.sameubels.nl/"} text="Bekijk Online" />
                 </div>
                 {/* Right - 40% */}
-                <div className="md:col-span-2 col-span-1 flex flex-col justify-end items-end">
+                <div className="md:col-span-2 col-span-1 flex flex-col justify-center items-center md:justify-end md:items-end">
                     <img
                         src='/sameubels/mockup.webp'
                         alt="Website mockup van SA Meubels"
@@ -57,7 +57,7 @@ export default function SAMeubelsPagina() {
             </section>
             {/* Video */}
             <div
-                className="py-[60px] sm:py-[80px] relative w-full max-w-3xl mx-auto overflow-hidden"
+                className="py-[60px] sm:py-[80px] px-4 relative w-full max-w-3xl mx-auto overflow-hidden"
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
                 >
@@ -86,9 +86,9 @@ export default function SAMeubelsPagina() {
                     />
                 </div>
 				<div className="w-full md:w-[50%] flex flex-col justify-center my-4 md:my-12">
-					<h2 className="text-center xl:text-left text-[24px] sm:text-[28px] md:text-[32px] text-black font-bold leading-[120%]">Over SA Meubels Op Maat</h2>
-					<p className="flex flex-col text-left text-[14px] sm:text-[16px] text-dark/80 font-medium mt-5 gap-3">
-						<span>SA Meubels Op Maat is een meubelmaker die actief is in Harderwijk, Gelderland. Voordat dit project startte, had SA Meubels een domein dat al jaren leegstond. De primaire uitdaging was om op dit domein eindelijk een website te plaatsen die zowel goed vindbaar zou zijn als bezoekers zou converteren naar klanten. Bovendien was hun Google Business Profile niet geclaimd en slecht geoptimaliseerd.</span>
+					<h2 className="text-[24px] sm:text-[28px] md:text-[32px] text-black font-bold leading-[120%]">Over SA Meubels Op Maat</h2>
+					<p className="flex flex-col text-left text-md sm:text-lg text-dark/80 font-medium mt-5 gap-3">
+						<span>SA Meubels Op Maat is een meubelmaker die actief is in Harderwijk, Gelderland. Voordat dit project startte, had SA Meubels een domein dat al jaren leegstond. Bovendien was hun Google Business Profile niet geclaimd en slecht geoptimaliseerd.</span>
 					</p>
 				</div>
             </section>
@@ -97,8 +97,8 @@ export default function SAMeubelsPagina() {
 				className="flex flex-col md:flex-row items-stretch 2xl:px-48 xl:px-52 lg:px-32 md:px-24 sm:px-20 px-4 gap-y-8 md:gap-y-12 xl:gap-x-32 pt-[60px] sm:py-[80px] xl:py-[100px]"
 			>
 				<div className="w-full md:w-[60%] flex flex-col justify-center my-4 md:my-12">
-					<h2 className="text-center xl:text-left text-[24px] sm:text-[28px] md:text-[32px] text-black font-bold leading-[120%]">Dit was onze uitdaging</h2>
-					<p className="flex flex-col text-left text-[14px] sm:text-[16px] text-dark/80 font-medium mt-5 gap-3">
+					<h2 className="text-[24px] sm:text-[28px] md:text-[32px] text-black font-bold leading-[120%]">Dit was onze uitdaging</h2>
+					<p className="flex flex-col text-left text-md sm:text-lg text-dark/80 font-medium mt-5 gap-3">
 						<span>SA Meubels Op Maat uit Harderwijk had jarenlang een leeg domein liggen - onbenutte digitale ruimte terwijl potentiële klanten online naar meubelmakers zochten. Het bedrijf miste niet alleen een professionele online uitstraling, maar was praktisch onvindbaar voor mensen die op zoek waren naar maatwerk meubels in de regio.</span>
 						<span>De uitdagingen waren duidelijk: er was geen website die de vakmanschap en kwaliteit van SA Meubels kon tonen, het Google Business Profile was niet geclaimd en was niet geoptimaliseerd, en er was geen enkele strategie om online zichtbaar te worden in een competitieve lokale markt.</span>
 						<span>Onze opdracht was helder maar veeleisend: bouw een website die niet alleen mooi is, maar die ook daadwerkelijk gevonden wordt door de juiste klanten én ze overtuigt om contact op te nemen. Een website die werkt als een digitale verkoper, 24/7 beschikbaar om projecten binnen te halen.</span>
@@ -108,7 +108,7 @@ export default function SAMeubelsPagina() {
                     <img
                         src="/sameubels/sameubels-before.webp"
                         alt="SA Meubels oude situatie"
-                        className="w-full h-full object-cover object-center rounded-xl"
+                        className="hidden md:block w-full h-full object-cover object-center rounded-xl"
                     />
                 </div>
             </section>
@@ -150,49 +150,53 @@ export default function SAMeubelsPagina() {
             </section>
             {/* Foto's */}
             <section
-                className="justify-center items-center flex flex-col md:flex-row 2xl:px-48 xl:px-52 lg:px-32 md:px-24 sm:px-20 px-4 py-[60px] sm:py-[80px] xl:py-[100px] gap-6 md:gap-0"
-            >
-                <img
-                    src="/sameubels/GBP.webp"
-                    alt="Google bedrijfsprofiel van SA Meubels"
-                    className="mb-6 md:mb-0 mr-0 md:mr-4 w-full md:w-[25%] h-auto object-contain object-center rounded-xl"
-                />
-                <div className="flex flex-col gap-4 w-full md:w-auto">
+                className="grid grid-cols-1 md:grid-cols-3 justify-center items-start xl:px-72 lg:px-32 md:px-24 sm:px-20 px-4 py-[60px] sm:py-[80px] xl:py-[100px] gap-4"
+                >
+                <div
+                    className="w-full col-span-1 flex flex-row justify-center md:justify-start"
+                >
                     <img
-                        src="/sameubels/resultaat.webp"
-                        alt="Google Bedrijfsprofiel optimalisatie resultaat SA Meubels"
-                        className="w-full md:w-[70%] h-auto object-contain object-center rounded-xl"
+                        src="/sameubels/GBP.webp"
+                        alt="Google bedrijfsprofiel van SA Meubels"
+                        className="w-[60%] md:w-full h-auto object-contain object-center rounded-xl"
+                    />
+                </div>
+                <div className="flex flex-col items-center gap-4 col-span-1 md:col-span-2">
+                    <img
+                    src="/sameubels/resultaat.webp"
+                    alt="Google Bedrijfsprofiel optimalisatie resultaat SA Meubels"
+                    className="w-full h-auto object-contain object-center rounded-xl"
                     />
                     <img
-                        src="/sameubels/SEO100.webp"
-                        alt="SEO score van SA Meubels"
-                        className="w-full md:w-[70%] h-auto object-contain object-center rounded-xl"
+                    src="/sameubels/SEO100.webp"
+                    alt="SEO score van SA Meubels"
+                    className="w-full h-auto object-contain object-center rounded-xl"
                     />
                 </div>
             </section>
             {/* Resultaat */}
             <section
-				className="flex flex-col md:flex-row items-stretch 2xl:px-48 xl:px-52 lg:px-32 md:px-24 sm:px-20 px-4 gap-y-8 md:gap-y-12 xl:gap-x-32 pt-[60px] sm:py-[80px] xl:py-[100px]"
+				className="flex flex-col md:flex-row items-stretch 2xl:px-48 xl:px-52 lg:px-32 md:px-24 sm:px-20 px-4 gap-y-8 md:gap-x-12 xl:gap-x-32 sm:py-[80px] xl:py-[100px]"
 			>
-				<div className="w-full md:w-[40%] flex items-stretch mb-8 md:mb-0">
+				<div className="hidden md:flex w-full md:w-[40%] items-stretch md:mb-0">
                     <img
                         src="/sameubels/home-small.webp"
                         alt="SA Meubels homepage voorbeeld"
-                        className="w-full h-full object-contain object-center rounded-xl"
+                        className="w-full h-full object-cover object-center rounded-xl"
                     />
                 </div>
 				<div className="w-full md:w-[60%] flex flex-col justify-center my-4 md:my-12">
 					<h2 className="text-[24px] sm:text-[28px] md:text-[32px] text-black font-bold leading-[120%]">Het resultaat</h2>
 					<h3 className="text-lg sm:text-2xl text-black font-semibold mt-4">Van onzichtbaar naar vindbaar binnen één week</h3>
-					<p className="flex flex-col text-left text-[14px] sm:text-[16px] text-dark/80 font-medium mt-5 gap-3">
+					<p className="flex flex-col text-left text-md sm:text-lg text-dark/80 font-medium mt-5 gap-3">
 						<span>SA Meubels Op Maat heeft nu een strategische 4-pagina website die hoog scoort op Google voor relevante zoektermen zoals "meubelmaker Harderwijk". De website combineert professionele foto's met slimme vindbaarheid - en zet bezoekers om in klanten dankzij WhatsApp- en offerteaanvraag-knoppen op elke pagina. De website hebben wij binnen één week na het eerste contact geleverd.</span>
 					</p>
 					<h3 className="text-lg sm:text-2xl text-black font-semibold mt-4">Lokale dominantie</h3>
-					<p className="flex flex-col text-left text-[14px] sm:text-[16px] text-dark/80 font-medium mt-5 gap-3">
+					<p className="flex flex-col text-left text-md sm:text-lg text-dark/80 font-medium mt-5 gap-3">
 						<span>Het geoptimaliseerde Google Business Profile zorgt ervoor dat SA Meubels prominent verschijnt in lokale zoekresultaten. Met Google Analytics en Search Console volledig geïntegreerd, zien we precies welke keywords werken en waar bezoekers vandaan komen.</span>
 					</p>
 					<h3 className="text-lg sm:text-2xl text-black font-semibold mt-4">Doorlopende groei</h3>
-					<p className="flex flex-col text-left text-[14px] sm:text-[16px] text-dark/80 font-medium mt-5 gap-3">
+					<p className="flex flex-col text-left text-md sm:text-lg text-dark/80 font-medium mt-5 gap-3">
 						<span>Onze continue ondersteuning houdt de website fris met nieuwe projectfoto's en reviews, terwijl SA Meubels zich kan concentreren op wat ze het beste doen: prachtige meubels op maat maken.</span>
 					</p>	
 				</div>

@@ -3,6 +3,9 @@ import { FontProvider } from './components/FontProvider';
 import { AnalyticsScript } from './components/AnalyticsScript';
 import { LayoutShell } from './components/LayoutShell';
 import CookieBanner from './components/CookieBanner';
+import { GA_MEASUREMENT_ID } from './lib/gtag';
+import Script from 'next/script';
+import AnalyticsTracker from './components/analytics-tracker';
 
 export async function generateMetadata({ params, parent }) {
   const heroImage = 'hero.png';
@@ -75,11 +78,25 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="nl">
       <head>
-        {/* hrefLang - Dutch only */}
-        <link rel="alternate" href="https://www.yakoweb.com/" hrefLang="nl" />
-        <link rel="alternate" href="https://www.yakoweb.com/privacy/" hrefLang="nl" />
-        <link rel="alternate" href="https://www.yakoweb.com/voorwaarden/" hrefLang="nl" />
-        <link rel="alternate" href="https://www.yakoweb.com/" hrefLang="x-default" />
+        {/* gtag.js: loads the GA library */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        {/* initialize gtag and set anonymize_ip + disable automatic page_view to control SPA pageviews */}
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            // Important: anonymize_ip true, and disable automatic page_view so we control pageviews.
+            gtag('config', '${GA_MEASUREMENT_ID}', {
+              anonymize_ip: true,
+              send_page_view: false
+            });
+          `}
+        </Script>
         
         {/* Preconnect to important third-party domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -87,11 +104,10 @@ export default async function RootLayout({ children }) {
       </head>
       <body>        
         <FontProvider>
-          {/* <AnalyticsScript /> */}
           <LayoutShell>
+            <AnalyticsTracker />
             {children}
           </LayoutShell>
-          {/* <CookieBanner /> */}
         </FontProvider>
       </body>
     </html>

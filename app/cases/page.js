@@ -2,10 +2,7 @@
 import { usePathname } from 'next/navigation';
 import React from 'react';
 import Navbar from '../components/Navbar';
-import HeroButtonSecondary from '../components/HeroButtonSecondary';
 import HeroButtonPrimary from '../components/HeroButtonPrimary';
-import WebsiteSlides from '../components/WebsiteSlides';
-import { ArrowSquareOutIcon, CarProfileIcon } from '@phosphor-icons/react';
 import EKAutotechniekCasePreview from '../components/EKAutotechniekCasePreview';
 import BaCuKozijnenCasePreview from '../components/BaCuKozijnenCasePreview';
 import SAMeubelsCasePreview from '../components/SAMeubelsCasePreview';
@@ -24,7 +21,7 @@ export default function Cases() {
                 className="
                     2xl:px-48 xl:px-52 lg:px-32 md:px-24 sm:px-20 px-8
                     py-[60px] sm:py-[80px] xl:py-[100px]
-                    grid grid-cols-5 w-full h-auto gap-8
+                    flex flex-col md:flex-row justify-between
                 "
             >
                 {/* Left - 60% */}
@@ -41,7 +38,7 @@ export default function Cases() {
                     </p>
                 </div>
                 {/* Right - 40% */}
-                <div className="col-span-2 flex flex-col justify-end items-end">
+                <div className="mt-8 md:mt-0 col-span-2 flex flex-col md:justify-end md:items-end">
                     <HeroButtonPrimary href="/#contact" text="Neem contact op" />
                 </div>
             </section>
