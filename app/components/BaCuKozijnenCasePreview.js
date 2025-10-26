@@ -26,7 +26,7 @@ function BaCuKozijnenCasePreview({className}) {
                 </span>
             </div>
             <a
-                href="https://www.bacukozijnen.nl/"
+                href="https://bacukozijnen.vercel.app/"
                 target="_blank"
                 className="mt-6 xl:mt-0 gap-x-2 w-fit flex flex-row justify-center items-center px-3 py-2 bg-SecondaryBackground rounded-xl shadow-[0_0_12px_rgba(0,0,0,0.10)] hover:shadow-[0_0_12px_rgba(0,0,0,0.20)] transition-shadow duration-300"
             >
