@@ -23,6 +23,18 @@ export default function Home() {
   // Helper function to access Dutch translations
   const nl = nlTranslations.HomePage;
 
+  // Get current month in Dutch
+  const getCurrentMonthInDutch = () => {
+    const months = [
+      'januari', 'februari', 'maart', 'april', 'mei', 'juni',
+      'juli', 'augustus', 'september', 'oktober', 'november', 'december'
+    ];
+    return months[new Date().getMonth()];
+  };
+
+  // Dynamic badge text with current month
+  const badgeText = `Nog 1 plek beschikbaar voor ${getCurrentMonthInDutch()}`;
+
   // Contact cards data
   const contactCards = [
     {
@@ -206,7 +218,7 @@ export default function Home() {
           <div className="w-[10px] h-[10px]">
             <div className="pulsating-circle"></div>
           </div>
-          <span className="text-[12px] font-semibold">{nl.badge}</span>
+          <span className="text-[12px] font-semibold">{badgeText}</span>
         </div>
         {/* Title */}
         <h1
