@@ -621,7 +621,7 @@ export default function Home() {
       <section
         id="prijzen"
         className="z-40 relative
-          flex flex-col xl:items-start items-center
+          hidden flex-col xl:items-start items-center
           mt-[12vh] sm:-mt-[0vh]
           2xl:px-48 xl:px-36 lg:px-28 md:px-14 sm:px-16 px-8
           bg-[url('/backgrounds/pricing.webp')] xl:bg-no-repeat bg-top
